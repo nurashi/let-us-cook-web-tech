@@ -472,3 +472,18 @@ body {
     height: 400px;
   }
 }
+.drink-info {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  font-size: 0.95rem;
+  color: #333;
+  text-align: center;
+}
+
+.drinks-card:hover .drink-info {
+  opacity: 1;
+  max-height: 200px;
+  margin-top: 12px;
+}
