@@ -682,3 +682,30 @@ body {
     font-size: 1rem;
     text-align: center;
 }
+
+.recipe {
+      font-size: 0.95rem;
+      color: #333;
+      margin-top: 12px;
+      text-align: center;
+      line-height: 1.5;
+}
+
+.video-btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 20px;
+    background: #d7263d;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px #d7263d44;
+}
+
+.video-btn:hover {
+  background: #fff;
+  color: #d7263d;
+  transform: scale(1.05);
+}
