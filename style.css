@@ -682,65 +682,30 @@ body {
     font-size: 1rem;
     text-align: center;
 }
-.fastfood-info {
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.4s ease-in-out;
-    font-size: 0.95rem;
-    color: #333;
-    text-align: center;
+
+.recipe {
+      font-size: 0.95rem;
+      color: #333;
+      margin-top: 12px;
+      text-align: center;
+      line-height: 1.5;
 }
 
-.fastfood-card:hover .fastfood-info {
-    opacity: 1;
-    max-height: 200px;
-    margin-top: 12px;
-}
-.dessert-info {
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.4s ease-in-out;
-    font-size: 0.95rem;
-    color: #333;
-    text-align: center;
+.video-btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 20px;
+    background: #d7263d;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px #d7263d44;
 }
 
-.desserts-card:hover .dessert-info {
-    opacity: 1;
-    max-height: 200px;
-    margin-top: 12px;
+.video-btn:hover {
+  background: #fff;
+  color: #d7263d;
+  transform: scale(1.05);
 }
-.breakfast-info {
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.4s ease-in-out;
-    font-size: 0.95rem;
-    color: #333;
-    text-align: center;
-}
-
-.breakfast-card:hover .breakfast-info {
-    opacity: 1;
-    max-height: 200px;
-    margin-top: 12px;
-}
-.culinary-info {
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.4s ease-in-out;
-    font-size: 0.95rem;
-    color: #333;
-    text-align: center;
-}
-
-.culinary-card:hover .culinary-info {
-    opacity: 1;
-    max-height: 200px;
-    margin-top: 12px;
-}
-
-
