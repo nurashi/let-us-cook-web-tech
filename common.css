@@ -1,0 +1,70 @@
+/* Common styles for all pages */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Navbar styles */
+.navbar {
+    width: 100%;
+    background: #d7263d;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 12px #d7263d22;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.navbar a:hover, .navbar a.active {
+    background: #fff;
+    color: #d7263d;
+}
+
+/* Footer styles */
+.footer {
+    width: 100%;
+    background: #d7263d;
+    color: #fff;
+    text-align: center;
+    padding: 18px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    box-shadow: 0 -2px 12px #d7263d22;
+}
+
+.title {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 40px;
+    color: #d7263d;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px #fff6;
+    z-index: 1;
+}
+
+@media (max-width: 900px) {
+    .hero-section {
+        min-height: 300px;
+    }
+
+    .feature-card {
+        width: 90vw;
+        max-width: 300px;
+    }
+}
