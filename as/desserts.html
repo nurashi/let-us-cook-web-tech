@@ -8,14 +8,33 @@
 </head>
 <body>
   <nav class="navbar">
-    <a href="../index.html">Home</a>
-    <a href="../an/soups.html">Soups</a>
-    <a href="../an/meals.html">Meals</a>
-    <a href="fastfood.html">Fast Food</a>
-    <a href="../ra/drinks.html">Drinks</a>
-    <a href="desserts.html" class="active">Desserts</a>
-    <a href="../ra/breakfast.html">Breakfast</a>
+    <div class="nav-desktop">
+      <a href="../index.html">Home</a>
+      <a href="../an/soups.html">Soups</a>
+      <a href="../an/meals.html">Meals</a>
+      <a href="fastfood.html">Fast Food</a>
+      <a href="../ra/drinks.html">Drinks</a>
+      <a href="desserts.html">Desserts</a>
+      <a href="../ra/breakfast.html">Breakfast</a>
+      <a href="../culinary.html">Culinary</a>
+    </div>
+    <div class="nav-mobile">
+      <button class="hamburger" aria-label="Open menu" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="mobile-menu">
+        <a href="../index.html">Home</a>
+        <a href="../an/soups.html">Soups</a>
+        <a href="../an/meals.html">Meals</a>
+        <a href="fastfood.html">Fast Food</a>
+        <a href="../ra/drinks.html">Drinks</a>
+        <a href="desserts.html" class="active">Desserts</a>
+        <a href="../ra/breakfast.html">Breakfast</a>
         <a href="../culinary.html">Culinary</a>
+      </div>
+    </div>
   </nav>
 
   <h1 class="title">Sweet Desserts</h1>
