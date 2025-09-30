@@ -1,11 +1,12 @@
 @import url('../common.css');
 
 .fastfood-section, .desserts-section {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 40px;
     margin-top: 60px;
-    flex-wrap: wrap;
+    justify-items: center;
+    align-items: stretch;
 }
 
 nav.navbar {
@@ -46,6 +47,7 @@ nav.navbar {
 
 @media (max-width: 700px) {
     .fastfood-section, .desserts-section {
+        display: flex;
         flex-direction: column;
         align-items: center;
         gap: 24px;
