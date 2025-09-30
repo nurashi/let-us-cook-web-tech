@@ -1,0 +1,96 @@
+@import url('../common.css');
+
+/* Section styles for drinks and breakfast pages */
+.drinks-section, .breakfast-section {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.drinks-card, .breakfast-card {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px #d7263d44;
+    width: 260px;
+    padding: 30px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.drinks-card:hover, .breakfast-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 16px 48px #d7263d66;
+}
+
+.drinks-card img, .breakfast-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 18px;
+    border-radius: 50%;
+    border-style: dashed;
+    border: 2px;
+}
+
+.drinks-card h2, .breakfast-card h2 {
+    color: #d7263d;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.drinks-card p, .breakfast-card p {
+    color: #333;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.drink-info {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    font-size: 0.95rem;
+    color: #f4f1f1;
+    text-align: center;
+}
+
+.drinks-card:hover .drink-info {
+    opacity: 1;
+    max-height: 200px;
+    margin-top: 12px;
+}
+
+.recipe {
+    font-size: 0.95rem;
+    color: #333;
+    margin-top: 12px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.video-btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 20px;
+    background: #d7263d;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px #d7263d44;
+}
+
+.video-btn:hover {
+    background: #fff;
+    color: #d7263d;
+    transform: scale(1.05);
+}
+
+#button:hover {
+    background-color: rgb(204, 238, 15)
+}
