@@ -8,30 +8,45 @@
 </head>
 <body>
   <nav class="navbar">
-    <a href="../index.html">Home</a>
-    <a href="../an/soups.html">Soups</a>
-    <a href="../an/meals.html">Meals</a>
-    <a href="../as/fastfood.html">Fast Food</a>
-    <a href="drinks.html" class="active">Drinks</a>
-    <a href="../as/desserts.html">Desserts</a>
-    <a href="breakfast.html">Breakfast</a>
+    <div class="nav-desktop">
+      <a href="../index.html">Home</a>
+      <a href="../an/soups.html">Soups</a>
+      <a href="../an/meals.html">Meals</a>
+      <a href="../as/fastfood.html">Fast Food</a>
+      <a href="drinks.html" class="active">Drinks</a>
+      <a href="../as/desserts.html">Desserts</a>
+      <a href="breakfast.html">Breakfast</a>
+      <a href="../culinary.html">Culinary</a>
+    </div>
+    <div class="nav-mobile">
+      <div class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="mobile-menu">
+        <a href="../index.html">Home</a>
+        <a href="../an/soups.html">Soups</a>
+        <a href="../an/meals.html">Meals</a>
+        <a href="../as/fastfood.html">Fast Food</a>
+        <a href="drinks.html" class="active">Drinks</a>
+        <a href="../as/desserts.html">Desserts</a>
+        <a href="breakfast.html">Breakfast</a>
         <a href="../culinary.html">Culinary</a>
+      </div>
+    </div>
   </nav>
 
   <h1 class="title">Refreshing Drinks</h1>
-  <div class="drinks-section">
 
+  <div class="drinks-section">
     <div class="drinks-card">
       <img src="https://img.icons8.com/color/400/000000/cocktail.png" alt="Cocktail">
       <h2>Cocktail</h2>
       <div class="recipe">
         <strong>Recipe:</strong><br>
-        1. Mix juice, soda, or alcohol base.<br>
-        2. Add ice cubes.<br>
-        3. Stir or shake well.<br>
-        4. Garnish with fruit slice.
+        Mix juice/soda base, add ice, stir/shake.<br>
+        Garnish with fruit slice.
       </div>
-      <a href="https://www.youtube.com/watch?v=b0IuTL3Z-kk&t=641s&pp=ygURY29ja3RhaWwgdHV0b3JpYWw%3D" target="_blank" class="video-btn">Watch Recipe</a>
+      <a href="https://www.youtube.com/watch?v=b0IuTL3Z-kk" target="_blank" class="video-btn">Watch Recipe</a>
     </div>
 
     <div class="drinks-card">
@@ -39,12 +54,10 @@
       <h2>Tea</h2>
       <div class="recipe">
         <strong>Recipe:</strong><br>
-        1. Boil fresh water.<br>
-        2. Add tea bag or loose tea.<br>
-        3. Steep 3–5 minutes.<br>
-        4. Add lemon or honey if desired.
+        Boil water, steep tea 3–5 min.<br>
+        Add lemon/honey if desired.
       </div>
-      <a href="https://www.youtube.com/watch?v=ULlV7bmM8lA&pp=ygUPdGVhIGhvdyB0byBtYWtl" target="_blank" class="video-btn">Watch Recipe</a>
+      <a href="https://www.youtube.com/watch?v=ULlV7bmM8lA" target="_blank" class="video-btn">Watch Recipe</a>
     </div>
 
     <div class="drinks-card">
@@ -52,12 +65,10 @@
       <h2>Coffee</h2>
       <div class="recipe">
         <strong>Recipe:</strong><br>
-        1. Grind coffee beans.<br>
-        2. Brew with hot water.<br>
-        3. Pour into a cup.<br>
-        4. Add sugar or milk if you like.
+        Grind beans, brew with hot water.<br>
+        Add sugar/milk if you like.
       </div>
-      <a href="https://www.youtube.com/watch?v=lVeNTofDB2k&pp=ygUSY29mZmVlIGhvdyB0byBtYWtl" target="_blank" class="video-btn">Watch Recipe</a>
+      <a href="https://www.youtube.com/watch?v=lVeNTofDB2k" target="_blank" class="video-btn">Watch Recipe</a>
     </div>
 
     <div class="drinks-card">
@@ -65,12 +76,10 @@
       <h2>Orange Juice</h2>
       <div class="recipe">
         <strong>Recipe:</strong><br>
-        1. Cut oranges in half.<br>
-        2. Squeeze with juicer.<br>
-        3. Strain juice if needed.<br>
-        4. Serve cold with ice.
+        Squeeze oranges, strain if needed.<br>
+        Serve cold with ice.
       </div>
-      <a href="https://www.youtube.com/watch?v=w6IjwKOB_t8&pp=ygUYb3JhbmdlIGp1aWNlIGhvdyB0byBtYWtl" target="_blank" class="video-btn">Watch Recipe</a>
+      <a href="https://www.youtube.com/watch?v=w6IjwKOB_t8" target="_blank" class="video-btn">Watch Recipe</a>
     </div>
 
     <div class="drinks-card">
@@ -78,12 +87,11 @@
       <h2>Milk</h2>
       <div class="recipe">
         <strong>Recipe:</strong><br>
-        1. Pour fresh milk into a glass.<br>
-        2. Heat gently if warm milk preferred.<br>
-        3. Optionally add honey or cocoa.<br>
-        4. Enjoy immediately.
+        Pour fresh milk into a glass.<br>
+        Optionally add honey or cocoa.<br>
+        Enjoy immediately.
       </div>
-      <a href="https://www.youtube.com/watch?v=USR0LuUdFi0&pp=ygURbWlsayBob3cgdG8gbWFrZSA%3D" target="_blank" class="video-btn">Watch Recipe</a>
+      <a href="https://www.youtube.com/watch?v=USR0LuUdFi0" target="_blank" class="video-btn">Watch Recipe</a>
     </div>
 
     <div class="drinks-card">
@@ -91,12 +99,11 @@
       <h2>Water</h2>
       <div class="recipe">
         <strong>Recipe:</strong><br>
-        1. Use clean filtered water.<br>
-        2. Chill in fridge.<br>
-        3. Pour into glass with ice.<br>
-        4. Add lemon slice if desired.
+        Use clean filtered water.<br>
+        Chill in fridge, add ice.<br>
+        Add lemon slice if desired.
       </div>
-      <a href="https://www.youtube.com/watch?v=9sG7T9wmtFQ&pp=ygURZnJlc2ggd2F0ZXIgbWFrZXI%3D" target="_blank" class="video-btn">Watch Recipe</a>
+      <a href="https://www.youtube.com/watch?v=9sG7T9wmtFQ" target="_blank" class="video-btn">Watch Recipe</a>
     </div>
 
     <div class="drinks-card">
@@ -104,12 +111,10 @@
       <h2>Smoothie</h2>
       <div class="recipe">
         <strong>Recipe:</strong><br>
-        1. Add fruits (banana, berries) to blender.<br>
-        2. Add yogurt or milk.<br>
-        3. Blend until creamy.<br>
-        4. Serve chilled.
+        Blend fruits with yogurt/milk.<br>
+        Serve chilled and creamy.
       </div>
-      <a href="https://www.youtube.com/watch?v=yFhu3dm0224&pp=ygURc21vb3RoaWUgdHV0b3JpYWw%3D" target="_blank" class="video-btn">Watch Recipe</a>
+      <a href="https://www.youtube.com/watch?v=yFhu3dm0224" target="_blank" class="video-btn">Watch Recipe</a>
     </div>
 
     <div class="drinks-card">
@@ -117,12 +122,11 @@
       <h2>Cola</h2>
       <div class="recipe">
         <strong>Recipe:</strong><br>
-        1. Chill bottle of cola.<br>
-        2. Add ice cubes to a glass.<br>
-        3. Pour cola over ice.<br>
-        4. Serve cold.
+        Chill cola bottle.<br>
+        Pour into glass with ice.<br>
+        Serve cold.
       </div>
-      <a href="https://www.youtube.com/watch?v=U2HS_hswGmQ&pp=ygUVY29jYSBjb2xhIGhvdyB0byBtYWtl" target="_blank" class="video-btn">Watch Recipe</a>
+      <a href="https://www.youtube.com/watch?v=U2HS_hswGmQ" target="_blank" class="video-btn">Watch Recipe</a>
     </div>
 
     <div class="drinks-card">
@@ -130,16 +134,16 @@
       <h2>Beer</h2>
       <div class="recipe">
         <strong>Recipe:</strong><br>
-        1. Chill beer bottle.<br>
-        2. Tilt glass at 45°.<br>
-        3. Pour slowly to avoid foam.<br>
-        4. Serve cold.
+        Chill beer bottle.<br>
+        Tilt glass 45°, pour slowly.<br>
+        Serve cold.
       </div>
-      <a href="https://www.youtube.com/watch?v=yTecaoiViFs&pp=ygUQYmVlciBob3cgdG8gbWFrZQ%3D%3D" target="_blank" class="video-btn">Watch Recipe</a>
+      <a href="https://www.youtube.com/watch?v=yTecaoiViFs" target="_blank" class="video-btn">Watch Recipe</a>
     </div>
-
   </div>
-<footer class="footer">2025. Nurassyl Orazbek, Rasul Akhmetov, Asylan Usen, Anuar Zhenissov.
-</footer>
+
+  <footer class="footer">
+    2025. Nurassyl Orazbek, Rasul Akhmetov, Asylan Usen, Anuar Zhenissov.
+  </footer>
 </body>
 </html>

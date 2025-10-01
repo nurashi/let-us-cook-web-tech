@@ -1,14 +1,53 @@
 @import url('../common.css');
 
-/* Section styles for drinks and breakfast pages */
+/* Sections */
 .drinks-section, .breakfast-section {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 40px;
     margin-top: 60px;
-    flex-wrap: wrap;
+    justify-items: center;
+    align-items: stretch;
 }
 
+/* Navbar */
+nav.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.nav-desktop {
+    display: flex;
+    gap: 18px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.nav-desktop a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.08rem;
+    padding: 8px 18px;
+    border-radius: 8px;
+    transition: background 0.2s, box-shadow 0.2s;
+    background: #d7263d;
+    border: 2px solid #fcb69f;
+    box-shadow: 0 2px 8px #d7263d11;
+    margin: 0 2px;
+}
+.nav-desktop a.active, .nav-desktop a:hover {
+    background: #ffffff;
+    border-color: #d7263d;
+    box-shadow: 0 4px 16px #d7263d22;
+}
+.nav-mobile {
+    display: none;
+}
+
+/* Cards */
 .drinks-card, .breakfast-card {
     background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
     border-radius: 20px;
@@ -22,7 +61,7 @@
 }
 
 .drinks-card:hover, .breakfast-card:hover {
-    transform: translateY(-10px) scale(1.01);
+    transform: translateY(-10px) scale(1.04);
     box-shadow: 0 16px 48px #d7263d66;
 }
 
@@ -48,14 +87,16 @@
     text-align: center;
 }
 
+/* Extra hover info for drinks */
 .drink-info {
     opacity: 0;
     max-height: 0;
     overflow: hidden;
     transition: all 0.4s ease-in-out;
     font-size: 0.95rem;
-    color: #f4f1f1;
+    color: #444;
     text-align: center;
+    line-height: 1.5;
 }
 
 .drinks-card:hover .drink-info {
@@ -64,6 +105,7 @@
     margin-top: 12px;
 }
 
+/* Shared */
 .recipe {
     font-size: 0.95rem;
     color: #333;
@@ -92,5 +134,94 @@
 }
 
 #button:hover {
-    background-color: rgb(204, 238, 15)
+    background-color: rgb(204, 238, 15);
+}
+
+/* Mobile styles */
+@media (max-width: 700px) {
+    .drinks-section, .breakfast-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        margin-top: 30px;
+    }
+
+    .drinks-card, .breakfast-card {
+        width: 90vw;
+        max-width: 340px;
+        padding: 18px 8px 16px 8px;
+    }
+
+    .drinks-card img, .breakfast-card img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .title {
+        font-size: 1.7rem;
+        text-align: center;
+        margin-top: 18px;
+    }
+
+    .nav-desktop {
+        display: none;
+    }
+    .nav-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        position: relative;
+    }
+    .hamburger {
+        background: #fff;
+        border: 2px solid #d7263d;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 12px;
+        margin-right: 10px;
+        z-index: 101;
+        box-shadow: 0 2px 8px #d7263d22;
+    }
+    .hamburger span {
+        display: block;
+        width: 28px;
+        height: 4px;
+        background: #d7263d;
+        border-radius: 2px;
+        transition: all 0.3s;
+    }
+    .mobile-menu {
+        display: none;
+        position: absolute;
+        top: 44px;
+        right: 0;
+        background: #fff;
+        box-shadow: 0 4px 16px #d7263d22;
+        border-radius: 12px;
+        padding: 18px 0 10px 0;
+        z-index: 100;
+        min-width: 160px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .mobile-menu.open {
+        display: flex;
+    }
+    .mobile-menu a {
+        color: #d7263d;
+        text-decoration: none;
+        padding: 10px 24px;
+        font-size: 1.1rem;
+        width: 100%;
+        border-radius: 6px;
+        transition: background 0.2s;
+    }
+    .mobile-menu a.active, .mobile-menu a:hover {
+        background: #fcb69f44;
+    }
 }
