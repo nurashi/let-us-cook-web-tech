@@ -57,7 +57,6 @@ h1, h2, h3, h4, h5, h6 {
   to { opacity: 1; }
 }
 
-/* FLEXBOX NAVIGATION (10 points) - Modern Navigation with Flexbox */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -174,7 +173,6 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
 }
 
-/* GRID LAYOUT (10 points) - CSS Grid for Featured Section */
 .featured-section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
