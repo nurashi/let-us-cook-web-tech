@@ -3,184 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fast Food</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Fast Food - Let Us Cook</title>
+      <link rel="stylesheet" href="../common.css">
+  <link rel="icon" type="image/webp" href="../Images/let-us-cook-(logo).webp">
+
 </head>
-<body>
-  <nav class="navbar">
-    <div class="nav-desktop">
-      <a href="../index.html">Home</a>
-      <a href="../an/soups.html">Soups</a>
-      <a href="../an/meals.html">Meals</a>
-      <a href="fastfood.html">Fast Food</a>
-      <a href="../ra/drinks.html">Drinks</a>
-      <a href="desserts.html">Desserts</a>
-      <a href="../ra/breakfast.html">Breakfast</a>
-      <a href="../culinary.html">Culinary</a>
-    </div>
-    <div class="nav-mobile">
-      <button class="hamburger" aria-label="Open menu" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="mobile-menu">
-        <a href="../index.html">Home</a>
-        <a href="../an/soups.html">Soups</a>
-        <a href="../an/meals.html">Meals</a>
-        <a href="fastfood.html" class="active">Fast Food</a>
-        <a href="../ra/drinks.html">Drinks</a>
-        <a href="desserts.html">Desserts</a>
-        <a href="../ra/breakfast.html">Breakfast</a>
-        <a href="../culinary.html">Culinary</a>
-      </div>
-    </div>
-  </nav>
+<body class="fade-in">
+    <!-- FLEXBOX NAVIGATION (10 points) - Enhanced Navigation -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="../index.html"><img src="../Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo"></a>
+        </div>
+        <div class="nav-menu">
+            <a href="../index.html">Home</a>
+            <a href="../an/soups.html">Soups</a>
+            <a href="../an/meals.html">Meals</a>
+            <a href="fastfood.html" class="active">Fast Food</a>
+            <a href="../ra/drinks.html">Drinks</a>
+            <a href="desserts.html">Desserts</a>
+            <a href="../ra/breakfast.html">Breakfast</a>
+            <a href="../culinary.html">Culinary</a>
+        </div>
+        <div class="nav-actions">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-  <h1 class="title">Fast Food</h1>
+    <!-- Main content -->
+    <main class="main-content">
+        <!-- Hero section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="title"><img src="../Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo" class="title-logo"> Fast Food Favorites</h1>
+                <p class="subtitle">Quick, delicious, and satisfying meals for busy lifestyles</p>
+            </div>
+        </section>
 
-  <div class="fastfood-section">
+        <!-- FLEXBOX CARDS (10 points) - Recipe Cards Layout -->
+        <section class="recipe-container">
+            <div class="recipe-card">
+                <img src="../Images/fried-chicken.png" alt="Crispy Fried Chicken" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Crispy Fried Chicken</h3>
+                    <p class="card-description">Golden crispy chicken with a secret spice blend and herbs. Perfectly seasoned and fried to perfection.</p>
+                    <div class="card-badges">
+                        <span class="badge time">45 mins</span>
+                        <span class="badge difficulty">Medium</span>
+                        <span class="badge">American</span>
+                    </div>
+                </div>
+            </div>
 
-    <div class="fastfood-card">
-      <img src="https://img.icons8.com/color/400/000000/hamburger.png" alt="Burger">
-      <h2>Burger</h2>
-      <p>Juicy beef patty with cheese, lettuce, and tomato.</p>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Grill beef patty<br>
-        2. Toast buns<br>
-        3. Add cheese, lettuce, tomato<br>
-        4. Assemble & enjoy!
-      </div>
-      <a href="https://www.youtube.com/watch?v=tuDbSVyClzI" target="_blank" class="video-btn">Watch Recipe</a>
-    </div>
+            <div class="recipe-card">
+                <img src="https://img.icons8.com/color/400/000000/hamburger.png" alt="Classic Burger" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Classic Burger</h3>
+                    <p class="card-description">Juicy beef patty with cheese, lettuce, tomato, and special sauce on a toasted bun.</p>
+                    <div class="card-badges">
+                        <span class="badge time">20 mins</span>
+                        <span class="badge difficulty">Easy</span>
+                        <span class="badge">American</span>
+                    </div>
+                </div>
+            </div>
 
-    <div class="fastfood-card">
-      <img src="https://img.icons8.com/color/400/000000/french-fries.png" alt="Fries">
-      <h2>French Fries</h2>
-      <p>Crispy golden fries, perfect with ketchup.</p>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Cut potatoes<br>
-        2. Soak in water<br>
-        3. Fry until golden<br>
-        4. Sprinkle salt
-      </div>
-      <a href="https://www.youtube.com/watch?v=I-mWa_GqIEg" target="_blank" class="video-btn">Watch Recipe</a>
-    </div>
+            <div class="recipe-card">
+                <img src="https://img.icons8.com/color/400/000000/french-fries.png" alt="French Fries" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Crispy French Fries</h3>
+                    <p class="card-description">Golden crispy fries seasoned with salt and served hot. The perfect side dish for any meal.</p>
+                    <div class="card-badges">
+                        <span class="badge time">30 mins</span>
+                        <span class="badge difficulty">Easy</span>
+                        <span class="badge">American</span>
+                    </div>
+                </div>
+            </div>
 
-    <div class="fastfood-card">
-      <img src="https://img.icons8.com/color/400/000000/hot-dog.png" alt="Hot Dog">
-      <h2>Hot Dog</h2>
-      <p>Classic fast food with sausage and bun.</p>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Grill sausage<br>
-        2. Toast bun<br>
-        3. Add ketchup & mustard<br>
-        4. Serve hot
-      </div>
-      <a href="https://www.youtube.com/watch?v=rH2EmY_ytf4" target="_blank" class="video-btn">Watch Recipe</a>
-    </div>
+            <div class="recipe-card">
+                <img src="https://img.icons8.com/color/400/000000/pizza.png" alt="Pizza Slice" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Margherita Pizza</h3>
+                    <p class="card-description">Classic Italian pizza with fresh mozzarella, tomato sauce, and basil on crispy crust.</p>
+                    <div class="card-badges">
+                        <span class="badge time">25 mins</span>
+                        <span class="badge difficulty">Medium</span>
+                        <span class="badge">Italian</span>
+                    </div>
+                </div>
+            </div>
 
-    <div class="fastfood-card">
-      <img src="https://img.icons8.com/color/400/000000/pizza.png" alt="Pizza">
-      <h2>Pizza</h2>
-      <p>Cheesy pizza with your favorite toppings.</p>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Prepare dough<br>
-        2. Add sauce & cheese<br>
-        3. Add toppings<br>
-        4. Bake at 220°C
-      </div>
-      <a href="https://www.youtube.com/watch?v=1-SJGQ2HLp8" target="_blank" class="video-btn">Watch Recipe</a>
-    </div>
+            <div class="recipe-card">
+                <img src="https://img.icons8.com/color/400/000000/hot-dog.png" alt="Hot Dog" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Gourmet Hot Dog</h3>
+                    <p class="card-description">Premium sausage in a toasted bun with mustard, ketchup, and caramelized onions.</p>
+                    <div class="card-badges">
+                        <span class="badge time">15 mins</span>
+                        <span class="badge difficulty">Easy</span>
+                        <span class="badge">American</span>
+                    </div>
+                </div>
+            </div>
 
-    <div class="fastfood-card">
-      <img src="../Images/fried-chicken.png" alt="Fried Chicken">
-      <h2>Fried Chicken</h2>
-      <p>Crispy fried chicken with spices.</p>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Season chicken<br>
-        2. Coat with flour<br>
-        3. Deep fry<br>
-        4. Serve crispy
-      </div>
-      <a href="https://www.youtube.com/watch?v=AJbJYwEduso" target="_blank" class="video-btn" id="button">Watch Recipe</a>
-    </div>
+            <div class="recipe-card">
+                <img src="https://img.icons8.com/color/400/000000/taco.png" alt="Taco" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Street Tacos</h3>
+                    <p class="card-description">Authentic Mexican tacos with seasoned meat, fresh cilantro, onions, and lime.</p>
+                    <div class="card-badges">
+                        <span class="badge time">25 mins</span>
+                        <span class="badge difficulty">Medium</span>
+                        <span class="badge">Mexican</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <div class="fastfood-card">
-      <img src="https://img.icons8.com/color/400/000000/sandwich.png" alt="Sandwich">
-      <h2>Sandwich</h2>
-      <p>Quick sandwich with ham, cheese, and veggies.</p>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Toast bread<br>
-        2. Add ham & cheese<br>
-        3. Add veggies<br>
-        4. Serve fresh
-      </div>
-      <a href="https://www.youtube.com/watch?v=0rmrZZj1Hjs" target="_blank" class="video-btn">Watch Recipe</a>
-    </div>
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <strong>Fast Food by Asylan Usen</strong> | Let Us Cook Team
+            </div>
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="desserts.html">Desserts</a>
+                <a href="../culinary.html">Gallery</a>
+            </div>
+            <div class="social-links">
+                <a href="#" title="Facebook">📘</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="Twitter">🐦</a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+            © 2025 Let Us Cook. Nurassyl Orazbek, Anuar Zhenissov, Asylan Usen, Rasul Akhmetov.
+        </div>
+    </footer>
 
-    <div class="fastfood-card">
-      <img src="https://img.icons8.com/color/400/000000/taco.png" alt="Taco">
-      <h2>Taco</h2>
-      <p>Spicy taco with beef and salsa.</p>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Cook ground beef<br>
-        2. Warm taco shells<br>
-        3. Add salsa & cheese<br>
-        4. Garnish & serve
-      </div>
-      <a href="https://www.youtube.com/watch?v=Xev12eGqJqA" target="_blank" class="video-btn">Watch Recipe</a>
-    </div>
 
-    <div class="fastfood-card">
-      <img src="https://img.icons8.com/color/400/000000/popcorn.png" alt="Popcorn">
-      <h2>Popcorn</h2>
-      <p>Salty popcorn for movie nights.</p>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Heat oil in pot<br>
-        2. Add kernels<br>
-        3. Cover & pop<br>
-        4. Add salt & butter
-      </div>
-      <a href="https://www.youtube.com/watch?v=w6YH8cWYdxs" target="_blank" class="video-btn">Watch Recipe</a>
-    </div>
-  </div>
-  
-  <div class="gallery">
-    <div class="gallery-item">
-      <img src="../Images/fried-chicken.png" alt="Fried Chicken">
-      <span>Fried Chicken</span>
-    </div>
-    <div class="gallery-item">
-      <img src="https://img.icons8.com/color/400/000000/french-fries.png" alt="French Fries">
-      <span>French Fries</span>
-    </div>
-    <div class="gallery-item">
-      <img src="https://img.icons8.com/color/400/000000/hamburger.png" alt="Burger">
-      <span>Burger</span>
-    </div>
-    <div class="gallery-item">
-      <img src="https://img.icons8.com/color/400/000000/hamburger.png" alt="Pizza">
-      <span>Pizza</span>
-    </div>
-    <div class="gallery-item">
-      <img src="https://img.icons8.com/color/400/000000/sandwich.png" alt="Sandwich">
-      <span>Sandwich</span>
-    </div>
-    <div class="gallery-item">
-      <img src="https://img.icons8.com/color/400/000000/popcorn.png" alt="Popcorn">
-      <span>Popcorn</span>
-    </div>
-  </div>
-<footer class="footer">2025. Nurassyl Orazbek, Rasul Akhmetov, Asylan Usen, Anuar Zhenissov.
-</footer>
 </body>
 </html>
+     

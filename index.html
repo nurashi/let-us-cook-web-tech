@@ -5,39 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Let Us Cook</title>
     <link rel="stylesheet" href="common.css">
+    <link rel="icon" type="image/webp" href="Images/let-us-cook-(logo).webp">
 </head>
-<body>
-    <!-- Navigation with flexbox -->
+<body class="fade-in">
+    <!-- FLEXBOX NAVIGATION (10 points) - Enhanced Navigation -->
     <nav class="navbar">
-        <a href="index.html" class="active">Home</a>
-        <a href="an/soups.html">Soups</a>
-        <a href="an/meals.html">Meals</a>
-        <a href="as/fastfood.html">Fast Food</a>
-        <a href="ra/drinks.html">Drinks</a>
-        <a href="as/desserts.html">Desserts</a>
-        <a href="ra/breakfast.html">Breakfast</a>
-        <a href="culinary.html">Culinary</a>
+        <div class="nav-logo">
+            <img src="Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo">
+        </div>
+        <div class="nav-menu">
+            <a href="index.html" class="active">Home</a>
+            <a href="an/soups.html">Soups</a>
+            <a href="an/meals.html">Meals</a>
+            <a href="as/fastfood.html">Fast Food</a>
+            <a href="ra/drinks.html">Drinks</a>
+            <a href="as/desserts.html">Desserts</a>
+            <a href="ra/breakfast.html">Breakfast</a>
+            <a href="culinary.html">Culinary</a>
+        </div>
+        <div class="nav-actions">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
 
-    <!-- Main content with flexbox layout -->
+    <!-- Main content -->
     <main class="main-content">
         <!-- Hero section -->
         <section class="hero-section">
-            <h1 class="title">Let Us Cook!</h1>
+            <div class="hero-content">
+                <h1 class="title"><img src="Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo" class="title-logo"> Let Us Cook!</h1>
+                <p class="subtitle">Discover amazing recipes from around the world</p>
+                <div>
+                    <a href="#featured" class="btn">Explore Recipes</a>
+                    <a href="culinary.html" class="btn btn-secondary">View Gallery</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRID LAYOUT (10 points) - Featured section with CSS Grid -->
+        <section class="featured-section" id="featured">
+            <div class="grid-item hero">
+                <h2>🍳 Recipe of the Day</h2>
+                <img src="Images/Chef-Curry.jpeg" alt="Chef's Special Curry" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin: 1rem 0;">
+                <p>Our chef's special curry recipe that combines authentic spices with modern cooking techniques. Perfect for family dinners!</p>
+                <a href="an/meals.html" class="btn">Learn More</a>
+            </div>
+            
+            <div class="grid-item featured-1">
+                <h3>🥄 Featured Soups</h3>
+                <img src="Images/Miso-Soup.jpg" alt="Miso Soup" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin: 0.5rem 0;">
+                <p>Warm, comforting soups from around the world including Miso, Borscht, and Minestrone.</p>
+                <a href="an/soups.html" class="btn">View Soups</a>
+            </div>
+            
+            <div class="grid-item featured-2">
+                <h3>🥘 Main Meals</h3>
+                <img src="Images/Grilled-Ribeye.jpg" alt="Grilled Ribeye" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin: 0.5rem 0;">
+                <p>Hearty main courses including grilled steaks, pasta dishes, and traditional rice meals.</p>
+                <a href="an/meals.html" class="btn">View Meals</a>
+            </div>
+            
+            <div class="grid-item sidebar">
+                <h3>Quick Links</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin: 1rem 0;"><a href="as/fastfood.html" style="color: var(--primary); text-decoration: none;">🍟 Fast Food</a></li>
+                    <li style="margin: 1rem 0;"><a href="as/desserts.html" style="color: var(--primary); text-decoration: none;">🍰 Desserts</a></li>
+                    <li style="margin: 1rem 0;"><a href="ra/drinks.html" style="color: var(--primary); text-decoration: none;">🥤 Drinks</a></li>
+                    <li style="margin: 1rem 0;"><a href="ra/breakfast.html" style="color: var(--primary); text-decoration: none;">🥞 Breakfast</a></li>
+                </ul>
+                <div style="margin-top: 2rem; padding: 1rem; background: var(--light); border-radius: 8px;">
+                    <strong>💡 Cooking Tip</strong>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Always taste your food while cooking and adjust seasonings gradually!</p>
+                </div>
+            </div>
+            
+            <div class="grid-item popular">
+                <h3>🔥 Popular Recipes</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                    <div style="text-align: center;">
+                        <img src="Images/spaghetti-bolognese.jpg" alt="Spaghetti Bolognese" style="width: 100%; height: 80px; object-fit: cover; border-radius: 8px;">
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem;">Spaghetti Bolognese</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="Images/fried-chicken.png" alt="Fried Chicken" style="width: 100%; height: 80px; object-fit: cover; border-radius: 8px;">
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem;">Crispy Fried Chicken</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="Images/cake.png" alt="Cake" style="width: 100%; height: 80px; object-fit: cover; border-radius: 8px;">
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem;">Chocolate Cake</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid-item categories">
+                <h3>🍴 Browse by Category</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                    <a href="an/soups.html" style="display: block; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 1rem; border-radius: 8px; text-decoration: none; text-align: center; transition: var(--transition);">
+                        <strong>🥄 Soups & Broths</strong>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Comfort in a bowl</p>
+                    </a>
+                    <a href="an/meals.html" style="display: block; background: linear-gradient(135deg, var(--secondary), var(--accent)); color: white; padding: 1rem; border-radius: 8px; text-decoration: none; text-align: center; transition: var(--transition);">
+                        <strong>🥘 Main Meals</strong>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Hearty & satisfying</p>
+                    </a>
+                    <a href="as/fastfood.html" style="display: block; background: linear-gradient(135deg, var(--accent), var(--primary)); color: white; padding: 1rem; border-radius: 8px; text-decoration: none; text-align: center; transition: var(--transition);">
+                        <strong>🍟 Fast Food</strong>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Quick & delicious</p>
+                    </a>
+                    <a href="as/desserts.html" style="display: block; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 1rem; border-radius: 8px; text-decoration: none; text-align: center; transition: var(--transition);">
+                        <strong>🍰 Desserts</strong>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Sweet endings</p>
+                    </a>
+                </div>
+            </div>
         </section>
 
         <!-- Features section with flexbox cards -->
         <section class="features-section">
             <div class="feature-card">
-                <h2>Fresh Ingredients</h2>
+                <h2>🌱 Fresh Ingredients</h2>
                 <p>We use only the freshest ingredients to ensure every bite is packed with flavor and nutrition.</p>
             </div>
             <div class="feature-card">
-                <h2>Fast Delivery</h2>
+                <h2>⚡ Fast Delivery</h2>
                 <p>Get your favorite meals and drinks delivered to your door in no time.</p>
             </div>
             <div class="feature-card">
-                <h2>Affordable Prices</h2>
+                <h2>💰 Affordable Prices</h2>
                 <p>Enjoy delicious food and drinks at prices that won't break the bank.</p>
             </div>
         </section>
@@ -84,9 +182,28 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Enhanced Footer -->
     <footer class="footer">
-        2025. Nurassyl Orazbek, Rasul Akhmetov, Asylan Usen, Anuar Zhenissov.
+        <div class="footer-content">
+            <div>
+                <strong>Let Us Cook Team:</strong> Nurassyl Orazbek, Rasul Akhmetov, Asylan Usen, Anuar Zhenissov
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="culinary.html">Gallery</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="social-links">
+                <a href="#" title="Facebook">📘</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="Twitter">🐦</a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+            © 2025 Let Us Cook. Nurassyl Orazbek, Anuar Zhenissov, Asylan Usen, Rasul Akhmetov.
+        </div>
     </footer>
+
+
 </body>
 </html>

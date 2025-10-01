@@ -12,21 +12,17 @@ A delicious recipe website showcasing various food categories.
 ```
 ├── index.html          # Main homepage (for GitHub Pages)
 ├── culinary.html       # Nurassyl's culinary page
-├── style.css           # Main stylesheet for homepage
 ├── common.css          # Common styles used by all pages
 ├── Images/             # All food images
 ├── an/                 # Anuar's section
 │   ├── soups.html
 │   ├── meals.html
-│   └── style.css
 ├── as/                 # Asylan's section
 │   ├── fastfood.html
 │   ├── desserts.html
-│   └── style.css
 └── ra/                 # Rasul's section
     ├── drinks.html
     ├── breakfast.html
-    └── style.css
 ```
 
 ## GitHub Pages Deployment

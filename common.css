@@ -1,321 +1,898 @@
-/* Simple CSS for Let Us Cook Web Tech - Assignment Defense */
-/* Core flexbox implementation for modern web layout */
+/* Let Us Cook Web Tech - Assignment Defense (90 Points Total) */
+/* Enhanced CSS with Flexbox Navigation, Cards, Grid Layout, Image Gallery & UX */
 
-/* Basic page setup with flexbox */
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* CSS Custom Properties for Consistent Theme */
+:root {
+  --primary: #FF6B35;
+  --secondary: #F7931E;
+  --accent: #C1403D;
+  --dark: #2C3E50;
+  --light: #FFF8F0;
+  --text: #333;
+  --shadow-light: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-medium: 0 8px 16px rgba(255, 107, 53, 0.3);
+  --shadow-heavy: 0 12px 24px rgba(0,0,0,0.2);
+  --border-radius: 15px;
+  --transition: all 0.3s ease;
 }
 
-/* Navigation bar with flexbox */
-.navbar {
-    background: #d7263d;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 18px 0;
-    flex-wrap: wrap;
+/* Global Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: var(--light);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+/* Utility Classes */
+.fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* FLEXBOX NAVIGATION (10 points) - Apply to ALL pages */
+/* Using flexbox for responsive navigation bar
+   - justify-content: space-between distributes items evenly
+   - align-items: center vertically aligns all nav elements
+   - This creates a professional, mobile-friendly navigation */
+nav, .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-light);
+  flex-wrap: wrap;
+}
+
+.nav-logo {
+  flex: 0 0 auto;
+}
+
+.nav-logo img {
+  height: 50px;
+  width: auto;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.nav-actions {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 .navbar a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    padding: 8px 18px;
-    border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  transition: var(--transition);
+  position: relative;
 }
 
-.navbar a:hover, .navbar a.active {
-    background: white;
-    color: #d7263d;
+.navbar a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
+}
+
+.navbar a.active {
+  background: white;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Mobile Navigation */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 3px 0;
+  transition: var(--transition);
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: none; /* Hide hamburger since JavaScript is removed */
+  }
+  
+  .nav-menu {
+    display: flex; /* Always show navigation on mobile */
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    background: transparent;
+    flex-direction: column;
+    padding: 0;
+    box-shadow: none;
+    z-index: 999;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  
+  .navbar {
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem 5%;
+  }
+  
+  .nav-menu a {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+    border-radius: 8px;
+    margin: 0.2rem 0;
+  }
 }
 
 /* Main content area */
 .main-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* GRID LAYOUT (10 points) - Featured section with CSS Grid */
+/* Using CSS Grid for complex page layout
+   - grid-template-areas creates named grid regions
+   - Allows flexible positioning of different content types
+   - Easy to reorganize with media queries for mobile */
+.featured-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "hero hero hero"
+    "featured-1 featured-2 sidebar"
+    "popular popular sidebar"
+    "categories categories categories";
+  gap: 2rem;
+  padding: 2rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero { grid-area: hero; }
+.featured-1 { grid-area: featured-1; }
+.featured-2 { grid-area: featured-2; }
+.sidebar { grid-area: sidebar; }
+.popular { grid-area: popular; }
+.categories { grid-area: categories; }
+
+.grid-item {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-heavy);
+}
+
+@media (max-width: 768px) {
+  .featured-section {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "hero"
+      "featured-1"
+      "featured-2"
+      "popular"
+      "sidebar"
+      "categories";
+  }
 }
 
 /* Hero section */
 .hero-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 400px;
-    background: linear-gradient(120deg, #fcb69f 0%, #ffecd2 100%);
-    margin-bottom: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('Images/let-us-cook-(logo).webp');
+  background-position: center;
+  background-size: cover;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
 }
 
 .title {
-    font-size: 3rem;
-    color: #d7263d;
-    text-align: center;
-    margin: 0;
+  font-size: clamp(2rem, 8vw, 4rem);
+  color: white;
+  text-align: center;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-/* Features section - flexbox cards */
-.features-section {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto 40px auto;
-    padding: 0 20px;
-    flex-wrap: wrap;
+.title-logo {
+  height: clamp(2rem, 8vw, 4rem);
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
 }
 
-.feature-card {
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(215, 38, 61, 0.3);
-    flex: 1;
-    min-width: 300px;
-    max-width: 400px;
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+/* Dark title for pages with different backgrounds */
+.main-content .title:not(.hero-section .title) {
+  color: var(--dark);
+  text-shadow: none;
 }
 
-.feature-card h2 {
-    color: #d7263d;
-    font-size: 1.4rem;
-    margin-bottom: 15px;
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
 }
 
-.feature-card p {
-    color: #333;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0;
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-light);
 }
 
-/* Culinary section - flexbox grid */
-.culinary-section {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    max-width: 1400px;
-    margin: 60px auto;
-    padding: 0 20px;
-    flex-wrap: wrap;
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
 }
 
-.culinary-card {
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(215, 38, 61, 0.3);
-    flex: 1;
-    min-width: 260px;
-    max-width: 320px;
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+.btn-secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
 }
 
-.culinary-card img {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 18px;
+.btn-secondary:hover {
+  background: white;
+  color: var(--primary);
 }
 
-.culinary-card h2 {
-    color: #d7263d;
-    font-size: 1.3rem;
-    margin-bottom: 15px;
+/* FLEXBOX CARDS (10 points) - Recipe Cards Layout */
+/* Using flexbox for equal-height recipe cards
+   - flex-wrap: wrap allows cards to flow to next row
+   - gap property creates consistent spacing
+   - flex: 0 1 calc() creates responsive 3-column layout */
+.recipe-container, .features-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem 5%;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.recipe {
-    color: #333;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    flex-grow: 1;
+.recipe-card, .feature-card {
+  flex: 0 1 calc(33.333% - 2rem); /* 3 cards per row */
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  min-width: 300px;
 }
 
-.video-btn {
-    background: #d7263d;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 600;
+.recipe-card:hover, .feature-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-heavy);
 }
 
-.video-btn:hover {
-    background: white;
-    color: #d7263d;
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: var(--transition);
 }
 
-/* Contact section - flexbox layout */
+.card-image:hover {
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  color: var(--dark);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.card-description {
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.card-badges {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.badge.difficulty {
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+}
+
+.badge.time {
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+}
+
+/* Responsive Cards */
+@media (max-width: 1024px) {
+  .recipe-card, .feature-card {
+    flex: 0 1 calc(50% - 2rem); /* 2 cards per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .recipe-card, .feature-card {
+    flex: 0 1 100%; /* 1 card per row */
+    min-width: unset;
+  }
+  
+  .recipe-container, .features-section {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
+/* IMAGE GALLERY (10 points) - CSS Grid with auto-fit */
+/* CSS Grid with auto-fit for responsive gallery
+   - minmax(280px, 1fr) creates flexible column sizes
+   - Hover effects improve user engagement
+   - Position absolute for caption overlay */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.9));
+  color: white;
+  padding: 2rem 1.5rem 1.5rem;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+  transform: translateY(0);
+}
+
+.caption-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.caption-description {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+
+
+/* Enhanced Contact Section */
 .contact-section {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  padding: 4rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .contact-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #d7263d;
-    margin-bottom: 50px;
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--dark);
+  margin-bottom: 3rem;
 }
 
 .contact-container {
-    display: flex;
-    gap: 60px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
 }
 
 .contact-info, .contact-form {
-    flex: 1;
-    min-width: 300px;
+  flex: 1;
+  min-width: 300px;
 }
 
 .contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .contact-item {
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(215, 38, 61, 0.3);
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
 }
 
 .contact-item h3 {
-    color: #d7263d;
-    font-size: 1.3rem;
-    margin-bottom: 10px;
+  color: var(--primary);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
 }
 
 .contact-item p {
-    color: #333;
-    font-size: 1.1rem;
-    margin: 0;
+  color: var(--text);
+  font-size: 1.1rem;
+  margin: 0;
 }
 
 .contact-form {
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(215, 38, 61, 0.3);
+  background: white;
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
 }
 
 .form-group {
-    margin-bottom: 25px;
+  margin-bottom: 1.5rem;
 }
 
 .form-group label {
-    display: block;
-    color: #d7263d;
-    font-weight: 600;
-    margin-bottom: 8px;
-    font-size: 1.1rem;
+  display: block;
+  color: var(--dark);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
 }
 
 .form-group input, .form-group textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 2px solid transparent;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-family: inherit;
-    background: rgba(255, 255, 255, 0.9);
-    box-sizing: border-box;
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: var(--transition);
+  box-sizing: border-box;
 }
 
 .form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: #d7263d;
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
 }
 
 .contact-btn {
-    background: #d7263d;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    width: 100%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: var(--transition);
 }
 
 .contact-btn:hover {
-    background: white;
-    color: #d7263d;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
 }
 
-/* Footer */
+/* Enhanced Footer */
 .footer {
-    background: #d7263d;
-    color: white;
+  background: var(--dark);
+  color: white;
+  padding: 2rem 5%;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--secondary);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+}
+
+/* Additional Responsive Breakpoints */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .contact-info, .contact-form {
+    min-width: auto;
+  }
+  
+  .footer-content {
+    flex-direction: column;
     text-align: center;
-    padding: 18px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 50vh;
+  }
+  
+  .hero-content {
+    padding: 1rem;
+  }
+  
+  .btn {
+    padding: 0.8rem 2rem;
     font-size: 1rem;
-    margin-top: auto;
+  }
 }
 
-/* Responsive design */
-@media (max-width: 900px) {
-    .features-section, .culinary-section {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
-    
-    .feature-card, .culinary-card {
-        width: 90%;
-        max-width: 400px;
-        min-width: auto;
-    }
-    
-    .contact-container {
-        flex-direction: column;
-        gap: 40px;
-    }
-    
-    .contact-info, .contact-form {
-        min-width: auto;
-    }
-    
-    .title {
-        font-size: 2.5rem;
-    }
-    
-    .contact-title {
-        font-size: 2rem;
-    }
-    
-    .navbar {
-        gap: 15px;
-        padding: 15px 10px;
-    }
-    
-    .navbar a {
-        font-size: 1rem;
-        padding: 6px 12px;
-    }
+
+
+
+
+/* Fast Food and Desserts sections (Asylan's pages) */
+.fastfood-section, .desserts-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+  justify-items: center;
+  align-items: stretch;
+  padding: 0 2rem;
 }
 
-@media (max-width: 600px) {
-    .title {
-        font-size: 2rem;
-    }
-    
-    .navbar a {
-        font-size: 0.9rem;
-        padding: 5px 10px;
-    }
+.fastfood-card, .desserts-card {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px #d7263d44;
+  width: 260px;
+  padding: 30px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.fastfood-card:hover, .desserts-card:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 16px 48px #d7263d66;
+}
+
+.fastfood-card img, .desserts-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  border-style: dashed;
+  border: 2px;
+}
+
+.fastfood-card h2, .desserts-card h2 {
+  color: #d7263d;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.fastfood-card p, .desserts-card p {
+  color: #333;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Drinks and Breakfast sections (Rasul's pages) */
+.drinks-section, .breakfast-section {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+  padding: 0 2rem;
+}
+
+.drinks-card, .breakfast-card {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px #d7263d44;
+  width: 260px;
+  padding: 30px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.drinks-card:hover, .breakfast-card:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 16px 48px #d7263d66;
+}
+
+.drinks-card img, .breakfast-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  border-style: dashed;
+  border: 2px;
+}
+
+.drinks-card h2, .breakfast-card h2 {
+  color: #d7263d;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.drinks-card p, .breakfast-card p {
+  color: #333;
+  font-size: 1rem;
+  text-align: center;
+}
+
+
+
+
+
+
+
+/* Enhanced Gallery Styles for Team Pages */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin: 32px 0 0 0;
+}
+
+.gallery .gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px #d7263d22;
+  background: #fff;
+}
+
+.gallery .gallery-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.4s;
+  display: block;
+}
+
+.gallery .gallery-item span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background: rgba(215,38,61,0.8);
+  color: #fff;
+  text-align: center;
+  font-size: 1.08rem;
+  opacity: 0;
+  transition: opacity 0.4s;
+  border-radius: 0 0 16px 16px;
+}
+
+.gallery .gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.gallery .gallery-item:hover span {
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 50vh;
+  }
+  
+  .hero-content {
+    padding: 1rem;
+  }
+  
+  .btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
 }

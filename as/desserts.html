@@ -3,201 +3,150 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Desserts</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Desserts - Let Us Cook</title>
+      <link rel="stylesheet" href="../common.css">
+    <link rel="icon" type="image/webp" href="../Images/let-us-cook-(logo).webp">
+
 </head>
-<body>
-  <nav class="navbar">
-    <div class="nav-desktop">
-      <a href="../index.html">Home</a>
-      <a href="../an/soups.html">Soups</a>
-      <a href="../an/meals.html">Meals</a>
-      <a href="fastfood.html">Fast Food</a>
-      <a href="../ra/drinks.html">Drinks</a>
-      <a href="desserts.html">Desserts</a>
-      <a href="../ra/breakfast.html">Breakfast</a>
-      <a href="../culinary.html">Culinary</a>
-    </div>
-    <div class="nav-mobile">
-      <button class="hamburger" aria-label="Open menu" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="mobile-menu">
-        <a href="../index.html">Home</a>
-        <a href="../an/soups.html">Soups</a>
-        <a href="../an/meals.html">Meals</a>
-        <a href="fastfood.html">Fast Food</a>
-        <a href="../ra/drinks.html">Drinks</a>
-        <a href="desserts.html" class="active">Desserts</a>
-        <a href="../ra/breakfast.html">Breakfast</a>
-        <a href="../culinary.html">Culinary</a>
-      </div>
-    </div>
-  </nav>
+<body class="fade-in">
+    <!-- FLEXBOX NAVIGATION (10 points) - Enhanced Navigation -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="../index.html"><img src="../Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo"></a>
+        </div>
+        <div class="nav-menu">
+            <a href="../index.html">Home</a>
+            <a href="../an/soups.html">Soups</a>
+            <a href="../an/meals.html">Meals</a>
+            <a href="fastfood.html">Fast Food</a>
+            <a href="../ra/drinks.html">Drinks</a>
+            <a href="desserts.html" class="active">Desserts</a>
+            <a href="../ra/breakfast.html">Breakfast</a>
+            <a href="../culinary.html">Culinary</a>
+        </div>
+        <div class="nav-actions">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-  <h1 class="title">Sweet Desserts</h1>
+    <!-- Main content -->
+    <main class="main-content">
+        <!-- Hero section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="title"><img src="../Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo" class="title-logo"> Sweet Desserts</h1>
+                <p class="subtitle">Indulgent treats and sweet endings to perfect meals</p>
+            </div>
+        </section>
 
-  <div class="fastfood-section">
+        <!-- FLEXBOX CARDS (10 points) - Recipe Cards Layout -->
+        <section class="recipe-container">
+            <div class="recipe-card">
+                <img src="../Images/cake.png" alt="Chocolate Layer Cake" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Chocolate Layer Cake</h3>
+                    <p class="card-description">Rich and moist chocolate cake with creamy frosting between layers. A decadent treat for special occasions.</p>
+                    <div class="card-badges">
+                        <span class="badge time">2 hours</span>
+                        <span class="badge difficulty">Hard</span>
+                        <span class="badge">Chocolate</span>
+                    </div>
+                </div>
+            </div>
 
-    <div class="fastfood-card">
-      <img src="../Images/cake.png" alt="Chocolate Cake" />
-      <h2>Chocolate Cake</h2>
-      <p>Rich and moist chocolate cake with frosting.</p>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Mix flour, cocoa, sugar<br>
-        2. Add eggs & butter<br>
-        3. Bake at 180 °C<br>
-        4. Frost with chocolate cream
-      </div>
-      <a href="https://www.youtube.com/watch?v=EaljSnLrJW8" target="_blank" class="video-btn">
-        Watch Recipe
-      </a>
-    </div>
+            <div class="recipe-card">
+                <img src="../Images/lolipop.png" alt="Artisan Lollipops" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Artisan Lollipops</h3>
+                    <p class="card-description">Handcrafted colorful lollipops with natural fruit flavors. Perfect for kids and the young at heart.</p>
+                    <div class="card-badges">
+                        <span class="badge time">1 hour</span>
+                        <span class="badge difficulty">Medium</span>
+                        <span class="badge">Candy</span>
+                    </div>
+                </div>
+            </div>
 
-    <div class="fastfood-card">
-      <img src="https://img.icons8.com/color/400/000000/doughnut.png" alt="Donut" />
-      <h2>Donut</h2>
-      <p>Glazed donuts with sweet toppings.</p>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Make dough<br>
-        2. Shape rings<br>
-        3. Fry golden<br>
-        4. Add glaze
-      </div>
-      <a href="https://www.youtube.com/watch?v=ijYtLqIDZtk" target="_blank" class="video-btn">
-        Watch Recipe
-      </a>
-    </div>
+            <div class="recipe-card">
+                <img src="../Images/free-icon-pudding-13369655.png" alt="Vanilla Pudding" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Vanilla Pudding</h3>
+                    <p class="card-description">Smooth and creamy vanilla pudding with caramel drizzle. A comforting classic dessert.</p>
+                    <div class="card-badges">
+                        <span class="badge time">30 mins</span>
+                        <span class="badge difficulty">Easy</span>
+                        <span class="badge">Creamy</span>
+                    </div>
+                </div>
+            </div>
 
-    <div class="fastfood-card">
-      <img src="https://img.icons8.com/color/400/000000/cupcake.png" alt="Cupcake" />
-      <h2>Cupcake</h2>
-      <p>Fluffy cupcakes with colorful frosting.</p>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Mix batter<br>
-        2. Bake in cups<br>
-        3. Add frosting<br>
-        4. Decorate
-      </div>
-      <a href="https://www.youtube.com/watch?v=q9Zln5gfmAo" target="_blank" class="video-btn">
-        Watch Recipe
-      </a>
-    </div>
+            <div class="recipe-card">
+                <img src="https://img.icons8.com/color/400/000000/ice-cream.png" alt="Ice Cream" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Homemade Ice Cream</h3>
+                    <p class="card-description">Creamy vanilla ice cream made from scratch with real vanilla beans and fresh cream.</p>
+                    <div class="card-badges">
+                        <span class="badge time">4 hours</span>
+                        <span class="badge difficulty">Medium</span>
+                        <span class="badge">Frozen</span>
+                    </div>
+                </div>
+            </div>
 
-    <div class="fastfood-card">
-      <img src="https://img.icons8.com/color/400/000000/apple-pie.png" alt="Apple Pie" />
-      <h2>Apple Pie</h2>
-      <p>Traditional apple pie with cinnamon.</p>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Make crust<br>
-        2. Slice apples<br>
-        3. Add sugar & cinnamon<br>
-        4. Bake golden
-      </div>
-      <a href="https://www.youtube.com/watch?v=KbyahTnzbKA" target="_blank" class="video-btn">
-        Watch Recipe
-      </a>
-    </div>
+            <div class="recipe-card">
+                <img src="https://img.icons8.com/color/400/000000/cookie.png" alt="Chocolate Chip Cookies" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Chocolate Chip Cookies</h3>
+                    <p class="card-description">Classic soft and chewy cookies loaded with chocolate chips. Perfect with a glass of milk.</p>
+                    <div class="card-badges">
+                        <span class="badge time">45 mins</span>
+                        <span class="badge difficulty">Easy</span>
+                        <span class="badge">Cookies</span>
+                    </div>
+                </div>
+            </div>
 
-    <div class="fastfood-card">
-      <img src="https://img.icons8.com/color/400/000000/cookies.png" alt="Cookies" />
-      <h2>Cookies</h2>
-      <p>Crunchy chocolate chip cookies.</p>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Mix butter & sugar<br>
-        2. Add flour & chips<br>
-        3. Shape balls<br>
-        4. Bake 12 min
-      </div>
-      <a href="https://www.youtube.com/watch?v=loqCY9b7aec" target="_blank" class="video-btn">
-        Watch Recipe
-      </a>
-    </div>
+            <div class="recipe-card">
+                <img src="https://img.icons8.com/color/400/000000/cupcake.png" alt="Cupcakes" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Vanilla Cupcakes</h3>
+                    <p class="card-description">Fluffy vanilla cupcakes topped with colorful buttercream frosting and rainbow sprinkles.</p>
+                    <div class="card-badges">
+                        <span class="badge time">1 hour</span>
+                        <span class="badge difficulty">Medium</span>
+                        <span class="badge">Cupcakes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <div class="fastfood-card">
-      <img src="https://img.icons8.com/color/400/000000/candy.png" alt="Candy" />
-      <h2>Candy</h2>
-      <p>Sweet candies and gummies for treats.</p>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Boil sugar & water<br>
-        2. Add flavors<br>
-        3. Pour in molds<br>
-        4. Let cool
-      </div>
-      <a href="https://www.youtube.com/watch?v=B4tzGraTn2E" target="_blank" class="video-btn">
-        Watch Recipe
-      </a>
-    </div>
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <strong>Desserts by Asylan Usen</strong> | Let Us Cook Team
+            </div>
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="fastfood.html">Fast Food</a>
+                <a href="../culinary.html">Gallery</a>
+            </div>
+            <div class="social-links">
+                <a href="#" title="Facebook">📘</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="Twitter">🐦</a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+            © 2025 Let Us Cook. Nurassyl Orazbek, Anuar Zhenissov, Asylan Usen, Rasul Akhmetov.
+        </div>
+    </footer>
 
-    <div class="fastfood-card">
-      <img src="../Images/lolipop.png" alt="Lollipop" />
-      <h2>Lollipop</h2>
-      <p>Colorful lollipops in fruity flavors.</p>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Melt sugar<br>
-        2. Add colors<br>
-        3. Pour on sticks<br>
-        4. Harden & enjoy
-      </div>
-      <a href="https://www.youtube.com/watch?v=rthHkjuKapk" target="_blank" class="video-btn">
-        Watch Recipe
-      </a>
-    </div>
 
-    <div class="fastfood-card">
-      <img src="../Images/free-icon-pudding-13369655.png" alt="Pudding" />
-      <h2>Pudding</h2>
-      <p>Smooth and creamy chocolate pudding.</p>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Heat milk<br>
-        2. Add cocoa & sugar<br>
-        3. Stir until thick<br>
-        4. Chill & serve
-      </div>
-      <a href="https://www.youtube.com/watch?v=w02shj6GU_g" target="_blank" class="video-btn">
-        Watch Recipe
-      </a>
-    </div>
-
-  </div>
-
-  <div class="gallery">
-    <div class="gallery-item">
-      <img src="../Images/cake.png" alt="Chocolate Cake">
-      <span>Chocolate Cake</span>
-    </div>
-    <div class="gallery-item">
-      <img src="../Images/lolipop.png" alt="Lollipop">
-      <span>Lollipop</span>
-    </div>
-    <div class="gallery-item">
-      <img src="../Images/free-icon-pudding-13369655.png" alt="Pudding">
-      <span>Pudding</span>
-    </div>
-    <div class="gallery-item">
-      <img src="https://img.icons8.com/color/400/000000/doughnut.png" alt="Donut">
-      <span>Donut</span>
-    </div>
-    <div class="gallery-item">
-      <img src="https://img.icons8.com/color/400/000000/cupcake.png" alt="Cupcake">
-      <span>Cupcake</span>
-    </div>
-    <div class="gallery-item">
-      <img src="https://img.icons8.com/color/400/000000/candy.png" alt="Candy">
-      <span>Candy</span>
-    </div>
-  </div>
-<footer class="footer">2025. Nurassyl Orazbek, Rasul Akhmetov, Asylan Usen, Anuar Zhenissov.
-</footer>
 </body>
 </html>

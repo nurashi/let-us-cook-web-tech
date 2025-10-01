@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soups</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<!-- Grid Layout Wrapper -->
-<div class="grid-layout">
+    <title>Soups - Let Us Cook</title>
+        <link rel="stylesheet" href="../common.css">
+    <link rel="icon" type="image/webp" href="../Images/let-us-cook-(logo).webp">
 
-    <!-- Header -->
-    <header class="grid-header">
-        <div class="logo"><img src="/Images/let-us-cook-(logo).webp" alt="logo"></div>
-        <nav class="navbar">
+</head>
+<body class="fade-in">
+    <!-- FLEXBOX NAVIGATION (10 points) - Enhanced Navigation -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="../index.html"><img src="../Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo"></a>
+        </div>
+        <div class="nav-menu">
             <a href="../index.html">Home</a>
             <a href="soups.html" class="active">Soups</a>
             <a href="meals.html">Meals</a>
@@ -22,140 +23,142 @@
             <a href="../as/desserts.html">Desserts</a>
             <a href="../ra/breakfast.html">Breakfast</a>
             <a href="../culinary.html">Culinary</a>
-        </nav>
-    </header>
-
-    <!-- Sidebar -->
-    <aside class="grid-sidebar">
-        <h3>Categories</h3>
-        <ul>
-            <li>Vegetarian Soups</li>
-            <li>Meat Soups</li>
-            <li>Spicy Soups</li>
-        </ul>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="grid-main">
-        <h1 class="title">Soups</h1>
-        <div class="soups-section">
-            <div class="soups-card">
-                <img src="../Images/Borscht.jpg" alt="Borsh">
-                <h2>Borsh</h2>
-                <p>Rich Ukrainian beet soup with vegetables and sour cream.</p>
-                <div class="recipe">
-                    <strong>Recipe:</strong><br>
-                    1. Boil beets and carrots<br>
-                    2. Sauté onions and garlic<br>
-                    3. Simmer with broth and cabbage<br>
-                    4. Serve with sour cream
-                </div>
-                <a href="https://youtu.be/mdT3tFEug00?si=ZgqVTGs0kSS566WI" target="_blank" class="video-btn">Watch Recipe</a>
-            </div>
-            <div class="soups-card">
-                <img src="../Images/Chicken-Noodle-Soup.jpg" alt="Chicken Noodle Soup">
-                <h2>Chicken Noodle Soup</h2>
-                <p>Classic comforting soup with tender chicken and noodles.</p>
-                <div class="recipe">
-                    <strong>Recipe:</strong><br>
-                    1. Cook chicken in broth<br>
-                    2. Add noodles and carrots<br>
-                    3. Season with herbs<br>
-                    4. Simmer until tender
-                </div>
-                <a href="https://youtu.be/6CXgPVw_-0g?si=hcpQkFBgFvMZPaLN" target="_blank" class="video-btn">Watch Recipe</a>
-            </div>
-
-            <div class="soups-card">
-                <img src="../Images/Tomato-Basil-Soup.jpg" alt="Tomato Basil Soup">
-                <h2>Tomato Basil Soup</h2>
-                <p>Rich and creamy tomato soup with fresh basil notes.</p>
-                <div class="recipe">
-                    <strong>Recipe:</strong><br>
-                    1. Blend tomatoes and broth<br>
-                    2. Add cream and basil<br>
-                    3. Simmer gently<br>
-                    4. Serve warm
-                </div>
-                <a href="https://youtu.be/06Vrqqo1SaU?si=O94_dxk7wa5pHmrp" target="_blank" class="video-btn">Watch Recipe</a>
-            </div>
-
-            <div class="soups-card">
-                <img src="../Images/Minestrone-Soup.webp" alt="Minestrone">
-                <h2>Minestrone</h2>
-                <p>Hearty vegetable soup with pasta and beans.</p>
-                <div class="recipe">
-                    <strong>Recipe:</strong><br>
-                    1. Sauté vegetables<br>
-                    2. Add broth and beans<br>
-                    3. Cook pasta separately<br>
-                    4. Combine and season
-                </div>
-                <a href="https://youtu.be/guwu8I2VDTI?si=KdxvOlxnKDvQFPZK" target="_blank" class="video-btn">Watch Recipe</a>
-            </div>
-
-            <div class="soups-card">
-                <img src="../Images/Pumpkin-Soup.jpg" alt="Pumpkin Soup">
-                <h2>Pumpkin Soup</h2>
-                <p>Creamy and velvety pumpkin soup with a hint of spice.</p>
-                <div class="recipe">
-                    <strong>Recipe:</strong><br>
-                    1. Roast pumpkin chunks<br>
-                    2. Blend with broth<br>
-                    3. Add cream and spices<br>
-                    4. Heat and serve
-                </div>
-                <a href="https://youtu.be/_UMwoA1O-xI?si=lxNgq_jFTZALfhZx" target="_blank" class="video-btn">Watch Recipe</a>
-            </div>
-
-            <div class="soups-card">
-                <img src="../Images/Lentil-Soup.webp" alt="Lentil Soup">
-                <h2>Lentil Soup</h2>
-                <p>Nutritious lentil soup with earthy flavors and vegetables.</p>
-                <div class="recipe">
-                    <strong>Recipe:</strong><br>
-                    1. Rinse lentils<br>
-                    2. Sauté onions and carrots<br>
-                    3. Simmer with broth<br>
-                    4. Season and serve
-                </div>
-                <a href="https://youtu.be/pXO1l9tZmic?si=SqWF5IEvGHl9-jjo" target="_blank" class="video-btn">Watch Recipe</a>
-            </div>
-
-            <div class="soups-card">
-                <img src="../Images/Miso-Soup.jpg" alt="Miso Soup">
-                <h2>Miso Soup</h2>
-                <p>Traditional Japanese soup with tofu and seaweed.</p>
-                <div class="recipe">
-                    <strong>Recipe:</strong><br>
-                    1. Dissolve miso in hot water<br>
-                    2. Add tofu and seaweed<br>
-                    3. Simmer briefly<br>
-                    4. Garnish with scallions
-                </div>
-                <a href="https://youtu.be/wshf6yZbhwk?si=sKNeetle4WISTXed" target="_blank" class="video-btn">Watch Recipe </a>
+        </div>
+        <div class="nav-actions">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
+    </nav>
 
-        <!-- Gallery -->
-        <h2 class="title">Soup Gallery</h2>
-        <div class="gallery">
-            <div class="gallery-item"><img src="../Images/Borscht.jpg" alt=""><span>Borsh</span></div>
-            <div class="gallery-item"><img src="../Images/Chicken-Noodle-Soup.jpg" alt=""><span>Chicken Noodle</span></div>
-            <div class="gallery-item"><img src="../Images/Tomato-Basil-Soup.jpg" alt=""><span>Tomato Basil</span></div>
-            <div class="gallery-item"><img src="../Images/Minestrone-Soup.webp" alt=""><span>Minestrone</span></div>
-            <div class="gallery-item"><img src="../Images/Pumpkin-Soup.jpg" alt=""><span>Pumpkin</span></div>
-            <div class="gallery-item"><img src="../Images/Lentil-Soup.webp" alt=""><span>Lentil</span></div>
-            <div class="gallery-item"><img src="../Images/Miso-Soup.jpg" alt=""><span>Miso</span></div>
-            <div class="gallery-item"><img src="../Images/Chicken-Noodle-Soup.jpg" alt=""><span>Chicken Broth</span></div>
-            <div class="gallery-item"><img src="../Images/Tomato-Basil-Soup.jpg" alt=""><span>Herb Tomato</span></div>
-        </div>
+    <!-- Main content -->
+    <main class="main-content">
+        <!-- Hero section -->
+                <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="title"><img src="../Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo" class="title-logo"> Comfort Soups</h1>
+                <p class="subtitle">Warm and comforting soups perfect for any season</p>
+
+        <!-- FLEXBOX CARDS (10 points) - Recipe Cards Layout -->
+        <section class="recipe-container">
+            <div class="recipe-card">
+                <img src="../Images/Borscht.jpg" alt="Traditional Borscht" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Traditional Borscht</h3>
+                    <p class="card-description">Rich Ukrainian beet soup with vegetables and sour cream. A hearty, nutritious soup perfect for cold days.</p>
+                    <div class="card-badges">
+                        <span class="badge time">2 hours</span>
+                        <span class="badge difficulty">Medium</span>
+                        <span class="badge">Ukrainian</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="../Images/Chicken-Noodle-Soup.jpg" alt="Chicken Noodle Soup" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Chicken Noodle Soup</h3>
+                    <p class="card-description">Classic comfort soup with tender chicken, fresh vegetables, and homemade noodles in a savory broth.</p>
+                    <div class="card-badges">
+                        <span class="badge time">1 hour</span>
+                        <span class="badge difficulty">Easy</span>
+                        <span class="badge">American</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="../Images/Lentil-Soup.webp" alt="Hearty Lentil Soup" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Hearty Lentil Soup</h3>
+                    <p class="card-description">Nutritious and filling soup packed with protein-rich lentils, vegetables, and aromatic spices.</p>
+                    <div class="card-badges">
+                        <span class="badge time">45 mins</span>
+                        <span class="badge difficulty">Easy</span>
+                        <span class="badge">Vegetarian</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="../Images/Minestrone-Soup.webp" alt="Italian Minestrone" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Italian Minestrone</h3>
+                    <p class="card-description">Classic Italian vegetable soup with pasta, beans, and fresh herbs in a rich tomato broth.</p>
+                    <div class="card-badges">
+                        <span class="badge time">1.5 hours</span>
+                        <span class="badge difficulty">Medium</span>
+                        <span class="badge">Italian</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="../Images/Miso-Soup.jpg" alt="Traditional Miso Soup" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Traditional Miso Soup</h3>
+                    <p class="card-description">Authentic Japanese soup with fermented soybean paste, silky tofu, and wakame seaweed.</p>
+                    <div class="card-badges">
+                        <span class="badge time">15 mins</span>
+                        <span class="badge difficulty">Easy</span>
+                        <span class="badge">Japanese</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="../Images/Pumpkin-Soup.jpg" alt="Creamy Pumpkin Soup" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Creamy Pumpkin Soup</h3>
+                    <p class="card-description">Smooth and velvety autumn soup with roasted pumpkin, warming spices, and coconut cream.</p>
+                    <div class="card-badges">
+                        <span class="badge time">50 mins</span>
+                        <span class="badge difficulty">Medium</span>
+                        <span class="badge">Vegetarian</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="../Images/Tomato-Basil-Soup.jpg" alt="Fresh Tomato Basil Soup" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Tomato Basil Soup</h3>
+                    <p class="card-description">Fresh and vibrant soup with ripe tomatoes, aromatic basil leaves, and a touch of cream.</p>
+                    <div class="card-badges">
+                        <span class="badge time">40 mins</span>
+                        <span class="badge difficulty">Easy</span>
+                        <span class="badge">Vegetarian</span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="grid-footer">
-        2025. Nurassyl Orazbek, Rasul Akhmetov, Asylan Usen, Anuar Zhenissov.
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <strong>Soups by Anuar Zhenissov</strong> | Let Us Cook Team
+            </div>
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="meals.html">Meals</a>
+                <a href="../culinary.html">Gallery</a>
+            </div>
+            <div class="social-links">
+                <a href="#" title="Facebook">📘</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="Twitter">🐦</a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+            © 2025 Let Us Cook. Nurassyl Orazbek, Anuar Zhenissov, Asylan Usen, Rasul Akhmetov.
+        </div>
     </footer>
-</div>
+
+
 </body>
 </html>
+

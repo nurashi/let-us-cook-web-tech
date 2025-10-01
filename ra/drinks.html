@@ -3,143 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Drinks</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Drinks - Let Us Cook</title>
+  <link rel="stylesheet" href="../common.css">
+    <link rel="icon" type="image/webp" href="../Images/let-us-cook-(logo).webp">
+
 </head>
-<body>
-  <nav class="navbar">
-    <a href="../index.html">Home</a>
-    <a href="../an/soups.html">Soups</a>
-    <a href="../an/meals.html">Meals</a>
-    <a href="../as/fastfood.html">Fast Food</a>
-    <a href="drinks.html" class="active">Drinks</a>
-    <a href="../as/desserts.html">Desserts</a>
-    <a href="breakfast.html">Breakfast</a>
-        <a href="../culinary.html">Culinary</a>
-  </nav>
+<body class="fade-in">
+    <!-- FLEXBOX NAVIGATION (10 points) - Enhanced Navigation -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="../index.html"><img src="../Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo"></a>
+        </div>
+        <div class="nav-menu">
+            <a href="../index.html">Home</a>
+            <a href="../an/soups.html">Soups</a>
+            <a href="../an/meals.html">Meals</a>
+            <a href="../as/fastfood.html">Fast Food</a>
+            <a href="drinks.html" class="active">Drinks</a>
+            <a href="../as/desserts.html">Desserts</a>
+            <a href="breakfast.html">Breakfast</a>
+            <a href="../culinary.html">Culinary</a>
+        </div>
+        <div class="nav-actions">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-  <h1 class="title">Refreshing Drinks</h1>
-  <div class="drinks-section">
+    <!-- Main content -->
+    <main class="main-content">
+        <!-- Hero section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="title"><img src="../Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo" class="title-logo"> Refreshing Drinks</h1>
+                <p class="subtitle">Thirst-quenching beverages for every occasion</p>
+            </div>
+        </section>
 
-    <div class="drinks-card">
-      <img src="https://img.icons8.com/color/400/000000/cocktail.png" alt="Cocktail">
-      <h2>Cocktail</h2>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Mix juice, soda, or alcohol base.<br>
-        2. Add ice cubes.<br>
-        3. Stir or shake well.<br>
-        4. Garnish with fruit slice.
-      </div>
-      <a href="https://www.youtube.com/watch?v=b0IuTL3Z-kk&t=641s&pp=ygURY29ja3RhaWwgdHV0b3JpYWw%3D" target="_blank" class="video-btn">Watch Recipe</a>
-    </div>
+        <!-- FLEXBOX CARDS (10 points) - Recipe Cards Layout -->
+        <section class="recipe-container">
+            <div class="recipe-card">
+                <img src="https://img.icons8.com/color/400/000000/cocktail.png" alt="Tropical Cocktail" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Tropical Cocktail</h3>
+                    <p class="card-description">Refreshing mix of tropical juices with ice and fresh fruit garnish. Perfect for summer parties.</p>
+                    <div class="card-badges">
+                        <span class="badge time">10 mins</span>
+                        <span class="badge difficulty">Easy</span>
+                        <span class="badge">Tropical</span>
+                    </div>
+                </div>
+            </div>
 
-    <div class="drinks-card">
-      <img src="https://img.icons8.com/color/400/000000/tea.png" alt="Tea">
-      <h2>Tea</h2>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Boil fresh water.<br>
-        2. Add tea bag or loose tea.<br>
-        3. Steep 3–5 minutes.<br>
-        4. Add lemon or honey if desired.
-      </div>
-      <a href="https://www.youtube.com/watch?v=ULlV7bmM8lA&pp=ygUPdGVhIGhvdyB0byBtYWtl" target="_blank" class="video-btn">Watch Recipe</a>
-    </div>
+            <div class="recipe-card">
+                <img src="https://img.icons8.com/color/400/000000/tea.png" alt="Herbal Tea" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Herbal Tea</h3>
+                    <p class="card-description">Soothing herbal tea blend with chamomile, mint, and honey. Perfect for relaxation.</p>
+                    <div class="card-badges">
+                        <span class="badge time">5 mins</span>
+                        <span class="badge difficulty">Easy</span>
+                        <span class="badge">Herbal</span>
+                    </div>
+                </div>
+            </div>
 
-    <div class="drinks-card">
-      <img src="https://img.icons8.com/color/400/000000/coffee-to-go.png" alt="Coffee">
-      <h2>Coffee</h2>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Grind coffee beans.<br>
-        2. Brew with hot water.<br>
-        3. Pour into a cup.<br>
-        4. Add sugar or milk if you like.
-      </div>
-      <a href="https://www.youtube.com/watch?v=lVeNTofDB2k&pp=ygUSY29mZmVlIGhvdyB0byBtYWtl" target="_blank" class="video-btn">Watch Recipe</a>
-    </div>
+            <div class="recipe-card">
+                <img src="https://img.icons8.com/color/400/000000/coffee.png" alt="Espresso Coffee" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Espresso Coffee</h3>
+                    <p class="card-description">Rich and aromatic espresso coffee made with freshly ground beans. Perfect morning energizer.</p>
+                    <div class="card-badges">
+                        <span class="badge time">5 mins</span>
+                        <span class="badge difficulty">Medium</span>
+                        <span class="badge">Coffee</span>
+                    </div>
+                </div>
+            </div>
 
-    <div class="drinks-card">
-      <img src="https://img.icons8.com/color/400/000000/orange-juice.png" alt="Orange Juice">
-      <h2>Orange Juice</h2>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Cut oranges in half.<br>
-        2. Squeeze with juicer.<br>
-        3. Strain juice if needed.<br>
-        4. Serve cold with ice.
-      </div>
-      <a href="https://www.youtube.com/watch?v=w6IjwKOB_t8&pp=ygUYb3JhbmdlIGp1aWNlIGhvdyB0byBtYWtl" target="_blank" class="video-btn">Watch Recipe</a>
-    </div>
+            <div class="recipe-card">
+                <img src="https://img.icons8.com/color/400/000000/orange-juice.png" alt="Fresh Orange Juice" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Fresh Orange Juice</h3>
+                    <p class="card-description">Freshly squeezed orange juice packed with vitamin C. Natural and refreshing breakfast drink.</p>
+                    <div class="card-badges">
+                        <span class="badge time">10 mins</span>
+                        <span class="badge difficulty">Easy</span>
+                        <span class="badge">Fresh</span>
+                    </div>
+                </div>
+            </div>
 
-    <div class="drinks-card">
-      <img src="https://img.icons8.com/color/400/000000/milk-bottle.png" alt="Milk">
-      <h2>Milk</h2>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Pour fresh milk into a glass.<br>
-        2. Heat gently if warm milk preferred.<br>
-        3. Optionally add honey or cocoa.<br>
-        4. Enjoy immediately.
-      </div>
-      <a href="https://www.youtube.com/watch?v=USR0LuUdFi0&pp=ygURbWlsayBob3cgdG8gbWFrZSA%3D" target="_blank" class="video-btn">Watch Recipe</a>
-    </div>
+            <div class="recipe-card">
+                <img src="https://img.icons8.com/color/400/000000/milkshake.png" alt="Chocolate Milkshake" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Chocolate Milkshake</h3>
+                    <p class="card-description">Creamy chocolate milkshake with vanilla ice cream and whipped cream topping.</p>
+                    <div class="card-badges">
+                        <span class="badge time">5 mins</span>
+                        <span class="badge difficulty">Easy</span>
+                        <span class="badge">Sweet</span>
+                    </div>
+                </div>
+            </div>
 
-    <div class="drinks-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/2447/2447764.png" alt="Water">
-      <h2>Water</h2>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Use clean filtered water.<br>
-        2. Chill in fridge.<br>
-        3. Pour into glass with ice.<br>
-        4. Add lemon slice if desired.
-      </div>
-      <a href="https://www.youtube.com/watch?v=9sG7T9wmtFQ&pp=ygURZnJlc2ggd2F0ZXIgbWFrZXI%3D" target="_blank" class="video-btn">Watch Recipe</a>
-    </div>
+            <div class="recipe-card">
+                <img src="https://img.icons8.com/color/400/000000/water-bottle.png" alt="Infused Water" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Fruit Infused Water</h3>
+                    <p class="card-description">Refreshing water infused with cucumber, lemon, and mint. Healthy hydration option.</p>
+                    <div class="card-badges">
+                        <span class="badge time">15 mins</span>
+                        <span class="badge difficulty">Easy</span>
+                        <span class="badge">Healthy</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <div class="drinks-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/4080/4080639.png" alt="Smoothie">
-      <h2>Smoothie</h2>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Add fruits (banana, berries) to blender.<br>
-        2. Add yogurt or milk.<br>
-        3. Blend until creamy.<br>
-        4. Serve chilled.
-      </div>
-      <a href="https://www.youtube.com/watch?v=yFhu3dm0224&pp=ygURc21vb3RoaWUgdHV0b3JpYWw%3D" target="_blank" class="video-btn">Watch Recipe</a>
-    </div>
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <strong>Drinks by Rasul Akhmetov</strong> | Let Us Cook Team
+            </div>
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="breakfast.html">Breakfast</a>
+                <a href="../culinary.html">Gallery</a>
+            </div>
+            <div class="social-links">
+                <a href="#" title="Facebook">📘</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="Twitter">🐦</a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+            © 2025 Let Us Cook. Nurassyl Orazbek, Anuar Zhenissov, Asylan Usen, Rasul Akhmetov.
+        </div>
+    </footer>
 
-    <div class="drinks-card">
-      <img src="https://img.icons8.com/color/400/000000/cola.png" alt="Cola">
-      <h2>Cola</h2>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Chill bottle of cola.<br>
-        2. Add ice cubes to a glass.<br>
-        3. Pour cola over ice.<br>
-        4. Serve cold.
-      </div>
-      <a href="https://www.youtube.com/watch?v=U2HS_hswGmQ&pp=ygUVY29jYSBjb2xhIGhvdyB0byBtYWtl" target="_blank" class="video-btn">Watch Recipe</a>
-    </div>
 
-    <div class="drinks-card">
-      <img src="https://img.icons8.com/color/400/000000/beer.png" alt="Beer">
-      <h2>Beer</h2>
-      <div class="recipe">
-        <strong>Recipe:</strong><br>
-        1. Chill beer bottle.<br>
-        2. Tilt glass at 45°.<br>
-        3. Pour slowly to avoid foam.<br>
-        4. Serve cold.
-      </div>
-      <a href="https://www.youtube.com/watch?v=yTecaoiViFs&pp=ygUQYmVlciBob3cgdG8gbWFrZQ%3D%3D" target="_blank" class="video-btn">Watch Recipe</a>
-    </div>
-
-  </div>
-<footer class="footer">2025. Nurassyl Orazbek, Rasul Akhmetov, Asylan Usen, Anuar Zhenissov.
-</footer>
 </body>
 </html>
+    
