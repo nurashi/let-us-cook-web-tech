@@ -1,5 +1,5 @@
 /* Let Us Cook Web Tech - Assignment Defense (90 Points Total) */
-/* Enhanced CSS with Flexbox Navigation, Cards, Grid Layout, Image Gallery & UX */
+/* Enhanced CSS with Flexbox Navigation, Cards, Grid Layout & UX */
 
 /* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap');
@@ -47,155 +47,134 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--dark);
 }
 
-/* Utility Classes */
+/* Animation */
 .fade-in {
-  animation: fadeIn 0.6s ease-in;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
 }
 
 @keyframes fadeIn {
-  from { 
-    opacity: 0; 
-    transform: translateY(20px); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
-  }
+  to { opacity: 1; }
 }
 
-/* FLEXBOX NAVIGATION (10 points) - Apply to ALL pages */
-/* Using flexbox for responsive navigation bar
-   - justify-content: space-between distributes items evenly
-   - align-items: center vertically aligns all nav elements
-   - This creates a professional, mobile-friendly navigation */
-nav, .navbar {
+/* FLEXBOX NAVIGATION (10 points) - Modern Navigation with Flexbox */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5%;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: white;
+  box-shadow: var(--shadow-light);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: var(--shadow-light);
-  flex-wrap: wrap;
+  transition: var(--transition);
 }
 
 .nav-logo {
-  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
 }
 
 .nav-logo img {
-  height: 50px;
+  height: 40px;
   width: auto;
 }
 
 .nav-menu {
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 2rem;
-  flex: 1;
+  align-items: center;
   flex-wrap: wrap;
 }
 
 .nav-actions {
-  flex: 0 0 auto;
   display: flex;
-  gap: 1rem;
   align-items: center;
+  gap: 1rem;
 }
 
 .navbar a {
-  color: white;
   text-decoration: none;
-  font-size: 1.1rem;
+  color: var(--text);
   font-weight: 500;
-  padding: 0.8rem 1.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 25px;
   transition: var(--transition);
   position: relative;
+  overflow: hidden;
 }
 
 .navbar a:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-light);
 }
 
 .navbar a.active {
-  background: white;
-  color: var(--primary);
-  font-weight: 600;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  box-shadow: var(--shadow-medium);
 }
 
-/* Mobile Navigation */
+/* Hamburger Menu for Mobile */
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
+  gap: 3px;
   padding: 0.5rem;
-  background: none;
-  border: none;
 }
 
 .hamburger span {
   width: 25px;
   height: 3px;
-  background: white;
-  margin: 3px 0;
+  background: var(--primary);
+  border-radius: 2px;
   transition: var(--transition);
-  display: block;
 }
 
+/* Mobile Navigation */
 @media (max-width: 768px) {
-  .hamburger {
-    display: none; /* Hide hamburger since JavaScript is removed */
-  }
-  
   .nav-menu {
-    display: flex; /* Always show navigation on mobile */
-    position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-    background: transparent;
-    flex-direction: column;
-    padding: 0;
-    box-shadow: none;
-    z-index: 999;
-    gap: 0.5rem;
-    margin-top: 1rem;
+    position: fixed;
+    top: 70px;
+    left: -100%;
     width: 100%;
-  }
-  
-  .navbar {
-    justify-content: center;
+    height: calc(100vh - 70px);
+    background: white;
     flex-direction: column;
-    padding: 1rem 5%;
+    justify-content: flex-start;
+    align-items: center;
+    transition: left 0.3s ease;
+    padding: 2rem 0;
+    box-shadow: var(--shadow-light);
   }
   
-  .nav-menu a {
-    padding: 0.8rem 1rem;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .navbar a {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    width: 200px;
     text-align: center;
-    border-radius: 8px;
-    margin: 0.2rem 0;
   }
 }
 
-/* Main content area */
+/* Main Content */
 .main-content {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* GRID LAYOUT (10 points) - Featured section with CSS Grid */
-/* Using CSS Grid for complex page layout
-   - grid-template-areas creates named grid regions
-   - Allows flexible positioning of different content types
-   - Easy to reorganize with media queries for mobile */
+/* GRID LAYOUT (10 points) - CSS Grid for Featured Section */
 .featured-section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -345,10 +324,6 @@ nav, .navbar {
 }
 
 /* FLEXBOX CARDS (10 points) - Recipe Cards Layout */
-/* Using flexbox for equal-height recipe cards
-   - flex-wrap: wrap allows cards to flow to next row
-   - gap property creates consistent spacing
-   - flex: 0 1 calc() creates responsive 3-column layout */
 .recipe-container, .features-section {
   display: flex;
   flex-wrap: wrap;
@@ -450,76 +425,6 @@ nav, .navbar {
     gap: 1rem;
   }
 }
-
-/* IMAGE GALLERY (10 points) - CSS Grid with auto-fit */
-/* CSS Grid with auto-fit for responsive gallery
-   - minmax(280px, 1fr) creates flexible column sizes
-   - Hover effects improve user engagement
-   - Position absolute for caption overlay */
-.image-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem 5%;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  aspect-ratio: 1 / 1;
-  cursor: pointer;
-  box-shadow: var(--shadow-light);
-  transition: var(--transition);
-}
-
-.gallery-item:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-heavy);
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.1);
-}
-
-.gallery-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.9));
-  color: white;
-  padding: 2rem 1.5rem 1.5rem;
-  transform: translateY(100%);
-  transition: transform 0.4s ease;
-}
-
-.gallery-item:hover .gallery-caption {
-  transform: translateY(0);
-}
-
-.caption-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.caption-description {
-  font-size: 0.9rem;
-  opacity: 0.9;
-  line-height: 1.4;
-}
-
-
 
 /* Enhanced Contact Section */
 .contact-section {
@@ -717,182 +622,5 @@ nav, .navbar {
   .btn {
     padding: 0.8rem 2rem;
     font-size: 1rem;
-  }
-}
-
-
-
-
-
-/* Fast Food and Desserts sections (Asylan's pages) */
-.fastfood-section, .desserts-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 40px;
-  margin-top: 60px;
-  justify-items: center;
-  align-items: stretch;
-  padding: 0 2rem;
-}
-
-.fastfood-card, .desserts-card {
-  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px #d7263d44;
-  width: 260px;
-  padding: 30px 20px 20px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.fastfood-card:hover, .desserts-card:hover {
-  transform: translateY(-10px) scale(1.04);
-  box-shadow: 0 16px 48px #d7263d66;
-}
-
-.fastfood-card img, .desserts-card img {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  margin-bottom: 18px;
-  border-radius: 50%;
-  border-style: dashed;
-  border: 2px;
-}
-
-.fastfood-card h2, .desserts-card h2 {
-  color: #d7263d;
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-}
-
-.fastfood-card p, .desserts-card p {
-  color: #333;
-  font-size: 1rem;
-  text-align: center;
-}
-
-/* Drinks and Breakfast sections (Rasul's pages) */
-.drinks-section, .breakfast-section {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 60px;
-  flex-wrap: wrap;
-  padding: 0 2rem;
-}
-
-.drinks-card, .breakfast-card {
-  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px #d7263d44;
-  width: 260px;
-  padding: 30px 20px 20px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.drinks-card:hover, .breakfast-card:hover {
-  transform: translateY(-10px) scale(1.01);
-  box-shadow: 0 16px 48px #d7263d66;
-}
-
-.drinks-card img, .breakfast-card img {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  margin-bottom: 18px;
-  border-radius: 50%;
-  border-style: dashed;
-  border: 2px;
-}
-
-.drinks-card h2, .breakfast-card h2 {
-  color: #d7263d;
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-}
-
-.drinks-card p, .breakfast-card p {
-  color: #333;
-  font-size: 1rem;
-  text-align: center;
-}
-
-
-
-
-
-
-
-/* Enhanced Gallery Styles for Team Pages */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
-  margin: 32px 0 0 0;
-}
-
-.gallery .gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px #d7263d22;
-  background: #fff;
-}
-
-.gallery .gallery-item img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  transition: transform 0.4s;
-  display: block;
-}
-
-.gallery .gallery-item span {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 10px;
-  background: rgba(215,38,61,0.8);
-  color: #fff;
-  text-align: center;
-  font-size: 1.08rem;
-  opacity: 0;
-  transition: opacity 0.4s;
-  border-radius: 0 0 16px 16px;
-}
-
-.gallery .gallery-item:hover img {
-  transform: scale(1.08);
-}
-
-.gallery .gallery-item:hover span {
-  opacity: 1;
-}
-
-@media (max-width: 480px) {
-  .hero-section {
-    min-height: 50vh;
-  }
-  
-  .hero-content {
-    padding: 1rem;
-  }
-  
-  .btn {
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
-  }
-  
-  .gallery {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin: 16px 0;
   }
 }
