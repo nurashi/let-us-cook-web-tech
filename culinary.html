@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Culinary Gallery - Let Us Cook</title>
+    <title>Culinary Gallery - Let Us Cook</title>
     <link rel="stylesheet" href="common.css">
     <link rel="icon" type="image/webp" href="Images/let-us-cook-(logo).webp">
-
 </head>
 <body class="fade-in">
+    <!-- CSS-only Navigation Toggle -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    
     <!-- FLEXBOX NAVIGATION (10 points) - Enhanced Navigation -->
     <nav class="navbar">
         <div class="nav-logo">
-            <a href="index.html"><img src="Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo"></a>
+            <img src="Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo">
         </div>
         <div class="nav-menu">
             <a href="index.html">Home</a>
@@ -24,13 +26,7 @@
             <a href="ra/breakfast.html">Breakfast</a>
             <a href="culinary.html" class="active">Culinary</a>
         </div>
-        <div class="nav-actions">
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+        <label for="nav-toggle" class="nav-toggle-label">☰</label>
     </nav>
 
     <!-- Main content -->
@@ -43,7 +39,7 @@
             </div>
         </section>
 
-        <!-- FLEXBOX CARDS (10 points) - Recipe Cards Layout -->
+        <!-- Recipe Cards Section -->
         <section class="recipe-container">
             <div class="recipe-card">
                 <img src="https://img.icons8.com/color/400/000000/sushi.png" alt="Japanese Sushi" class="card-image">
@@ -52,8 +48,7 @@
                     <p class="card-description">Traditional Japanese sushi with fresh fish, seasoned rice, and nori seaweed. A delicate balance of flavors and textures.</p>
                     <div class="card-badges">
                         <span class="badge time">45 mins</span>
-                        <span class="badge difficulty">Hard</span>
-                        <span class="badge">Japanese</span>
+                        <span class="badge difficulty">Advanced</span>
                     </div>
                 </div>
             </div>
@@ -65,8 +60,7 @@
                     <p class="card-description">Authentic Mexican tacos with seasoned meat, fresh vegetables, and traditional spices wrapped in corn tortillas.</p>
                     <div class="card-badges">
                         <span class="badge time">30 mins</span>
-                        <span class="badge difficulty">Medium</span>
-                        <span class="badge">Mexican</span>
+                        <span class="badge difficulty">Intermediate</span>
                     </div>
                 </div>
             </div>
@@ -74,12 +68,11 @@
             <div class="recipe-card">
                 <img src="https://img.icons8.com/color/400/000000/pizza.png" alt="Italian Pizza" class="card-image">
                 <div class="card-content">
-                    <h3 class="card-title">Italian Margherita Pizza</h3>
+                    <h3 class="card-title">Italian Pizza</h3>
                     <p class="card-description">Classic Neapolitan pizza with fresh mozzarella, San Marzano tomatoes, fresh basil, and extra virgin olive oil.</p>
                     <div class="card-badges">
                         <span class="badge time">60 mins</span>
-                        <span class="badge difficulty">Medium</span>
-                        <span class="badge">Italian</span>
+                        <span class="badge difficulty">Intermediate</span>
                     </div>
                 </div>
             </div>
@@ -87,12 +80,11 @@
             <div class="recipe-card">
                 <img src="https://img.icons8.com/color/400/000000/curry.png" alt="Indian Curry" class="card-image">
                 <div class="card-content">
-                    <h3 class="card-title">Indian Butter Chicken</h3>
+                    <h3 class="card-title">Indian Curry</h3>
                     <p class="card-description">Rich and creamy Indian curry with tender chicken in a spiced tomato-based sauce, served with basmati rice.</p>
                     <div class="card-badges">
-                        <span class="badge time">40 mins</span>
-                        <span class="badge difficulty">Medium</span>
-                        <span class="badge">Indian</span>
+                        <span class="badge time">90 mins</span>
+                        <span class="badge difficulty">Advanced</span>
                     </div>
                 </div>
             </div>
@@ -103,9 +95,8 @@
                     <h3 class="card-title">Spanish Paella</h3>
                     <p class="card-description">Traditional Spanish rice dish with saffron, seafood, chicken, and vegetables cooked in a large shallow pan.</p>
                     <div class="card-badges">
-                        <span class="badge time">50 mins</span>
-                        <span class="badge difficulty">Hard</span>
-                        <span class="badge">Spanish</span>
+                        <span class="badge time">75 mins</span>
+                        <span class="badge difficulty">Advanced</span>
                     </div>
                 </div>
             </div>
@@ -116,22 +107,20 @@
                     <h3 class="card-title">Japanese Ramen</h3>
                     <p class="card-description">Hearty Japanese noodle soup with rich broth, tender pork, soft-boiled egg, and fresh vegetables.</p>
                     <div class="card-badges">
-                        <span class="badge time">90 mins</span>
-                        <span class="badge difficulty">Hard</span>
-                        <span class="badge">Japanese</span>
+                        <span class="badge time">120 mins</span>
+                        <span class="badge difficulty">Advanced</span>
                     </div>
                 </div>
             </div>
 
             <div class="recipe-card">
-                <img src="https://img.icons8.com/color/400/000000/croissant.png" alt="French Croissant" class="card-image">
+                <img src="https://img.icons8.com/color/400/000000/croissant.png" alt="French Croissants" class="card-image">
                 <div class="card-content">
                     <h3 class="card-title">French Croissants</h3>
                     <p class="card-description">Buttery, flaky French pastries with layers of dough and butter, perfect for breakfast or brunch.</p>
                     <div class="card-badges">
-                        <span class="badge time">4 hours</span>
-                        <span class="badge difficulty">Hard</span>
-                        <span class="badge">French</span>
+                        <span class="badge time">240 mins</span>
+                        <span class="badge difficulty">Expert</span>
                     </div>
                 </div>
             </div>
@@ -139,25 +128,23 @@
             <div class="recipe-card">
                 <img src="https://img.icons8.com/color/400/000000/greek-salad.png" alt="Greek Salad" class="card-image">
                 <div class="card-content">
-                    <h3 class="card-title">Greek Village Salad</h3>
+                    <h3 class="card-title">Greek Salad</h3>
                     <p class="card-description">Fresh Mediterranean salad with tomatoes, cucumbers, olives, feta cheese, and olive oil dressing.</p>
                     <div class="card-badges">
                         <span class="badge time">15 mins</span>
-                        <span class="badge difficulty">Easy</span>
-                        <span class="badge">Greek</span>
+                        <span class="badge difficulty">Beginner</span>
                     </div>
                 </div>
             </div>
 
             <div class="recipe-card">
-                <img src="https://img.icons8.com/color/400/000000/steaming-bowl.png" alt="Chinese Dumplings" class="card-image">
+                <img src="https://img.icons8.com/color/400/000000/dumpling.png" alt="Chinese Dumplings" class="card-image">
                 <div class="card-content">
                     <h3 class="card-title">Chinese Dumplings</h3>
                     <p class="card-description">Traditional Chinese dumplings filled with pork and vegetables, steamed to perfection and served with dipping sauce.</p>
                     <div class="card-badges">
-                        <span class="badge time">60 mins</span>
-                        <span class="badge difficulty">Medium</span>
-                        <span class="badge">Chinese</span>
+                        <span class="badge time">90 mins</span>
+                        <span class="badge difficulty">Intermediate</span>
                     </div>
                 </div>
             </div>
@@ -167,24 +154,22 @@
     <!-- Enhanced Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <div>
-                <strong>Culinary by </strong> Nurassyl Orazbek<div>
             <div class="footer-links">
                 <a href="index.html">Home</a>
-                <a href="culinary.html">Culinary</a>
-                <a href="index.html#contact">Contact</a>
+                <a href="an/soups.html">Soups</a>
+                <a href="an/meals.html">Meals</a>
+                <a href="as/fastfood.html">Fast Food</a>
+                <a href="ra/drinks.html">Drinks</a>
+                <a href="as/desserts.html">Desserts</a>
+                <a href="ra/breakfast.html">Breakfast</a>
             </div>
             <div class="social-links">
                 <a href="#" title="Facebook">📘</a>
-                <a href="#" title="Instagram">📷</a>
                 <a href="#" title="Twitter">🐦</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="YouTube">📺</a>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
-            © 2025 Let Us Cook. Nurassyl Orazbek, Anuar Zhenissov, Asylan Usen, Rasul Akhmetov.
-        </div>
     </footer>
-
-
 </body>
 </html>
