@@ -1,10 +1,5 @@
-/* Let Us Cook Web Tech - Assignment Defense (90 Points Total) */
-/* Enhanced CSS with Flexbox Navigation, Cards, Grid Layout & UX */
-
-/* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
-/* CSS Custom Properties for Consistent Theme */
 :root {
   --primary: #FF6B35;
   --secondary: #F7931E;
@@ -19,7 +14,6 @@
   --transition: all 0.3s ease;
 }
 
-/* Global Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -57,7 +51,6 @@ h1, h2, h3, h4, h5, h6 {
   to { opacity: 1; }
 }
 
-/* FLEXBOX NAVIGATION (10 points) - Responsive Navigation with CSS-only Toggle */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -111,7 +104,6 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: var(--shadow-medium);
 }
 
-/* Hamburger Menu Toggle - CSS Only */
 .nav-toggle {
   display: none;
 }
@@ -130,7 +122,6 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--light);
 }
 
-/* Mobile Navigation - CSS Only Toggle */
 @media (max-width: 600px) {
   .nav-toggle-label {
     display: block;
@@ -168,7 +159,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Main Content */
 .main-content {
   flex: 1;
   display: flex;
@@ -223,7 +213,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Hero section */
 .hero-section {
   display: flex;
   align-items: center;
@@ -279,7 +268,6 @@ h1, h2, h3, h4, h5, h6 {
   filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
 }
 
-/* Dark title for pages with different backgrounds */
 .main-content .title:not(.hero-section .title) {
   color: var(--dark);
   text-shadow: none;
@@ -323,7 +311,6 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary);
 }
 
-/* FLEXBOX CARDS (10 points) - Recipe Cards Layout */
 .recipe-container, .features-section {
   display: flex;
   flex-wrap: wrap;
