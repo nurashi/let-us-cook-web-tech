@@ -1,143 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Breakfast - Let Us Cook</title>
-  <link rel="stylesheet" href="../common.css">
-    <link rel="icon" type="image/webp" href="../Images/let-us-cook-(logo).webp">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breakfast - Let Us Cook</title>
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="icon" type="image/webp" href="../Images/let-us-cook-(logo).webp" />
 </head>
-<body class="fade-in">
-    <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    
-    <nav class="navbar">
-        <div class="nav-logo">
-            <a href="../index.html"><img src="../Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo"></a>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid px-sm-3 px-lg-5">
+        <a class="navbar-brand d-flex align-items-center" href="../index.html">
+            <img src="../Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo" width="40" height="40" class="me-2" />
+            Let Us Cook
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="../an/soups.html">Soups</a></li>
+                <li class="nav-item"><a class="nav-link" href="../an/meals.html">Meals</a></li>
+                <li class="nav-item"><a class="nav-link" href="../as/fastfood.html">Fast Food</a></li>
+                <li class="nav-item"><a class="nav-link" href="../as/desserts.html">Desserts</a></li>
+                <li class="nav-item"><a class="nav-link active" href="breakfast.html">Breakfast</a></li>
+                <li class="nav-item"><a class="nav-link" href="drinks.html">Drinks</a></li>
+                <li class="nav-item"><a class="nav-link" href="../culinary.html">Culinary</a></li>
+            </ul>
         </div>
-        <div class="nav-menu">
-            <a href="../index.html">Home</a>
-            <a href="../an/soups.html">Soups</a>
-            <a href="../an/meals.html">Meals</a>
-            <a href="../as/fastfood.html">Fast Food</a>
-            <a href="drinks.html">Drinks</a>
-            <a href="../as/desserts.html">Desserts</a>
-            <a href="breakfast.html" class="active">Breakfast</a>
-            <a href="../culinary.html">Culinary</a>
+    </div>
+</nav>
+
+<main class="container mt-5">
+    <div class="row align-items-center mb-5">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+            <img src="../Images/Breakfasat-logo.png" alt="Breakfast Banner" class="img-fluid rounded shadow" style="width: 80%; height: 400px; object-fit: cover;" />
         </div>
-        <label for="nav-toggle" class="nav-toggle-label">☰</label>
-    </nav>
-
-    <main class="main-content">
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1 class="title">Morning Breakfast</h1>
-                <p class="subtitle">Start your day right with delicious breakfast recipes</p>
-            </div>
-        </section>
-
-        <section class="recipe-container">
-            <div class="recipe-card">
-                <img src="https://img.icons8.com/color/400/000000/pancake.png" alt="Fluffy Pancakes" class="card-image">
-                <div class="card-content">
-                    <h3 class="card-title">Fluffy Pancakes</h3>
-                    <p class="card-description">Light and fluffy pancakes served with maple syrup and fresh berries. Perfect weekend breakfast treat.</p>
-                    <div class="card-badges">
-                        <span class="badge time">20 mins</span>
-                        <span class="badge difficulty">Easy</span>
-                        <span class="badge">Sweet</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="recipe-card">
-                <img src="https://cdn-icons-png.flaticon.com/128/4806/4806489.png" alt="Scrambled Eggs" class="card-image">
-                <div class="card-content">
-                    <h3 class="card-title">Scrambled Eggs</h3>
-                    <p class="card-description">Creamy scrambled eggs cooked to perfection with herbs and butter. Classic breakfast staple.</p>
-                    <div class="card-badges">
-                        <span class="badge time">10 mins</span>
-                        <span class="badge difficulty">Easy</span>
-                        <span class="badge">Protein</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="recipe-card">
-                <img src="https://img.icons8.com/color/400/000000/bread.png" alt="French Toast" class="card-image">
-                <div class="card-content">
-                    <h3 class="card-title">French Toast</h3>
-                    <p class="card-description">Golden French toast made with brioche bread, cinnamon, and vanilla. Served with powdered sugar.</p>
-                    <div class="card-badges">
-                        <span class="badge time">15 mins</span>
-                        <span class="badge difficulty">Easy</span>
-                        <span class="badge">Sweet</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="recipe-card">
-                <img src="https://img.icons8.com/color/400/000000/waffle.png" alt="Belgian Waffles" class="card-image">
-                <div class="card-content">
-                    <h3 class="card-title">Belgian Waffles</h3>
-                    <p class="card-description">Crispy Belgian waffles with deep pockets perfect for holding syrup, fruit, and whipped cream.</p>
-                    <div class="card-badges">
-                        <span class="badge time">25 mins</span>
-                        <span class="badge difficulty">Medium</span>
-                        <span class="badge">Belgian</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="recipe-card">
-                <img src="https://img.icons8.com/color/400/000000/oatmeal.png" alt="Oatmeal Bowl" class="card-image">
-                <div class="card-content">
-                    <h3 class="card-title">Healthy Oatmeal</h3>
-                    <p class="card-description">Nutritious oatmeal topped with fresh fruits, nuts, and honey. Perfect healthy start to your day.</p>
-                    <div class="card-badges">
-                        <span class="badge time">10 mins</span>
-                        <span class="badge difficulty">Easy</span>
-                        <span class="badge">Healthy</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="recipe-card">
-                <img src="https://img.icons8.com/color/400/000000/avocado.png" alt="Avocado Toast" class="card-image">
-                <div class="card-content">
-                    <h3 class="card-title">Avocado Toast</h3>
-                    <p class="card-description">Toasted sourdough topped with mashed avocado, lime, and everything bagel seasoning.</p>
-                    <div class="card-badges">
-                        <span class="badge time">8 mins</span>
-                        <span class="badge difficulty">Easy</span>
-                        <span class="badge">Healthy</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <div>
-                <strong>Breakfast by Rasul Akhmetov</strong> | Let Us Cook Team
-            </div>
-            <div class="footer-links">
-                <a href="../index.html">Home</a>
-                <a href="drinks.html">Drinks</a>
-                <a href="../culinary.html">Gallery</a>
-            </div>
-            <div class="social-links">
-                <a href="#" title="Facebook">📘</a>
-                <a href="#" title="Instagram">📷</a>
-                <a href="#" title="Twitter">🐦</a>
+        <div class="col-lg-6">
+            <h1 class="fw-bold mb-3">Morning Breakfast</h1>
+            <p class="lead">Start your day right with delicious breakfast recipes</p>
+            <div class="btn-group" role="group" aria-label="Breakfast Actions">
+                <button class="btn btn-primary btn-lg">Explore Recipes</button>
+                <button class="btn btn-outline-secondary btn-lg">Learn More</button>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+    </div>
+
+    <div id="breakfastCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#breakfastCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#breakfastCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#breakfastCarousel" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner rounded shadow">
+            <div class="carousel-item active">
+                <img src="https://img.icons8.com/color/400/000000/pancake.png" class="d-block w-100" alt="Fluffy Pancakes" style="height: 400px; object-fit: contain; background: linear-gradient(135deg, #FF6B35, #F7931E);">
+            </div>
+            <div class="carousel-item">
+                <img src="https://cdn-icons-png.flaticon.com/128/4806/4806489.png" class="d-block w-100" alt="Scrambled Eggs" style="height: 400px; object-fit: contain; background: linear-gradient(135deg, #C1403D, #FF6B35);">
+            </div>
+            <div class="carousel-item">
+                <img src="https://img.icons8.com/color/400/000000/waffle.png" class="d-block w-100" alt="Belgian Waffles" style="height: 400px; object-fit: contain; background: linear-gradient(135deg, #F7931E, #FF6B35);">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#breakfastCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#breakfastCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <div class="row g-4 mb-5">
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+                <img src="https://img.icons8.com/color/400/000000/pancake.png" class="card-img-top" alt="Fluffy Pancakes" style="height: 200px; object-fit: contain; padding: 20px; background: #f8f9fa;">
+                <div class="card-body">
+                    <h5 class="card-title">Fluffy Pancakes</h5>
+                    <p class="card-text">Light and fluffy pancakes served with maple syrup and fresh berries. Perfect weekend breakfast treat.</p>
+                    <div class="d-flex gap-2 flex-wrap mb-3">
+                        <span class="badge bg-warning text-dark">20 mins</span>
+                        <span class="badge bg-success">Easy</span>
+                        <span class="badge bg-info text-dark">Sweet</span>
+                    </div>
+                    <a href="https://youtu.be/NCMKedZvnyI?si=RV31LP9-d0GA3_Qv"><button class="btn btn-outline-primary btn-sm">View Recipe</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+                <img src="https://cdn-icons-png.flaticon.com/128/4806/4806489.png" class="card-img-top" alt="Scrambled Eggs" style="height: 200px; object-fit: contain; padding: 20px; background: #f8f9fa;">
+                <div class="card-body">
+                    <h5 class="card-title">Scrambled Eggs</h5>
+                    <p class="card-text">Creamy scrambled eggs cooked to perfection with herbs and butter. Classic breakfast staple.</p>
+                    <div class="d-flex gap-2 flex-wrap mb-3">
+                        <span class="badge bg-warning text-dark">10 mins</span>
+                        <span class="badge bg-success">Easy</span>
+                        <span class="badge bg-info text-dark">Protein</span>
+                    </div>
+                    <a href=""><button class="btn btn-outline-success btn-sm">View Recipe</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+                <img src="https://img.icons8.com/color/400/000000/bread.png" class="card-img-top" alt="French Toast" style="height: 200px; object-fit: contain; padding: 20px; background: #f8f9fa;">
+                <div class="card-body">
+                    <h5 class="card-title">French Toast</h5>
+                    <p class="card-text">Golden French toast made with brioche bread, cinnamon, and vanilla. Served with powdered sugar.</p>
+                    <div class="d-flex gap-2 flex-wrap mb-3">
+                        <span class="badge bg-warning text-dark">15 mins</span>
+                        <span class="badge bg-success">Easy</span>
+                        <span class="badge bg-info text-dark">Sweet</span>
+                    </div>
+                    <a href=""><button class="btn btn-outline-danger btn-sm">View Recipe</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+                <img src="https://img.icons8.com/color/400/000000/waffle.png" class="card-img-top" alt="Belgian Waffles" style="height: 200px; object-fit: contain; padding: 20px; background: #f8f9fa;">
+                <div class="card-body">
+                    <h5 class="card-title">Belgian Waffles</h5>
+                    <p class="card-text">Crispy Belgian waffles with deep pockets perfect for holding syrup, fruit, and whipped cream.</p>
+                    <div class="d-flex gap-2 flex-wrap mb-3">
+                        <span class="badge bg-warning text-dark">25 mins</span>
+                        <span class="badge bg-primary">Medium</span>
+                        <span class="badge bg-info text-dark">Belgian</span>
+                    </div>
+                    <a href=""><button class="btn btn-outline-primary btn-sm">View Recipe</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+                <img src="../Images/oatmeal.png" class="card-img-top" alt="Oatmeal Bowl" style="height: 200px; object-fit: contain; padding: 20px; background: #f8f9fa;">
+                <div class="card-body">
+                    <h5 class="card-title">Healthy Oatmeal</h5>
+                    <p class="card-text">Nutritious oatmeal topped with fresh fruits, nuts, and honey. Perfect healthy start to your day.</p>
+                    <div class="d-flex gap-2 flex-wrap mb-3">
+                        <span class="badge bg-warning text-dark">10 mins</span>
+                        <span class="badge bg-success">Easy</span>
+                        <span class="badge bg-info text-dark">Healthy</span>
+                    </div>
+                    <a href=""><button class="btn btn-outline-success btn-sm">View Recipe</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+                <img src="https://img.icons8.com/color/400/000000/avocado.png" class="card-img-top" alt="Avocado Toast" style="height: 200px; object-fit: contain; padding: 20px; background: #f8f9fa;">
+                <div class="card-body">
+                    <h5 class="card-title">Avocado Toast</h5>
+                    <p class="card-text">Toasted sourdough topped with mashed avocado, lime, and everything bagel seasoning.</p>
+                    <div class="d-flex gap-2 flex-wrap mb-3">
+                        <span class="badge bg-warning text-dark">8 mins</span>
+                        <span class="badge bg-success">Easy</span>
+                        <span class="badge bg-info text-dark">Healthy</span>
+                    </div>
+                    <a href=""><button class="btn btn-outline-warning btn-sm">View Recipe</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-6">
+            <h3 class="mb-4 text-center">Subscribe for Recipe Updates</h3>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter your name" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <div class="input-group">
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email" />
+                        <button class="btn btn-primary" type="submit">Subscribe</button>
+                    </div>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input" id="updates" />
+                    <label class="form-check-label" for="updates">Send me weekly recipe updates</label>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container text-center">
+        <p class="mb-1">
+            <strong>Breakfast by Rasul Akhmetov</strong> | Let Us Cook Team
+        </p>
+        <div class="mb-2">
+            <a href="../index.html" class="text-white me-3 text-decoration-none">Home</a>
+            <a href="../an/soups.html" class="text-white me-3 text-decoration-none">Soups</a>
+            <a href="../an/meals.html" class="text-white me-3 text-decoration-none">Meals</a>
+            <a href="../as/fastfood.html" class="text-white me-3 text-decoration-none">Fast Food</a>
+            <a href="../as/desserts.html" class="text-white me-3 text-decoration-none">Desserts</a>
+            <a href="drinks.html" class="text-white me-3 text-decoration-none">Drinks</a>
+            <a href="../culinary.html" class="text-white text-decoration-none">World Culinary</a>
+        </div>
+        <div>
+            <a href="#" class="text-white me-2" aria-label="Facebook">📘</a>
+            <a href="#" class="text-white me-2" aria-label="Instagram">📷</a>
+            <a href="#" class="text-white" aria-label="Twitter">🐦</a>
+        </div>
+        <p class="mt-3 mb-0">
             © 2025 Let Us Cook. Nurassyl Orazbek, Anuar Zhenissov, Asylan Usen, Rasul Akhmetov.
-        </div>
-    </footer>
+        </p>
+    </div>
+</footer>
 
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+</html>="Facebook">📘</a>
+            <a href="#" class="text-white me-2" aria-label
