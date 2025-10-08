@@ -1,158 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Soups - Let Us Cook</title>
-        <link rel="stylesheet" href="../common.css">
-    <link rel="icon" type="image/webp" href="../Images/let-us-cook-(logo).webp">
 
+    <!-- Bootstrap CSS -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/webp" href="../Images/let-us-cook-(logo).webp" />
 </head>
-<body class="fade-in">
-<input type="checkbox" id="nav-toggle" class="nav-toggle">
+<body class="bg-light">
 
-<nav class="navbar">
-    <div class="nav-logo">
-        <a href="../index.html"><img src="../Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo"></a>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid px-sm-3 px-lg-5">
+        <a class="navbar-brand" href="../index.html">
+            <img src="../Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo" width="40" height="40" class="me-2" />
+            Let Us Cook
+        </a>
+
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="soups.html">Soups</a></li>
+                <li class="nav-item"><a class="nav-link" href="meals.html">Meals</a></li>
+                <li class="nav-item"><a class="nav-link" href="../as/fastfood.html">Fast Food</a></li>
+                <li class="nav-item"><a class="nav-link" href="../as/desserts.html">Desserts</a></li>
+                <li class="nav-item"><a class="nav-link" href="../ra/breakfast.html">Breakfast</a></li>
+                <li class="nav-item"><a class="nav-link" href="../ra/drinks.html">Drinks</a></li>
+                <li class="nav-item"><a class="nav-link" href="../culinary.html">Culinary</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="nav-menu">
-        <a href="../index.html">Home</a>
-        <a href="soups.html" class="active">Soups</a>
-        <a href="meals.html">Meals</a>
-        <a href="../as/fastfood.html">Fast Food</a>
-        <a href="../ra/drinks.html">Drinks</a>
-        <a href="../as/desserts.html">Desserts</a>
-        <a href="../ra/breakfast.html">Breakfast</a>
-        <a href="../culinary.html">Culinary</a>
-    </div>
-    <label for="nav-toggle" class="nav-toggle-label">☰</label>
 </nav>
 
-<main class="main-content">
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1 class="title"><img src="../Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo" class="title-logo"> Delicious Meals</h1>
-            <p class="subtitle">Hearty and satisfying main courses from around the world</p>
-        </div>
-    </section>
 
-    <section class="recipe-container">
-        <div class="recipe-card">
-            <img src="../Images/Borscht.jpg" alt="Borscht" class="card-image">
-            <div class="card-content">
-                <h3 class="card-title">Borscht</h3>
-                <p class="card-description">Rich Ukrainian beet soup with vegetables and sour cream. A hearty, nutritious soup perfect for cold days.</p>
-                <div class="card-badges">
-                    <span class="badge time">2 Hours</span>
-                    <span class="badge difficulty">Medium</span>
-                    <span class="badge">Ukranian</span>
-                </div>
-            </div>
+<main class="container mt-5">
+    <div class="row align-items-center mb-5">
+        <div class="col-lg-6 mb-3 mb-lg-0">
+            <img src="../Images/Soup-Banner.png" class="img-fluid rounded shadow" alt="Soups Banner" />
         </div>
-
-        <div class="recipe-card">
-            <img src="../Images/Chicken-Noodle-Soup.jpg" alt="Noodle Soup" class="card-image">
-            <div class="card-content">
-                <h3 class="card-title">Chiken Noodle Soup</h3>
-                <p class="card-description">Classic comfort soup with tender chicken, fresh vegetables, and homemade noodles in a savory broth.</p>
-                <div class="card-badges">
-                    <span class="badge time">1 Hour</span>
-                    <span class="badge difficulty">Easy</span>
-                    <span class="badge">American</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="recipe-card">
-            <img src="../Images/Lentil-Soup.webp" alt="Lentil Soup" class="card-image">
-            <div class="card-content">
-                <h3 class="card-title">Lentil Soup</h3>
-                <p class="card-description">Nutritious and filling soup packed with protein-rich lentils, vegetables, and aromatic spices.</p>
-                <div class="card-badges">
-                    <span class="badge time">45 mins</span>
-                    <span class="badge difficulty">Medium</span>
-                    <span class="badge">Vegetarian</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="recipe-card">
-            <img src="../Images/Minestrone-Soup.webp" alt="Minestrone" class="card-image">
-            <div class="card-content">
-                <h3 class="card-title">Italian Minestrone</h3>
-                <p class="card-description">Classic Italian vegetable soup with pasta, beans, and fresh herbs in a rich tomato broth.</p>
-                <div class="card-badges">
-                    <span class="badge time">1.5 hours</span>
-                    <span class="badge difficulty">Medium</span>
-                    <span class="badge">Italian</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="recipe-card">
-            <img src="../Images/Miso-Soup.jpg" alt="Miso SOup" class="card-image">
-            <div class="card-content">
-                <h3 class="card-title">Miso Soup</h3>
-                <p class="card-description">Authentic Japanese soup with fermented soybean paste, silky tofu, and wakame seaweed.</p>
-                <div class="card-badges">
-                    <span class="badge time">15 minutes</span>
-                    <span class="badge difficulty">Easy</span>
-                    <span class="badge">Japanese</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="recipe-card">
-            <img src="../Images/Pumpkin-Soup.jpg" alt="Pumpkin Soup" class="card-image">
-            <div class="card-content">
-                <h3 class="card-title">Pumpkin Soup</h3>
-                <p class="card-description">Smooth and velvety autumn soup with roasted pumpkin, warming spices, and coconut cream.</p>
-                <div class="card-badges">
-                    <span class="badge time">50 Minutes</span>
-                    <span class="badge difficulty">Medium</span>
-                    <span class="badge">Vegetarian</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="recipe-card">
-            <img src="../Images/Tomato-Basil-Soup.jpg" alt="Tomato Basil Soup" class="card-image">
-            <div class="card-content">
-                <h3 class="card-title">Tomato Basil Soup</h3>
-                <p class="card-description">Fresh and vibrant soup with ripe tomatoes, aromatic basil leaves, and a touch of cream.</p>
-                <div class="card-badges">
-                    <span class="badge time">40 mins</span>
-                    <span class="badge difficulty">Easy</span>
-                    <span class="badge">Vegetarian</span>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
-
-<!-- Enhanced Footer -->
-<footer class="footer">
-    <div class="footer-content">
-        <div>
-            <strong>Meals by Anuar Zhenissov</strong> | Let Us Cook Team
-        </div>
-        <div class="footer-links">
-            <a href="../index.html">Home</a>
-            <a href="soups.html">Soups</a>
-            <a href="../culinary.html">Gallery</a>
-        </div>
-        <div class="social-links">
-            <a href="#" title="Facebook">📘</a>
-            <a href="#" title="Instagram">📷</a>
-            <a href="#" title="Twitter">🐦</a>
+        <div class="col-lg-6">
+            <h1 class="fw-bold mb-3">Warm & Comforting Soups</h1>
+            <p class="lead">
+                Dive into our curated collection of soups from around the world — nourishing, flavorful, and perfect for any season.
+            </p>
+            <button class="btn btn-primary btn-lg me-2">Explore Recipes</button>
+            <button class="btn btn-outline-secondary btn-lg">Contact Us</button>
         </div>
     </div>
-    <div style="text-align: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
-        © 2025 Let Us Cook. Nurassyl Orazbek, Anuar Zhenissov, Asylan Usen, Rasul Akhmetov.
+
+
+    <div id="soupCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#soupCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#soupCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#soupCarousel" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner rounded shadow">
+            <div class="carousel-item active">
+                <img src="../Images/Borscht.jpg" class="d-block w-100" alt="Borscht" />
+            </div>
+            <div class="carousel-item">
+                <img src="../Images/Lentil-Soup.webp" class="d-block w-100" alt="Lentil Soup" />
+            </div>
+            <div class="carousel-item">
+                <img src="../Images/Minestrone-Soup.webp" class="d-block w-100" alt="Minestrone Soup" />
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#soupCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#soupCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <div class="row g-4 mb-5">
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+                <img src="../Images/Borscht.jpg" class="card-img-top" alt="Borscht" />
+                <div class="card-body">
+                    <h5 class="card-title">Borscht</h5>
+                    <p class="card-text">
+                        Ukrainian beet soup with vegetables and sour cream — rich and satisfying.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=_-9nH4zFThs"><button class="btn btn-outline-primary btn-sm">View Recipe</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+                <img src="../Images/Miso-Soup.jpg" class="card-img-top" alt="Miso Soup" />
+                <div class="card-body">
+                    <h5 class="card-title">Miso Soup</h5>
+                    <p class="card-text">
+                        Japanese soup with tofu and seaweed — simple, light, and flavorful.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=JKqWEAJlZNE"><button class="btn btn-outline-success btn-sm">View Recipe</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100 shadow-sm">
+                <img src="../Images/Tomato-Basil-Soup.jpg" class="card-img-top" alt="Tomato Basil Soup" />
+                <div class="card-body">
+                    <h5 class="card-title">Tomato Basil Soup</h5>
+                    <p class="card-text">
+                        Fresh tomatoes and basil with a creamy touch — a perfect cozy meal.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=guwu8I2VDTI"><button class="btn btn-outline-danger btn-sm">View Recipe</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-6">
+            <h3 class="mb-4 text-center">Subscribe for Recipe Updates</h3>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter your name" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <div class="input-group">
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email" />
+                        <button class="btn btn-primary" type="submit">Subscribe</button>
+                    </div>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input" id="updates" />
+                    <label class="form-check-label" for="updates">Send me weekly recipe updates</label>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container text-center">
+        <p class="mb-1">
+            <strong>Meals by Anuar Zhenissov</strong> | Let Us Cook Team
+        </p>
+        <div class="mb-2">
+            <a href="../index.html" class="text-white me-3 text-decoration-none">Home</a>
+            <a href="meals.html" class="text-white me-3 text-decoration-none">Meals</a>
+            <a href="../as/fastfood.html" class="text-white me-3 text-decoration-none">Fast Food</a>
+            <a href="../as/desserts.html" class="text-white me-3 text-decoration-none">Desserts</a>
+            <a href="../ra/breakfast.html" class="text-white me-3 text-decoration-none">Breakfast</a>
+            <a href="../ra/drinks.html" class="text-white me-3 text-decoration-none">Drinks</a>
+            <a href="../culinary.html" class="text-white text-decoration-none">World Culinary</a>
+        </div>
+        <div>
+            <a href="#" class="text-white me-2" aria-label="Facebook">📘</a>
+            <a href="#" class="text-white me-2" aria-label="Instagram">📷</a>
+            <a href="#" class="text-white" aria-label="Twitter">🐦</a>
+        </div>
+        <p class="mt-3 mb-0">© 2025 Let Us Cook. All rights reserved.</p>
     </div>
 </footer>
 
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
