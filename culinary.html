@@ -1,202 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Culinary Gallery - Let Us Cook</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-    <link rel="icon" type="image/webp" href="Images/let-us-cook-(logo).webp" />
+        <link rel="stylesheet" href="common.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-" crossorigin="anonymous">
+    <link rel="icon" type="image/webp" href="Images/let-us-cook-(logo).webp">
 </head>
-<body class="bg-light">
-
-<!-- ===== Navbar ===== -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid px-sm-3 px-lg-5">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-            <img src="Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo" width="40" height="40" class="me-2" />
-            Let Us Cook
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="an/soups.html">Soups</a></li>
-                <li class="nav-item"><a class="nav-link" href="an/meals.html">Meals</a></li>
-                <li class="nav-item"><a class="nav-link" href="as/fastfood.html">Fast Food</a></li>
-                <li class="nav-item"><a class="nav-link" href="as/desserts.html">Desserts</a></li>
-                <li class="nav-item"><a class="nav-link" href="ra/breakfast.html">Breakfast</a></li>
-                <li class="nav-item"><a class="nav-link" href="ra/drinks.html">Drinks</a></li>
-                <li class="nav-item"><a class="nav-link active" href="culinary.html">Culinary</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<!-- ===== Hero Section ===== -->
-<main class="container mt-5">
-    <div class="row align-items-center mb-5">
-        <div class="col-lg-6 mb-4 mb-lg-0">
-            <img src="Images/Culinary-Banner.png" alt="Culinary Traditions" class="img-fluid rounded shadow" />
-        </div>
-        <div class="col-lg-6">
-            <h1 class="fw-bold mb-3">World Culinary Traditions</h1>
-            <p class="lead">
-                Discover authentic dishes and culinary techniques from every corner of the globe — a celebration of culture, flavor, and creativity.
-            </p>
-            <div class="btn-group" role="group" aria-label="Culinary Actions">
-                <button class="btn btn-primary btn-lg">Explore Gallery</button>
-                <button class="btn btn-outline-secondary btn-lg">Learn More</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== Carousel ===== -->
-    <div id="culinaryCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#culinaryCarousel" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#culinaryCarousel" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#culinaryCarousel" data-bs-slide-to="2"></button>
-        </div>
-
-        <div class="carousel-inner rounded shadow">
-            <div class="carousel-item active">
-                <img src="https://img.icons8.com/color/1600/sushi.png" class="d-block w-100" alt="Sushi" />
-            </div>
-            <div class="carousel-item">
-                <img src="https://img.icons8.com/color/1600/taco.png" class="d-block w-100" alt="Tacos" />
-            </div>
-            <div class="carousel-item">
-                <img src="https://img.icons8.com/color/1600/pizza.png" class="d-block w-100" alt="Pizza" />
-            </div>
-        </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#culinaryCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#culinaryCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-    </div>
-
-    <!-- ===== Culinary Cards ===== -->
-    <div class="row g-4 mb-5">
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm">
-                <img src="https://img.icons8.com/color/400/sushi.png" class="card-img-top" alt="Japanese Sushi">
-                <div class="card-body">
-                    <h5 class="card-title">Japanese Sushi</h5>
-                    <p class="card-text">Delicate sushi rolls made with fresh fish and seasoned rice — an art of simplicity and flavor.</p>
-                    <a href="https://www.youtube.com/watch?v=I1UDS2kgqY8" class="btn btn-outline-primary btn-sm">View Recipe</a>
+<body class="fade-in">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"><img src="Images/let-us-cook-(logo).webp" alt="logo" height="36">Let Us Cook</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#culinaryNav" aria-controls="culinaryNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="culinaryNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="an/soups.html">Soups</a></li>
+                        <li class="nav-item"><a class="nav-link" href="an/meals.html">Meals</a></li>
+                        <li class="nav-item"><a class="nav-link" href="as/fastfood.html">Fast Food</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ra/drinks.html">Drinks</a></li>
+                        <li class="nav-item"><a class="nav-link" href="as/desserts.html">Desserts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ra/breakfast.html">Breakfast</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="culinary.html">Culinary</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
+        </nav>
 
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm">
-                <img src="https://img.icons8.com/color/400/taco.png" class="card-img-top" alt="Mexican Tacos">
-                <div class="card-body">
-                    <h5 class="card-title">Mexican Tacos</h5>
-                    <p class="card-text">Authentic street tacos filled with flavorful meats, salsa, and lime — a fiesta in every bite.</p>
-                    <a href="https://www.youtube.com/watch?v=1WZgk0jG6xA" class="btn btn-outline-success btn-sm">View Recipe</a>
-                </div>
+    <main class="main-content mt-4">
+        <section class="hero-section">
+            <div class="hero-content container text-center">
+                <h1 class="title d-flex align-items-center justify-content-center gap-3"><img src="Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo" class="title-logo"> World Culinary Traditions</h1>
+                <p class="subtitle">Discover authentic recipes and cooking techniques from around the globe</p>
             </div>
-        </div>
+        </section>
 
-
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm">
-                <img src="https://img.icons8.com/color/400/curry.png" class="card-img-top" alt="Indian Curry">
-                <div class="card-body">
-                    <h5 class="card-title">Indian Curry</h5>
-                    <p class="card-text">Aromatic chicken curry infused with spices, herbs, and a touch of cream — full of warmth.</p>
-                    <a href="https://www.youtube.com/watch?v=x9C_2QcpFJ4" class="btn btn-outline-warning btn-sm">View Recipe</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm">
-                <img src="https://img.icons8.com/color/400/paella.png" class="card-img-top" alt="Spanish Paella">
-                <div class="card-body">
-                    <h5 class="card-title">Spanish Paella</h5>
-                    <p class="card-text">Traditional saffron rice dish with seafood, chicken, and vegetables — a taste of Valencia.</p>
-                    <a href="https://www.youtube.com/watch?v=H1FYrWq87Ks" class="btn btn-outline-secondary btn-sm">View Recipe</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm">
-                <img src="https://img.icons8.com/color/400/croissant.png" class="card-img-top" alt="French Croissants">
-                <div class="card-body">
-                    <h5 class="card-title">French Croissants</h5>
-                    <p class="card-text">Flaky, buttery pastry with golden layers — the symbol of French breakfast elegance.</p>
-                    <a href="https://www.youtube.com/watch?v=fU6qRZC2y5U" class="btn btn-outline-info btn-sm">View Recipe</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== Subscription Form ===== -->
-    <div class="row justify-content-center mb-5">
-        <div class="col-lg-6">
-            <h3 class="mb-4 text-center">Join Our Culinary Newsletter</h3>
-            <form>
-                <div class="mb-3">
-                    <label for="name" class="form-label">Full Name</label>
-                    <input type="text" id="name" class="form-control" placeholder="Enter your name" />
-                </div>
-
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email Address</label>
-                    <div class="input-group">
-                        <input type="email" id="email" class="form-control" placeholder="Enter your email" />
-                        <button class="btn btn-primary" type="submit">Subscribe</button>
+                <section class="container py-4">
+                    <h2 class="mb-4">Culinary Gallery</h2>
+                    <div id="culinaryCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#culinaryCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#culinaryCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#culinaryCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active"><img src="Images/Culinary-Banner.png" class="d-block w-100" alt="culinary 1"></div>
+                            <div class="carousel-item"><img src="Images/Meals-Banner.png" class="d-block w-100" alt="culinary 2"></div>
+                            <div class="carousel-item"><img src="Images/Soup-Banner.png" class="d-block w-100" alt="culinary 3"></div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#culinaryCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#culinaryCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
+
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                                    <div class="col">
+                                        <div class="card h-100">
+                                            <img src="https://img.icons8.com/color/400/000000/sushi.png" class="card-img-top" alt="Japanese Sushi">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Japanese Sushi</h5>
+                                                <p class="card-text">Traditional Japanese sushi with fresh fish, seasoned rice, and nori seaweed.</p>
+                                            </div>
+                                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <span class="badge bg-primary">45 mins</span>
+                                                    <span class="badge bg-danger">Advanced</span>
+                                                </div>
+                                                <div class="btn-group" role="group" aria-label="Card actions">
+                                                    <a href="#" class="btn btn-sm btn-primary">Details</a>
+                                                    <button class="btn btn-sm btn-outline-secondary">Save</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card h-100">
+                                            <img src="https://img.icons8.com/color/400/000000/taco.png" class="card-img-top" alt="Mexican Tacos">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Mexican Tacos</h5>
+                                                <p class="card-text">Authentic Mexican tacos with seasoned meat, fresh vegetables, and traditional spices.</p>
+                                            </div>
+                                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <span class="badge bg-primary">30 mins</span>
+                                                    <span class="badge bg-warning text-dark">Intermediate</span>
+                                                </div>
+                                                <div class="btn-group" role="group" aria-label="Card actions">
+                                                    <a href="#" class="btn btn-sm btn-primary">Details</a>
+                                                    <button class="btn btn-sm btn-outline-secondary">Save</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card h-100">
+                                            <img src="https://img.icons8.com/color/400/000000/pizza.png" class="card-img-top" alt="Italian Pizza">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Italian Pizza</h5>
+                                                <p class="card-text">Classic Neapolitan pizza with fresh mozzarella, San Marzano tomatoes, basil, and olive oil.</p>
+                                            </div>
+                                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <span class="badge bg-primary">60 mins</span>
+                                                    <span class="badge bg-warning text-dark">Intermediate</span>
+                                                </div>
+                                                <div class="btn-group" role="group" aria-label="Card actions">
+                                                    <a href="#" class="btn btn-sm btn-primary">Details</a>
+                                                    <button class="btn btn-sm btn-outline-secondary">Save</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card h-100">
+                                            <img src="https://img.icons8.com/color/400/000000/curry.png" class="card-img-top" alt="Indian Curry">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Indian Curry</h5>
+                                                <p class="card-text">Rich and creamy Indian curry with tender chicken in a spiced tomato-based sauce.</p>
+                                            </div>
+                                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <span class="badge bg-primary">90 mins</span>
+                                                    <span class="badge bg-danger">Advanced</span>
+                                                </div>
+                                                <div class="btn-group" role="group" aria-label="Card actions">
+                                                    <a href="#" class="btn btn-sm btn-primary">Details</a>
+                                                    <button class="btn btn-sm btn-outline-secondary">Save</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card h-100">
+                                            <img src="https://img.icons8.com/color/400/000000/paella.png" class="card-img-top" alt="Spanish Paella">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Spanish Paella</h5>
+                                                <p class="card-text">Traditional Spanish rice dish with saffron, seafood, chicken, and vegetables.</p>
+                                            </div>
+                                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <span class="badge bg-primary">75 mins</span>
+                                                    <span class="badge bg-danger">Advanced</span>
+                                                </div>
+                                                <div class="btn-group" role="group" aria-label="Card actions">
+                                                    <a href="#" class="btn btn-sm btn-primary">Details</a>
+                                                    <button class="btn btn-sm btn-outline-secondary">Save</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card h-100">
+                                            <img src="https://img.icons8.com/color/400/000000/ramen.png" class="card-img-top" alt="Japanese Ramen">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Japanese Ramen</h5>
+                                                <p class="card-text">Hearty Japanese noodle soup with rich broth, tender pork, soft-boiled egg, and fresh vegetables.</p>
+                                            </div>
+                                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <span class="badge bg-primary">120 mins</span>
+                                                    <span class="badge bg-danger">Advanced</span>
+                                                </div>
+                                                <div class="btn-group" role="group" aria-label="Card actions">
+                                                    <a href="#" class="btn btn-sm btn-primary">Details</a>
+                                                    <button class="btn btn-sm btn-outline-secondary">Save</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                    </div>
+
+                    <hr class="my-5">
+                    <h3 class="mb-3">CSS-only responsive cards (demo)</h3>
+                    <div class="media-cards">
+                        <div class="media-card">
+                            <img src="Images/uzbek-beef-plov-13-Region.jpg" alt="Card 1">
+                            <h5>Plov</h5>
+                            <p>Traditional rice dish from Central Asia.</p>
+                        </div>
+                        <div class="media-card">
+                            <img src="Images/Pasta-Alfredo.jpg" alt="Card 2">
+                            <h5>Pasta Alfredo</h5>
+                            <p>Creamy pasta with parmesan and butter.</p>
+                        </div>
+                        <div class="media-card">
+                            <img src="Images/Ribs.jpg" alt="Card 3">
+                            <h5>Grilled Ribs</h5>
+                            <p>Smoky and tender ribs with glaze.</p>
+                        </div>
+                    </div>
+                </section>
+    </main>
+
+        <footer class="footer py-4">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="d-flex gap-3 flex-wrap">
+                    <a class="text-white text-decoration-none" href="index.html">Home</a>
+                    <a class="text-white text-decoration-none" href="an/soups.html">Soups</a>
+                    <a class="text-white text-decoration-none" href="an/meals.html">Meals</a>
+                    <a class="text-white text-decoration-none" href="as/fastfood.html">Fast Food</a>
                 </div>
-
-                <div class="form-check mb-3">
-                    <input type="checkbox" class="form-check-input" id="updates" />
-                    <label class="form-check-label" for="updates">Send me international recipes weekly</label>
+                <div class="d-flex gap-2">
+                    <a class="social-link btn btn-sm btn-primary" href="#" title="Facebook">📘</a>
+                    <a class="social-link btn btn-sm btn-primary" href="#" title="Twitter">🐦</a>
+                    <a class="social-link btn btn-sm btn-primary" href="#" title="Instagram">📷</a>
+                    <a class="social-link btn btn-sm btn-primary" href="#" title="YouTube">📺</a>
                 </div>
-            </form>
-        </div>
-    </div>
-</main>
+            </div>
+        </footer>
 
-<!-- ===== Footer ===== -->
-<footer class="bg-dark text-white py-4 mt-5">
-    <div class="container text-center">
-        <p class="mb-1"><strong>World Culinary by Nurassyl Orazbek</strong> | Let Us Cook Team</p>
-        <div class="mb-2">
-            <a href="/index.html" class="text-white me-3 text-decoration-none">Home</a>
-            <a href="/an/soups.html" class="text-white me-3 text-decoration-none">Soups</a>
-            <a href="/as/fastfood.html" class="text-white me-3 text-decoration-none">Fast Food</a>
-            <a href="/an/meals.html" class="text-white text-decoration-none">Meals</a>
-            <a href="/as/desserts.html" class="text-white me-3 text-decoration-none">Desserts</a>
-            <a href="/ra/breakfast.html" class="text-white me-3 text-decoration-none">Breakfast</a>
-            <a href="/ra/drinks.html" class="text-white me-3 text-decoration-none">Drinks</a>
-        </div>
-        <div>
-            <a href="#" class="text-white me-2" aria-label="Facebook">📘</a>
-            <a href="#" class="text-white me-2" aria-label="Instagram">📷</a>
-            <a href="#" class="text-white" aria-label="Twitter">🐦</a>
-        </div>
-        <p class="mt-3 mb-0">
-            © 2025 Let Us Cook. Nurassyl Orazbek, Anuar Zhenissov, Asylan Usen, Rasul Akhmetov.
-        </p>
-    </div>
-</footer>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="" crossorigin="anonymous"></script>
 </body>
 </html>

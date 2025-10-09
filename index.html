@@ -4,170 +4,234 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Let Us Cook</title>
-    <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="common.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-" crossorigin="anonymous">
     <link rel="icon" type="image/webp" href="Images/let-us-cook-(logo).webp">
 </head>
 <body class="fade-in">
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    
-    <nav class="navbar">
-        <div class="nav-logo">
-            <img src="Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo">
-        </div>
-        <div class="nav-menu">
-            <a href="index.html" class="active">Home</a>
-            <a href="an/soups.html">Soups</a>
-            <a href="an/meals.html">Meals</a>
-            <a href="as/fastfood.html">Fast Food</a>
-            <a href="ra/drinks.html">Drinks</a>
-            <a href="as/desserts.html">Desserts</a>
-            <a href="ra/breakfast.html">Breakfast</a>
-            <a href="culinary.html">Culinary</a>
-        </div>
-        <label for="nav-toggle" class="nav-toggle-label">☰</label>
-    </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"><img src="Images/let-us-cook-(logo).webp" alt="logo" height="36">Let Us Cook</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="an/soups.html">Soups</a></li>
+                        <li class="nav-item"><a class="nav-link" href="an/meals.html">Meals</a></li>
+                        <li class="nav-item"><a class="nav-link" href="as/fastfood.html">Fast Food</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ra/drinks.html">Drinks</a></li>
+                        <li class="nav-item"><a class="nav-link" href="as/desserts.html">Desserts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ra/breakfast.html">Breakfast</a></li>
+                        <li class="nav-item"><a class="nav-link" href="culinary.html">Culinary</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
     <main class="main-content">
         <section class="hero-section">
-            <div class="hero-content">
-                <h1 class="title"><img src="Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo" class="title-logo"> Let Us Cook!</h1>
+            <div class="hero-content container text-center">
+                <h1 class="title d-flex align-items-center justify-content-center gap-3"><img src="Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo" class="title-logo"> Let Us Cook!</h1>
                 <p class="subtitle">Discover amazing recipes from around the world</p>
-                <div>
-                    <a href="#featured" class="btn">Explore Recipes</a>
-                    <a href="culinary.html" class="btn btn-secondary">View Gallery</a>
+                <div class="d-flex justify-content-center gap-3 mt-3">
+                    <a href="#featured" class="btn btn-primary btn-lg">Explore Recipes</a>
+                    <a href="culinary.html" class="btn btn-outline-light btn-lg">View Gallery</a>
                 </div>
             </div>
         </section>
 
-        <section class="featured-section" id="featured">
-            <div class="grid-item hero">
-                <h2>🍳 Recipe of the Day</h2>
-                <img src="Images/Chef-Curry.jpeg" alt="Chef's Special Curry" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin: 1rem 0;">
-                <p>Our chef's special curry recipe that combines authentic spices with modern cooking techniques. Perfect for family dinners!</p>
-                <a href="an/meals.html" class="btn">Learn More</a>
-            </div>
-            
-            <div class="grid-item featured-1">
-                <h3>🥄 Featured Soups</h3>
-                <img src="Images/Miso-Soup.jpg" alt="Miso Soup" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin: 0.5rem 0;">
-                <p>Warm, comforting soups from around the world including Miso, Borscht, and Minestrone.</p>
-                <a href="an/soups.html" class="btn">View Soups</a>
-            </div>
-            
-            <div class="grid-item featured-2">
-                <h3>🥘 Main Meals</h3>
-                <img src="Images/Grilled-Ribeye.jpg" alt="Grilled Ribeye" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin: 0.5rem 0;">
-                <p>Hearty main courses including grilled steaks, pasta dishes, and traditional rice meals.</p>
-                <a href="an/meals.html" class="btn">View Meals</a>
-            </div>
-            
-            <div class="grid-item sidebar">
-                <h3>Quick Links</h3>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin: 1rem 0;"><a href="as/fastfood.html" style="color: var(--primary); text-decoration: none;">🍟 Fast Food</a></li>
-                    <li style="margin: 1rem 0;"><a href="as/desserts.html" style="color: var(--primary); text-decoration: none;">🍰 Desserts</a></li>
-                    <li style="margin: 1rem 0;"><a href="ra/drinks.html" style="color: var(--primary); text-decoration: none;">🥤 Drinks</a></li>
-                    <li style="margin: 1rem 0;"><a href="ra/breakfast.html" style="color: var(--primary); text-decoration: none;">🥞 Breakfast</a></li>
-                </ul>
-                <div style="margin-top: 2rem; padding: 1rem; background: var(--light); border-radius: 8px;">
-                    <strong>💡 Cooking Tip</strong>
-                    <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Always taste your food while cooking and adjust seasonings gradually!</p>
-                </div>
-            </div>
-            
-            <div class="grid-item popular">
-                <h3>🔥 Popular Recipes</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; margin-top: 1rem;">
-                    <div style="text-align: center;">
-                        <img src="Images/spaghetti-bolognese.jpg" alt="Spaghetti Bolognese" style="width: 100%; height: 80px; object-fit: cover; border-radius: 8px;">
-                        <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem;">Spaghetti Bolognese</p>
+                <section class="container my-5" id="featured">
+                    <div class="row g-4">
+                        <div class="col-12 col-lg-6">
+                            <div class="card h-100">
+                                <img src="Images/Chef-Curry.jpeg" class="card-img-top" alt="Chef's Special Curry">
+                                <div class="card-body">
+                                    <h5 class="card-title">Recipe of the Day</h5>
+                                    <p class="card-text">Our chef's special curry recipe that combines authentic spices with modern cooking techniques. Perfect for family dinners!</p>
+                                    <a href="an/meals.html" class="btn btn-primary">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+                            <div class="row g-4">
+                                <div class="col-12 col-md-6">
+                                    <div class="card h-100">
+                                        <img src="Images/Miso-Soup.jpg" class="card-img-top" alt="Miso Soup">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Featured Soups</h5>
+                                            <p class="card-text">Warm, comforting soups from around the world including Miso, Borscht, and Minestrone.</p>
+                                            <a href="an/soups.html" class="btn btn-secondary">View Soups</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="card h-100">
+                                        <img src="Images/Grilled-Ribeye.jpg" class="card-img-top" alt="Grilled Ribeye">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Main Meals</h5>
+                                            <p class="card-text">Hearty main courses including grilled steaks, pasta dishes, and traditional rice meals.</p>
+                                            <a href="an/meals.html" class="btn btn-secondary">View Meals</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div style="text-align: center;">
-                        <img src="Images/fried-chicken.png" alt="Fried Chicken" style="width: 100%; height: 80px; object-fit: cover; border-radius: 8px;">
-                        <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem;">Crispy Fried Chicken</p>
+
+                    <div class="row mt-4">
+                        <div class="col-12 col-lg-4">
+                            <div class="card bg-light h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Quick Links</h5>
+                                    <ul class="list-unstyled">
+                                        <li class="my-2"><a class="text-decoration-none text-primary" href="as/fastfood.html">🍟 Fast Food</a></li>
+                                        <li class="my-2"><a class="text-decoration-none text-primary" href="as/desserts.html">🍰 Desserts</a></li>
+                                        <li class="my-2"><a class="text-decoration-none text-primary" href="ra/drinks.html">🥤 Drinks</a></li>
+                                        <li class="my-2"><a class="text-decoration-none text-primary" href="ra/breakfast.html">🥞 Breakfast</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-8">
+                            <div class="row row-cols-1 row-cols-md-3 g-3">
+                                <div class="col">
+                                    <div class="card h-100 text-center">
+                                        <img src="Images/spaghetti-bolognese.jpg" class="card-img-top" alt="Spaghetti Bolognese">
+                                        <div class="card-body">
+                                            <p class="card-text">Spaghetti Bolognese</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100 text-center">
+                                        <img src="Images/fried-chicken.png" class="card-img-top" alt="Fried Chicken">
+                                        <div class="card-body">
+                                            <p class="card-text">Crispy Fried Chicken</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card h-100 text-center">
+                                        <img src="Images/cake.png" class="card-img-top" alt="Cake">
+                                        <div class="card-body">
+                                            <p class="card-text">Chocolate Cake</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div style="text-align: center;">
-                        <img src="Images/cake.png" alt="Cake" style="width: 100%; height: 80px; object-fit: cover; border-radius: 8px;">
-                        <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem;">Chocolate Cake</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="grid-item categories">
-                <h3>🍴 Browse by Category</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
-                    <a href="an/soups.html" style="display: block; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 1rem; border-radius: 8px; text-decoration: none; text-align: center; transition: var(--transition);">
-                        <strong>🥄 Soups & Broths</strong>
-                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Comfort in a bowl</p>
-                    </a>
-                    <a href="an/meals.html" style="display: block; background: linear-gradient(135deg, var(--secondary), var(--accent)); color: white; padding: 1rem; border-radius: 8px; text-decoration: none; text-align: center; transition: var(--transition);">
-                        <strong>🥘 Main Meals</strong>
-                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Hearty & satisfying</p>
-                    </a>
-                    <a href="as/fastfood.html" style="display: block; background: linear-gradient(135deg, var(--accent), var(--primary)); color: white; padding: 1rem; border-radius: 8px; text-decoration: none; text-align: center; transition: var(--transition);">
-                        <strong>🍟 Fast Food</strong>
-                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Quick & delicious</p>
-                    </a>
-                    <a href="as/desserts.html" style="display: block; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 1rem; border-radius: 8px; text-decoration: none; text-align: center; transition: var(--transition);">
-                        <strong>🍰 Desserts</strong>
-                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Sweet endings</p>
-                    </a>
-                </div>
-            </div>
-        </section>
+                </section>
 
         <section class="features-section">
-            <div class="feature-card">
-                <h2>🌱 Fresh Ingredients</h2>
-                <p>We use only the freshest ingredients to ensure every bite is packed with flavor and nutrition.</p>
-            </div>
-            <div class="feature-card">
-                <h2>⚡ Fast Delivery</h2>
-                <p>Get your favorite meals and drinks delivered to your door in no time.</p>
-            </div>
-            <div class="feature-card">
-                <h2>💰 Affordable Prices</h2>
-                <p>Enjoy delicious food and drinks at prices that won't break the bank.</p>
-            </div>
+                        <div class="container py-4">
+                                        <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+                                                <div class="carousel-indicators">
+                                                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                                                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                                                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                                                </div>
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item active"><img src="Images/Culinary-Banner.png" class="d-block w-100" alt="Banner 1"></div>
+                                                    <div class="carousel-item"><img src="Images/Meals-Banner.png" class="d-block w-100" alt="Banner 2"></div>
+                                                    <div class="carousel-item"><img src="Images/Soup-Banner.png" class="d-block w-100" alt="Banner 3"></div>
+                                                    <div class="carousel-item"><img src="Images/Chef-Curry.jpeg" class="d-block w-100" alt="Chef Curry"></div>
+                                                    <div class="carousel-item"><img src="Images/Grilled-Ribeye.jpg" class="d-block w-100" alt="Ribeye"></div>
+                                                    <div class="carousel-item"><img src="Images/Pasta-Alfredo.jpg" class="d-block w-100" alt="Pasta Alfredo"></div>
+                                                    <div class="carousel-item"><img src="Images/Pumpkin-Soup.jpg" class="d-block w-100" alt="Pumpkin Soup"></div>
+                                                    <div class="carousel-item"><img src="Images/spaghetti-bolognese.jpg" class="d-block w-100" alt="Spaghetti"></div>
+                                                    <div class="carousel-item"><img src="Images/uzbek-beef-plov-13-Region.jpg" class="d-block w-100" alt="Plov"></div>
+                                                </div>
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Next</span>
+                                                </button>
+                                            </div>
+
+                                <section class="container my-5">
+                                    <div class="row g-4">
+                                        <div class="col-12 col-lg-4">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">🌱 Fresh Ingredients</h5>
+                                                    <p class="card-text">We use only the freshest ingredients to ensure every bite is packed with flavor and nutrition.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-4">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">⚡ Fast Delivery</h5>
+                                                    <p class="card-text">Get your favorite meals and drinks delivered to your door in no time.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-4">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">💰 Affordable Prices</h5>
+                                                    <p class="card-text">Enjoy delicious food and drinks at prices that won't break the bank.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                        </div>
         </section>
 
-        <section class="contact-section">
-            <h2 class="contact-title">Contact Us</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <h3>📧 Email</h3>
-                        <p>letuscook@foodie.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>📞 Phone</h3>
-                        <p>+7 777 777 77 77</p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>📍 Address</h3>
-                        <p>123 Culinary Street<br>Food City, FC 12345</p>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
+                <section class="contact-section container">
+                    <h2 class="contact-title">Contact Us</h2>
+                    <div class="row g-4">
+                        <div class="col-12 col-md-4">
+                            <div class="card p-3 h-100">
+                                <h5>📧 Email</h5>
+                                <p class="mb-3">letuscook@foodie.com</p>
+                                <h5>📞 Phone</h5>
+                                <p class="mb-3">+7 777 777 77 77</p>
+                                <h5>📍 Address</h5>
+                                <p>123 Culinary Street<br>Food City, FC 12345</p>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                        <div class="col-12 col-md-8">
+                            <div class="card p-3 h-100">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="name" name="name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">Message</label>
+                                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                    </div>
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <div class="btn-group" role="group" aria-label="Contact buttons">
+                                            <button type="submit" class="btn btn-primary">Send Message</button>
+                                            <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="contact-btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </section>
+                    </div>
+                </section>
     </main>
 
     <footer class="footer">
@@ -191,6 +255,6 @@
         </div>
     </footer>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="" crossorigin="anonymous"></script>
 </body>
 </html>
