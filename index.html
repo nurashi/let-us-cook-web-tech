@@ -37,8 +37,8 @@
                 <h1 class="title d-flex align-items-center justify-content-center gap-3"><img src="Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo" class="title-logo"> Let Us Cook!</h1>
                 <p class="subtitle">Discover amazing recipes from around the world</p>
                 <div class="d-flex justify-content-center gap-3 mt-3">
-                    <a href="#featured" class="btn btn-primary btn-lg">Explore Recipes</a>
-                    <a href="culinary.html" class="btn btn-outline-light btn-lg">View Gallery</a>
+                    <a href="#featured" class="btn btn-primary btn-md">Explore Recipes</a>
+                    <a href="culinary.html" class="btn btn-sm btn-lg">View Gallery</a>
                 </div>
             </div>
         </section>
@@ -193,38 +193,126 @@
                         </div>
         </section>
 
+                <section class="container my-5">
+                    <div class="card text-center p-4 shadow-sm">
+                        <h3 class="mb-4">Current Date & Time</h3>
+                        <div id="currentDateTime" class="py-3">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="container my-5 text-center">
+                    <div class="card p-4">
+                        <h3 class="mb-3">Change Page Background</h3>
+                        <p class="text-muted mb-3">Click the button to change the page background color</p>
+                        <button id="colorChangeBtn" class="btn btn-lg btn-primary" onclick="changeBackgroundColor()">
+                            Change Background Color
+                        </button>
+                    </div>
+                </section>
+
+                <section class="container my-5 text-center">
+                    <div class="card p-4 bg-light">
+                        <h3 class="mb-3">Stay Updated!</h3>
+                        <p class="text-muted mb-3">Subscribe to our newsletter for the latest recipes and cooking tips</p>
+                        <button class="btn btn-success btn-lg" onclick="showPopup()">
+                            Subscribe Now
+                        </button>
+                    </div>
+                </section>
+
+                <section class="container my-5">
+                    <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="faq-item mb-3">
+                                <div class="faq-question p-3 bg-light rounded" onclick="toggleAccordion(this)" style="cursor: pointer; border: 1px solid #ddd;">
+                                    <strong>Q: What types of recipes do you offer?</strong> <span style="float: right;">▼</span>
+                                </div>
+                                <div class="faq-answer p-3" style="display: none; transition: all 0.3s ease;">
+                                    <p>We offer a wide variety of recipes including soups, main meals, fast food, desserts, drinks, and breakfast items from cuisines around the world.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item mb-3">
+                                <div class="faq-question p-3 bg-light rounded" onclick="toggleAccordion(this)" style="cursor: pointer; border: 1px solid #ddd;">
+                                    <strong>Q: Are the recipes suitable for beginners?</strong> <span style="float: right;">▼</span>
+                                </div>
+                                <div class="faq-answer p-3" style="display: none; transition: all 0.3s ease;">
+                                    <p>Yes! We have recipes for all skill levels, from beginner to advanced. Each recipe includes difficulty level indicators and detailed step-by-step instructions.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item mb-3">
+                                <div class="faq-question p-3 bg-light rounded" onclick="toggleAccordion(this)" style="cursor: pointer; border: 1px solid #ddd;">
+                                    <strong>Q: How often do you add new recipes?</strong> <span style="float: right;">▼</span>
+                                </div>
+                                <div class="faq-answer p-3" style="display: none; transition: all 0.3s ease;">
+                                    <p>We add new recipes every week! Subscribe to our newsletter to stay updated with the latest additions to our culinary collection.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item mb-3">
+                                <div class="faq-question p-3 bg-light rounded" onclick="toggleAccordion(this)" style="cursor: pointer; border: 1px solid #ddd;">
+                                    <strong>Q: Can I submit my own recipes?</strong> <span style="float: right;">▼</span>
+                                </div>
+                                <div class="faq-answer p-3" style="display: none; transition: all 0.3s ease;">
+                                    <p>Absolutely! We love featuring recipes from our community. Contact us through our contact form to submit your recipe for review.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question p-3 bg-light rounded" onclick="toggleAccordion(this)" style="cursor: pointer; border: 1px solid #ddd;">
+                                    <strong>Q: Do you offer nutritional information?</strong> <span style="float: right;">▼</span>
+                                </div>
+                                <div class="faq-answer p-3" style="display: none; transition: all 0.3s ease;">
+                                    <p>We're working on adding comprehensive nutritional information to all our recipes. This feature will be available soon!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <section class="contact-section container">
                     <h2 class="contact-title">Contact Us</h2>
                     <div class="row g-4">
                         <div class="col-12 col-md-4">
                             <div class="card p-3 h-100">
-                                <h5>📧 Email</h5>
+                                <h5>Email</h5>
                                 <p class="mb-3">letuscook@foodie.com</p>
-                                <h5>📞 Phone</h5>
+                                <h5>Phone</h5>
                                 <p class="mb-3">+7 777 777 77 77</p>
-                                <h5>📍 Address</h5>
+                                <h5>Address</h5>
                                 <p>123 Culinary Street<br>Food City, FC 12345</p>
                             </div>
                         </div>
                         <div class="col-12 col-md-8">
                             <div class="card p-3 h-100">
-                                <form>
+                                <form id="contactForm" novalidate>
                                     <div class="mb-3">
-                                        <label for="name" class="form-label">Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" required>
+                                        <label for="name" class="form-label">Name *</label>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" required>
+                                        <label for="email" class="form-label">Email *</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="your.email@example.com">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="message" class="form-label">Message</label>
-                                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                        <label for="password" class="form-label">Password *</label>
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="At least 6 characters">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="confirmPassword" class="form-label">Confirm Password *</label>
+                                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">Message *</label>
+                                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell us what you're thinking... (min 10 characters)"></textarea>
                                     </div>
                                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                         <div class="btn-group" role="group" aria-label="Contact buttons">
                                             <button type="submit" class="btn btn-primary">Send Message</button>
-                                            <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                                            <button type="reset" class="btn btn-outline-secondary" onclick="clearErrors()">Reset</button>
                                         </div>
                                     </div>
                                 </form>
@@ -232,6 +320,25 @@
                         </div>
                     </div>
                 </section>
+
+                <div id="subscriptionPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 9999; align-items: center; justify-content: center;">
+                    <div class="card" style="max-width: 500px; margin: 20px; position: relative;">
+                        <div class="card-body p-4">
+                            <button onclick="closePopup()" style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #999;">&times;</button>
+                            <h3 class="text-center mb-4">📬 Subscribe to Our Newsletter</h3>
+                            <p class="text-center text-muted mb-4">Get the latest recipes and cooking tips delivered to your inbox!</p>
+                            <form id="subscriptionForm">
+                                <div class="mb-3">
+                                    <label for="subscribeEmail" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="subscribeEmail" placeholder="Enter your email" required>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-success btn-lg">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
     </main>
 
     <footer class="footer">
@@ -256,5 +363,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 </html>
