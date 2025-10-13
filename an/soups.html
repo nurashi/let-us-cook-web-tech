@@ -13,7 +13,7 @@
 
     <link rel="icon" type="image/webp" href="../Images/let-us-cook-(logo).webp" />
 </head>
-<body class="bg-light">
+<body class="fade-in">
 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -135,7 +135,52 @@
         </div>
     </div>
 
+    <section class="container my-5">
+        <div class="card text-center p-4 shadow-sm">
+            <h3 class="mb-4">Current Date & Time</h3>
+            <div id="currentDateTime" class="py-3">
+            </div>
+        </div>
+    </section>
 
+    <section class="container my-5 text-center">
+        <div class="card p-4">
+            <h3 class="mb-3">Change Page Background</h3>
+            <p class="text-muted mb-3">Click the button to change the page background color</p>
+            <button id="colorChangeBtn" class="btn btn-lg btn-primary" onclick="changeBackgroundColor()">
+                Change Background Color
+            </button>
+        </div>
+    </section>
+
+    <section class="container my-5 text-center">
+        <div class="card p-4 bg-light">
+            <h3 class="mb-3">Stay Updated!</h3>
+            <p class="text-muted mb-3">Subscribe to our newsletter for the latest recipes and cooking tips</p>
+            <button class="btn btn-success btn-lg" onclick="showPopup()">
+                Subscribe Now
+            </button>
+        </div>
+    </section>
+
+    <div id="subscriptionPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 9999; align-items: center; justify-content: center;">
+        <div class="card" style="max-width: 500px; margin: 20px; position: relative;">
+            <div class="card-body p-4">
+                <button onclick="closePopup()" style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #999;">&times;</button>
+                <h3 class="text-center mb-4">📬 Subscribe to Our Newsletter</h3>
+                <p class="text-center text-muted mb-4">Get the latest recipes and cooking tips delivered to your inbox!</p>
+                <form id="subscriptionForm">
+                    <div class="mb-3">
+                        <label for="subscribeEmail" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="subscribeEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success btn-lg">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <div class="row justify-content-center mb-5">
         <div class="col-lg-6">
             <h3 class="mb-4 text-center">Subscribe for Recipe Updates</h3>
@@ -188,5 +233,6 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../script.js"></script>
 </body>
 </html>

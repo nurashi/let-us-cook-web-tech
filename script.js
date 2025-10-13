@@ -159,17 +159,16 @@ const backgroundColors = [
 let currentColorIndex = 0;
 
 function changeBackgroundColor() {
-    currentColorIndex = (currentColorIndex + 1) % backgroundColors.length;
-    document.body.style.backgroundColor = backgroundColors[currentColorIndex];
-    
-    // Show a small notification
-    const button = document.getElementById('colorChangeBtn');
-    const originalText = button.textContent;
-    button.textContent = 'Color Changed! ✨';
-    
-    setTimeout(() => {
-        button.textContent = originalText;
-    }, 1000);
+    const colors = ["#f8f9fa", "#ffe4e1", "#e6ffe6", "#e6f0ff", "#fffbe6", "#f0e6ff"];
+    const currentColor = document.body.style.backgroundColor;
+    let newColor = colors[Math.floor(Math.random() * colors.length)];
+
+    // prevent picking the same color again
+    while (newColor === currentColor) {
+        newColor = colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    document.body.style.backgroundColor = newColor;
 }
 
 function updateDateTime() {
