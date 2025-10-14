@@ -137,13 +137,23 @@ function closePopupOutside(event) {
     }
 }
 
-// Handle subscription form submission
-function handleSubscription(event) {
-    event.preventDefault();
-    const email = document.getElementById('subscribeEmail').value;
+// Handle subscription form submission for a single form element
+function handleSubscriptionForForm(form, event) {
+    if (event) event.preventDefault();
+    const emailInput = form.querySelector('.subscribe-email');
+    const nameInput = form.querySelector('.subscribe-name');
+    const email = emailInput ? emailInput.value.trim() : '';
+    const name = nameInput ? nameInput.value.trim() : '';
+
+    if (email === '') {
+        alert('Please enter an email to subscribe.');
+        return;
+    }
+
     alert('Thank you for subscribing! \nWe will send updates to: ' + email);
-    document.getElementById('subscriptionForm').reset();
-    closePopup();
+    form.reset();
+    // Close popup if present
+    try { closePopup(); } catch (e) { /* ignore if no popup */ }
 }
 
 const backgroundColors = [
@@ -157,18 +167,35 @@ const backgroundColors = [
 ];
 
 let currentColorIndex = 0;
+let lastBgColor = '';
 
 function changeBackgroundColor() {
-    const colors = ["#f8f9fa", "#ffe4e1", "#e6ffe6", "#e6f0ff", "#fffbe6", "#f0e6ff"];
-    const currentColor = document.body.style.backgroundColor;
-    let newColor = colors[Math.floor(Math.random() * colors.length)];
+    const colors = ["#f8f9fa", "#ffe4e1", "#e6ffe6", "#e6f0ff", "#fffbe6", "#f0e6ff", "#ffffff"];
 
-    // prevent picking the same color again
-    while (newColor === currentColor) {
+    // pick a new color different from last set
+    let newColor = colors[Math.floor(Math.random() * colors.length)];
+    let attempts = 0;
+    while (newColor === lastBgColor && attempts < 10) {
         newColor = colors[Math.floor(Math.random() * colors.length)];
+        attempts++;
     }
 
-    document.body.style.backgroundColor = newColor;
+    // Remove any Bootstrap bg-* classes on body and html that may override background
+    [document.documentElement, document.body].forEach(elem => {
+        const clsList = Array.from(elem.classList);
+        clsList.forEach(cls => {
+            if (/^bg-/.test(cls)) elem.classList.remove(cls);
+        });
+    });
+
+    // Remove background-image and set background-color/background with !important on both html and body
+    [document.documentElement, document.body].forEach(elem => {
+        elem.style.setProperty('background-image', 'none', 'important');
+        elem.style.setProperty('background', newColor, 'important');
+        elem.style.setProperty('background-color', newColor, 'important');
+    });
+
+    lastBgColor = newColor;
 }
 
 function updateDateTime() {
@@ -214,10 +241,12 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', validateForm);
     }
     
-    // Set up subscription form
-    const subscriptionForm = document.getElementById('subscriptionForm');
-    if (subscriptionForm) {
-        subscriptionForm.addEventListener('submit', handleSubscription);
+    // Set up subscription forms (support multiple pages/forms)
+    const subscriptionForms = document.querySelectorAll('.subscription-form');
+    if (subscriptionForms.length) {
+        subscriptionForms.forEach(form => {
+            form.addEventListener('submit', handleSubscriptionForForm.bind(null, form));
+        });
     }
     
     // Set up popup close on outside click
