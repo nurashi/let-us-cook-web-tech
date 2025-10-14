@@ -440,6 +440,82 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 3rem;
 }
 
+/* JavaScript Tasks Styles */
+/* FAQ Accordion Styles */
+.faq-question {
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.faq-question:hover {
+  background-color: #e9ecef !important;
+  transform: translateX(5px);
+}
+
+.faq-question.active {
+  background-color: #007bff !important;
+  color: white !important;
+  border-color: #007bff !important;
+}
+
+.faq-answer {
+  transition: all 0.3s ease;
+  border-left: 3px solid #007bff;
+  background-color: #f8f9fa;
+}
+
+/* Media Cards for responsive demo */
+.media-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.media-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  background: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.media-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.media-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.media-card h5 {
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.media-card p {
+  color: #666;
+  margin: 0;
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 600px) and (max-width: 991px) {
+  .media-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 992px) {
+  .media-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .contact-container {
   display: flex;
   gap: 4rem;

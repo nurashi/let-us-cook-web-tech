@@ -178,31 +178,74 @@
         </div>
     </div>
 
+    <!-- Subscribe block moved to bottom of page to match Meals layout -->
+</main>
+
+    <section class="container my-5">
+        <div class="card text-center p-4 shadow-sm">
+            <h3 class="mb-4">Current Date & Time</h3>
+            <div id="currentDateTime" class="py-3"></div>
+        </div>
+    </section>
+
+    <section class="container my-5 text-center">
+        <div class="card p-4">
+            <h3 class="mb-3">Change Page Background</h3>
+            <p class="text-muted mb-3">Click the button to change the page background color</p>
+            <button id="colorChangeBtn" class="btn btn-lg btn-primary" onclick="changeBackgroundColor()">
+                Change Background Color
+            </button>
+        </div>
+    </section>
+
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Breakfast FAQ</h2>
+        <div class="card">
+            <div class="card-body">
+                <div class="faq-item mb-3">
+                    <div class="faq-question p-3 bg-light rounded" onclick="toggleAccordion(this)" style="cursor:pointer; border:1px solid #ddd;">
+                        <strong>Q: What are easy breakfast options?</strong> <span style="float:right;">▼</span>
+                    </div>
+                    <div class="faq-answer p-3" style="display:none;">
+                        <p>Try pancakes, scrambled eggs, or avocado toast for quick and tasty mornings.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item mb-3">
+                    <div class="faq-question p-3 bg-light rounded" onclick="toggleAccordion(this)" style="cursor:pointer; border:1px solid #ddd;">
+                        <strong>Q: Can I make these recipes ahead of time?</strong> <span style="float:right;">▼</span>
+                    </div>
+                    <div class="faq-answer p-3" style="display:none;">
+                        <p>Yes — many breakfast components can be prepped the night before to save time in the morning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="row justify-content-center mb-5">
         <div class="col-lg-6">
             <h3 class="mb-4 text-center">Subscribe for Recipe Updates</h3>
-            <form>
+            <form class="subscription-form">
                 <div class="mb-3">
-                    <label for="name" class="form-label">Full Name</label>
-                    <input type="text" id="name" class="form-control" placeholder="Enter your name" />
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-control subscribe-name" placeholder="Enter your name" />
                 </div>
 
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email Address</label>
+                    <label class="form-label">Email Address</label>
                     <div class="input-group">
-                        <input type="email" id="email" class="form-control" placeholder="Enter your email" />
+                        <input type="email" class="form-control subscribe-email" placeholder="Enter your email" />
                         <button class="btn btn-primary" type="submit">Subscribe</button>
                     </div>
                 </div>
 
                 <div class="form-check mb-3">
-                    <input type="checkbox" class="form-check-input" id="updates" />
-                    <label class="form-check-label" for="updates">Send me weekly recipe updates</label>
+                    <input type="checkbox" class="form-check-input sub-updates" />
+                    <label class="form-check-label">Send me weekly recipe updates</label>
                 </div>
             </form>
         </div>
     </div>
-</main>
 
 <footer class="bg-dark text-white py-4 mt-5">
     <div class="container text-center">
@@ -230,5 +273,6 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>
