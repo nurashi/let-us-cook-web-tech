@@ -179,6 +179,8 @@
                     </div>
 
                     <hr class="my-5">
+                    <h3 class="mb-3">CSS-only Responsive Cards Demo</h3>
+                    <p class="text-muted mb-4">These cards use CSS Grid and media queries (no Bootstrap) to adapt: 1 column on mobile, 2 on tablet, 3 on desktop.</p>
                     <div class="media-cards">
                         <div class="media-card">
                             <img src="Images/uzbek-beef-plov-13-Region.jpg" alt="Card 1">
@@ -196,7 +198,160 @@
                             <p>Smoky and tender ribs with glaze.</p>
                         </div>
                     </div>
+
+                    <!-- JavaScript Features Section -->
+                    <hr class="my-5">
+                    
+                    <!-- TASK 5: Date and Time Display -->
+                    <section class="my-5">
+                        <div class="card text-center p-4 shadow-sm">
+                            <h3 class="mb-4">📆 Current Date & Time</h3>
+                            <div id="currentDateTime" class="py-3">
+                                <!-- Date and time will be displayed here -->
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- TASK 4: Change Background Color Button -->
+                    <section class="my-5 text-center">
+                        <div class="card p-4">
+                            <h3 class="mb-3">🎨 Change Page Background</h3>
+                            <p class="text-muted mb-3">Click the button to change the page background color</p>
+                            <button id="colorChangeBtn" class="btn btn-lg btn-primary" onclick="changeBackgroundColor()">
+                                Change Background Color
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- TASK 3: Popup Subscription Button -->
+                    <section class="my-5 text-center">
+                        <div class="card p-4 bg-light">
+                            <h3 class="mb-3">📬 Get Recipe Updates!</h3>
+                            <p class="text-muted mb-3">Subscribe to receive new culinary recipes and cooking techniques</p>
+                            <button class="btn btn-success btn-lg" onclick="showPopup()">
+                                Subscribe to Newsletter
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- TASK 2: FAQ Accordion -->
+                    <section class="my-5">
+                        <h2 class="text-center mb-4">❓ Cooking FAQs</h2>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="faq-item mb-3">
+                                    <div class="faq-question p-3 bg-light rounded" onclick="toggleAccordion(this)" style="cursor: pointer; border: 1px solid #ddd;">
+                                        <strong>Q: What makes these recipes authentic?</strong> <span style="float: right;">▼</span>
+                                    </div>
+                                    <div class="faq-answer p-3" style="display: none; transition: all 0.3s ease;">
+                                        <p>Our recipes are sourced from traditional cooking methods passed down through generations, ensuring authenticity in ingredients and preparation techniques.</p>
+                                    </div>
+                                </div>
+
+                                <div class="faq-item mb-3">
+                                    <div class="faq-question p-3 bg-light rounded" onclick="toggleAccordion(this)" style="cursor: pointer; border: 1px solid #ddd;">
+                                        <strong>Q: Can I substitute ingredients?</strong> <span style="float: right;">▼</span>
+                                    </div>
+                                    <div class="faq-answer p-3" style="display: none; transition: all 0.3s ease;">
+                                        <p>Yes! Each recipe includes suggested substitutions for common ingredients. However, some traditional dishes work best with authentic ingredients for the most accurate flavor profile.</p>
+                                    </div>
+                                </div>
+
+                                <div class="faq-item mb-3">
+                                    <div class="faq-question p-3 bg-light rounded" onclick="toggleAccordion(this)" style="cursor: pointer; border: 1px solid #ddd;">
+                                        <strong>Q: What cooking equipment do I need?</strong> <span style="float: right;">▼</span>
+                                    </div>
+                                    <div class="faq-answer p-3" style="display: none; transition: all 0.3s ease;">
+                                        <p>Most recipes use standard kitchen equipment. Advanced recipes may require specialized tools, which are clearly listed in the requirements section.</p>
+                                    </div>
+                                </div>
+
+                                <div class="faq-item mb-3">
+                                    <div class="faq-question p-3 bg-light rounded" onclick="toggleAccordion(this)" style="cursor: pointer; border: 1px solid #ddd;">
+                                        <strong>Q: Are these recipes suitable for meal prep?</strong> <span style="float: right;">▼</span>
+                                    </div>
+                                    <div class="faq-answer p-3" style="display: none; transition: all 0.3s ease;">
+                                        <p>Many of our recipes are perfect for meal prep! Look for the "meal prep friendly" badge on recipe cards. We also provide storage instructions and reheating tips.</p>
+                                    </div>
+                                </div>
+
+                                <div class="faq-item">
+                                    <div class="faq-question p-3 bg-light rounded" onclick="toggleAccordion(this)" style="cursor: pointer; border: 1px solid #ddd;">
+                                        <strong>Q: How can I adjust serving sizes?</strong> <span style="float: right;">▼</span>
+                                    </div>
+                                    <div class="faq-answer p-3" style="display: none; transition: all 0.3s ease;">
+                                        <p>Each recipe includes a serving calculator tool that automatically adjusts ingredient quantities based on your desired number of servings.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- TASK 1: Contact Form with Validation -->
+                    <section class="my-5">
+                        <h2 class="text-center mb-4">✉️ Share Your Recipe</h2>
+                        <div class="card p-4">
+                            <p class="text-center text-muted mb-4">Have a traditional recipe to share? Send it to us!</p>
+                            <form id="contactForm" novalidate>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label">Your Name *</label>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email Address *</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="your.email@example.com">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="password" class="form-label">Create Password *</label>
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="At least 6 characters">
+                                        <small class="text-muted">For recipe submission account</small>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="confirmPassword" class="form-label">Confirm Password *</label>
+                                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">Recipe Details *</label>
+                                        <textarea class="form-control" id="message" name="message" rows="6" placeholder="Share your recipe name, ingredients, cooking method, and cultural background... (min 10 characters)"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                            <div class="btn-group" role="group" aria-label="Form buttons">
+                                                <button type="submit" class="btn btn-primary btn-lg">Submit Recipe</button>
+                                                <button type="reset" class="btn btn-outline-secondary btn-lg" onclick="clearErrors()">Reset Form</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
                 </section>
+
+                <!-- Popup Subscription Form (Hidden by default) -->
+                <div id="subscriptionPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 9999; align-items: center; justify-content: center;">
+                    <div class="card" style="max-width: 500px; margin: 20px; position: relative;">
+                        <div class="card-body p-4">
+                            <button onclick="closePopup()" style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #999;" aria-label="Close popup">&times;</button>
+                            <h3 class="text-center mb-4">📬 Subscribe to Culinary Newsletter</h3>
+                            <p class="text-center text-muted mb-4">Get authentic recipes and cooking tips from around the world!</p>
+                            <form class="subscription-form">
+                                <div class="mb-3">
+                                    <label for="subscribeEmail" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control subscribe-email" id="subscribeEmail" placeholder="Enter your email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subscribeName" class="form-label">Name (optional)</label>
+                                    <input type="text" class="form-control subscribe-name" id="subscribeName" placeholder="Enter your name">
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-success btn-lg">Subscribe Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
     </main>
 
         <footer class="footer py-4">
