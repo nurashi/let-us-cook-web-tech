@@ -202,15 +202,113 @@
                     <!-- JavaScript Features Section -->
                     <hr class="my-5">
                     
+                    <!-- Date and Time Display -->
                     <section class="my-5">
                         <div class="card text-center p-4 shadow-sm">
                             <h3 class="mb-4">📆 Current Date & Time</h3>
                             <div id="currentDateTime" class="py-3">
-                                <!-- Date and time will be displayed here -->
                             </div>
                         </div>
                     </section>
 
+                    <!-- ADVANCED JS: Theme Toggle -->
+                    <section class="my-5 text-center">
+                        <div class="card p-4">
+                            <h3 class="mb-3">🌙 Day/Night Theme</h3>
+                            <p class="text-muted mb-3">Switch between light and dark modes</p>
+                            <button id="themeToggle" class="btn btn-lg btn-dark">
+                                🌙 Night Mode
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- ADVANCED JS: Star Rating for Recipes -->
+                    <section class="my-5">
+                        <div class="card p-4">
+                            <h3 class="mb-4">⭐ Rate These Culinary Dishes</h3>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="card p-3">
+                                        <h5>Japanese Sushi</h5>
+                                        <div class="star-rating">
+                                            <span class="star">☆</span>
+                                            <span class="star">☆</span>
+                                            <span class="star">☆</span>
+                                            <span class="star">☆</span>
+                                            <span class="star">☆</span>
+                                        </div>
+                                        <div class="rating-value">Rating: 0/5</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card p-3">
+                                        <h5>Italian Pizza</h5>
+                                        <div class="star-rating">
+                                            <span class="star">☆</span>
+                                            <span class="star">☆</span>
+                                            <span class="star">☆</span>
+                                            <span class="star">☆</span>
+                                            <span class="star">☆</span>
+                                        </div>
+                                        <div class="rating-value">Rating: 0/5</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card p-3">
+                                        <h5>Mexican Tacos</h5>
+                                        <div class="star-rating">
+                                            <span class="star">☆</span>
+                                            <span class="star">☆</span>
+                                            <span class="star">☆</span>
+                                            <span class="star">☆</span>
+                                            <span class="star">☆</span>
+                                        </div>
+                                        <div class="rating-value">Rating: 0/5</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card p-3">
+                                        <h5>Spanish Paella</h5>
+                                        <div class="star-rating">
+                                            <span class="star">☆</span>
+                                            <span class="star">☆</span>
+                                            <span class="star">☆</span>
+                                            <span class="star">☆</span>
+                                            <span class="star">☆</span>
+                                        </div>
+                                        <div class="rating-value">Rating: 0/5</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ADVANCED JS: Recipe Filter -->
+                    <section class="my-5">
+                        <div class="card p-4">
+                            <h3 class="mb-4">🍽️ Browse Recipes by Type</h3>
+                            <div class="filter-buttons">
+                                <button class="filter-btn active" onclick="filterRecipes('all')">All</button>
+                                <button class="filter-btn" onclick="filterRecipes('breakfast')">Breakfast</button>
+                                <button class="filter-btn" onclick="filterRecipes('lunch')">Lunch</button>
+                                <button class="filter-btn" onclick="filterRecipes('dinner')">Dinner</button>
+                                <button class="filter-btn" onclick="filterRecipes('dessert')">Dessert</button>
+                            </div>
+                            <div id="filterStatus">Showing all recipes</div>
+                            <div id="recipeList"></div>
+                        </div>
+                    </section>
+
+                    <!-- ADVANCED JS: Current Time Button -->
+                    <section class="my-5 text-center">
+                        <div class="card p-4">
+                            <h3 class="mb-3">⏰ Check the Time</h3>
+                            <button id="showTimeBtn" class="btn btn-lg btn-info">Show Current Time</button>
+                            <div id="currentTime" class="mt-3"></div>
+                        </div>
+                    </section>
+
+                    <!-- Change Background Color Button -->
                     <section class="my-5 text-center">
                         <div class="card p-4">
                             <h3 class="mb-3">🎨 Change Page Background</h3>
@@ -221,6 +319,7 @@
                         </div>
                     </section>
 
+                    <!-- Popup Subscription Button -->
                     <section class="my-5 text-center">
                         <div class="card p-4 bg-light">
                             <h3 class="mb-3">📬 Get Recipe Updates!</h3>
@@ -231,6 +330,7 @@
                         </div>
                     </section>
 
+                    <!-- TASK 2: FAQ Accordion -->
                     <section class="my-5">
                         <h2 class="text-center mb-4">❓ Cooking FAQs</h2>
                         <div class="card">
@@ -283,6 +383,7 @@
                         </div>
                     </section>
 
+                    <!-- TASK 1: Contact Form with Validation -->
                     <section class="my-5">
                         <h2 class="text-center mb-4">✉️ Share Your Recipe</h2>
                         <div class="card p-4">
@@ -324,6 +425,7 @@
                     </section>
                 </section>
 
+                <!-- Popup Subscription Form (Hidden by default) -->
                 <div id="subscriptionPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 9999; align-items: center; justify-content: center;">
                     <div class="card" style="max-width: 500px; margin: 20px; position: relative;">
                         <div class="card-body p-4">

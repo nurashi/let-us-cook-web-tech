@@ -195,15 +195,167 @@
 
                 <section class="container my-5">
                     <div class="card text-center p-4 shadow-sm">
-                        <h3 class="mb-4">Current Date & Time</h3>
+                        <h3 class="mb-4">📆 Current Date & Time</h3>
                         <div id="currentDateTime" class="py-3">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ADVANCED JS: Theme Toggle -->
+                <section class="container my-5 text-center">
+                    <div class="card p-4">
+                        <h3 class="mb-3">🌙 Theme Switcher</h3>
+                        <p class="text-muted mb-3">Toggle between day and night modes</p>
+                        <button id="themeToggle" class="btn btn-lg btn-dark">
+                            🌙 Night Mode
+                        </button>
+                    </div>
+                </section>
+
+                <!-- ADVANCED JS: Greeting with Dynamic Input -->
+                <section class="container my-5">
+                    <div class="greeting-section">
+                        <h3 class="mb-3">👋 Personal Greeting</h3>
+                        <input type="text" id="userName" class="form-control w-50 mx-auto mb-3" placeholder="Enter your name">
+                        <div id="greeting">Welcome to Let Us Cook!</div>
+                    </div>
+                </section>
+
+                <!-- ADVANCED JS: Current Time Button -->
+                <section class="container my-5 text-center">
+                    <div class="card p-4">
+                        <h3 class="mb-3">⏰ What Time Is It?</h3>
+                        <button id="showTimeBtn" class="btn btn-lg btn-info">Show Current Time</button>
+                        <div id="currentTime" class="mt-3"></div>
+                    </div>
+                </section>
+
+                <!-- ADVANCED JS: Star Rating System -->
+                <section class="container my-5">
+                    <div class="card p-4">
+                        <h3 class="mb-4">⭐ Rate Our Recipes</h3>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="card p-3">
+                                    <h5>Pancakes</h5>
+                                    <div class="star-rating">
+                                        <span class="star">☆</span>
+                                        <span class="star">☆</span>
+                                        <span class="star">☆</span>
+                                        <span class="star">☆</span>
+                                        <span class="star">☆</span>
+                                    </div>
+                                    <div class="rating-value">Rating: 0/5</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card p-3">
+                                    <h5>Pasta Carbonara</h5>
+                                    <div class="star-rating">
+                                        <span class="star">☆</span>
+                                        <span class="star">☆</span>
+                                        <span class="star">☆</span>
+                                        <span class="star">☆</span>
+                                        <span class="star">☆</span>
+                                    </div>
+                                    <div class="rating-value">Rating: 0/5</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card p-3">
+                                    <h5>Chocolate Cake</h5>
+                                    <div class="star-rating">
+                                        <span class="star">☆</span>
+                                        <span class="star">☆</span>
+                                        <span class="star">☆</span>
+                                        <span class="star">☆</span>
+                                        <span class="star">☆</span>
+                                    </div>
+                                    <div class="rating-value">Rating: 0/5</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card p-3">
+                                    <h5>Grilled Chicken</h5>
+                                    <div class="star-rating">
+                                        <span class="star">☆</span>
+                                        <span class="star">☆</span>
+                                        <span class="star">☆</span>
+                                        <span class="star">☆</span>
+                                        <span class="star">☆</span>
+                                    </div>
+                                    <div class="rating-value">Rating: 0/5</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ADVANCED JS: Recipe Filter with Switch Statement -->
+                <section class="container my-5">
+                    <div class="card p-4">
+                        <h3 class="mb-4">🍳 Filter Recipes by Meal Type</h3>
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" onclick="filterRecipes('all')">All Recipes</button>
+                            <button class="filter-btn" onclick="filterRecipes('breakfast')">Breakfast</button>
+                            <button class="filter-btn" onclick="filterRecipes('lunch')">Lunch</button>
+                            <button class="filter-btn" onclick="filterRecipes('dinner')">Dinner</button>
+                            <button class="filter-btn" onclick="filterRecipes('dessert')">Dessert</button>
+                        </div>
+                        <div id="filterStatus">Showing all recipes</div>
+                        <div id="recipeList"></div>
+                    </div>
+                </section>
+
+                <!-- ADVANCED JS: Multi-Step Form -->
+                <section class="container my-5">
+                    <div class="card p-4">
+                        <h3 class="mb-4">📝 Multi-Step Recipe Submission</h3>
+                        <div class="step-indicator">
+                            <div class="step active">Step 1</div>
+                            <div class="step">Step 2</div>
+                            <div class="step">Step 3</div>
+                        </div>
+                        
+                        <div id="step1" class="form-step">
+                            <h4>Basic Information</h4>
+                            <div class="mb-3">
+                                <label class="form-label">Recipe Name</label>
+                                <input type="text" class="form-control" placeholder="e.g., Chocolate Chip Cookies">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Cooking Time (minutes)</label>
+                                <input type="number" class="form-control" placeholder="e.g., 30">
+                            </div>
+                        </div>
+                        
+                        <div id="step2" class="form-step">
+                            <h4>Ingredients</h4>
+                            <div class="mb-3">
+                                <label class="form-label">Main Ingredients</label>
+                                <textarea class="form-control" rows="4" placeholder="List main ingredients..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <div id="step3" class="form-step">
+                            <h4>Instructions</h4>
+                            <div class="mb-3">
+                                <label class="form-label">Cooking Steps</label>
+                                <textarea class="form-control" rows="6" placeholder="Describe the cooking process..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between mt-4">
+                            <button id="prevBtn" class="btn btn-secondary" style="display:none;">Previous</button>
+                            <button id="nextBtn" class="btn btn-primary">Next</button>
+                            <button id="submitMultiStep" class="btn btn-success" style="display:none;" onclick="alert('Recipe submitted! 🎉')">Submit Recipe</button>
                         </div>
                     </div>
                 </section>
 
                 <section class="container my-5 text-center">
                     <div class="card p-4">
-                        <h3 class="mb-3">Change Page Background</h3>
+                        <h3 class="mb-3">🎨 Change Page Background</h3>
                         <p class="text-muted mb-3">Click the button to change the page background color</p>
                         <button id="colorChangeBtn" class="btn btn-lg btn-primary" onclick="changeBackgroundColor()">
                             Change Background Color

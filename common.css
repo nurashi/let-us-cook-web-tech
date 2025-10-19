@@ -773,3 +773,268 @@ p  { font-size: 1rem; }
   .media-cards { flex-direction: column; padding: 1rem; }
   .media-card { flex: 1 1 100%; }
 }
+
+/* ============================================
+   ADVANCED JS FEATURES STYLES
+   ============================================ */
+
+/* Dark Theme Styles */
+body.dark-theme,
+html.dark-theme {
+  background-color: #1a1a2e !important;
+  color: #eaeaea !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-theme .card {
+  background-color: #16213e;
+  color: #eaeaea;
+  border-color: #0f3460;
+}
+
+.dark-theme .navbar {
+  background-color: #0f3460 !important;
+  border-bottom: 2px solid #e94560;
+}
+
+.dark-theme .nav-link {
+  color: #eaeaea !important;
+}
+
+.dark-theme .nav-link:hover {
+  color: #e94560 !important;
+}
+
+.dark-theme .btn-primary {
+  background-color: #e94560;
+  border-color: #e94560;
+}
+
+.dark-theme .btn-primary:hover {
+  background-color: #c93654;
+}
+
+.dark-theme .footer {
+  background-color: #0f3460;
+  color: #eaeaea;
+}
+
+.dark-theme .form-control {
+  background-color: #16213e;
+  border-color: #0f3460;
+  color: #eaeaea;
+}
+
+.dark-theme .form-control:focus {
+  background-color: #1a1a2e;
+  border-color: #e94560;
+  color: #eaeaea;
+}
+
+.dark-theme .hero-section {
+  background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+}
+
+/* Star Rating Styles */
+.star-rating {
+  display: inline-flex;
+  gap: 0.25rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.star {
+  color: #ddd;
+  transition: color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.star:hover {
+  transform: scale(1.2);
+}
+
+.rating-value {
+  margin-left: 1rem;
+  font-weight: 600;
+  color: #007bff;
+}
+
+/* Recipe Filter Styles */
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid #007bff;
+  background: white;
+  color: #007bff;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.filter-btn:hover {
+  background: #007bff;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,123,255,0.3);
+}
+
+.filter-btn.active {
+  background: #007bff;
+  color: white;
+}
+
+#filterStatus {
+  font-weight: 600;
+  color: #28a745;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: #f0f9f4;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Multi-step Form Styles */
+.form-step {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.step-indicator {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  padding: 0.5rem;
+  background: #e9ecef;
+  border-radius: 5px;
+  margin: 0 0.25rem;
+  font-weight: 600;
+}
+
+.step.active {
+  background: #007bff;
+  color: white;
+}
+
+/* Greeting Section */
+.greeting-section {
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+#greeting {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  min-height: 2rem;
+}
+
+/* Time Display */
+#currentTime {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 1rem;
+  border: 2px solid #007bff;
+}
+
+/* Recipe Items */
+.recipe-item {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.recipe-item[style*="display: none"] {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+/* Animation Classes */
+.bounce {
+  animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Focus styles for keyboard navigation */
+.nav-link:focus {
+  outline: 3px solid #007bff;
+  outline-offset: 2px;
+  background-color: rgba(0,123,255,0.1);
+}
+
+/* Dark theme adjustments for new features */
+.dark-theme #filterStatus {
+  background: #16213e;
+  color: #4ecca3;
+}
+
+.dark-theme .filter-btn {
+  border-color: #e94560;
+  background: transparent;
+  color: #e94560;
+}
+
+.dark-theme .filter-btn:hover,
+.dark-theme .filter-btn.active {
+  background: #e94560;
+  color: white;
+}
+
+.dark-theme .greeting-section {
+  background: linear-gradient(135deg, #e94560 0%, #0f3460 100%);
+}
+
+.dark-theme #currentTime {
+  background: #16213e;
+  border-color: #e94560;
+  color: #eaeaea;
+}
+
+.dark-theme .step {
+  background: #16213e;
+  color: #eaeaea;
+}
+
+.dark-theme .step.active {
+  background: #e94560;
+}
