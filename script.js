@@ -171,6 +171,18 @@ function showStep(step) {
     if (prevBtn) prevBtn.style.display = step === 1 ? 'none' : 'inline-block';
     if (nextBtn) nextBtn.style.display = step === totalSteps ? 'none' : 'inline-block';
     if (submitBtn) submitBtn.style.display = step === totalSteps ? 'inline-block' : 'none';
+
+    // update step indicator visuals
+    const stepIndicators = document.querySelectorAll('.step-indicator .step');
+    if (stepIndicators && stepIndicators.length) {
+        stepIndicators.forEach((el, idx) => {
+            if (idx === (step - 1)) {
+                el.classList.add('active');
+            } else {
+                el.classList.remove('active');
+            }
+        });
+    }
 }
 
 function nextStep() {
