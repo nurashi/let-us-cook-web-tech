@@ -27,6 +27,19 @@ function toggleTheme() {
             themeBtn.innerHTML = '🌙 Night Mode';
         }
     }
+    // clear any inline backgrounds that could override the css dark theme
+    _clearInlineBackgrounds();
+}
+
+// ensure theme toggling is not blocked by inline background styles
+function _clearInlineBackgrounds() {
+    [document.documentElement, document.body].forEach(elem => {
+        try {
+            elem.style.removeProperty('background');
+            elem.style.removeProperty('background-color');
+            elem.style.removeProperty('background-image');
+        } catch (e) {}
+    });
 }
 
 // Star Rating System - allows users to rate recipes
@@ -226,6 +239,16 @@ function filterRecipes(category) {
             });
             displayText = 'Showing desserts';
             break;
+        case 'fastfood':
+            allRecipes.forEach(recipe => {
+                if (recipe.dataset.category === 'fastfood') {
+                    recipe.style.display = 'block';
+                } else {
+                    recipe.style.display = 'none';
+                }
+            });
+            displayText = 'Showing fast food items';
+            break;
         default:
             allRecipes.forEach(recipe => recipe.style.display = 'block');
             displayText = 'Showing all recipes';
@@ -266,9 +289,23 @@ const recipeDatabase = {
             category: 'dessert', 
             cookTime: 60,
             difficulty: 'Hard' 
-        }
+        },
+        { id: 5, name: 'Cheeseburger', category: 'lunch', cookTime: 12, difficulty: 'Easy' },
+        { id: 6, name: 'Loaded Fries', category: 'lunch', cookTime: 15, difficulty: 'Easy' },
+        { id: 7, name: 'Fried Chicken', category: 'dinner', cookTime: 30, difficulty: 'Medium' },
+        { id: 8, name: 'Donuts', category: 'dessert', cookTime: 25, difficulty: 'Easy' },
+        { id: 9, name: 'Ice Cream Sundae', category: 'dessert', cookTime: 10, difficulty: 'Easy' },
+        { id: 10, name: 'Pizza Slice', category: 'dinner', cookTime: 20, difficulty: 'Easy' },
+        { id: 11, name: 'Double Cheeseburger', category: 'fastfood', cookTime: 15, difficulty: 'Easy' },
+        { id: 12, name: 'Chicken Nuggets', category: 'fastfood', cookTime: 12, difficulty: 'Easy' },
+        { id: 13, name: 'Veggie Wrap', category: 'fastfood', cookTime: 10, difficulty: 'Easy' }
     ],
-    
+    // add fastfood-specific entries
+    // (these will appear when filterRecipes('fastfood') is used)
+    getFastFoodByCategory: function() {
+        return this.recipes.filter(r => r.category === 'fastfood');
+    }
+,
     getRecipeById: function(id) {
         return this.recipes.find(recipe => recipe.id === id);
     },
