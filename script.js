@@ -1,45 +1,94 @@
 
-// Day/Night Theme Toggle
+// Theme and Language Management
+let currentLang = 'en';
+
+// Initialize theme from localStorage on page load
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+        document.documentElement.classList.add('dark-theme');
+        updateThemeButton(true);
+    } else {
+        updateThemeButton(false);
+    }
+}
+
+// Toggle theme and save to localStorage
+function toggleNavTheme() {
+    const isDark = document.body.classList.toggle('dark-theme');
+    document.documentElement.classList.toggle('dark-theme');
+    
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    updateThemeButton(isDark);
+    
+    // Callback to update UI elements after theme change
+    onThemeChanged(isDark);
+}
+
+// Callback function executed after theme changes
+function onThemeChanged(isDark) {
+    const allCards = document.querySelectorAll('.card');
+    allCards.forEach(card => {
+        if (isDark) {
+            card.style.transition = 'all 0.3s ease';
+        }
+    });
+    
+    console.log(`Theme changed to: ${isDark ? 'dark' : 'light'}`);
+}
+
+// Update theme button icon
+function updateThemeButton(isDark) {
+    const navBtn = document.getElementById('navThemeToggle');
+    const oldBtn = document.getElementById('themeToggle');
+    
+    if (navBtn) {
+        const icon = navBtn.querySelector('.theme-icon');
+        if (icon) {
+            icon.textContent = isDark ? '☀️' : '🌙';
+        }
+    }
+    
+    if (oldBtn) {
+        oldBtn.innerHTML = isDark ? '☀️ Day Mode' : '🌙 Night Mode';
+    }
+}
+
+// Initialize language from localStorage
+function initLanguage() {
+    const savedLang = localStorage.getItem('language') || 'en';
+    currentLang = savedLang;
+    updateLanguage(savedLang);
+}
+
+// Toggle language between EN and RU
+function toggleLanguage() {
+    currentLang = currentLang === 'en' ? 'ru' : 'en';
+    localStorage.setItem('language', currentLang);
+    updateLanguage(currentLang);
+}
+
+// Update all text elements with language
+function updateLanguage(lang) {
+    const langBtn = document.getElementById('navLangToggle');
+    if (langBtn) {
+        langBtn.textContent = lang === 'en' ? 'EN' : 'RU';
+    }
+    
+    document.querySelectorAll('[data-lang-en][data-lang-ru]').forEach(element => {
+        const text = lang === 'en' ? element.getAttribute('data-lang-en') : element.getAttribute('data-lang-ru');
+        if (text) {
+            element.textContent = text;
+        }
+    });
+}
+
+// Day/Night Theme Toggle (old function, kept for compatibility)
 let isDarkTheme = false;
 
 function toggleTheme() {
-    isDarkTheme = !isDarkTheme;
-    const body = document.body;
-    const html = document.documentElement;
-    
-    if (isDarkTheme) {
-        // night mode
-        body.classList.add('dark-theme');
-        html.classList.add('dark-theme');
-        
-        // update button text
-        const themeBtn = document.getElementById('themeToggle');
-        if (themeBtn) {
-            themeBtn.innerHTML = '☀️ Day Mode';
-        }
-    } else {
-        // day mode
-        body.classList.remove('dark-theme');
-        html.classList.remove('dark-theme');
-        
-        const themeBtn = document.getElementById('themeToggle');
-        if (themeBtn) {
-            themeBtn.innerHTML = '🌙 Night Mode';
-        }
-    }
-    // clear any inline backgrounds that could override the css dark theme
-    _clearInlineBackgrounds();
-}
-
-// ensure theme toggling is not blocked by inline background styles
-function _clearInlineBackgrounds() {
-    [document.documentElement, document.body].forEach(elem => {
-        try {
-            elem.style.removeProperty('background');
-            elem.style.removeProperty('background-color');
-            elem.style.removeProperty('background-image');
-        } catch (e) {}
-    });
+    toggleNavTheme();
 }
 
 // Star Rating System - allows users to rate recipes
@@ -171,18 +220,6 @@ function showStep(step) {
     if (prevBtn) prevBtn.style.display = step === 1 ? 'none' : 'inline-block';
     if (nextBtn) nextBtn.style.display = step === totalSteps ? 'none' : 'inline-block';
     if (submitBtn) submitBtn.style.display = step === totalSteps ? 'inline-block' : 'none';
-
-    // update step indicator visuals
-    const stepIndicators = document.querySelectorAll('.step-indicator .step');
-    if (stepIndicators && stepIndicators.length) {
-        stepIndicators.forEach((el, idx) => {
-            if (idx === (step - 1)) {
-                el.classList.add('active');
-            } else {
-                el.classList.remove('active');
-            }
-        });
-    }
 }
 
 function nextStep() {
@@ -198,7 +235,7 @@ function prevStep() {
         showStep(currentStep);
     }
 }
-
+``
 // Switch statement - Recipe filter by category
 function filterRecipes(category) {
     const allRecipes = document.querySelectorAll('.recipe-item');
@@ -251,16 +288,6 @@ function filterRecipes(category) {
             });
             displayText = 'Showing desserts';
             break;
-        case 'fastfood':
-            allRecipes.forEach(recipe => {
-                if (recipe.dataset.category === 'fastfood') {
-                    recipe.style.display = 'block';
-                } else {
-                    recipe.style.display = 'none';
-                }
-            });
-            displayText = 'Showing fast food items';
-            break;
         default:
             allRecipes.forEach(recipe => recipe.style.display = 'block');
             displayText = 'Showing all recipes';
@@ -301,23 +328,9 @@ const recipeDatabase = {
             category: 'dessert', 
             cookTime: 60,
             difficulty: 'Hard' 
-        },
-        { id: 5, name: 'Cheeseburger', category: 'lunch', cookTime: 12, difficulty: 'Easy' },
-        { id: 6, name: 'Loaded Fries', category: 'lunch', cookTime: 15, difficulty: 'Easy' },
-        { id: 7, name: 'Fried Chicken', category: 'dinner', cookTime: 30, difficulty: 'Medium' },
-        { id: 8, name: 'Donuts', category: 'dessert', cookTime: 25, difficulty: 'Easy' },
-        { id: 9, name: 'Ice Cream Sundae', category: 'dessert', cookTime: 10, difficulty: 'Easy' },
-        { id: 10, name: 'Pizza Slice', category: 'dinner', cookTime: 20, difficulty: 'Easy' },
-        { id: 11, name: 'Double Cheeseburger', category: 'fastfood', cookTime: 15, difficulty: 'Easy' },
-        { id: 12, name: 'Chicken Nuggets', category: 'fastfood', cookTime: 12, difficulty: 'Easy' },
-        { id: 13, name: 'Veggie Wrap', category: 'fastfood', cookTime: 10, difficulty: 'Easy' }
+        }
     ],
-    // add fastfood-specific entries
-    // (these will appear when filterRecipes('fastfood') is used)
-    getFastFoodByCategory: function() {
-        return this.recipes.filter(r => r.category === 'fastfood');
-    }
-,
+    
     getRecipeById: function(id) {
         return this.recipes.find(recipe => recipe.id === id);
     },
@@ -591,7 +604,12 @@ function updateDateTime() {
 }
 
 // INITIALIZATION
+// INITIALIZATION
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize theme and language first
+    initTheme();
+    initLanguage();
+    
     // existing features
     updateDateTime();
     setInterval(updateDateTime, 1000);
@@ -635,10 +653,22 @@ document.addEventListener('DOMContentLoaded', function() {
         timeBtn.addEventListener('click', showCurrentTime);
     }
     
-    // theme toggle button
+    // theme toggle button (old)
     const themeToggle = document.getElementById('themeToggle');
     if (themeToggle) {
         themeToggle.addEventListener('click', toggleTheme);
+    }
+    
+    // navbar theme toggle button (new)
+    const navThemeToggle = document.getElementById('navThemeToggle');
+    if (navThemeToggle) {
+        navThemeToggle.addEventListener('click', toggleNavTheme);
+    }
+    
+    // navbar language toggle button
+    const navLangToggle = document.getElementById('navLangToggle');
+    if (navLangToggle) {
+        navLangToggle.addEventListener('click', toggleLanguage);
     }
     
     // multi-step form buttons
@@ -653,4 +683,237 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     console.log('✅ All features initialized!');
+    
+    // Initialize jQuery features if jQuery is loaded
+    if (typeof jQuery !== 'undefined') {
+        initJQueryFeatures();
+    }
 });
+
+// PART 1: jQuery Search
+// Real-time search and live filter
+function initRealTimeSearch() {
+    $('#searchInput').on('keyup', function() {
+        const searchText = $(this).val().toLowerCase();
+        $('.searchable-item').each(function() {
+            const itemText = $(this).text().toLowerCase();
+            if (itemText.indexOf(searchText) !== -1) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    });
+}
+
+// Autocomplete search suggestions
+function initAutocomplete() {
+    const suggestions = [
+        'Pancakes', 'Grilled Chicken', 'Pasta Carbonara', 'Chocolate Cake',
+        'Cheeseburger', 'Loaded Fries', 'Fried Chicken', 'Donuts',
+        'Ice Cream Sundae', 'Pizza Slice', 'Double Cheeseburger', 
+        'Chicken Nuggets', 'Veggie Wrap', 'Sushi', 'Tacos', 'Paella'
+    ];
+    
+    $('#autocompleteInput').on('keyup', function() {
+        const value = $(this).val().toLowerCase();
+        const $dropdown = $('#autocompleteDropdown');
+        
+        if (value.length === 0) {
+            $dropdown.hide();
+            return;
+        }
+        
+        const matches = suggestions.filter(item => 
+            item.toLowerCase().indexOf(value) !== -1
+        );
+        
+        if (matches.length > 0) {
+            $dropdown.empty();
+            matches.forEach(match => {
+                $dropdown.append(`<div class="autocomplete-item">${match}</div>`);
+            });
+            $dropdown.show();
+        } else {
+            $dropdown.hide();
+        }
+    });
+    
+    $(document).on('click', '.autocomplete-item', function() {
+        $('#autocompleteInput').val($(this).text());
+        $('#autocompleteDropdown').hide();
+    });
+    
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('#autocompleteInput, #autocompleteDropdown').length) {
+            $('#autocompleteDropdown').hide();
+        }
+    });
+}
+
+// Search highlighting
+function initSearchHighlight() {
+    $('#highlightSearchBtn').on('click', function() {
+        const searchTerm = $('#highlightInput').val();
+        const $content = $('.highlight-content');
+        
+        $content.find('.highlight').contents().unwrap();
+        
+        if (searchTerm.length === 0) return;
+        
+        const regex = new RegExp(`(${searchTerm})`, 'gi');
+        $content.each(function() {
+            const $elem = $(this);
+            const html = $elem.html();
+            const newHtml = html.replace(regex, '<span class="highlight">$1</span>');
+            $elem.html(newHtml);
+        });
+    });
+}
+
+// PART 2: UX Engagement Elements
+// Scroll progress bar
+function initScrollProgressBar() {
+    $(window).on('scroll', function() {
+        const windowHeight = $(document).height() - $(window).height();
+        const scrolled = $(window).scrollTop();
+        const progress = (scrolled / windowHeight) * 100;
+        $('#scrollProgress').css('width', progress + '%');
+    });
+}
+
+// Animated number counter
+function initNumberCounter() {
+    let counted = false;
+    
+    $(window).on('scroll', function() {
+        const $counters = $('.counter-number');
+        
+        if ($counters.length === 0) return;
+        
+        const counterTop = $counters.first().offset().top;
+        const windowBottom = $(window).scrollTop() + $(window).height();
+        
+        if (!counted && windowBottom > counterTop) {
+            counted = true;
+            $counters.each(function() {
+                const $this = $(this);
+                const target = parseInt($this.data('target'));
+                
+                $({ count: 0 }).animate({ count: target }, {
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function() {
+                        $this.text(Math.floor(this.count));
+                    },
+                    complete: function() {
+                        $this.text(target);
+                    }
+                });
+            });
+        }
+    });
+}
+
+// Loading spinner on submit
+function initLoadingSpinner() {
+    $('.submit-with-loader').on('click', function(e) {
+        e.preventDefault();
+        const $btn = $(this);
+        const originalText = $btn.text();
+        
+        $btn.prop('disabled', true)
+            .html('<span class="spinner"></span> Please wait...')
+            .addClass('loading');
+        
+        setTimeout(function() {
+            $btn.prop('disabled', false)
+                .html(originalText)
+                .removeClass('loading');
+            showNotification('Form submitted successfully', 'success');
+        }, 2000);
+    });
+}
+
+// PART 3: Web App Functionality
+// Notification system
+function showNotification(message, type) {
+    const $notification = $('<div class="notification"></div>')
+        .addClass(type || 'info')
+        .text(message)
+        .appendTo('body');
+    
+    setTimeout(function() {
+        $notification.addClass('show');
+    }, 100);
+    
+    setTimeout(function() {
+        $notification.removeClass('show');
+        setTimeout(function() {
+            $notification.remove();
+        }, 300);
+    }, 3000);
+}
+
+// Copy to clipboard
+function initCopyToClipboard() {
+    $('.copy-btn').on('click', function() {
+        const $btn = $(this);
+        const textToCopy = $btn.siblings('.copy-text').text();
+        
+        const $temp = $('<textarea>');
+        $('body').append($temp);
+        $temp.val(textToCopy).select();
+        document.execCommand('copy');
+        $temp.remove();
+        
+        const originalHtml = $btn.html();
+        $btn.html('✓ Copied!')
+            .addClass('copied');
+        
+        showNotification('Copied to clipboard!', 'success');
+        
+        setTimeout(function() {
+            $btn.html(originalHtml)
+                .removeClass('copied');
+        }, 2000);
+    });
+}
+
+// Image lazy loading
+function initLazyLoading() {
+    $(window).on('scroll resize', function() {
+        $('.lazy-image').each(function() {
+            const $img = $(this);
+            const imageTop = $img.offset().top;
+            const imageBottom = imageTop + $img.outerHeight();
+            const windowTop = $(window).scrollTop();
+            const windowBottom = windowTop + $(window).height();
+            
+            if (imageBottom >= windowTop && imageTop <= windowBottom) {
+                const src = $img.data('src');
+                if (src && !$img.attr('src')) {
+                    $img.attr('src', src)
+                        .addClass('loaded')
+                        .removeClass('lazy-image');
+                }
+            }
+        });
+    });
+    
+    $(window).trigger('scroll');
+}
+
+// Initialize all jQuery features
+function initJQueryFeatures() {
+    initRealTimeSearch();
+    initAutocomplete();
+    initSearchHighlight();
+    initScrollProgressBar();
+    initNumberCounter();
+    initLoadingSpinner();
+    initCopyToClipboard();
+    initLazyLoading();
+    
+    console.log('jQuery features initialized');
+}

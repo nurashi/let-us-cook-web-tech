@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="common.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-" crossorigin="anonymous">
     <link rel="icon" type="image/webp" href="Images/let-us-cook-(logo).webp">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body class="fade-in">
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
@@ -18,14 +19,24 @@
                 </button>
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="an/soups.html">Soups</a></li>
-                        <li class="nav-item"><a class="nav-link" href="an/meals.html">Meals</a></li>
-                        <li class="nav-item"><a class="nav-link" href="as/fastfood.html">Fast Food</a></li>
-                        <li class="nav-item"><a class="nav-link" href="ra/drinks.html">Drinks</a></li>
-                        <li class="nav-item"><a class="nav-link" href="as/desserts.html">Desserts</a></li>
-                        <li class="nav-item"><a class="nav-link" href="ra/breakfast.html">Breakfast</a></li>
-                        <li class="nav-item"><a class="nav-link" href="culinary.html">Culinary</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="index.html" data-lang-en="Home" data-lang-ru="Главная">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="an/soups.html" data-lang-en="Soups" data-lang-ru="Супы">Soups</a></li>
+                        <li class="nav-item"><a class="nav-link" href="an/meals.html" data-lang-en="Meals" data-lang-ru="Блюда">Meals</a></li>
+                        <li class="nav-item"><a class="nav-link" href="as/fastfood.html" data-lang-en="Fast Food" data-lang-ru="Фастфуд">Fast Food</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ra/drinks.html" data-lang-en="Drinks" data-lang-ru="Напитки">Drinks</a></li>
+                        <li class="nav-item"><a class="nav-link" href="as/desserts.html" data-lang-en="Desserts" data-lang-ru="Десерты">Desserts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ra/breakfast.html" data-lang-en="Breakfast" data-lang-ru="Завтрак">Breakfast</a></li>
+                        <li class="nav-item"><a class="nav-link" href="culinary.html" data-lang-en="Culinary" data-lang-ru="Кулинария">Culinary</a></li>
+                        <li class="nav-item">
+                            <button id="navThemeToggle" class="btn btn-sm btn-outline-secondary ms-2">
+                                <span class="theme-icon">🌙</span>
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button id="navLangToggle" class="btn btn-sm btn-outline-primary ms-2">
+                                EN
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -35,10 +46,10 @@
         <section class="hero-section">
             <div class="hero-content container text-center">
                 <h1 class="title d-flex align-items-center justify-content-center gap-3"><img src="Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo" class="title-logo"> Let Us Cook!</h1>
-                <p class="subtitle">Discover amazing recipes from around the world</p>
+                <p class="subtitle" data-lang-en="Discover amazing recipes from around the world" data-lang-ru="Откройте для себя удивительные рецепты со всего мира">Discover amazing recipes from around the world</p>
                 <div class="d-flex justify-content-center gap-3 mt-3">
-                    <a href="#featured" class="btn btn-primary btn-md">Explore Recipes</a>
-                    <a href="culinary.html" class="btn btn-sm btn-lg">View Gallery</a>
+                    <a href="#featured" class="btn btn-primary btn-md" data-lang-en="Explore Recipes" data-lang-ru="Изучить рецепты">Explore Recipes</a>
+                    <a href="culinary.html" class="btn btn-sm btn-lg" data-lang-en="View Gallery" data-lang-ru="Посмотреть галерею">View Gallery</a>
                 </div>
             </div>
         </section>
@@ -468,6 +479,149 @@
                                         </div>
                                     </div>
                                 </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- JQUERY FEATURES SECTION -->
+                <section class="container my-5">
+                    <!-- Scroll Progress Bar -->
+                    <div id="scrollProgress" style="position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); z-index: 9999; width: 0%;"></div>
+                    
+                    <!-- Real-time Search -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="mb-0">Task 1: Real-time Recipe Search</h3>
+                        </div>
+                        <div class="card-body">
+                            <input type="text" id="searchInput" class="form-control mb-3" placeholder="Type to search recipes...">
+                            <div id="searchResults">
+                                <div class="searchable-item p-2 border-bottom">Pancakes - Easy breakfast recipe</div>
+                                <div class="searchable-item p-2 border-bottom">Grilled Chicken - Healthy lunch option</div>
+                                <div class="searchable-item p-2 border-bottom">Pasta Carbonara - Italian dinner classic</div>
+                                <div class="searchable-item p-2 border-bottom">Chocolate Cake - Delicious dessert</div>
+                                <div class="searchable-item p-2 border-bottom">Cheeseburger - Quick fast food</div>
+                                <div class="searchable-item p-2 border-bottom">Fried Chicken - Crispy and tasty</div>
+                                <div class="searchable-item p-2 border-bottom">Pizza Slice - Italian favorite</div>
+                                <div class="searchable-item p-2 border-bottom">Ice Cream Sundae - Cool dessert</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Autocomplete Search -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-success text-white">
+                            <h3 class="mb-0">Task 2: Autocomplete Search</h3>
+                        </div>
+                        <div class="card-body">
+                            <div style="position: relative;">
+                                <input type="text" id="autocompleteInput" class="form-control" placeholder="Start typing a recipe name...">
+                                <div id="autocompleteDropdown" style="display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #ddd; border-top: none; max-height: 200px; overflow-y: auto; z-index: 1000;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search Highlighting -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-warning text-dark">
+                            <h3 class="mb-0">Task 3: Search Highlighting</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="input-group mb-3">
+                                <input type="text" id="highlightInput" class="form-control" placeholder="Enter keyword to highlight...">
+                                <button class="btn btn-warning" id="highlightSearchBtn">Highlight</button>
+                            </div>
+                            <div class="highlight-content">
+                                <p>Cooking is an art that brings people together. Whether you love breakfast, lunch, dinner, or dessert, there is always a recipe for everyone.</p>
+                                <p>Our recipes include pasta, chicken, cake, pizza, and many more delicious dishes from around the world.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Animated Counter -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-info text-white">
+                            <h3 class="mb-0">Task 5: Animated Number Counter</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-md-3">
+                                    <h2 class="counter-number" data-target="1250">0</h2>
+                                    <p>Recipes</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h2 class="counter-number" data-target="5000">0</h2>
+                                    <p>Users</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h2 class="counter-number" data-target="850">0</h2>
+                                    <p>Reviews</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h2 class="counter-number" data-target="120">0</h2>
+                                    <p>Chefs</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Loading Spinner -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-danger text-white">
+                            <h3 class="mb-0">Task 6: Loading Spinner on Submit</h3>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label class="form-label">Recipe Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter recipe name">
+                                </div>
+                                <button type="button" class="btn btn-danger submit-with-loader">Submit Recipe</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Copy to Clipboard -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-secondary text-white">
+                            <h3 class="mb-0">Task 8: Copy to Clipboard</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Recipe Code:</label>
+                                <div class="d-flex align-items-center gap-2">
+                                    <code class="copy-text p-2 bg-light flex-grow-1">RECIPE-2025-PANCAKES</code>
+                                    <button class="btn btn-sm btn-secondary copy-btn">Copy</button>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Discount Code:</label>
+                                <div class="d-flex align-items-center gap-2">
+                                    <code class="copy-text p-2 bg-light flex-grow-1">SAVE20OFF</code>
+                                    <button class="btn btn-sm btn-secondary copy-btn">Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lazy Loading Images -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-dark text-white">
+                            <h3 class="mb-0">Task 9: Lazy Loading Images</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Scroll down to load images:</p>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <img class="lazy-image img-fluid" data-src="Images/oatmeal.png" alt="Oatmeal" style="background: #f0f0f0; min-height: 200px;">
+                                </div>
+                                <div class="col-md-4">
+                                    <img class="lazy-image img-fluid" data-src="Images/Grilled-Ribeye.jpg" alt="Grilled" style="background: #f0f0f0; min-height: 200px;">
+                                </div>
+                                <div class="col-md-4">
+                                    <img class="lazy-image img-fluid" data-src="Images/cake.png" alt="Cake" style="background: #f0f0f0; min-height: 200px;">
+                                </div>
                             </div>
                         </div>
                     </div>

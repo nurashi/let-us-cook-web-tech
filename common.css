@@ -1038,3 +1038,140 @@ html.dark-theme {
 .dark-theme .step.active {
   background: #e94560;
 }
+
+/* jQuery Features Styles */
+.autocomplete-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.autocomplete-item:hover {
+  background-color: #f0f0f0;
+}
+
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+  padding: 2px 4px;
+}
+
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  opacity: 0;
+  transform: translateX(400px);
+  transition: all 0.3s ease;
+  z-index: 10000;
+  max-width: 300px;
+}
+
+.notification.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.notification.success {
+  border-left: 4px solid #28a745;
+}
+
+.notification.error {
+  border-left: 4px solid #dc3545;
+}
+
+.notification.info {
+  border-left: 4px solid #17a2b8;
+}
+
+.copy-btn.copied {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: white;
+}
+
+.lazy-image {
+  transition: opacity 0.3s ease;
+  opacity: 0.5;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+.searchable-item {
+  transition: all 0.3s ease;
+}
+
+.counter-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+#scrollProgress {
+  transition: width 0.1s ease;
+}
+
+.dark-theme .notification {
+  background: #16213e;
+  color: #eaeaea;
+}
+
+.dark-theme .autocomplete-item:hover {
+  background-color: #0f3460;
+}
+
+.dark-theme #autocompleteDropdown {
+  background: #16213e;
+  border-color: #0f3460;
+  color: #eaeaea;
+}
+
+/* Navbar Theme and Language Toggle Buttons */
+#navThemeToggle,
+#navLangToggle {
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 50px;
+}
+
+#navThemeToggle:hover,
+#navLangToggle:hover {
+  transform: scale(1.05);
+}
+
+.theme-icon {
+  font-size: 1.1rem;
+}
+
+.dark-theme #navThemeToggle {
+  background-color: #f8f9fa;
+  color: #212529;
+  border-color: #dee2e6;
+}
+
+.dark-theme #navLangToggle {
+  background-color: transparent;
+  color: #007bff;
+  border-color: #007bff;
+}
