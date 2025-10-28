@@ -8,37 +8,43 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="../common.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
         <link rel="icon" type="image/webp" href="../Images/let-us-cook-(logo).webp" />
     </head>
     <body class="fade-in">
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid px-sm-3 px-lg-5">
-            <a class="navbar-brand d-flex align-items-center" href="../index.html">
-                <img src="../Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo" width="40" height="40" class="me-2" />
-                Let Us Cook
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="soups.html">Soups</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="meals.html">Meals</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../as/fastfood.html">Fast Food</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../as/desserts.html">Desserts</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../ra/breakfast.html">Breakfast</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../ra/drinks.html">Drinks</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../culinary.html">Culinary</a></li>
-                </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"><img src="../Images/let-us-cook-(logo).webp" alt="logo" height="36">Let Us Cook</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html" data-lang-en="Home" data-lang-ru="Главная">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="an/soups.html" data-lang-en="Soups" data-lang-ru="Супы">Soups</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="an/meals.html" data-lang-en="Meals" data-lang-ru="Блюда">Meals</a></li>
+                        <li class="nav-item"><a class="nav-link" href="as/fastfood.html" data-lang-en="Fast Food" data-lang-ru="Фастфуд">Fast Food</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ra/drinks.html" data-lang-en="Drinks" data-lang-ru="Напитки">Drinks</a></li>
+                        <li class="nav-item"><a class="nav-link" href="as/desserts.html" data-lang-en="Desserts" data-lang-ru="Десерты">Desserts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ra/breakfast.html" data-lang-en="Breakfast" data-lang-ru="Завтрак">Breakfast</a></li>
+                        <li class="nav-item"><a class="nav-link" href="culinary.html" data-lang-en="Culinary" data-lang-ru="Кулинария">Culinary</a></li>
+                        <li class="nav-item">
+                            <button id="navThemeToggle" class="btn btn-sm btn-outline-secondary ms-2">
+                                <span class="theme-icon">🌙</span>
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button id="navLangToggle" class="btn btn-sm btn-outline-primary ms-2">
+                                EN
+                            </button>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
 
     <main class="container mt-5">
@@ -47,11 +53,11 @@
                 <img src="../Images/Meals-Banner.png" alt="Meals Banner" class="img-fluid rounded shadow" />
             </div>
             <div class="col-lg-6">
-                <h1 class="fw-bold mb-3">Delicious Meals from Around the World</h1>
-                <p class="lead">Enjoy a flavorful journey with our curated main courses — from tender steaks to aromatic curries, every dish brings a unique taste experience.</p>
-                <div class="btn-group" role="group" aria-label="Meal Actions">
-                    <button class="btn btn-primary btn-lg">Explore Dishes</button>
-                    <button class="btn btn-outline-secondary btn-lg">Learn More</button>
+                <h1 class="fw-bold mb-3" data-lang-en="Delicious Meals from Around the World" data-lang-ru="Вкусные блюда со всего мира">Delicious Meals from Around the World</h1>
+                <p class="lead" data-lang-en="Enjoy a flavorful journey with our curated main courses — from tender steaks to aromatic curries, every dish brings a unique taste experience." data-lang-ru="Отправьтесь в гастрономическое путешествие с нашими основными блюдами — от нежных стейков до ароматных карри.">Enjoy a flavorful journey with our curated main courses — from tender steaks to aromatic curries, every dish brings a unique taste experience.</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-lg" data-lang-en="Explore Dishes" data-lang-ru="Исследовать блюда">Explore Dishes</button>
+                    <button class="btn btn-outline-secondary btn-lg" data-lang-en="Learn More" data-lang-ru="Узнать больше">Learn More</button>
                 </div>
             </div>
         </div>
@@ -90,9 +96,9 @@
                 <div class="card h-100 shadow-sm">
                     <img src="../Images/spaghetti-bolognese.jpg" class="card-img-top" alt="Bolognese">
                     <div class="card-body">
-                        <h5 class="card-title">Bolognese</h5>
-                        <p class="card-text">Great Spaghetti Bolognese</p>
-                        <a href="https://www.youtube.com/watch?v=Sk_CGtA4HIY"><button class="btn btn-outline-primary btn-sm">View Recipe</button></a>
+                        <h5 class="card-title" data-lang-en="Bolognese" data-lang-ru="Болоньезе">Bolognese</h5>
+                        <p class="card-text" data-lang-en="Classic spaghetti with rich meat sauce." data-lang-ru="Классические спагетти с насыщенным мясным соусом.">Classic spaghetti with rich meat sauce.</p>
+                        <a href="https://www.youtube.com/watch?v=Sk_CGtA4HIY"><button class="btn btn-outline-primary btn-sm" data-lang-en="View Recipe" data-lang-ru="Просмотреть рецепт">View Recipe</button></a>
                     </div>
                 </div>
             </div>
@@ -101,9 +107,9 @@
                 <div class="card h-100 shadow-sm">
                     <img src="../Images/Grilled-Ribeye.jpg" class="card-img-top" alt="Grilled Ribeye Steak">
                     <div class="card-body">
-                        <h5 class="card-title">Grilled Ribeye Steak</h5>
-                        <p class="card-text">Juicy ribeye steak with garlic butter and roasted potatoes — a perfect American classic.</p>
-                        <a href="https://www.youtube.com/watch?v=AmC9SmCBUj4"><button class="btn btn-outline-success btn-sm">View Recipe</button></a>
+                        <h5 class="card-title" data-lang-en="Grilled Ribeye Steak" data-lang-ru="Жареный рибай">Grilled Ribeye Steak</h5>
+                        <p class="card-text" data-lang-en="Juicy ribeye with garlic butter and roasted potatoes." data-lang-ru="Сочный рибай с чесночным маслом и запечённым картофелем.">Juicy ribeye with garlic butter and roasted potatoes.</p>
+                        <a href="https://www.youtube.com/watch?v=AmC9SmCBUj4"><button class="btn btn-outline-success btn-sm" data-lang-en="View Recipe" data-lang-ru="Просмотреть рецепт">View Recipe</button></a>
                     </div>
                 </div>
             </div>
@@ -112,9 +118,9 @@
                 <div class="card h-100 shadow-sm">
                     <img src="../Images/uzbek-beef-plov-13-Region.jpg" class="card-img-top" alt="Uzbek Beef Plov">
                     <div class="card-body">
-                        <h5 class="card-title">Uzbek Beef Plov</h5>
-                        <p class="card-text">Traditional Central Asian rice dish with tender beef, carrots, and spices — a true comfort food.</p>
-                        <a href="https://www.youtube.com/watch?v=Fk7-GZYENjA&t=1s"><button class="btn btn-outline-warning btn-sm">View Recipe</button></a>
+                        <h5 class="card-title" data-lang-en="Uzbek Beef Plov" data-lang-ru="Узбекский плов">Uzbek Beef Plov</h5>
+                        <p class="card-text" data-lang-en="Traditional rice dish with tender beef, carrots, and spices." data-lang-ru="Традиционное рисовое блюдо с мягкой говядиной, морковью и специями.">Traditional rice dish with tender beef, carrots, and spices.</p>
+                        <a href="https://www.youtube.com/watch?v=Fk7-GZYENjA&t=1s"><button class="btn btn-outline-warning btn-sm" data-lang-en="View Recipe" data-lang-ru="Просмотреть рецепт">View Recipe</button></a>
                     </div>
                 </div>
             </div>
@@ -122,72 +128,57 @@
 
         <section class="container my-5">
             <div class="card text-center p-4 shadow-sm">
-                <h3 class="mb-4">Current Date & Time</h3>
-                <div id="currentDateTime" class="py-3">
-                </div>
+                <h3 class="mb-4" data-lang-en="Current Date & Time" data-lang-ru="Текущая дата и время">Current Date & Time</h3>
+                <div id="currentDateTime" class="py-3"></div>
             </div>
         </section>
 
         <section class="container my-5 text-center">
             <div class="card p-4">
-                <h3 class="mb-3">Change Page Background</h3>
-                <p class="text-muted mb-3">Click the button to change the page background color</p>
-                <button id="colorChangeBtn" class="btn btn-lg btn-primary" onclick="changeBackgroundColor()">
-                    Change Background Color
-                </button>
+                <h3 class="mb-3" data-lang-en="Change Page Background" data-lang-ru="Изменить фон страницы">Change Page Background</h3>
+                <p class="text-muted mb-3" data-lang-en="Click the button to change the page background color" data-lang-ru="Нажмите кнопку, чтобы изменить цвет фона страницы">Click the button to change the page background color</p>
+                <button id="colorChangeBtn" class="btn btn-lg btn-primary" onclick="changeBackgroundColor()" data-lang-en="Change Background Color" data-lang-ru="Изменить цвет фона">Change Background Color</button>
             </div>
         </section>
 
         <section class="container my-5">
-            <h2 class="text-center mb-4">Meals FAQ</h2>
+            <h2 class="text-center mb-4" data-lang-en="Meals FAQ" data-lang-ru="Вопросы о блюдах">Meals FAQ</h2>
             <div class="card">
                 <div class="card-body">
                     <div class="faq-item mb-3">
-                        <div class="faq-question p-3 bg-light rounded" onclick="toggleAccordion(this)" style="cursor:pointer; border:1px solid #ddd;">
-                            <strong>Q: What are the most popular main meals?</strong> <span style="float:right;">▼</span>
-                        </div>
-                        <div class="faq-answer p-3" style="display:none;">
-                            <p>Some of our most popular meals include grilled ribeye, pasta bolognese, and traditional plov.</p>
-                        </div>
+                        <div class="faq-question p-3 bg-light rounded" onclick="toggleAccordion(this)" style="cursor:pointer; border:1px solid #ddd;"><strong data-lang-en="Q: What are the most popular main meals?" data-lang-ru="В: Какие основные блюда самые популярные?">Q: What are the most popular main meals?</strong> <span style="float:right;">▼</span></div>
+                        <div class="faq-answer p-3" style="display:none;"><p data-lang-en="Some of our most popular meals include grilled ribeye, pasta bolognese, and traditional plov." data-lang-ru="Некоторые из наших самых популярных блюд: рибай на гриле, паста болоньезе и традиционный плов.">Some of our most popular meals include grilled ribeye, pasta bolognese, and traditional plov.</p></div>
                     </div>
 
                     <div class="faq-item mb-3">
-                        <div class="faq-question p-3 bg-light rounded" onclick="toggleAccordion(this)" style="cursor:pointer; border:1px solid #ddd;">
-                            <strong>Q: Are these recipes beginner-friendly?</strong> <span style="float:right;">▼</span>
-                        </div>
-                        <div class="faq-answer p-3" style="display:none;">
-                            <p>Yes! Each recipe includes simple step-by-step instructions that anyone can follow at home.</p>
-                        </div>
+                        <div class="faq-question p-3 bg-light rounded" onclick="toggleAccordion(this)" style="cursor:pointer; border:1px solid #ddd;"><strong data-lang-en="Q: Are these recipes beginner-friendly?" data-lang-ru="В: Подходят ли эти рецепты для начинающих?">Q: Are these recipes beginner-friendly?</strong> <span style="float:right;">▼</span></div>
+                        <div class="faq-answer p-3" style="display:none;"><p data-lang-en="Yes! Each recipe includes simple step-by-step instructions that anyone can follow at home." data-lang-ru="Да! Каждый рецепт содержит простые пошаговые инструкции, которые сможет повторить любой.">Yes! Each recipe includes simple step-by-step instructions that anyone can follow at home.</p></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ADVANCED JS: Theme Toggle -->
-                <section class="container my-5 text-center">
-                    <div class="card p-4">
-                        <h3 class="mb-3">🌙 Theme Switcher</h3>
-                        <p class="text-muted mb-3">Toggle between day and night modes</p>
-                        <button id="themeToggle" class="btn btn-lg btn-dark">
-                            🌙 Night Mode
-                        </button>
-                    </div>
-                </section>
+        <section class="container my-5 text-center">
+            <div class="card p-4">
+                <h3 class="mb-3" data-lang-en="🌙 Theme Switcher" data-lang-ru="🌙 Переключатель темы">🌙 Theme Switcher</h3>
+                <p class="text-muted mb-3" data-lang-en="Toggle between day and night modes" data-lang-ru="Переключение между дневным и ночным режимами">Toggle between day and night modes</p>
+                <button id="themeToggle" class="btn btn-lg btn-dark" data-lang-en="🌙 Night Mode" data-lang-ru="🌙 Ночной режим">🌙 Night Mode</button>
+            </div>
+        </section>
 
-                <!-- ADVANCED JS: Greeting with Dynamic Input -->
-                <section class="container my-5">
-                    <div class="greeting-section">
-                        <h3 class="mb-3">👋 Personal Greeting</h3>
-                        <input type="text" id="userName" class="form-control w-50 mx-auto mb-3" placeholder="Enter your name">
-                        <div id="greeting">Welcome to Let Us Cook!</div>
-                    </div>
-                </section>
+        <section class="container my-5">
+            <div class="greeting-section card p-4 text-center">
+                <h3 class="mb-3" data-lang-en="👋 Personal Greeting" data-lang-ru="👋 Персональное приветствие">👋 Personal Greeting</h3>
+                <input type="text" id="userName" class="form-control w-50 mx-auto mb-3" placeholder="Enter your name" data-lang-en="Enter your name" data-lang-ru="Введите ваше имя">
+                <div id="greeting" data-lang-en="Welcome to Let Us Cook!" data-lang-ru="Добро пожаловать на Давайте готовить!">Welcome to Let Us Cook!</div>
+            </div>
+        </section>
 
         <!-- ADVANCED JS: Current Time Button -->
         <section class="container my-5 text-center">
             <div class="card p-4">
-                <h3 class="mb-3">⏰ What Time Is It?</h3>
-                <button id="showTimeBtn" class="btn btn-lg btn-info">Show Current Time</button>
+                <h3 class="mb-3" data-lang-en="⏰ What Time Is It?" data-lang-ru="⏰ Который час?">⏰ What Time Is It?</h3>
+                <button id="showTimeBtn" class="btn btn-lg btn-info" data-lang-en="Show Current Time" data-lang-ru="Показать текущее время">Show Current Time</button>
                 <div id="currentTime" class="mt-3"></div>
             </div>
         </section>
@@ -195,7 +186,7 @@
         <!-- ADVANCED JS: Star Rating System -->
         <section class="container my-5">
             <div class="card p-4">
-                <h3 class="mb-4">⭐ Rate Our Recipes</h3>
+                <h3 class="mb-4" data-lang-en="⭐ Rate Our Recipes" data-lang-ru="⭐ Оцените наши рецепты">⭐ Rate Our Recipes</h3>
                 <div class="row g-3">
                     <div class="col-md-6">
                         <div class="card p-3 text-center">
@@ -273,26 +264,135 @@
             </div>
         </section>
 
+    <!-- JQUERY FEATURES SECTION -->
+    <section class="container my-5">
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress" data-orientation="horizontal" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); z-index: 9999; width: 0%;"></div>
+
+        <!-- Real-time Search -->
+        <div class="card mb-4">
+            <div class="card-header text-white">
+                <h3 class="mb-0">Task 1: Real-time Recipe Search</h3>
+            </div>
+            <div class="card-body">
+                <input type="text" id="searchInput" class="form-control mb-3" placeholder="Type to search recipes...">
+                <div id="searchResults">
+                    <div class="searchable-item p-2 border-bottom">Pancakes - Easy breakfast recipe</div>
+                    <div class="searchable-item p-2 border-bottom">Grilled Chicken - Healthy lunch option</div>
+                    <div class="searchable-item p-2 border-bottom">Pasta Carbonara - Italian dinner classic</div>
+                    <div class="searchable-item p-2 border-bottom">Chocolate Cake - Delicious dessert</div>
+                    <div class="searchable-item p-2 border-bottom">Cheeseburger - Quick fast food</div>
+                    <div class="searchable-item p-2 border-bottom">Fried Chicken - Crispy and tasty</div>
+                    <div class="searchable-item p-2 border-bottom">Pizza Slice - Italian favorite</div>
+                    <div class="searchable-item p-2 border-bottom">Ice Cream Sundae - Cool dessert</div>
+                    <div class="searchable-item p-2 border-bottom">Grilled Ribeye Steak</div>
+                    <div class="searchable-item p-2 border-bottom">Uzbek Beef Plov</div>
+                    <div class="searchable-item p-2 border-bottom">Pasta Bolognese</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Autocomplete Search -->
+        <div class="card mb-4 p-3">
+            <h5 class="mb-2">Autocomplete Search</h5>
+            <input id="autocompleteInput" class="form-control" placeholder="Start typing..." autocomplete="off" />
+            <div id="autocompleteDropdown" class="border rounded mt-1" style="display:none;max-height:150px;overflow:auto;"></div>
+        </div>
+
+
+        <!-- Search Highlighting -->
+        <div class="card mb-4 p-3">
+            <h5 class="mb-2" data-lang-en="Search Highlighting" data-lang-ru="Подсветка поиска">Search Highlighting</h5>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <input type="text" id="highlightInput" class="form-control" placeholder="Enter keyword to highlight...">
+                    <button class="btn btn-warning" id="highlightSearchBtn">Highlight</button>
+                </div>
+                <div class="highlight-content">
+                    <p class="searchable-item">Our bolognese is rich and meaty.</p>
+                    <p class="searchable-item">Ribeye with garlic butter is a crowd favorite.</p>
+                    <p class="searchable-item">Plov is a traditional main course full of flavor.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animated Counter -->
+        <div class="card mb-4 p-3">
+            <h5 class="mb-2">Animated Counter</h5>
+            <div class="d-flex gap-4 justify-content-center align-items-center">
+                <div class="text-center">
+                    <div class="counter-number h2" data-target="1200">0</div>
+                    <div>Recipes</div>
+                </div>
+                <div class="text-center">
+                    <div class="counter-number h2" data-target="350">0</div>
+                    <div>Chefs</div>
+                </div>
+                <div class="text-center">
+                    <div class="counter-number h2" data-target="48">0</div>
+                    <div>Countries</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div class="card mb-4 p-3">
+            <h5 class="mb-2">Loading Spinner</h5>
+            <form id="spinnerForm" class="d-flex gap-2 align-items-center">
+                <input class="form-control" placeholder="Simulate submit..." />
+                <button class="btn btn-primary" type="submit">Submit</button>
+                <div class="spinner-border text-primary" role="status" id="formSpinner" style="display:none;">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </form>
+        </div>
+
+        <!-- Notification System
+        <div class="card mb-4 p-3">
+            <h5 class="mb-2">Notification System</h5>
+            <div class="d-flex gap-2">
+                <button class="btn btn-success" onclick="showNotification('Saved successfully','success')">Show Success</button>
+                <button class="btn btn-info" onclick="showNotification('Here is some info','info')">Show Info</button>
+                <button class="btn btn-danger" onclick="showNotification('Something went wrong','error')">Show Error</button>
+            </div>
+        </div> -->
+        
+        <div class="card mb-4 p-3">
+            <div class="card mb-4 p-3">
+                <h5 class="mb-2" data-lang-en="Copy to Clipboard" data-lang-ru="Копировать">Copy to Clipboard</h5>
+                <textarea id="copyText" class="form-control" rows="3">Try copying this recipe snippet.</textarea>
+                <button id="copyBtn" class="btn btn-outline-secondary mt-2 copy-btn">Copy</button>
+            </div>
+            <div class="card mb-4 p-3">
+                <h5 class="mb-2" data-lang-en="Lazy Loading Images" data-lang-ru="Ленивая загрузка изображений">Lazy Loading Images</h5>
+                <div class="d-flex gap-3 flex-wrap">
+                    <img class="lazy-image" data-src="../Images/spaghetti-bolognese.jpg" src="../Images/spaghetti-bolognese.jpg" alt="Bolognese" width="400" />
+                    <img class="lazy-image" data-src="../Images/Grilled-Ribeye.jpg" src="../Images/Grilled-Ribeye.jpg" alt="Ribeye" width="400" />
+                    <img class="lazy-image" data-src="../Images/uzbek-beef-plov-13-Region.jpg" src="../Images/uzbek-beef-plov-13-Region.jpg" alt="Plov" width="350" />
+                </div>
+            </div>
+        </section>
+
         <div class="row justify-content-center mb-5">
             <div class="col-lg-6">
                 <h3 class="mb-4 text-center">Subscribe for Recipe Updates</h3>
                 <form>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Full Name</label>
-                        <input type="text" id="name" class="form-control" placeholder="Enter your name" />
+                        <label for="name" class="form-label" data-lang-en="Full Name" data-lang-ru="Полное имя">Full Name</label>
+                        <input type="text" id="name" class="form-control subscribe-name" placeholder="Enter your name" data-lang-en="Enter your name" data-lang-ru="Введите ваше имя" />
                     </div>
 
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email Address</label>
+                        <label for="email" class="form-label" data-lang-en="Email Address" data-lang-ru="Электронная почта">Email Address</label>
                         <div class="input-group">
-                            <input type="email" id="email" class="form-control" placeholder="Enter your email" />
-                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                            <input type="email" id="email" class="form-control subscribe-email" placeholder="Enter your email" data-lang-en="Enter your email" data-lang-ru="Введите ваш email" />
+                            <button class="btn btn-primary" type="submit" data-lang-en="Subscribe" data-lang-ru="Подписаться">Subscribe</button>
                         </div>
                     </div>
 
                     <div class="form-check mb-3">
                         <input type="checkbox" class="form-check-input" id="updates" />
-                        <label class="form-check-label" for="updates">Send me weekly recipe updates</label>
+                        <label class="form-check-label" for="updates" data-lang-en="Send me weekly recipe updates" data-lang-ru="Присылать еженедельные обновления рецептов">Send me weekly recipe updates</label>
                     </div>
 
                 </form>
@@ -320,9 +420,7 @@
                 <a href="#" class="text-white me-2" aria-label="Instagram">📷</a>
                 <a href="#" class="text-white" aria-label="Twitter">🐦</a>
             </div>
-            <p class="mt-3 mb-0">
-                © 2025 Let Us Cook. Nurassyl Orazbek, Anuar Zhenissov, Asylan Usen, Rasul Akhmetov.
-            </p>
+            <p class="mt-3 mb-0" data-lang-en="© 2025 Let Us Cook. All rights reserved." data-lang-ru="© 2025 Давайте готовить. Все права защищены.">© 2025 Let Us Cook. All rights reserved.</p>
         </div>
     </footer>
 
