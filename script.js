@@ -625,6 +625,11 @@ document.addEventListener('DOMContentLoaded', function() {
             form.addEventListener('submit', handleSubscriptionForForm.bind(null, form));
         });
     }
+    // also bind the popup subscription form (some pages use id="subscriptionForm")
+    const popupForm = document.getElementById('subscriptionForm');
+    if (popupForm) {
+        popupForm.addEventListener('submit', handleSubscriptionForForm.bind(null, popupForm));
+    }
     
     const popup = document.getElementById('subscriptionPopup');
     if (popup) {
@@ -676,6 +681,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.getElementById('prevBtn');
     if (nextBtn) nextBtn.addEventListener('click', nextStep);
     if (prevBtn) prevBtn.addEventListener('click', prevStep);
+    // bind background color button if present (some pages use inline onclick, add listener here too)
+    const colorBtn = document.getElementById('colorChangeBtn');
+    if (colorBtn) colorBtn.addEventListener('click', changeBackgroundColor);
     
     // initialize multi-step form
     if (document.getElementById('step1')) {
