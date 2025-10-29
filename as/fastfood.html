@@ -28,14 +28,24 @@
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="../an/soups.html">Soups</a></li>
-                <li class="nav-item"><a class="nav-link" href="../an/meals.html">Meals</a></li>
-                <li class="nav-item"><a class="nav-link active" href="fastfood.html">Fast Food</a></li>
-                <li class="nav-item"><a class="nav-link" href="../as/desserts.html">Desserts</a></li>
-                <li class="nav-item"><a class="nav-link" href="../ra/drinks.html">Drinks</a></li>
-                <li class="nav-item"><a class="nav-link" href="../ra/breakfast.html">Breakfast</a></li>
-                <li class="nav-item"><a class="nav-link" href="../culinary.html">Culinary</a></li>
+                <li class="nav-item"><a class="nav-link" href="../index.html" data-lang-en="Home" data-lang-ru="Главная">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="../an/soups.html" data-lang-en="Soups" data-lang-ru="Супы">Soups</a></li>
+                <li class="nav-item"><a class="nav-link" href="../an/meals.html" data-lang-en="Meals" data-lang-ru="Блюда">Meals</a></li>
+                <li class="nav-item"><a class="nav-link active" href="fastfood.html" data-lang-en="Fast Food" data-lang-ru="Фастфуд">Fast Food</a></li>
+                <li class="nav-item"><a class="nav-link" href="../as/desserts.html" data-lang-en="Desserts" data-lang-ru="Десерты">Desserts</a></li>
+                <li class="nav-item"><a class="nav-link" href="../ra/drinks.html" data-lang-en="Drinks" data-lang-ru="Напитки">Drinks</a></li>
+                <li class="nav-item"><a class="nav-link" href="../ra/breakfast.html" data-lang-en="Breakfast" data-lang-ru="Завтрак">Breakfast</a></li>
+                <li class="nav-item"><a class="nav-link" href="../culinary.html" data-lang-en="Culinary" data-lang-ru="Кулинария">Culinary</a></li>
+                <li class="nav-item">
+                    <button id="navThemeToggle" class="btn btn-sm btn-outline-secondary ms-2">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button id="navLangToggle" class="btn btn-sm btn-outline-primary ms-2">
+                        EN
+                    </button>
+                </li>
             </ul>
         </div>
     </div>
@@ -50,11 +60,11 @@
             </div>
         </div>
         <div class="col-lg-6">
-            <h1 class="fw-bold mb-3">Fast Food Favorites</h1>
-            <p class="lead">Quick, delicious, and satisfying meals for busy lifestyles — burgers, fries, pizza and more.</p>
+            <h1 class="fw-bold mb-3" data-lang-en="Fast Food Favorites" data-lang-ru="Любимый Фастфуд">Fast Food Favorites</h1>
+            <p class="lead" data-lang-en="Quick, delicious, and satisfying meals for busy lifestyles — burgers, fries, pizza and more." data-lang-ru="Быстрая, вкусная и сытная еда для занятых людей — бургеры, картофель фри, пицца и многое другое.">Quick, delicious, and satisfying meals for busy lifestyles — burgers, fries, pizza and more.</p>
             <div class="btn-group" role="group" aria-label="Fast Food Actions">
-                <button class="btn btn-primary btn-lg">Explore Dishes</button>
-                <button class="btn btn-outline-secondary btn-lg">Learn More</button>
+                <button class="btn btn-primary btn-lg" data-lang-en="Explore Dishes" data-lang-ru="Изучить блюда">Explore Dishes</button>
+                <button class="btn btn-outline-secondary btn-lg" data-lang-en="Learn More" data-lang-ru="Узнать больше">Learn More</button>
             </div>
         </div>
     </div>
@@ -403,19 +413,22 @@
                 <p>Scroll down to load fast food images:</p>
                 <div class="row g-3">
                     <div class="col-md-4">
-                        <img class="lazy-image img-fluid" data-src="../Images/fried-chicken.png" alt="Fried Chicken" style="background: #f0f0f0; min-height: 200px;">
+                        <img class="lazy-image img-fluid" data-src="../Images/fried-chicken.png" alt="Fried Chicken" style="background: #f0f0f0; min-height: 200px; width: 100%;">
                     </div>
                     <div class="col-md-4">
-                        <img class="lazy-image img-fluid" data-src="https://img.icons8.com/color/400/000000/hamburger.png" alt="Burger" style="background: #f0f0f0; min-height: 200px;">
+                        <img class="lazy-image img-fluid" data-src="https://img.icons8.com/color/400/000000/hamburger.png" alt="Burger" style="background: #f0f0f0; min-height: 200px; width: 100%;">
                     </div>
                     <div class="col-md-4">
-                        <img class="lazy-image img-fluid" data-src="https://img.icons8.com/color/400/000000/french-fries.png" alt="Fries" style="background: #f0f0f0; min-height: 200px;">
+                        <img class="lazy-image img-fluid" data-src="https://img.icons8.com/color/400/000000/french-fries.png" alt="Fries" style="background: #f0f0f0; min-height: 200px; width: 100%;">
                     </div>
                     <div class="col-md-4">
-                        <img class="lazy-image img-fluid" data-src="../Images/fried-chicken.png" alt="Fried Chicken" style="background: #f0f0f0; min-height: 200px;">
+                        <img class="lazy-image img-fluid" data-src="../Images/fried-chicken.png" alt="Fried Chicken" style="background: #f0f0f0; min-height: 200px; width: 100%;">
                     </div>
                     <div class="col-md-4">
-                        <img class="lazy-image img-fluid" data-src="https://img.icons8.com/color/400/000000/hamburger.png" alt="Burger" style="background: #f0f0f0; min-height: 200px;">
+                        <img class="lazy-image img-fluid" data-src="https://img.icons8.com/color/400/000000/hamburger.png" alt="Burger" style="background: #f0f0f0; min-height: 200px; width: 100%;">
+                    </div>
+                    <div class="col-md-4">
+                        <img class="lazy-image img-fluid" data-src="https://img.icons8.com/color/400/000000/french-fries.png" alt="Fries" style="background: #f0f0f0; min-height: 200px; width: 100%;">
                     </div>
                 </div>
             </div>
