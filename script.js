@@ -618,7 +618,6 @@ function updateDateTime() {
 }
 
 // INITIALIZATION
-// INITIALIZATION
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize theme and language first
     initTheme();
@@ -856,7 +855,6 @@ function initLoadingSpinner() {
     });
 }
 
-// PART 3: Web App Functionality
 // Notification system
 function showNotification(message, type) {
     const $notification = $('<div class="notification"></div>')
