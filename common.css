@@ -27,7 +27,7 @@ html {
 body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
   background: var(--light);
-  color: var(--text);
+  color: #2d3748;
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
@@ -38,7 +38,24 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  color: var(--dark);
+  color: #1a202c;
+}
+
+p {
+  color: #4a5568;
+}
+
+small {
+  color: #718096;
+}
+
+.subtitle {
+  color: #4a5568;
+}
+
+label {
+  color: #2d3748;
+  font-weight: 500;
 }
 
 /* Animation */
@@ -193,11 +210,75 @@ h1, h2, h3, h4, h5, h6 {
   padding: 2rem;
   box-shadow: var(--shadow-light);
   transition: var(--transition);
+  border: 1px solid #e2e8f0;
 }
 
 .grid-item:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-heavy);
+}
+
+/* Light theme card improvements */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #f7fafc;
+  border-bottom: 2px solid #e2e8f0;
+  color: #1a202c;
+  font-weight: 600;
+}
+
+.card-body {
+  color: #2d3748;
+}
+
+.card-body h5 {
+  color: #1a202c;
+}
+
+.card-body p {
+  color: #4a5568;
+}
+
+.card-body small {
+  color: #718096;
+}
+
+/* Form controls for light theme */
+.form-control {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e0;
+  color: #2d3748;
+  transition: all 0.2s ease;
+}
+
+.form-control:focus {
+  background-color: #ffffff;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+  color: #2d3748;
+}
+
+.form-control::placeholder {
+  color: #a0aec0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  background-color: #ffffff;
+  color: #2d3748;
+  border: 1px solid #cbd5e0;
+}
+
+.form-label {
+  color: #2d3748;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {
@@ -445,23 +526,41 @@ h1, h2, h3, h4, h5, h6 {
 .faq-question {
   transition: all 0.3s ease;
   user-select: none;
+  background-color: #f8f9fa;
+  border: 1px solid #e2e8f0;
+  color: #2d3748;
+}
+
+.faq-question strong {
+  color: #1a202c;
 }
 
 .faq-question:hover {
-  background-color: #e9ecef !important;
+  background-color: #e2e8f0;
   transform: translateX(5px);
+  border-color: #cbd5e0;
 }
 
 .faq-question.active {
-  background-color: #007bff !important;
-  color: white !important;
-  border-color: #007bff !important;
+  background-color: #3182ce;
+  color: white;
+  border-color: #2c5282;
+}
+
+.faq-question.active strong {
+  color: white;
 }
 
 .faq-answer {
   transition: all 0.3s ease;
-  border-left: 3px solid #007bff;
-  background-color: #f8f9fa;
+  border-left: 3px solid #3182ce;
+  background-color: #f7fafc;
+  color: #4a5568;
+}
+
+.faq-answer p {
+  color: #4a5568;
+  margin-bottom: 0;
 }
 
 /* Media Cards for responsive demo */
@@ -782,14 +881,25 @@ p  { font-size: 1rem; }
 body.dark-theme,
 html.dark-theme {
   background-color: #1a1a2e !important;
-  color: #eaeaea !important;
+  color: #e0e0e0 !important;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .dark-theme .card {
   background-color: #16213e;
-  color: #eaeaea;
-  border-color: #0f3460;
+  color: #e8e8e8;
+  border: 1px solid #2d3e5f;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .card-header {
+  background-color: #0f3460;
+  color: #ffffff;
+  border-bottom: 2px solid #e94560;
+}
+
+.dark-theme .card-body {
+  color: #e0e0e0;
 }
 
 .dark-theme .navbar {
@@ -801,38 +911,132 @@ html.dark-theme {
   color: #eaeaea !important;
 }
 
-.dark-theme .nav-link:hover {
+.dark-theme .nav-link:hover,
+.dark-theme .nav-link.active {
   color: #e94560 !important;
 }
 
 .dark-theme .btn-primary {
   background-color: #e94560;
   border-color: #e94560;
+  color: #ffffff;
 }
 
 .dark-theme .btn-primary:hover {
   background-color: #c93654;
+  border-color: #c93654;
+}
+
+.dark-theme .btn-outline-secondary {
+  color: #e0e0e0;
+  border-color: #4a5568;
+  background-color: transparent;
+}
+
+.dark-theme .btn-outline-secondary:hover {
+  background-color: #4a5568;
+  color: #ffffff;
 }
 
 .dark-theme .footer {
   background-color: #0f3460;
-  color: #eaeaea;
+  color: #e0e0e0;
 }
 
 .dark-theme .form-control {
   background-color: #16213e;
-  border-color: #0f3460;
-  color: #eaeaea;
+  border: 1px solid #2d3e5f;
+  color: #e8e8e8;
 }
 
 .dark-theme .form-control:focus {
   background-color: #1a1a2e;
   border-color: #e94560;
-  color: #eaeaea;
+  color: #e8e8e8;
+  box-shadow: 0 0 0 0.2rem rgba(233, 69, 96, 0.25);
+}
+
+.dark-theme .form-control::placeholder {
+  color: #a0aec0;
 }
 
 .dark-theme .hero-section {
   background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+}
+
+.dark-theme .subtitle,
+.dark-theme p {
+  color: #cbd5e0;
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme h5 {
+  color: #f7fafc;
+}
+
+.dark-theme small {
+  color: #a0aec0;
+}
+
+.dark-theme .searchable-item {
+  border-color: #2d3e5f !important;
+  color: #e0e0e0;
+}
+
+.dark-theme .border-bottom {
+  border-color: #2d3e5f !important;
+}
+
+.dark-theme input[type="text"],
+.dark-theme input[type="email"],
+.dark-theme input[type="password"],
+.dark-theme textarea {
+  background-color: #16213e;
+  color: #e8e8e8;
+  border-color: #2d3e5f;
+}
+
+.dark-theme label {
+  color: #cbd5e0;
+}
+
+/* Dark theme FAQ styles */
+.dark-theme .faq-question {
+  background-color: #16213e;
+  border-color: #2d3e5f;
+  color: #e0e0e0;
+}
+
+.dark-theme .faq-question strong {
+  color: #f7fafc;
+}
+
+.dark-theme .faq-question:hover {
+  background-color: #1f2b4a;
+  border-color: #3d4e6f;
+}
+
+.dark-theme .faq-question.active {
+  background-color: #e94560;
+  border-color: #d63851;
+  color: #ffffff;
+}
+
+.dark-theme .faq-question.active strong {
+  color: #ffffff;
+}
+
+.dark-theme .faq-answer {
+  background-color: #0f1929;
+  border-left-color: #e94560;
+  color: #cbd5e0;
+}
+
+.dark-theme .faq-answer p {
+  color: #cbd5e0;
 }
 
 /* Star Rating Styles */
@@ -1108,13 +1312,18 @@ html.dark-theme {
   color: white;
 }
 
+/* Lazy Loading Images */
 .lazy-image {
-  transition: opacity 0.3s ease;
-  opacity: 0.5;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  opacity: 0.3;
+  transform: scale(0.95);
+  filter: blur(5px);
 }
 
 .lazy-image.loaded {
   opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
 }
 
 .searchable-item {

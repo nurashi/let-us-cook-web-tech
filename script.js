@@ -22,11 +22,10 @@ function toggleNavTheme() {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     updateThemeButton(isDark);
     
-    // Callback to update UI elements after theme change
     onThemeChanged(isDark);
 }
 
-// Callback function executed after theme changes
+// Callback executed after theme changes
 function onThemeChanged(isDark) {
     const allCards = document.querySelectorAll('.card');
     allCards.forEach(card => {
@@ -79,19 +78,40 @@ function updateLanguage(lang) {
     document.querySelectorAll('[data-lang-en][data-lang-ru]').forEach(element => {
         const text = lang === 'en' ? element.getAttribute('data-lang-en') : element.getAttribute('data-lang-ru');
         if (text) {
-            element.textContent = text;
+            // Update placeholder for input elements
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                element.placeholder = text;
+            } else {
+                element.textContent = text;
+            }
         }
     });
+    
+    // Special handling for highlight content (to avoid showing HTML attributes)
+    const highlightText1 = document.querySelector('.highlight-text-1');
+    const highlightText2 = document.querySelector('.highlight-text-2');
+    
+    if (highlightText1) {
+        highlightText1.textContent = lang === 'en' 
+            ? 'Cooking is an art that brings people together. Whether you love breakfast, lunch, dinner, or dessert, there is always a recipe for everyone.'
+            : 'Приготовление пищи - это искусство, которое объединяет людей. Будь то завтрак, обед, ужин или десерт, всегда найдется рецепт для каждого.';
+    }
+    
+    if (highlightText2) {
+        highlightText2.textContent = lang === 'en'
+            ? 'Our recipes include pasta, chicken, cake, pizza, and many more delicious dishes from around the world.'
+            : 'Наши рецепты включают пасту, курицу, торты, пиццу и множество других вкусных блюд со всего мира.';
+    }
 }
 
-// Day/Night Theme Toggle (old function, kept for compatibility)
+// Old function for compatibility
 let isDarkTheme = false;
 
 function toggleTheme() {
     toggleNavTheme();
 }
 
-// Star Rating System - allows users to rate recipes
+// Star rating system
 function setupStarRating() {
     const ratingContainers = document.querySelectorAll('.star-rating');
     
@@ -100,25 +120,21 @@ function setupStarRating() {
         let currentRating = 0;
         
         stars.forEach((star, index) => {
-            // click to set rating
             star.addEventListener('click', function() {
                 currentRating = index + 1;
                 updateStars(stars, currentRating);
                 
-                // show the rating value
                 const ratingText = container.nextElementSibling;
                 if (ratingText && ratingText.classList.contains('rating-value')) {
                     ratingText.textContent = `Rating: ${currentRating}/5`;
                 }
             });
             
-            // hover effect
             star.addEventListener('mouseenter', function() {
                 updateStars(stars, index + 1);
             });
         });
         
-        // reset to current rating when mouse leaves
         container.addEventListener('mouseleave', function() {
             updateStars(stars, currentRating);
         });
@@ -128,16 +144,16 @@ function setupStarRating() {
 function updateStars(stars, rating) {
     stars.forEach((star, index) => {
         if (index < rating) {
-            star.style.color = '#ffc107'; // gold color
+            star.style.color = '#ffc107';
             star.textContent = '★';
         } else {
-            star.style.color = '#ddd'; // gray color
+            star.style.color = '#ddd';
             star.textContent = '☆';
         }
     });
 }
 
-// Dynamic content update using textContent and innerHTML
+// Dynamic content update
 function updateGreeting() {
     const nameInput = document.getElementById('userName');
     const greetingElement = document.getElementById('greeting');
@@ -145,15 +161,14 @@ function updateGreeting() {
     if (nameInput && greetingElement) {
         const name = nameInput.value.trim();
         if (name) {
-            greetingElement.innerHTML = `<strong>Hello, ${name}! 👋</strong> Welcome to Let Us Cook!`;
+            greetingElement.innerHTML = `<strong>Hello, ${name}!</strong> Welcome to Let Us Cook!`;
         } else {
             greetingElement.textContent = 'Welcome to Let Us Cook!';
         }
     }
 }
 
-
-// Button to display current time
+// Display current time
 function showCurrentTime() {
     const timeDisplay = document.getElementById('currentTime');
     if (timeDisplay) {
@@ -175,7 +190,6 @@ function setupKeyboardNavigation() {
     let currentIndex = 0;
     
     document.addEventListener('keydown', function(event) {
-        // only works when no input is focused
         if (document.activeElement.tagName === 'INPUT' || 
             document.activeElement.tagName === 'TEXTAREA') {
             return;
@@ -698,7 +712,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// PART 1: jQuery Search
 // Real-time search and live filter
 function initRealTimeSearch() {
     $('#searchInput').on('keyup', function() {
@@ -888,9 +901,9 @@ function initCopyToClipboard() {
     });
 }
 
-// Image lazy loading
+// Image lazy loading with smooth animation
 function initLazyLoading() {
-    $(window).on('scroll resize', function() {
+    const lazyLoadImages = function() {
         $('.lazy-image').each(function() {
             const $img = $(this);
             const imageTop = $img.offset().top;
@@ -898,17 +911,31 @@ function initLazyLoading() {
             const windowTop = $(window).scrollTop();
             const windowBottom = windowTop + $(window).height();
             
-            if (imageBottom >= windowTop && imageTop <= windowBottom) {
+            // Load image when it's in viewport (with 100px offset)
+            if (imageBottom >= windowTop - 100 && imageTop <= windowBottom + 100) {
                 const src = $img.data('src');
                 if (src && !$img.attr('src')) {
-                    $img.attr('src', src)
-                        .addClass('loaded')
-                        .removeClass('lazy-image');
+                    // Preload image before showing
+                    const tempImg = new Image();
+                    tempImg.onload = function() {
+                        $img.attr('src', src)
+                            .addClass('loaded')
+                            .removeClass('lazy-image');
+                    };
+                    tempImg.src = src;
                 }
             }
         });
+    };
+    
+    // Debounce scroll event for performance
+    let scrollTimeout;
+    $(window).on('scroll resize', function() {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(lazyLoadImages, 100);
     });
     
+    // Initial check on page load
     $(window).trigger('scroll');
 }
 
