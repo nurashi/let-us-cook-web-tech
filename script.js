@@ -226,6 +226,16 @@ function showStep(step) {
         currentStepDiv.style.display = 'block';
     }
     
+    // update step indicators
+    const stepIndicators = document.querySelectorAll('.step-indicator .step');
+    stepIndicators.forEach((indicator, index) => {
+        if (index + 1 === step) {
+            indicator.classList.add('active');
+        } else {
+            indicator.classList.remove('active');
+        }
+    });
+    
     // update buttons
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
@@ -254,6 +264,26 @@ function prevStep() {
 function filterRecipes(category) {
     const allRecipes = document.querySelectorAll('.recipe-item');
     const filterStatus = document.getElementById('filterStatus');
+    
+    // Update active button state
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // Find and activate the clicked button
+    filterButtons.forEach(btn => {
+        const btnText = btn.textContent.toLowerCase();
+        if (
+            (category === 'all' && btnText.includes('all')) ||
+            (category === 'breakfast' && btnText.includes('breakfast')) ||
+            (category === 'lunch' && btnText.includes('lunch')) ||
+            (category === 'dinner' && btnText.includes('dinner')) ||
+            (category === 'dessert' && btnText.includes('dessert'))
+        ) {
+            btn.classList.add('active');
+        }
+    });
     
     let displayText = '';
     
@@ -950,3 +980,4 @@ function initJQueryFeatures() {
     
     console.log('jQuery features initialized');
 }
+
