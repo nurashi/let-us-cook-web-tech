@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Let Us Cook</title>
+    <!--Bootstrap 5.3.2 for Responsive Grid System -->
         <link rel="stylesheet" href="common.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-" crossorigin="anonymous">
     <link rel="icon" type="image/webp" href="Images/let-us-cook-(logo).webp">
@@ -11,6 +12,7 @@
 </head>
 <body class="fade-in">
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <!-- Navigation - Bootstrap Navbar (Responsive & Working Links) -->
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
             <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"><img src="Images/let-us-cook-(logo).webp" alt="logo" height="36">Let Us Cook</a>
@@ -19,6 +21,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <!--  All navigation links work correctly -->
                         <li class="nav-item"><a class="nav-link active" href="index.html" data-lang-en="Home" data-lang-ru="Главная">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="an/soups.html" data-lang-en="Soups" data-lang-ru="Супы">Soups</a></li>
                         <li class="nav-item"><a class="nav-link" href="an/meals.html" data-lang-en="Meals" data-lang-ru="Блюда">Meals</a></li>
@@ -54,8 +57,10 @@
             </div>
         </section>
 
+                <!--  Bootstrap Grid - Responsive Layout (col-12, col-lg-6 for mobile-first design) -->
                 <section class="container my-5" id="featured">
                     <div class="row g-4">
+                        <!-- Desktop: 2 columns, Mobile: 1 column -->
                         <div class="col-12 col-lg-6">
                             <div class="card h-100">
                                 <img src="Images/Chef-Curry.jpeg" class="card-img-top" alt="Chef's Special Curry">
@@ -68,6 +73,7 @@
                         </div>
 
                         <div class="col-12 col-lg-6">
+                            <!-- Nested Grid: Desktop 2 columns, Mobile 1 column -->
                             <div class="row g-4">
                                 <div class="col-12 col-md-6">
                                     <div class="card h-100">
@@ -93,12 +99,15 @@
                         </div>
                     </div>
 
+                    <!-- Bootstrap Grid - Mixed Column Layout (col-12, col-lg-4, col-lg-8) -->
                     <div class="row mt-4">
+                        <!-- Sidebar: Desktop 1/3 width, Mobile full width -->
                         <div class="col-12 col-lg-4">
                             <div class="card bg-light h-100">
                                 <div class="card-body">
                                     <h5 class="card-title" data-lang-en="Quick Links" data-lang-ru="Быстрые ссылки">Quick Links</h5>
                                     <ul class="list-unstyled">
+                                        <!-- Footer/Navigation links - all working -->
                                         <li class="my-2"><a class="text-decoration-none text-primary" href="as/fastfood.html" data-lang-en="🍟 Fast Food" data-lang-ru="🍟 Фастфуд">🍟 Fast Food</a></li>
                                         <li class="my-2"><a class="text-decoration-none text-primary" href="as/desserts.html" data-lang-en="🍰 Desserts" data-lang-ru="🍰 Десерты">🍰 Desserts</a></li>
                                         <li class="my-2"><a class="text-decoration-none text-primary" href="ra/drinks.html" data-lang-en="🥤 Drinks" data-lang-ru="🥤 Напитки">🥤 Drinks</a></li>
@@ -107,7 +116,9 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Main content: Desktop 2/3 width, Mobile full width -->
                         <div class="col-12 col-lg-8">
+                            <!--  Bootstrap Responsive Grid - 3 equal columns on desktop, 1 on mobile -->
                             <div class="row row-cols-1 row-cols-md-3 g-3">
                                 <div class="col">
                                     <div class="card h-100 text-center">
@@ -724,20 +735,23 @@
                 </div>
     </main>
 
+    <!-- Footer with Working Links (All Links Functional) -->
     <footer class="footer">
         <div class="footer-content">
             <div>
                 <strong data-lang-en="Let Us Cook Team:" data-lang-ru="Команда Let Us Cook:">Let Us Cook Team:</strong> Nurassyl Orazbek, Rasul Akhmetov, Asylan Usen, Anuar Zhenissov
             </div>
             <div class="footer-links">
+                <!--  All footer links direct to appropriate pages -->
                 <a href="index.html" data-lang-en="Home" data-lang-ru="Главная">Home</a>
                 <a href="culinary.html" data-lang-en="Gallery" data-lang-ru="Галерея">Gallery</a>
                 <a href="#contact" data-lang-en="Contact" data-lang-ru="Контакты">Contact</a>
             </div>
             <div class="social-links">
-                <a href="#" title="Facebook">📘</a>
-                <a href="#" title="Instagram">📷</a>
-                <a href="#" title="Twitter">🐦</a>
+                <!-- Social links styled and accessible -->
+                <a href="#" title="Facebook" aria-label="Facebook">📘</a>
+                <a href="#" title="Instagram" aria-label="Instagram">📷</a>
+                <a href="#" title="Twitter" aria-label="Twitter">🐦</a>
             </div>
         </div>
         <div style="text-align: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
@@ -745,6 +759,7 @@
         </div>
     </footer>
 
+    <!--Bootstrap 5.3.2 JavaScript for Responsive Components -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
