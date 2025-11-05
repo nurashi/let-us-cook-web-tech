@@ -37,14 +37,12 @@
                 <li class="nav-item"><a class="nav-link" href="../ra/breakfast.html" data-lang-en="Breakfast" data-lang-ru="Завтрак">Breakfast</a></li>
                 <li class="nav-item"><a class="nav-link" href="../culinary.html" data-lang-en="Culinary" data-lang-ru="Кулинария">Culinary</a></li>
                 <li class="nav-item">
-                    <button id="navThemeToggle" class="btn btn-sm btn-outline-secondary ms-2">
+                    <button id="navThemeToggle" type="button" class="btn btn-sm btn-outline-secondary ms-2" aria-label="Toggle theme">
                         <span class="theme-icon">🌙</span>
                     </button>
                 </li>
                 <li class="nav-item">
-                    <button id="navLangToggle" class="btn btn-sm btn-outline-primary ms-2">
-                        EN
-                    </button>
+                    <button id="navLangToggle" type="button" class="btn btn-sm btn-outline-primary ms-2" aria-label="Toggle language">EN</button>
                 </li>
             </ul>
         </div>
@@ -63,8 +61,8 @@
             <h1 class="fw-bold mb-3" data-lang-en="Fast Food Favorites" data-lang-ru="Любимый Фастфуд">Fast Food Favorites</h1>
             <p class="lead" data-lang-en="Quick, delicious, and satisfying meals for busy lifestyles — burgers, fries, pizza and more." data-lang-ru="Быстрая, вкусная и сытная еда для занятых людей — бургеры, картофель фри, пицца и многое другое.">Quick, delicious, and satisfying meals for busy lifestyles — burgers, fries, pizza and more.</p>
             <div class="btn-group" role="group" aria-label="Fast Food Actions">
-                <button class="btn btn-primary btn-lg" data-lang-en="Explore Dishes" data-lang-ru="Изучить блюда">Explore Dishes</button>
-                <button class="btn btn-outline-secondary btn-lg" data-lang-en="Learn More" data-lang-ru="Узнать больше">Learn More</button>
+                <button id="exploreBtn" type="button" class="btn btn-primary btn-lg" data-lang-en="Explore Dishes" data-lang-ru="Изучить блюда" aria-label="Explore dishes">Explore Dishes</button>
+                <button id="learnBtn" type="button" class="btn btn-outline-secondary btn-lg" data-lang-en="Learn More" data-lang-ru="Узнать больше" aria-label="Learn more about this section">Learn More</button>
             </div>
         </div>
     </div>
@@ -135,8 +133,8 @@
 
     <section class="container my-5">
         <div class="card text-center p-4 shadow-sm">
-            <h3 class="mb-4">Current Date & Time</h3>
-            <div id="currentDateTime" class="py-3"></div>
+                <h3 class="mb-4">Current Date & Time</h3>
+            <div id="currentDateTime" class="py-3" aria-live="polite"></div>
         </div>
     </section>
 
@@ -235,7 +233,7 @@
                 <button class="filter-btn btn btn-outline-primary btn-sm me-2" onclick="filterRecipes('fastfood')">Fast Food</button>
                 <button class="filter-btn btn btn-outline-primary btn-sm" onclick="filterRecipes('dessert')">Dessert</button>
             </div>
-            <div id="filterStatus">Showing all recipes</div>
+            <div id="filterStatus" aria-live="polite">Showing all recipes</div>
             <div id="recipeList"></div>
         </div>
     </section>
@@ -287,7 +285,7 @@
                 <h3 class="mb-0">Task 1: Real-time Fast Food Search</h3>
             </div>
             <div class="card-body">
-                <input type="text" id="searchInput" class="form-control mb-3" placeholder="Type to search fast food items...">
+                <input type="text" id="searchInput" aria-label="Search fast food items" class="form-control mb-3" placeholder="Type to search fast food items...">
                 <div id="searchResults">
                     <div class="searchable-item p-2 border-bottom">Cheeseburger - Classic American favorite</div>
                     <div class="searchable-item p-2 border-bottom">French Fries - Crispy golden fries</div>
@@ -310,7 +308,7 @@
             </div>
             <div class="card-body">
                 <div style="position: relative;">
-                    <input type="text" id="autocompleteInput" class="form-control" placeholder="Start typing a fast food name..." autocomplete="off">
+                    <input type="text" id="autocompleteInput" aria-label="Autocomplete fast food" class="form-control" placeholder="Start typing a fast food name..." autocomplete="off">
                     <div id="autocompleteDropdown" style="display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #ddd; border-top: none; max-height: 200px; overflow-y: auto; z-index: 1000;"></div>
                 </div>
             </div>
@@ -323,8 +321,8 @@
             </div>
             <div class="card-body">
                 <div class="input-group mb-3">
-                    <input type="text" id="highlightInput" class="form-control" placeholder="Enter keyword to highlight...">
-                    <button class="btn btn-warning" id="highlightSearchBtn">Highlight</button>
+                    <input type="text" id="highlightInput" aria-label="Highlight keyword" class="form-control" placeholder="Enter keyword to highlight...">
+                    <button type="button" class="btn btn-warning" id="highlightSearchBtn">Highlight</button>
                 </div>
                 <div class="highlight-content">
                     <p class="searchable-item">Fast food burgers are quick and delicious meals perfect for busy days.</p>

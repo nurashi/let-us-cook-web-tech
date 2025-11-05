@@ -22,7 +22,24 @@ function toggleNavTheme() {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     updateThemeButton(isDark);
     
+    // clear inline backgrounds so CSS-based dark-theme rules can take effect
+    _clearInlineBackgrounds();
     onThemeChanged(isDark);
+}
+
+// Remove inline background styles that block CSS theme colors
+function _clearInlineBackgrounds() {
+    try {
+        [document.documentElement, document.body].forEach(elem => {
+            if (!elem) return;
+            elem.style.removeProperty('background');
+            elem.style.removeProperty('background-image');
+            elem.style.removeProperty('background-color');
+        });
+    } catch (e) {
+        // fail silently
+        console.warn('clearInlineBackgrounds failed', e);
+    }
 }
 
 // Callback executed after theme changes
@@ -546,18 +563,26 @@ function toggleAccordion(element) {
     const allAnswers = document.querySelectorAll('.faq-answer');
     const allQuestions = document.querySelectorAll('.faq-question');
     
+    // close all
     allAnswers.forEach(ans => {
         ans.style.display = 'none';
+        ans.setAttribute('aria-hidden', 'true');
     });
-    
+
     allQuestions.forEach(q => {
         q.classList.remove('active');
+        q.setAttribute('aria-expanded', 'false');
     });
-    
+
     if (!isOpen) {
+        // open this one
         answer.style.display = 'block';
+        answer.setAttribute('aria-hidden', 'false');
         element.classList.add('active');
-        animateElement(answer.id || 'temp'); // add animation
+        element.setAttribute('aria-expanded', 'true');
+        // ensure answer has an id for animation references
+        if (!answer.id) answer.id = 'faq-answer-' + Math.random().toString(36).slice(2, 9);
+        animateElement(answer.id);
     }
 }
 
@@ -732,6 +757,47 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('step1')) {
         showStep(1);
     }
+
+    // Accessibility: allow toggling FAQ with keyboard (Enter / Space)
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach((q, idx) => {
+        q.setAttribute('tabindex', '0');
+        q.setAttribute('role', 'button');
+        q.setAttribute('aria-expanded', 'false');
+
+        // ensure the paired answer exists and has aria-hidden
+        const ans = q.nextElementSibling;
+        if (ans && ans.classList.contains('faq-answer')) {
+            if (!ans.id) ans.id = 'faq-answer-' + (idx + 1);
+            q.setAttribute('aria-controls', ans.id);
+            ans.setAttribute('role', 'region');
+            ans.setAttribute('aria-hidden', 'true');
+        }
+
+        q.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleAccordion(q);
+            }
+        });
+    });
+
+    // Attach Explore / Learn actions if present
+    const exploreBtn = document.getElementById('exploreBtn');
+    if (exploreBtn) {
+        exploreBtn.addEventListener('click', function() {
+            const target = document.getElementById('recipeList');
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            else showNotification('Recipes section not found', 'info');
+        });
+    }
+
+    const learnBtn = document.getElementById('learnBtn');
+    if (learnBtn) {
+        learnBtn.addEventListener('click', function() {
+            showModal('About this Section', '<p>This section contains curated recipes, interactive filters, and jQuery-powered features (search, autocomplete, counters, lazy loading).</p><p>Use the search box or explore the recipe list to find dishes and try the interactive features.</p>');
+        });
+    }
     
     console.log('✅ All features initialized!');
     
@@ -887,7 +953,7 @@ function initLoadingSpinner() {
 
 // Notification system
 function showNotification(message, type) {
-    const $notification = $('<div class="notification"></div>')
+    const $notification = $('<div class="notification" role="status" aria-live="polite"></div>')
         .addClass(type || 'info')
         .text(message)
         .appendTo('body');
@@ -902,6 +968,43 @@ function showNotification(message, type) {
             $notification.remove();
         }, 300);
     }, 3000);
+}
+
+// Small helper: create and show a Bootstrap modal with given title/html body
+function showModal(title, bodyHtml) {
+        // Ensure Bootstrap is available
+        if (typeof bootstrap === 'undefined') {
+                alert(title + '\n\n' + bodyHtml.replace(/<[^>]+>/g, ''));
+                return;
+        }
+
+        const modalId = 'generatedModal';
+        // remove existing
+        const existing = document.getElementById(modalId);
+        if (existing) existing.remove();
+
+        const modalHtml = `
+                <div class="modal fade" id="${modalId}" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">${title}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">${bodyHtml}</div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        `;
+
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+        const modalEl = document.getElementById(modalId);
+        const modal = new bootstrap.Modal(modalEl);
+        modal.show();
+        modalEl.addEventListener('hidden.bs.modal', function() { modalEl.remove(); });
 }
 
 // Copy to clipboard

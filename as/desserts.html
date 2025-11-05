@@ -42,14 +42,12 @@
 
                 <!-- Theme & Language toggles (right‑hand corner) -->
                 <li class="nav-item">
-                    <button id="navThemeToggle" class="btn btn-sm btn-outline-secondary ms-2">
+                    <button id="navThemeToggle" type="button" class="btn btn-sm btn-outline-secondary ms-2" aria-label="Toggle theme">
                         <span class="theme-icon">Night Mode</span>
                     </button>
                 </li>
                 <li class="nav-item">
-                    <button id="navLangToggle" class="btn btn-sm btn-outline-primary ms-2">
-                        EN
-                    </button>
+                    <button id="navLangToggle" type="button" class="btn btn-sm btn-outline-primary ms-2" aria-label="Toggle language">EN</button>
                 </li>
             </ul>
         </div>
@@ -70,8 +68,8 @@
             <p class="lead" data-lang-en="Indulgent treats and sweet endings to perfect meals."
                 data-lang-ru="Лакомства и сладкие завершения идеальных блюд.">Indulgent treats and sweet endings to perfect meals.</p>
             <div class="btn-group" role="group" aria-label="Dessert Actions">
-                <button class="btn btn-primary btn-lg" data-lang-en="Explore Desserts" data-lang-ru="Исследовать Десерты">Explore Desserts</button>
-                <button class="btn btn-outline-secondary btn-lg" data-lang-en="Learn More" data-lang-ru="Узнать больше">Learn More</button>
+                <button id="exploreBtn" type="button" class="btn btn-primary btn-lg" data-lang-en="Explore Desserts" data-lang-ru="Исследовать Десерты" aria-label="Explore desserts">Explore Desserts</button>
+                <button id="learnBtn" type="button" class="btn btn-outline-secondary btn-lg" data-lang-en="Learn More" data-lang-ru="Узнать больше" aria-label="Learn more about this section">Learn More</button>
             </div>
         </div>
     </div>
@@ -148,21 +146,18 @@
         </div>
     </div>
 </main>
-
-</main>
-
     <section class="container my-5">
-        <div class="card text-center p-4 shadow-sm">
+            <div class="card text-center p-4 shadow-sm">
             <h3 class="mb-4">Current Date & Time</h3>
-            <div id="currentDateTime" class="py-3"></div>
+            <div id="currentDateTime" class="py-3" aria-live="polite"></div>
         </div>
     </section>
 
     <section class="container my-5 text-center">
-        <div class="card p-4">
+            <div class="card p-4">
             <h3 class="mb-3">🌙 Theme Switcher</h3>
             <p class="text-muted mb-3">Toggle between day and night modes</p>
-            <button id="themeToggle" class="btn btn-lg btn-dark">🌙 Night Mode</button>
+            <button id="themeToggle" type="button" class="btn btn-lg btn-dark" aria-pressed="false">🌙 Night Mode</button>
         </div>
     </section>
 
@@ -252,7 +247,7 @@
                 <button class="filter-btn btn btn-outline-primary btn-sm me-2" onclick="filterRecipes('dinner')">Dinner</button>
                 <button class="filter-btn btn btn-outline-primary btn-sm" onclick="filterRecipes('dessert')">Dessert</button>
             </div>
-            <div id="filterStatus">Showing all recipes</div>
+            <div id="filterStatus" aria-live="polite">Showing all recipes</div>
             <div id="recipeList"></div>
         </div>
     </section>
@@ -304,7 +299,7 @@
                 <h3 class="mb-0">Task 1: Real-time Dessert Search</h3>
             </div>
             <div class="card-body">
-                <input type="text" id="searchInput" class="form-control mb-3" placeholder="Type to search desserts...">
+                <input type="text" id="searchInput" aria-label="Search desserts" class="form-control mb-3" placeholder="Type to search desserts...">
                 <div id="searchResults">
                     <div class="searchable-item p-2 border-bottom">Chocolate Cake - Rich and decadent</div>
                     <div class="searchable-item p-2 border-bottom">Vanilla Pudding - Smooth and creamy</div>
@@ -327,7 +322,7 @@
             </div>
             <div class="card-body">
                 <div style="position: relative;">
-                    <input type="text" id="autocompleteInput" class="form-control" placeholder="Start typing a dessert name..." autocomplete="off">
+                    <input type="text" id="autocompleteInput" aria-label="Autocomplete dessert" class="form-control" placeholder="Start typing a dessert name..." autocomplete="off">
                     <div id="autocompleteDropdown" style="display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #ddd; border-top: none; max-height: 200px; overflow-y: auto; z-index: 1000;"></div>
                 </div>
             </div>
@@ -340,8 +335,8 @@
             </div>
             <div class="card-body">
                 <div class="input-group mb-3">
-                    <input type="text" id="highlightInput" class="form-control" placeholder="Enter keyword to highlight...">
-                    <button class="btn btn-warning" id="highlightSearchBtn">Highlight</button>
+                    <input type="text" id="highlightInput" aria-label="Highlight keyword" class="form-control" placeholder="Enter keyword to highlight...">
+                    <button type="button" class="btn btn-warning" id="highlightSearchBtn">Highlight</button>
                 </div>
                 <div class="highlight-content">
                     <p class="searchable-item">Chocolate desserts are rich and indulgent treats perfect for any celebration.</p>
@@ -468,23 +463,23 @@
                     <form id="contactForm" novalidate>
                         <div class="mb-3">
                             <label for="name" class="form-label">Name *</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name">
+                            <input type="text" required class="form-control" id="name" name="name" placeholder="Enter your full name">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email *</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="your.email@example.com">
+                            <input type="email" required class="form-control" id="email" name="email" placeholder="your.email@example.com">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password *</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="At least 6 characters">
+                            <input type="password" required class="form-control" id="password" name="password" placeholder="At least 6 characters">
                         </div>
                         <div class="mb-3">
                             <label for="confirmPassword" class="form-label">Confirm Password *</label>
-                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password">
+                            <input type="password" required class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password">
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Message *</label>
-                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell us what you're thinking... (min 10 characters)"></textarea>
+                            <textarea class="form-control" required id="message" name="message" rows="5" placeholder="Tell us what you're thinking... (min 10 characters)"></textarea>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <div class="btn-group" role="group" aria-label="Contact buttons">
@@ -558,13 +553,13 @@
             <form class="subscription-form">
                 <div class="mb-3">
                     <label class="form-label">Full Name</label>
-                    <input type="text" class="form-control subscribe-name" placeholder="Enter your name" />
+                    <input type="text" required class="form-control subscribe-name" placeholder="Enter your name" />
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Email Address</label>
                     <div class="input-group">
-                        <input type="email" class="form-control subscribe-email" placeholder="Enter your email" />
+                        <input type="email" required class="form-control subscribe-email" placeholder="Enter your email" />
                         <button class="btn btn-primary" type="submit">Subscribe</button>
                     </div>
                 </div>
