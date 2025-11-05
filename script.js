@@ -1,29 +1,6 @@
-/* ============================================
-   PART 1 COMPLETION: RESPONSIVE LAYOUT AND NAVIGATION
-   ============================================
-   
-   TASK 1 - Functional Responsive Layout ✅
-   - Bootstrap 5.3.2 grid system implemented across all pages
-   - Mobile-first responsive design (col-12, col-md-*, col-lg-*)
-   - Custom CSS media queries for additional responsiveness
-   - Typography scales appropriately for mobile/tablet/desktop
-   - Images resize correctly across all screen sizes
-   - No overlapping or breaking layouts
-   
-   TASK 2 - Working Navigation and Footer Links ✅
-   - All navigation links direct to correct pages
-   - All footer links work properly
-   - Social links styled and accessible
-   - Links remain functional across all screen sizes
-   - Bootstrap navbar with collapsible mobile menu
-   - Active page highlighted in navigation
-   
-   ============================================ */
 
-// Theme and Language Management
 let currentLang = 'en';
 
-// Initialize theme from localStorage on page load
 function initTheme() {
     const savedTheme = localStorage.getItem('theme') || 'light';
     if (savedTheme === 'dark') {
@@ -31,11 +8,12 @@ function initTheme() {
         document.documentElement.classList.add('dark-theme');
         updateThemeButton(true);
     } else {
+        document.body.classList.remove('dark-theme');
+        document.documentElement.classList.remove('dark-theme');
         updateThemeButton(false);
     }
 }
 
-// Toggle theme and save to localStorage
 function toggleNavTheme() {
     const isDark = document.body.classList.toggle('dark-theme');
     document.documentElement.classList.toggle('dark-theme');
@@ -43,12 +21,10 @@ function toggleNavTheme() {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     updateThemeButton(isDark);
     
-    // clear inline backgrounds so CSS-based dark-theme rules can take effect
     _clearInlineBackgrounds();
     onThemeChanged(isDark);
 }
 
-// Remove inline background styles that block CSS theme colors
 function _clearInlineBackgrounds() {
     try {
         [document.documentElement, document.body].forEach(elem => {
@@ -58,12 +34,10 @@ function _clearInlineBackgrounds() {
             elem.style.removeProperty('background-color');
         });
     } catch (e) {
-        // fail silently
         console.warn('clearInlineBackgrounds failed', e);
     }
 }
 
-// Callback executed after theme changes
 function onThemeChanged(isDark) {
     const allCards = document.querySelectorAll('.card');
     allCards.forEach(card => {
@@ -72,23 +46,23 @@ function onThemeChanged(isDark) {
         }
     });
     
-    console.log(`Theme changed to: ${isDark ? 'dark' : 'light'}`);
+    updateDateTime();
+    
+    console.log(`Theme switched to: ${isDark ? 'dark mode' : 'light mode'}`);
 }
 
-// Update theme button icon
 function updateThemeButton(isDark) {
     const navBtn = document.getElementById('navThemeToggle');
     const oldBtn = document.getElementById('themeToggle');
     
     if (navBtn) {
-        const icon = navBtn.querySelector('.theme-icon');
-        if (icon) {
-            icon.textContent = isDark ? '☀️' : '🌙';
-        }
+        navBtn.innerHTML = isDark ? '<span class="theme-icon">☀️</span>' : '<span class="theme-icon">🌙</span>';
+        navBtn.setAttribute('aria-label', isDark ? 'Switch to day mode' : 'Switch to night mode');
     }
     
     if (oldBtn) {
         oldBtn.innerHTML = isDark ? '☀️ Day Mode' : '🌙 Night Mode';
+        oldBtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
     }
 }
 
@@ -491,7 +465,9 @@ function animateElement(elementId) {
     }, 300);
 }
 
-
+// Comprehensive form validation with required field checking
+// Validates: name (min 2 chars), email (proper format), password (min 6 chars),
+// password confirmation (must match), and message (min 10 chars)
 function validateForm(event) {
     event.preventDefault();
     clearErrors();
@@ -504,6 +480,7 @@ function validateForm(event) {
     
     let isValid = true;
     
+    // Name validation - required field
     if (name === '') {
         showError('name', 'Name is required');
         isValid = false;
@@ -512,6 +489,7 @@ function validateForm(event) {
         isValid = false;
     }
     
+    // Email validation - required field with format check
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (email === '') {
         showError('email', 'Email is required');
@@ -521,6 +499,7 @@ function validateForm(event) {
         isValid = false;
     }
     
+    // Password validation - required field with minimum length
     if (password === '') {
         showError('password', 'Password is required');
         isValid = false;
@@ -554,19 +533,24 @@ function validateForm(event) {
     return false;
 }
 
+// Display validation error with high contrast for accessibility
 function showError(fieldId, message) {
     const field = document.getElementById(fieldId);
     const errorDiv = document.createElement('div');
     errorDiv.className = 'error-message';
-    errorDiv.style.color = 'red';
+    errorDiv.style.color = '#dc3545'; /* Bootstrap danger color - better contrast than pure red */
     errorDiv.style.fontSize = '0.875rem';
     errorDiv.style.marginTop = '0.25rem';
+    errorDiv.style.fontWeight = '500';
     errorDiv.textContent = message;
+    errorDiv.setAttribute('role', 'alert'); /* Accessibility: announce errors to screen readers */
     
-    field.style.borderColor = 'red';
+    field.style.borderColor = '#dc3545';
+    field.setAttribute('aria-invalid', 'true');
     field.parentElement.appendChild(errorDiv);
 }
 
+// Clear all validation errors from the form
 function clearErrors() {
     const errorMessages = document.querySelectorAll('.error-message');
     errorMessages.forEach(error => error.remove());
@@ -574,9 +558,11 @@ function clearErrors() {
     const inputs = document.querySelectorAll('.form-control');
     inputs.forEach(input => {
         input.style.borderColor = '';
+        input.removeAttribute('aria-invalid');
     });
 }
 
+// Accordion toggle with proper ARIA attributes for screen readers
 function toggleAccordion(element) {
     const answer = element.nextElementSibling;
     const isOpen = answer.style.display === 'block';
@@ -584,7 +570,7 @@ function toggleAccordion(element) {
     const allAnswers = document.querySelectorAll('.faq-answer');
     const allQuestions = document.querySelectorAll('.faq-question');
     
-    // close all
+    // Close all other accordions for better UX
     allAnswers.forEach(ans => {
         ans.style.display = 'none';
         ans.setAttribute('aria-hidden', 'true');
@@ -595,13 +581,13 @@ function toggleAccordion(element) {
         q.setAttribute('aria-expanded', 'false');
     });
 
+    // Toggle current accordion
     if (!isOpen) {
-        // open this one
         answer.style.display = 'block';
         answer.setAttribute('aria-hidden', 'false');
         element.classList.add('active');
         element.setAttribute('aria-expanded', 'true');
-        // ensure answer has an id for animation references
+        // Generate unique ID for proper aria-controls reference
         if (!answer.id) answer.id = 'faq-answer-' + Math.random().toString(36).slice(2, 9);
         animateElement(answer.id);
     }
@@ -626,6 +612,7 @@ function closePopupOutside(event) {
     }
 }
 
+// Subscription form handler with email validation
 function handleSubscriptionForForm(form, event) {
     if (event) event.preventDefault();
     const emailInput = form.querySelector('.subscribe-email');
@@ -633,12 +620,22 @@ function handleSubscriptionForForm(form, event) {
     const email = emailInput ? emailInput.value.trim() : '';
     const name = nameInput ? nameInput.value.trim() : '';
 
+    // Validate email is not empty
     if (email === '') {
-        alert('Please enter an email to subscribe.');
+        alert('Please enter an email address to subscribe.');
+        if (emailInput) emailInput.focus();
+        return;
+    }
+    
+    // Validate email format
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address.');
+        if (emailInput) emailInput.focus();
         return;
     }
 
-    playNotificationSound(); // play sound
+    playNotificationSound();
     alert('Thank you for subscribing! 🎉\nWe will send updates to: ' + email);
     form.reset();
     try { closePopup(); } catch (e) { }
@@ -680,13 +677,17 @@ function updateDateTime() {
     const seconds = String(now.getSeconds()).padStart(2, '0');
     const timeString = `${hours}:${minutes}:${seconds}`;
     
+    const isDark = document.body.classList.contains('dark-theme');
+    const dateColor = isDark ? '#cbd5e0' : '#333';
+    const timeColor = isDark ? '#63b3ed' : '#007bff';
+    
     const dateTimeElement = document.getElementById('currentDateTime');
     if (dateTimeElement) {
         dateTimeElement.innerHTML = `
-            <div style="font-size: 1.2rem; font-weight: 600; color: #333;">
+            <div style="font-size: 1.2rem; font-weight: 600; color: ${dateColor};">
                  📅 ${dateString}
             </div>
-            <div style="font-size: 2rem; font-weight: 700; color: #007bff; margin-top: 0.5rem;">
+            <div style="font-size: 2rem; font-weight: 700; color: ${timeColor}; margin-top: 0.5rem;">
                  🕐 ${timeString}
             </div>
         `;
@@ -836,6 +837,105 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typeof jQuery !== 'undefined') {
         initJQueryFeatures();
     }
+    
+    // Make all "Details" buttons functional - show recipe modal
+    document.querySelectorAll('.btn-primary').forEach(btn => {
+        if (btn.textContent.trim() === 'Details' || btn.textContent.includes('Details')) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const card = this.closest('.card');
+                const title = card.querySelector('.card-title')?.textContent || 'Recipe Details';
+                const description = card.querySelector('.card-text')?.textContent || 'No description available';
+                const badges = Array.from(card.querySelectorAll('.badge')).map(b => b.textContent).join(' | ');
+                
+                showModal(title, `
+                    <p>${description}</p>
+                    <hr>
+                    <p><strong>Cooking Info:</strong> ${badges}</p>
+                    <p class="text-muted">This is a demo modal. In a real application, this would show full recipe instructions, ingredients, and step-by-step photos.</p>
+                `);
+            });
+        }
+    });
+    
+    // Make all "Save" buttons functional - save to favorites
+    document.querySelectorAll('.btn-outline-secondary').forEach(btn => {
+        if (btn.textContent.trim() === 'Save' || btn.textContent.includes('Save')) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const card = this.closest('.card');
+                const title = card.querySelector('.card-title')?.textContent || 'Recipe';
+                
+                // Get saved recipes from localStorage
+                let savedRecipes = JSON.parse(localStorage.getItem('savedRecipes') || '[]');
+                
+                if (savedRecipes.includes(title)) {
+                    // Already saved, remove it
+                    savedRecipes = savedRecipes.filter(r => r !== title);
+                    this.textContent = 'Save';
+                    this.classList.remove('btn-success');
+                    this.classList.add('btn-outline-secondary');
+                    showNotification(`Removed "${title}" from favorites`, 'info');
+                } else {
+                    // Save it
+                    savedRecipes.push(title);
+                    this.textContent = 'Saved ✓';
+                    this.classList.remove('btn-outline-secondary');
+                    this.classList.add('btn-success');
+                    showNotification(`Added "${title}" to favorites!`, 'success');
+                }
+                
+                localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
+            });
+        }
+    });
+    
+    // Check saved recipes and update buttons on page load
+    const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes') || '[]');
+    document.querySelectorAll('.card').forEach(card => {
+        const title = card.querySelector('.card-title')?.textContent;
+        const saveBtn = Array.from(card.querySelectorAll('.btn-outline-secondary')).find(btn => 
+            btn.textContent.trim() === 'Save'
+        );
+        
+        if (title && savedRecipes.includes(title) && saveBtn) {
+            saveBtn.textContent = 'Saved ✓';
+            saveBtn.classList.remove('btn-outline-secondary');
+            saveBtn.classList.add('btn-success');
+        }
+    });
+});
+
+// Social media links open in new tab with proper URL
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle social media links - provide a user-friendly experience
+    document.querySelectorAll('a[href="#"][aria-label*="Facebook"], a[href="#"][title*="Facebook"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Facebook: Visit facebook.com/letuscook to follow us! 📘');
+        });
+    });
+    
+    document.querySelectorAll('a[href="#"][aria-label*="Instagram"], a[href="#"][title*="Instagram"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Instagram: Follow @letuscook on Instagram! 📷');
+        });
+    });
+    
+    document.querySelectorAll('a[href="#"][aria-label*="Twitter"], a[href="#"][title*="Twitter"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Twitter: Follow @letuscook on Twitter! 🐦');
+        });
+    });
+    
+    document.querySelectorAll('a[href="#"][aria-label*="YouTube"], a[href="#"][title*="YouTube"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('YouTube: Subscribe to Let Us Cook on YouTube! 📺');
+        });
+    });
 });
 
 // Real-time search and live filter
@@ -982,17 +1082,19 @@ function initLoadingSpinner() {
     });
 }
 
-// Notification system
+// User-friendly notification system with accessibility features
 function showNotification(message, type) {
-    const $notification = $('<div class="notification" role="status" aria-live="polite"></div>')
+    const $notification = $('<div class="notification" role="status" aria-live="polite" aria-atomic="true"></div>')
         .addClass(type || 'info')
         .text(message)
         .appendTo('body');
     
+    // Fade in animation
     setTimeout(function() {
         $notification.addClass('show');
     }, 100);
     
+    // Auto-dismiss after 3 seconds
     setTimeout(function() {
         $notification.removeClass('show');
         setTimeout(function() {
