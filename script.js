@@ -743,6 +743,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (navLangToggle) {
         navLangToggle.addEventListener('click', toggleLanguage);
     }
+
+    // social buttons (non-configured) should show a helpful notification instead of being dead links
+    const socialBtns = document.querySelectorAll('.btn-social');
+    if (socialBtns.length) {
+        socialBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                showNotification('Social link is not configured yet', 'info');
+            });
+        });
+    }
     
     // multi-step form buttons
     const nextBtn = document.getElementById('nextBtn');

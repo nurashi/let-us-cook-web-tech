@@ -392,6 +392,13 @@ textarea {
   box-shadow: var(--shadow-medium);
 }
 
+/* Improved focus-visible for keyboard users */
+.btn:focus-visible {
+  outline: 3px solid #0056b3;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px rgba(0,86,179,0.12);
+}
+
 .btn-secondary {
   background: transparent;
   border: 2px solid white;
@@ -1077,6 +1084,24 @@ html.dark-theme {
 .dark-theme .faq-answer {
   background-color: #0f1929;
   border-left-color: #e94560;
+  color: #cbd5e0;
+}
+
+/* Ensure components that use Bootstrap utility classes like .bg-light
+   are still readable in dark mode (override where necessary) */
+.dark-theme .faq-question.bg-light,
+.dark-theme .faq-question.bg-light:focus,
+.dark-theme .faq-question.bg-light:hover {
+  background-color: #16213e !important;
+  color: #e0e0e0 !important;
+  border-color: #2d3e5f !important;
+}
+
+.dark-theme .faq-question.bg-light strong {
+  color: #f7fafc !important;
+}
+
+.dark-theme .faq-question span {
   color: #cbd5e0;
 }
 
