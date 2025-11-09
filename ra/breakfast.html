@@ -1,525 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Breakfast - Let Us Cook</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Site CSS -->
     <link rel="stylesheet" href="../common.css">
-    <!-- jQuery (used by some pages/features) -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-    <link rel="icon" type="image/webp" href="../Images/let-us-cook-(logo).webp" />
 </head>
-<body class="fade-in">
-
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <div class="container-fluid px-sm-3 px-lg-5">
-        <a class="navbar-brand d-flex align-items-center" href="../index.html">
-            <img src="../Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo" width="40" height="40" class="me-2" />
-            Let Us Cook
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="../index.html" data-lang-en="Home" data-lang-ru="Главная">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="../an/soups.html" data-lang-en="Soups" data-lang-ru="Супы">Soups</a></li>
-                <li class="nav-item"><a class="nav-link" href="../an/meals.html" data-lang-en="Meals" data-lang-ru="Блюда">Meals</a></li>
-                <li class="nav-item"><a class="nav-link" href="../as/fastfood.html" data-lang-en="Fast Food" data-lang-ru="Фастфуд">Fast Food</a></li>
-                <li class="nav-item"><a class="nav-link" href="../as/desserts.html" data-lang-en="Desserts" data-lang-ru="Десерты">Desserts</a></li>
-                <li class="nav-item"><a class="nav-link active" href="breakfast.html" data-lang-en="Breakfast" data-lang-ru="Завтрак">Breakfast</a></li>
-                <li class="nav-item"><a class="nav-link" href="drinks.html" data-lang-en="Drinks" data-lang-ru="Напитки">Drinks</a></li>
-                <li class="nav-item"><a class="nav-link" href="../culinary.html" data-lang-en="Culinary" data-lang-ru="Кулинария">Culinary</a></li>
-                <li class="nav-item">
-                    <button id="navThemeToggle" type="button" class="btn btn-sm btn-outline-secondary ms-2" aria-label="Toggle theme">
-                        <span class="theme-icon">🌙</span>
-                    </button>
-                </li>
-                <li class="nav-item">
-                    <button id="navLangToggle" type="button" class="btn btn-sm btn-outline-primary ms-2" aria-label="Toggle language">EN</button>
-                </li>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">🍳 Let Us Cook</a>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="../index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="../culinary.html" data-i18n="nav.culinary">Culinary</a></li>
+                <li><a href="../an/soups.html" data-i18n="nav.soups">Soups</a></li>
+                <li><a href="../an/meals.html" data-i18n="nav.meals">Meals</a></li>
+                <li><a href="../as/fastfood.html" data-i18n="nav.fastfood">Fast Food</a></li>
+                <li><a href="../as/desserts.html" data-i18n="nav.desserts">Desserts</a></li>
+                <li><a href="drinks.html" data-i18n="nav.drinks">Drinks</a></li>
+                <li><a href="breakfast.html" data-i18n="nav.breakfast">Breakfast</a></li>
             </ul>
-        </div>
-    </div>
-</nav>
-
-<main class="container mt-5">
-    <div class="row align-items-center mb-5">
-        <div class="col-lg-6 mb-4 mb-lg-0">
-            <img src="../Images/Breakfasat-logo.png" alt="Breakfast Banner" class="img-fluid rounded shadow" style="width: 80%; height: 400px; object-fit: cover;" />
-        </div>
-        <div class="col-lg-6">
-            <h1 class="fw-bold mb-3">Morning Breakfast</h1>
-            <p class="lead">Start your day right with delicious breakfast recipes</p>
-            <div class="btn-group" role="group" aria-label="Breakfast Actions">
-                <button id="exploreBtn" type="button" class="btn btn-primary btn-lg" data-lang-en="Explore Recipes" data-lang-ru="Изучить рецепты" aria-label="Explore recipes">Explore Recipes</button>
-                <button id="learnBtn" type="button" class="btn btn-outline-secondary btn-lg" data-lang-en="Learn More" data-lang-ru="Узнать больше" aria-label="Learn more about this section">Learn More</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="breakfastCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#breakfastCarousel" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#breakfastCarousel" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#breakfastCarousel" data-bs-slide-to="2"></button>
-        </div>
-
-        <div class="carousel-inner rounded shadow">
-            <div class="carousel-item active">
-                <img src="https://img.icons8.com/color/400/000000/pancake.png" class="d-block w-100" alt="Fluffy Pancakes" style="height: 400px; object-fit: contain; background: linear-gradient(135deg, #FF6B35, #F7931E);">
-            </div>
-            <div class="carousel-item">
-                <img src="https://cdn-icons-png.flaticon.com/128/4806/4806489.png" class="d-block w-100" alt="Scrambled Eggs" style="height: 400px; object-fit: contain; background: linear-gradient(135deg, #C1403D, #FF6B35);">
-            </div>
-            <div class="carousel-item">
-                <img src="https://img.icons8.com/color/400/000000/waffle.png" class="d-block w-100" alt="Belgian Waffles" style="height: 400px; object-fit: contain; background: linear-gradient(135deg, #F7931E, #FF6B35);">
-            </div>
-        </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#breakfastCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#breakfastCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-    </div>
-
-    <div class="row g-4 mb-5">
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm">
-                <img src="https://img.icons8.com/color/400/000000/pancake.png" class="card-img-top" alt="Fluffy Pancakes" style="height: 200px; object-fit: contain; padding: 20px; background: #f8f9fa;">
-                <div class="card-body">
-                    <h5 class="card-title">Fluffy Pancakes</h5>
-                    <p class="card-text">Light and fluffy pancakes served with maple syrup and fresh berries. Perfect weekend breakfast treat.</p>
-                    <div class="d-flex gap-2 flex-wrap mb-3">
-                        <span class="badge bg-warning text-dark">20 mins</span>
-                        <span class="badge bg-success">Easy</span>
-                        <span class="badge bg-info text-dark">Sweet</span>
+            
+            <div class="nav-controls">
+                <button class="language-toggle" aria-label="Toggle language">EN</button>
+                <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+                
+                <div class="auth-buttons">
+                    <a href="../login.html" class="btn-login" data-i18n="nav.login">Log In</a>
+                    <a href="../signup.html" class="btn-signup" data-i18n="nav.signup">Sign Up</a>
+                </div>
+                
+                <div class="user-profile" style="display: none;">
+                    <div class="user-info">
+                        <div class="user-name"></div>
+                        <div class="user-email"></div>
                     </div>
-                    <a href="https://youtu.be/NCMKedZvnyI?si=RV31LP9-d0GA3_Qv"><button class="btn btn-outline-primary btn-sm">View Recipe</button></a>
+                    <button class="btn-logout" data-i18n="nav.logout">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <h1>🥞 Breakfast Menu</h1>
+            <p>Start your day right with our delicious breakfast options</p>
+        </section>
+
+        <div class="search-filter-container">
+            <h3 style="margin-bottom: 1rem;">Find Your Perfect Breakfast</h3>
+            <div class="search-box">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search breakfast items...">
+                <button class="btn-search" onclick="searchItems()">Search</button>
+            </div>
+            <div class="filter-options">
+                <div class="filter-group">
+                    <label>Type</label>
+                    <select id="typeFilter" class="filter-select" onchange="filterItems()">
+                        <option value="">All Types</option>
+                        <option value="eggs">Eggs</option>
+                        <option value="pancakes">Pancakes</option>
+                        <option value="toast">Toast</option>
+                        <option value="bowl">Bowls</option>
+                        <option value="pastry">Pastries</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Dietary</label>
+                    <select id="dietFilter" class="filter-select" onchange="filterItems()">
+                        <option value="">All</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="protein">High Protein</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Sort By</label>
+                    <select id="sortFilter" class="filter-select" onchange="filterItems()">
+                        <option value="">Default</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="rating">Rating</option>
+                    </select>
                 </div>
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm">
-                <img src="https://cdn-icons-png.flaticon.com/128/4806/4806489.png" class="card-img-top" alt="Scrambled Eggs" style="height: 200px; object-fit: contain; padding: 20px; background: #f8f9fa;">
-                <div class="card-body">
-                    <h5 class="card-title">Scrambled Eggs</h5>
-                    <p class="card-text">Creamy scrambled eggs cooked to perfection with herbs and butter. Classic breakfast staple.</p>
-                    <div class="d-flex gap-2 flex-wrap mb-3">
-                        <span class="badge bg-warning text-dark">10 mins</span>
-                        <span class="badge bg-success">Easy</span>
-                        <span class="badge bg-info text-dark">Protein</span>
-                    </div>
-                    <a href=""><button class="btn btn-outline-success btn-sm">View Recipe</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm">
-                <img src="https://img.icons8.com/color/400/000000/bread.png" class="card-img-top" alt="French Toast" style="height: 200px; object-fit: contain; padding: 20px; background: #f8f9fa;">
-                <div class="card-body">
-                    <h5 class="card-title">French Toast</h5>
-                    <p class="card-text">Golden French toast made with brioche bread, cinnamon, and vanilla. Served with powdered sugar.</p>
-                    <div class="d-flex gap-2 flex-wrap mb-3">
-                        <span class="badge bg-warning text-dark">15 mins</span>
-                        <span class="badge bg-success">Easy</span>
-                        <span class="badge bg-info text-dark">Sweet</span>
-                    </div>
-                    <a href=""><button class="btn btn-outline-danger btn-sm">View Recipe</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm">
-                <img src="https://img.icons8.com/color/400/000000/waffle.png" class="card-img-top" alt="Belgian Waffles" style="height: 200px; object-fit: contain; padding: 20px; background: #f8f9fa;">
-                <div class="card-body">
-                    <h5 class="card-title">Belgian Waffles</h5>
-                    <p class="card-text">Crispy Belgian waffles with deep pockets perfect for holding syrup, fruit, and whipped cream.</p>
-                    <div class="d-flex gap-2 flex-wrap mb-3">
-                        <span class="badge bg-warning text-dark">25 mins</span>
-                        <span class="badge bg-primary">Medium</span>
-                        <span class="badge bg-info text-dark">Belgian</span>
-                    </div>
-                    <a href=""><button class="btn btn-outline-primary btn-sm">View Recipe</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm">
-                <img src="../Images/oatmeal.png" class="card-img-top" alt="Oatmeal Bowl" style="height: 200px; object-fit: contain; padding: 20px; background: #f8f9fa;">
-                <div class="card-body">
-                    <h5 class="card-title">Healthy Oatmeal</h5>
-                    <p class="card-text">Nutritious oatmeal topped with fresh fruits, nuts, and honey. Perfect healthy start to your day.</p>
-                    <div class="d-flex gap-2 flex-wrap mb-3">
-                        <span class="badge bg-warning text-dark">10 mins</span>
-                        <span class="badge bg-success">Easy</span>
-                        <span class="badge bg-info text-dark">Healthy</span>
-                    </div>
-                    <a href=""><button class="btn btn-outline-success btn-sm">View Recipe</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100 shadow-sm">
-                <img src="https://img.icons8.com/color/400/000000/avocado.png" class="card-img-top" alt="Avocado Toast" style="height: 200px; object-fit: contain; padding: 20px; background: #f8f9fa;">
-                <div class="card-body">
-                    <h5 class="card-title">Avocado Toast</h5>
-                    <p class="card-text">Toasted sourdough topped with mashed avocado, lime, and everything bagel seasoning.</p>
-                    <div class="d-flex gap-2 flex-wrap mb-3">
-                        <span class="badge bg-warning text-dark">8 mins</span>
-                        <span class="badge bg-success">Easy</span>
-                        <span class="badge bg-info text-dark">Healthy</span>
-                    </div>
-                    <a href=""><button class="btn btn-outline-warning btn-sm">View Recipe</button></a>
-                </div>
-            </div>
-        </div>
+        <section>
+            <h2 class="section-title">Breakfast Specials</h2>
+            <div class="grid" id="itemsGrid"></div>
+        </section>
     </div>
 
-    <!-- Subscribe block moved to bottom of page to match Meals layout -->
-</main>
-
-    <section class="container my-5">
-        <div class="card text-center p-4 shadow-sm">
-            <h3 class="mb-4">Current Date & Time</h3>
-            <div id="currentDateTime" class="py-3"></div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Let Us Cook - The best way to start your day</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="drinks.html">Drinks</a></li>
+                </ul>
+            </div>
         </div>
-    </section>
-
-    <!-- ADVANCED JS: Theme Toggle -->
-    <section class="container my-5 text-center">
-            <div class="card p-4">
-            <h3 class="mb-3">🌙 Theme Switcher</h3>
-            <p class="text-muted mb-3">Toggle between day and night modes</p>
-            <button id="themeToggle" class="btn btn-sm btn-dark">
-                🌙 Night Mode
-            </button>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Let Us Cook. All rights reserved.</p>
         </div>
-    </section>
+    </footer>
 
-    <!-- ADVANCED JS: Greeting with Dynamic Input -->
-    <section class="container my-5">
-        <div class="greeting-section text-center">
-            <h3 class="mb-3">👋 Personal Greeting</h3>
-            <input type="text" id="userName" class="form-control w-50 mx-auto mb-3" placeholder="Enter your name">
-            <div id="greeting">Welcome to Let Us Cook!</div>
-        </div>
-    </section>
+    <script src="../common.js"></script>
+    <script>
+        checkPageAuth();
+        
+        const items = [
+            {
+                id: 'breakfast-1',
+                name: 'Classic Eggs Benedict',
+                description: 'Poached eggs on English muffin with Canadian bacon and hollandaise sauce',
+                price: 12.99,
+                image: 'https://images.unsplash.com/photo-1608039829572-78524f79c4c7?w=500&h=300&fit=crop',
+                type: 'eggs',
+                diet: 'protein'
+            },
+            {
+                id: 'breakfast-2',
+                name: 'Buttermilk Pancakes',
+                description: 'Fluffy pancakes served with maple syrup, butter, and fresh berries',
+                price: 9.99,
+                image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500&h=300&fit=crop',
+                type: 'pancakes',
+                diet: 'vegetarian'
+            },
+            {
+                id: 'breakfast-3',
+                name: 'Avocado Toast',
+                description: 'Smashed avocado on sourdough with cherry tomatoes and poached egg',
+                price: 11.49,
+                image: 'https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=500&h=300&fit=crop',
+                type: 'toast',
+                diet: 'vegetarian'
+            },
+            {
+                id: 'breakfast-4',
+                name: 'Greek Yogurt Bowl',
+                description: 'Greek yogurt with granola, honey, and fresh mixed berries',
+                price: 8.99,
+                image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&h=300&fit=crop',
+                type: 'bowl',
+                diet: 'vegetarian'
+            },
+            {
+                id: 'breakfast-5',
+                name: 'Breakfast Burrito',
+                description: 'Scrambled eggs, bacon, cheese, potatoes, and salsa in a flour tortilla',
+                price: 10.99,
+                image: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=500&h=300&fit=crop',
+                type: 'eggs',
+                diet: 'protein'
+            },
+            {
+                id: 'breakfast-6',
+                name: 'French Toast',
+                description: 'Thick-cut brioche French toast with powdered sugar and maple syrup',
+                price: 10.49,
+                image: 'https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=500&h=300&fit=crop',
+                type: 'toast',
+                diet: 'vegetarian'
+            },
+            {
+                id: 'breakfast-7',
+                name: 'Croissant Sandwich',
+                description: 'Buttery croissant with scrambled eggs, cheese, and ham',
+                price: 9.49,
+                image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&h=300&fit=crop',
+                type: 'pastry',
+                diet: 'protein'
+            },
+            {
+                id: 'breakfast-8',
+                name: 'Acai Bowl',
+                description: 'Acai berry smoothie bowl topped with granola, banana, and coconut',
+                price: 11.99,
+                image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=500&h=300&fit=crop',
+                type: 'bowl',
+                diet: 'vegan'
+            }
+        ];
 
-    <!-- ADVANCED JS: Current Time Button -->
-    <section class="container my-5 text-center">
-        <div class="card p-4">
-            <h3 class="mb-3">⏰ What Time Is It?</h3>
-            <button id="showTimeBtn" class="btn btn-lg btn-info">Show Current Time</button>
-            <div id="currentTime" class="mt-3"></div>
-        </div>
-    </section>
+        let filteredItems = [...items];
 
-    <!-- ADVANCED JS: Star Rating System -->
-    <section class="container my-5">
-        <div class="card p-4">
-            <h3 class="mb-4">⭐ Rate Our Recipes</h3>
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <h5>Pancakes</h5>
-                        <div class="star-rating">
-                            <span class="star">☆</span>
-                            <span class="star">☆</span>
-                            <span class="star">☆</span>
-                            <span class="star">☆</span>
-                            <span class="star">☆</span>
+        function renderItems(itemsToRender) {
+            const grid = document.getElementById('itemsGrid');
+            grid.innerHTML = '';
+
+            if (itemsToRender.length === 0) {
+                grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--text-secondary); padding: 2rem;">No breakfast items found. Try adjusting your filters.</p>';
+                return;
+            }
+
+            itemsToRender.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                const ratingData = getRating(item.id);
+                
+                card.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">${item.name}</h3>
+                        <p class="card-description">${item.description}</p>
+                        <div class="card-meta">
+                            <span class="card-price">$${item.price.toFixed(2)}</span>
+                            <div id="rating-${item.id}"></div>
                         </div>
-                        <div class="rating-value">Rating: 0/5</div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <h5>Avocado Toast</h5>
-                        <div class="star-rating">
-                            <span class="star">☆</span>
-                            <span class="star">☆</span>
-                            <span class="star">☆</span>
-                            <span class="star">☆</span>
-                            <span class="star">☆</span>
-                        </div>
-                        <div class="rating-value">Rating: 0/5</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                `;
+                
+                grid.appendChild(card);
+                const ratingContainer = document.getElementById(`rating-${item.id}`);
+                ratingContainer.appendChild(createStarRating(item.id, ratingData.average, true));
+            });
+        }
 
-    <!-- ADVANCED JS: Recipe Filter with Switch Statement -->
-    <section class="container my-5">
-        <div class="card p-4">
-            <h3 class="mb-4">🍳 Filter Recipes by Meal Type</h3>
-            <div class="filter-buttons">
-                <button class="filter-btn active" onclick="filterRecipes('all')">All Recipes</button>
-                <button class="filter-btn" onclick="filterRecipes('breakfast')">Breakfast</button>
-                <button class="filter-btn" onclick="filterRecipes('lunch')">Lunch</button>
-                <button class="filter-btn" onclick="filterRecipes('dinner')">Dinner</button>
-                <button class="filter-btn" onclick="filterRecipes('dessert')">Dessert</button>
-            </div>
-            <div id="filterStatus">Showing all recipes</div>
-            <div id="recipeList"></div>
-        </div>
-    </section>
+        function searchItems() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (searchTerm) saveSearchTerm(searchTerm);
+            applyFilters();
+        }
 
-    <!-- ADVANCED JS: Multi-Step Form -->
-    <section class="container my-5">
-        <div class="card p-4">
-            <h3 class="mb-4">📝 Multi-Step Recipe Submission</h3>
-            <div id="step1" class="form-step">
-                <h4>Basic Information</h4>
-                <div class="mb-3">
-                    <label class="form-label">Recipe Name</label>
-                    <input type="text" class="form-control" placeholder="e.g., Chocolate Chip Cookies">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Cooking Time (minutes)</label>
-                    <input type="number" class="form-control" placeholder="e.g., 30">
-                </div>
-            </div>
-            <div id="step2" class="form-step" style="display:none;">
-                <h4>Ingredients</h4>
-                <div class="mb-3">
-                    <label class="form-label">Main Ingredients</label>
-                    <textarea class="form-control" rows="4" placeholder="List main ingredients..."></textarea>
-                </div>
-            </div>
-            <div id="step3" class="form-step" style="display:none;">
-                <h4>Instructions</h4>
-                <div class="mb-3">
-                    <label class="form-label">Cooking Steps</label>
-                    <textarea class="form-control" rows="6" placeholder="Describe the cooking process..."></textarea>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between mt-4">
-                <button id="prevBtn" class="btn btn-secondary" style="display:none;">Previous</button>
-                <button id="nextBtn" class="btn btn-primary">Next</button>
-                <button id="submitMultiStep" class="btn btn-success" style="display:none;" onclick="alert('Recipe submitted! 🎉')">Submit Recipe</button>
-            </div>
-        </div>
-    </section>
+        function filterItems() {
+            applyFilters();
+        }
 
-    <!-- JQUERY FEATURES SECTION -->
-    <section class="container my-5">
-    <!-- Scroll Progress Bar -->
-    <div id="scrollProgress" data-orientation="horizontal" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); z-index: 9999; width: 0%;"></div>
+        function applyFilters() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            const type = document.getElementById('typeFilter').value;
+            const diet = document.getElementById('dietFilter').value;
+            const sort = document.getElementById('sortFilter').value;
+            
+            let filtered = [...items];
+            
+            if (searchTerm) {
+                filtered = filtered.filter(item => 
+                    item.name.toLowerCase().includes(searchTerm) ||
+                    item.description.toLowerCase().includes(searchTerm)
+                );
+            }
+            
+            if (type) filtered = filtered.filter(item => item.type === type);
+            if (diet) filtered = filtered.filter(item => item.diet === diet);
+            
+            if (sort === 'price-asc') filtered.sort((a, b) => a.price - b.price);
+            else if (sort === 'price-desc') filtered.sort((a, b) => b.price - a.price);
+            else if (sort === 'rating') {
+                filtered.sort((a, b) => {
+                    const ratingA = getRating(a.id).average;
+                    const ratingB = getRating(b.id).average;
+                    return ratingB - ratingA;
+                });
+            }
+            
+            saveFilterState('breakfast', { searchTerm, type, diet, sort });
+            filteredItems = filtered;
+            renderItems(filteredItems);
+        }
 
-        <!-- Real-time Search -->
-        <div class="card mb-4">
-            <div class="card-header text-white">
-                <h3 class="mb-0">Task: Real-time Recipe Search</h3>
-            </div>
-            <div class="card-body">
-                <input type="text" id="searchInput" class="form-control mb-3" placeholder="Type to search recipes...">
-                <div id="searchResults">
-                    <div class="searchable-item p-2 border-bottom">Fluffy Pancakes - Light and fluffy pancakes with maple syrup</div>
-                    <div class="searchable-item p-2 border-bottom">Scrambled Eggs - Creamy scrambled eggs with herbs</div>
-                    <div class="searchable-item p-2 border-bottom">French Toast - Brioche French toast with cinnamon</div>
-                    <div class="searchable-item p-2 border-bottom">Belgian Waffles - Crispy waffles with toppings</div>
-                    <div class="searchable-item p-2 border-bottom">Healthy Oatmeal - Oatmeal with fruits and nuts</div>
-                    <div class="searchable-item p-2 border-bottom">Avocado Toast - Sourdough with mashed avocado</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Autocomplete Search -->
-        <div class="card mb-4 p-3">
-            <h5 class="mb-2">Autocomplete Search</h5>
-            <input id="autocompleteInput" class="form-control" placeholder="Start typing..." autocomplete="off" />
-            <div id="autocompleteDropdown" class="border rounded mt-1" style="display:none;max-height:150px;overflow:auto;"></div>
-        </div>
-
-        <!-- Search Highlighting -->
-        <div class="card mb-4 p-3">
-            <h5 class="mb-2">Search Highlighting</h5>
-            <div class="card-body">
-                <div class="input-group mb-3">
-                    <input type="text" id="highlightInput" class="form-control" placeholder="Enter keyword to highlight...">
-                    <button class="btn btn-warning" id="highlightSearchBtn">Highlight</button>
-                </div>
-                <div class="highlight-content">
-                    <p class="searchable-item">Our pancakes are light and fluffy.</p>
-                    <p class="searchable-item">Try adding fresh berries for a fruity twist.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Animated Counter -->
-        <div class="card mb-4 p-3">
-            <h5 class="mb-2">Animated Counter</h5>
-            <div class="d-flex gap-4 justify-content-center align-items-center">
-                <div class="text-center">
-                    <div class="counter-number h2" data-target="1200">0</div>
-                    <div>Recipes</div>
-                </div>
-                <div class="text-center">
-                    <div class="counter-number h2" data-target="350">0</div>
-                    <div>Chefs</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Loading Spinner -->
-        <div class="card mb-4 p-3">
-            <h5 class="mb-2">Loading Spinner</h5>
-            <form id="spinnerForm" class="d-flex gap-2 align-items-center">
-                <input class="form-control" placeholder="Simulate submit..." />
-                <button class="btn btn-primary" type="submit">Submit</button>
-                <div class="spinner-border text-primary" role="status" id="formSpinner" style="display:none;">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            </form>
-        </div>
-
-        <!-- Copy to clipboard & Lazy load -->
-        <div class="card mb-4 p-3">
-            <h5 class="mb-2">Copy to Clipboard</h5>
-            <textarea id="copyText" class="form-control mb-2" rows="2">Try copying this recipe snippet.</textarea>
-            <button id="copyBtn" class="btn btn-outline-secondary copy-btn">Copy</button>
-        </div>
-        <div class="card mb-4 p-3">
-            <h5 class="mb-2">Lazy Loading Images</h5>
-            <div class="d-flex gap-3 flex-wrap">
-                <img class="lazy-image img-fluid" data-src="https://img.icons8.com/color/400/000000/pancake.png" src="" alt="Pancakes" width="300" />
-                <img class="lazy-image img-fluid" data-src="https://cdn-icons-png.flaticon.com/128/4806/4806489.png" src="" alt="Scrambled Eggs" width="300" />
-                <img class="lazy-image img-fluid" data-src="../Images/oatmeal.png" src="" alt="Oatmeal" width="300" />
-            </div>
-        </div>
-    </section>
-
-    <!-- Subscription Popup (used by Subscribe Now button) -->
-    <div id="subscriptionPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 9999; align-items: center; justify-content: center;">
-        <div class="card" style="max-width: 500px; margin: 20px; position: relative;">
-            <div class="card-body p-4">
-                <button onclick="closePopup()" style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #999;">&times;</button>
-                <h3 class="text-center mb-4">📬 Subscribe to Our Newsletter</h3>
-                <p class="text-center text-muted mb-4">Get the latest breakfast recipes and tips delivered to your inbox!</p>
-                <form id="subscriptionForm">
-                    <div class="mb-3">
-                        <label for="subscribeEmail" class="form-label">Email Address</label>
-                        <input type="email" class="form-control" id="subscribeEmail" placeholder="Enter your email" required>
-                    </div>
-                    <div class="d-grid">
-                        <button type="submit" class="btn btn-success btn-lg">Subscribe</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <section class="container my-5 text-center">
-        <div class="card p-4 bg-light">
-            <h3 class="mb-3">Stay Updated!</h3>
-            <p class="text-muted mb-3">Subscribe to our newsletter for the latest recipes and cooking tips</p>
-            <button class="btn btn-success btn-lg" onclick="showPopup()">
-                Subscribe Now
-            </button>
-        </div>
-    </section>
-
-    <section class="container my-5 text-center">
-        <div class="card p-4">
-            <h3 class="mb-3">Change Page Background</h3>
-            <p class="text-muted mb-3">Click the button to change the page background color</p>
-            <button id="colorChangeBtn" class="btn btn-lg btn-primary" onclick="changeBackgroundColor()">
-                Change Background Color
-            </button>
-        </div>
-    </section>
-
-    <section class="container my-5">
-        <h2 class="text-center mb-4">Breakfast FAQ</h2>
-        <div class="card">
-            <div class="card-body">
-                <div class="faq-item mb-3">
-                    <div class="faq-question p-3 rounded" onclick="toggleAccordion(this)">
-                        <strong>Q: What are easy breakfast options?</strong> <span style="float:right;">▼</span>
-                    </div>
-                    <div class="faq-answer p-3" style="display:none;">
-                        <p>Try pancakes, scrambled eggs, or avocado toast for quick and tasty mornings.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item mb-3">
-                    <div class="faq-question p-3 rounded" onclick="toggleAccordion(this)">
-                        <strong>Q: Can I make these recipes ahead of time?</strong> <span style="float:right;">▼</span>
-                    </div>
-                    <div class="faq-answer p-3" style="display:none;">
-                        <p>Yes — many breakfast components can be prepped the night before to save time in the morning.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="row justify-content-center mb-5">
-        <div class="col-lg-6">
-            <h3 class="mb-4 text-center">Subscribe for Recipe Updates</h3>
-            <form class="subscription-form">
-                <div class="mb-3">
-                    <label class="form-label">Full Name</label>
-                    <input type="text" class="form-control subscribe-name" placeholder="Enter your name" />
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Email Address</label>
-                    <div class="input-group">
-                        <input type="email" class="form-control subscribe-email" placeholder="Enter your email" />
-                        <button class="btn btn-primary" type="submit">Subscribe</button>
-                    </div>
-                </div>
-
-                <div class="form-check mb-3">
-                    <input type="checkbox" class="form-check-input sub-updates" />
-                    <label class="form-check-label">Send me weekly recipe updates</label>
-                </div>
-            </form>
-        </div>
-    </div>
-
-<footer class="bg-dark text-white py-4 mt-5">
-    <div class="container text-center">
-        <p class="mb-1">
-            <strong>Breakfast by Rasul Akhmetov</strong> | Let Us Cook Team
-        </p>
-        <div class="mb-2">
-            <a href="../index.html" class="text-white me-3 text-decoration-none">Home</a>
-            <a href="../an/soups.html" class="text-white me-3 text-decoration-none">Soups</a>
-            <a href="../an/meals.html" class="text-white me-3 text-decoration-none">Meals</a>
-            <a href="../as/fastfood.html" class="text-white me-3 text-decoration-none">Fast Food</a>
-            <a href="../as/desserts.html" class="text-white me-3 text-decoration-none">Desserts</a>
-            <a href="drinks.html" class="text-white me-3 text-decoration-none">Drinks</a>
-            <a href="../culinary.html" class="text-white text-decoration-none">World Culinary</a>
-        </div>
-        <div>
-            <a href="#" class="text-white me-2" aria-label="Facebook">📘</a>
-            <a href="#" class="text-white me-2" aria-label="Instagram">📷</a>
-            <a href="#" class="text-white" aria-label="Twitter">🐦</a>
-        </div>
-        <p class="mt-3 mb-0">
-            © 2025 Let Us Cook. Nurassyl Orazbek, Anuar Zhenissov, Asylan Usen, Rasul Akhmetov.
-        </p>
-    </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../script.js"></script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedFilters = getFilterState('breakfast');
+            if (savedFilters.searchTerm) document.getElementById('searchInput').value = savedFilters.searchTerm;
+            if (savedFilters.type) document.getElementById('typeFilter').value = savedFilters.type;
+            if (savedFilters.diet) document.getElementById('dietFilter').value = savedFilters.diet;
+            if (savedFilters.sort) document.getElementById('sortFilter').value = savedFilters.sort;
+            
+            if (Object.keys(savedFilters).length > 0) {
+                applyFilters();
+            } else {
+                renderItems(items);
+            }
+            
+            document.getElementById('searchInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') searchItems();
+            });
+        });
+    </script>
 </body>
 </html>

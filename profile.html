@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Let Us Cook</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        .profile-container {
+            max-width: 800px;
+            margin: 3rem auto;
+            background-color: var(--bg-card);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-color), #ffa07a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 1rem;
+            color: white;
+        }
+
+        .profile-info {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .info-value {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background-color: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🍳 Let Us Cook</a>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="culinary.html" data-i18n="nav.culinary">Culinary</a></li>
+                <li><a href="an/soups.html" data-i18n="nav.soups">Soups</a></li>
+                <li><a href="an/meals.html" data-i18n="nav.meals">Meals</a></li>
+                <li><a href="as/fastfood.html" data-i18n="nav.fastfood">Fast Food</a></li>
+                <li><a href="as/desserts.html" data-i18n="nav.desserts">Desserts</a></li>
+                <li><a href="ra/drinks.html" data-i18n="nav.drinks">Drinks</a></li>
+                <li><a href="ra/breakfast.html" data-i18n="nav.breakfast">Breakfast</a></li>
+            </ul>
+            
+            <div class="nav-controls">
+                <button class="language-toggle" aria-label="Toggle language">EN</button>
+                <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+                
+                <div class="user-profile" style="display: none;">
+                    <div class="user-info">
+                        <div class="user-name"></div>
+                        <div class="user-email"></div>
+                    </div>
+                    <button class="btn-logout" data-i18n="auth.logout">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-avatar" id="profileAvatar">👤</div>
+                <h1 id="profileName">User Name</h1>
+                <p style="color: var(--text-secondary);"><span data-i18n="profile.member_since">Member since</span> <span id="memberSince"></span></p>
+            </div>
+
+            <div class="profile-info">
+                <div class="info-item">
+                    <div class="info-label" data-i18n="profile.email">Email Address</div>
+                    <div class="info-value" id="profileEmail">user@example.com</div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label" data-i18n="profile.phone">Phone Number</div>
+                    <div class="info-value" id="profilePhone">Not provided</div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label" data-i18n="profile.user_id">User ID</div>
+                    <div class="info-value" id="profileId">-</div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="ratingsGiven">0</div>
+                    <div class="stat-label" data-i18n="profile.ratings_given">Ratings Given</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-value" id="searchesMade">0</div>
+                    <div class="stat-label" data-i18n="profile.searches_made">Searches Made</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-value" id="favoriteCategory">-</div>
+                    <div class="stat-label" data-i18n="profile.favorite_category">Favorite Category</div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-secondary" data-i18n="profile.back_home">Back to Home</a>
+                <button class="btn-logout" onclick="logout()" data-i18n="auth.logout">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 data-i18n="footer.about">About Us</h3>
+                <p data-i18n="footer.description">Let Us Cook is your ultimate destination for discovering amazing recipes and culinary inspiration.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3 data-i18n="footer.links">Quick Links</h3>
+                <ul>
+                    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                    <li><a href="culinary.html" data-i18n="nav.culinary">Culinary</a></li>
+                    <li><a href="profile.html" data-i18n="nav.profile">Profile</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p data-i18n="footer.copyright">&copy; 2025 Let Us Cook. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+    <script>
+        checkPageAuth();
+        
+        // Check if user is logged in
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        
+        if (!currentUser) {
+            const currentLang = getCurrentLanguage();
+            alert(translations[currentLang]['message.login.required']);
+            window.location.href = 'login.html';
+        } else {
+            // Display user information
+            document.getElementById('profileName').textContent = currentUser.name;
+            document.getElementById('profileEmail').textContent = currentUser.email;
+            document.getElementById('profilePhone').textContent = currentUser.phone || 'Not provided';
+            document.getElementById('profileId').textContent = currentUser.id;
+            
+            // Set avatar initial
+            const initial = currentUser.name.charAt(0).toUpperCase();
+            document.getElementById('profileAvatar').textContent = initial;
+            
+            // Get user from users array to find creation date
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const fullUser = users.find(u => u.id === currentUser.id);
+            
+            if (fullUser && fullUser.createdAt) {
+                const createdDate = new Date(fullUser.createdAt);
+                document.getElementById('memberSince').textContent = createdDate.toLocaleDateString();
+            } else {
+                document.getElementById('memberSince').textContent = 'Unknown';
+            }
+            
+            // Calculate statistics
+            const ratings = getRatings();
+            const ratingsCount = Object.keys(ratings).length;
+            document.getElementById('ratingsGiven').textContent = ratingsCount;
+            
+            const recentSearches = getRecentSearches();
+            document.getElementById('searchesMade').textContent = recentSearches.length;
+            
+            // Calculate favorite category (placeholder)
+            const filterStates = JSON.parse(localStorage.getItem('filterStates')) || {};
+            const categories = Object.keys(filterStates);
+            if (categories.length > 0) {
+                document.getElementById('favoriteCategory').textContent = categories[0].toUpperCase();
+            } else {
+                document.getElementById('favoriteCategory').textContent = '-';
+            }
+        }
+    </script>
+</body>
+</html>

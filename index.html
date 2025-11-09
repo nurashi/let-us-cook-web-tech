@@ -3,764 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Let Us Cook</title>
-    <!--Bootstrap 5.3.2 for Responsive Grid System -->
-        <link rel="stylesheet" href="common.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-" crossorigin="anonymous">
-    <link rel="icon" type="image/webp" href="Images/let-us-cook-(logo).webp">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Let Us Cook - Culinary Excellence</title>
+    <link rel="stylesheet" href="common.css">
 </head>
-<body class="fade-in">
-    <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <!-- Navigation - Bootstrap Navbar (Responsive & Working Links) -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-            <div class="container-fluid">
-                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"><img src="Images/let-us-cook-(logo).webp" alt="logo" height="36">Let Us Cook</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="mainNav">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <!--  All navigation links work correctly -->
-                        <li class="nav-item"><a class="nav-link active" href="index.html" data-lang-en="Home" data-lang-ru="Главная">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="an/soups.html" data-lang-en="Soups" data-lang-ru="Супы">Soups</a></li>
-                        <li class="nav-item"><a class="nav-link" href="an/meals.html" data-lang-en="Meals" data-lang-ru="Блюда">Meals</a></li>
-                        <li class="nav-item"><a class="nav-link" href="as/fastfood.html" data-lang-en="Fast Food" data-lang-ru="Фастфуд">Fast Food</a></li>
-                        <li class="nav-item"><a class="nav-link" href="ra/drinks.html" data-lang-en="Drinks" data-lang-ru="Напитки">Drinks</a></li>
-                        <li class="nav-item"><a class="nav-link" href="as/desserts.html" data-lang-en="Desserts" data-lang-ru="Десерты">Desserts</a></li>
-                        <li class="nav-item"><a class="nav-link" href="ra/breakfast.html" data-lang-en="Breakfast" data-lang-ru="Завтрак">Breakfast</a></li>
-                        <li class="nav-item"><a class="nav-link" href="culinary.html" data-lang-en="Culinary" data-lang-ru="Кулинария">Culinary</a></li>
-                        <li class="nav-item">
-                            <button id="navThemeToggle" class="btn btn-sm btn-outline-secondary ms-2">
-                                <span class="theme-icon">🌙</span>
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <button id="navLangToggle" class="btn btn-sm btn-outline-primary ms-2">
-                                EN
-                            </button>
-                        </li>
-                    </ul>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🍳 Let Us Cook</a>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="culinary.html" data-i18n="nav.culinary">Culinary</a></li>
+                <li><a href="an/soups.html" data-i18n="nav.soups">Soups</a></li>
+                <li><a href="an/meals.html" data-i18n="nav.meals">Meals</a></li>
+                <li><a href="as/fastfood.html" data-i18n="nav.fastfood">Fast Food</a></li>
+                <li><a href="as/desserts.html" data-i18n="nav.desserts">Desserts</a></li>
+                <li><a href="ra/drinks.html" data-i18n="nav.drinks">Drinks</a></li>
+                <li><a href="ra/breakfast.html" data-i18n="nav.breakfast">Breakfast</a></li>
+            </ul>
+            
+            <div class="nav-controls">
+                <button class="language-toggle" aria-label="Toggle language">EN</button>
+                <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+                
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn-login" data-i18n="nav.login">Log In</a>
+                    <a href="signup.html" class="btn-signup" data-i18n="nav.signup">Sign Up</a>
                 </div>
-            </div>
-        </nav>
-
-    <main class="main-content">
-        <section class="hero-section">
-            <div class="hero-content container text-center">
-                <h1 class="title d-flex align-items-center justify-content-center gap-3"><img src="Images/let-us-cook-(logo).webp" alt="Let Us Cook Logo" class="title-logo"> Let Us Cook!</h1>
-                <p class="subtitle" data-lang-en="Discover amazing recipes from around the world" data-lang-ru="Откройте для себя удивительные рецепты со всего мира">Discover amazing recipes from around the world</p>
-                <div class="d-flex justify-content-center gap-3 mt-3">
-                    <a href="#featured" class="btn btn-primary btn-md" data-lang-en="Explore Recipes" data-lang-ru="Изучить рецепты">Explore Recipes</a>
-                    <a href="culinary.html" class="btn btn-sm btn-lg" data-lang-en="View Gallery" data-lang-ru="Посмотреть галерею">View Gallery</a>
+                
+                <div class="user-profile" style="display: none;">
+                    <div class="user-info">
+                        <div class="user-name"></div>
+                        <div class="user-email"></div>
+                    </div>
+                    <button class="btn-logout" data-i18n="nav.logout">Logout</button>
                 </div>
-            </div>
-        </section>
-
-                <!--  Bootstrap Grid - Responsive Layout (col-12, col-lg-6 for mobile-first design) -->
-                <section class="container my-5" id="featured">
-                    <div class="row g-4">
-                        <!-- Desktop: 2 columns, Mobile: 1 column -->
-                        <div class="col-12 col-lg-6">
-                            <div class="card h-100">
-                                <img src="Images/Chef-Curry.jpeg" class="card-img-top" alt="Chef's Special Curry">
-                                <div class="card-body">
-                                    <h5 class="card-title" data-lang-en="Recipe of the Day" data-lang-ru="Рецепт дня">Recipe of the Day</h5>
-                                    <p class="card-text" data-lang-en="Our chef's special curry recipe that combines authentic spices with modern cooking techniques. Perfect for family dinners!" data-lang-ru="Специальный рецепт карри от нашего шеф-повара, который сочетает аутентичные специи с современными кулинарными техниками. Идеально для семейных ужинов!">Our chef's special curry recipe that combines authentic spices with modern cooking techniques. Perfect for family dinners!</p>
-                                    <a href="an/meals.html" class="btn btn-primary" data-lang-en="Learn More" data-lang-ru="Узнать больше">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-lg-6">
-                            <!-- Nested Grid: Desktop 2 columns, Mobile 1 column -->
-                            <div class="row g-4">
-                                <div class="col-12 col-md-6">
-                                    <div class="card h-100">
-                                        <img src="Images/Miso-Soup.jpg" class="card-img-top" alt="Miso Soup">
-                                        <div class="card-body">
-                                            <h5 class="card-title" data-lang-en="Featured Soups" data-lang-ru="Избранные супы">Featured Soups</h5>
-                                            <p class="card-text" data-lang-en="Warm, comforting soups from around the world including Miso, Borscht, and Minestrone." data-lang-ru="Теплые, успокаивающие супы со всего мира, включая Мисо, Борщ и Минестроне.">Warm, comforting soups from around the world including Miso, Borscht, and Minestrone.</p>
-                                            <a href="an/soups.html" class="btn btn-secondary" data-lang-en="View Soups" data-lang-ru="Смотреть супы">View Soups</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="card h-100">
-                                        <img src="Images/Grilled-Ribeye.jpg" class="card-img-top" alt="Grilled Ribeye">
-                                        <div class="card-body">
-                                            <h5 class="card-title" data-lang-en="Main Meals" data-lang-ru="Основные блюда">Main Meals</h5>
-                                            <p class="card-text" data-lang-en="Hearty main courses including grilled steaks, pasta dishes, and traditional rice meals." data-lang-ru="Сытные основные блюда, включая стейки на гриле, пасту и традиционные блюда из риса.">Hearty main courses including grilled steaks, pasta dishes, and traditional rice meals.</p>
-                                            <a href="an/meals.html" class="btn btn-secondary" data-lang-en="View Meals" data-lang-ru="Смотреть блюда">View Meals</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Bootstrap Grid - Mixed Column Layout (col-12, col-lg-4, col-lg-8) -->
-                    <div class="row mt-4">
-                        <!-- Sidebar: Desktop 1/3 width, Mobile full width -->
-                        <div class="col-12 col-lg-4">
-                            <div class="card bg-light h-100">
-                                <div class="card-body">
-                                    <h5 class="card-title" data-lang-en="Quick Links" data-lang-ru="Быстрые ссылки">Quick Links</h5>
-                                    <ul class="list-unstyled">
-                                        <!-- Footer/Navigation links - all working -->
-                                        <li class="my-2"><a class="text-decoration-none text-primary" href="as/fastfood.html" data-lang-en="🍟 Fast Food" data-lang-ru="🍟 Фастфуд">🍟 Fast Food</a></li>
-                                        <li class="my-2"><a class="text-decoration-none text-primary" href="as/desserts.html" data-lang-en="🍰 Desserts" data-lang-ru="🍰 Десерты">🍰 Desserts</a></li>
-                                        <li class="my-2"><a class="text-decoration-none text-primary" href="ra/drinks.html" data-lang-en="🥤 Drinks" data-lang-ru="🥤 Напитки">🥤 Drinks</a></li>
-                                        <li class="my-2"><a class="text-decoration-none text-primary" href="ra/breakfast.html" data-lang-en="🥞 Breakfast" data-lang-ru="🥞 Завтрак">🥞 Breakfast</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Main content: Desktop 2/3 width, Mobile full width -->
-                        <div class="col-12 col-lg-8">
-                            <!--  Bootstrap Responsive Grid - 3 equal columns on desktop, 1 on mobile -->
-                            <div class="row row-cols-1 row-cols-md-3 g-3">
-                                <div class="col">
-                                    <div class="card h-100 text-center">
-                                        <img src="Images/spaghetti-bolognese.jpg" class="card-img-top" alt="Spaghetti Bolognese">
-                                        <div class="card-body">
-                                            <p class="card-text" data-lang-en="Spaghetti Bolognese" data-lang-ru="Спагетти Болоньезе">Spaghetti Bolognese</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card h-100 text-center">
-                                        <img src="Images/fried-chicken.png" class="card-img-top" alt="Fried Chicken">
-                                        <div class="card-body">
-                                            <p class="card-text" data-lang-en="Crispy Fried Chicken" data-lang-ru="Хрустящая жареная курица">Crispy Fried Chicken</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card h-100 text-center">
-                                        <img src="Images/cake.png" class="card-img-top" alt="Cake">
-                                        <div class="card-body">
-                                            <p class="card-text" data-lang-en="Chocolate Cake" data-lang-ru="Шоколадный торт">Chocolate Cake</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-        <section class="features-section">
-                        <div class="container py-4">
-                                        <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
-                                                <div class="carousel-indicators">
-                                                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                                                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                                                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                                                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-                                                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
-                                                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
-                                                </div>
-                                                <div class="carousel-inner">
-                                                    <div class="carousel-item active"><img src="Images/Culinary-Banner.png" class="d-block w-100" alt="Banner 1"></div>
-                                                    <div class="carousel-item"><img src="Images/Meals-Banner.png" class="d-block w-100" alt="Banner 2"></div>
-                                                    <div class="carousel-item"><img src="Images/Soup-Banner.png" class="d-block w-100" alt="Banner 3"></div>
-                                                    <div class="carousel-item"><img src="Images/Chef-Curry.jpeg" class="d-block w-100" alt="Chef Curry"></div>
-                                                    <div class="carousel-item"><img src="Images/Grilled-Ribeye.jpg" class="d-block w-100" alt="Ribeye"></div>
-                                                    <div class="carousel-item"><img src="Images/Pasta-Alfredo.jpg" class="d-block w-100" alt="Pasta Alfredo"></div>
-                                                    <div class="carousel-item"><img src="Images/Pumpkin-Soup.jpg" class="d-block w-100" alt="Pumpkin Soup"></div>
-                                                    <div class="carousel-item"><img src="Images/spaghetti-bolognese.jpg" class="d-block w-100" alt="Spaghetti"></div>
-                                                    <div class="carousel-item"><img src="Images/uzbek-beef-plov-13-Region.jpg" class="d-block w-100" alt="Plov"></div>
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden" data-lang-en="Previous" data-lang-ru="Предыдущий">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden" data-lang-en="Next" data-lang-ru="Следующий">Next</span>
-                                </button>
-                            </div>
-
-                                <section class="container my-5">
-                                    <div class="row g-4">
-                                        <div class="col-12 col-lg-4">
-                                            <div class="card h-100">
-                                                <div class="card-body">
-                                                    <h5 class="card-title" data-lang-en="🌱 Fresh Ingredients" data-lang-ru="🌱 Свежие ингредиенты">🌱 Fresh Ingredients</h5>
-                                                    <p class="card-text" data-lang-en="We use only the freshest ingredients to ensure every bite is packed with flavor and nutrition." data-lang-ru="Мы используем только самые свежие ингредиенты, чтобы каждый кусочек был наполнен вкусом и пользой.">We use only the freshest ingredients to ensure every bite is packed with flavor and nutrition.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-lg-4">
-                                            <div class="card h-100">
-                                                <div class="card-body">
-                                                    <h5 class="card-title" data-lang-en="⚡ Fast Delivery" data-lang-ru="⚡ Быстрая доставка">⚡ Fast Delivery</h5>
-                                                    <p class="card-text" data-lang-en="Get your favorite meals and drinks delivered to your door in no time." data-lang-ru="Получите ваши любимые блюда и напитки прямо к двери в кратчайшие сроки.">Get your favorite meals and drinks delivered to your door in no time.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-lg-4">
-                                            <div class="card h-100">
-                                                <div class="card-body">
-                                                    <h5 class="card-title" data-lang-en="💰 Affordable Prices" data-lang-ru="💰 Доступные цены">💰 Affordable Prices</h5>
-                                                    <p class="card-text" data-lang-en="Enjoy delicious food and drinks at prices that won't break the bank." data-lang-ru="Наслаждайтесь вкусной едой и напитками по доступным ценам.">Enjoy delicious food and drinks at prices that won't break the bank.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                        </div>
-        </section>
-
-                <section class="container my-5">
-                    <div class="card text-center p-4 shadow-sm">
-                        <h3 class="mb-4" data-lang-en="📆 Current Date & Time" data-lang-ru="📆 Текущие дата и время">📆 Current Date & Time</h3>
-                        <div id="currentDateTime" class="py-3">
-                        </div>
-                    </div>
-                </section>
-
-     
-                <!-- ADVANCED JS: Theme Toggle -->
-                <section class="container my-5 text-center">
-                    <div class="card p-4">
-                        <h3 class="mb-3" data-lang-en="🌙 Theme Switcher" data-lang-ru="🌙 Переключатель темы">🌙 Theme Switcher</h3>
-                        <p class="text-muted mb-3" data-lang-en="Toggle between day and night modes" data-lang-ru="Переключение между дневным и ночным режимами">Toggle between day and night modes</p>
-                        <button id="themeToggle" class="btn btn-lg btn-dark">
-                            🌙 Night Mode
-                        </button>
-                    </div>
-                </section>
-
-                <!-- ADVANCED JS: Greeting with Dynamic Input -->
-                <section class="container my-5">
-                    <div class="greeting-section">
-                        <h3 class="mb-3" data-lang-en="👋 Personal Greeting" data-lang-ru="👋 Личное приветствие">👋 Personal Greeting</h3>
-                        <input type="text" id="userName" class="form-control w-50 mx-auto mb-3" placeholder="Enter your name" data-lang-en="Enter your name" data-lang-ru="Введите ваше имя">
-                        <div id="greeting" data-lang-en="Welcome to Let Us Cook!" data-lang-ru="Добро пожаловать в Let Us Cook!">Welcome to Let Us Cook!</div>
-                    </div>
-                </section>
-
-                <!-- ADVANCED JS: Current Time Button -->
-                <section class="container my-5 text-center">
-                    <div class="card p-4">
-                        <h3 class="mb-3" data-lang-en="⏰ What Time Is It?" data-lang-ru="⏰ Который час?">⏰ What Time Is It?</h3>
-                        <button id="showTimeBtn" class="btn btn-lg btn-info" data-lang-en="Show Current Time" data-lang-ru="Показать текущее время">Show Current Time</button>
-                        <div id="currentTime" class="mt-3"></div>
-                    </div>
-                </section>
-
-                <!-- ADVANCED JS: Star Rating System -->
-                <section class="container my-5">
-                    <div class="card p-4">
-                        <h3 class="mb-4" data-lang-en="⭐ Rate Our Recipes" data-lang-ru="⭐ Оцените наши рецепты">⭐ Rate Our Recipes</h3>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="card p-3">
-                                    <h5 data-lang-en="Pancakes" data-lang-ru="Блинчики">Pancakes</h5>
-                                    <div class="star-rating">
-                                        <span class="star">☆</span>
-                                        <span class="star">☆</span>
-                                        <span class="star">☆</span>
-                                        <span class="star">☆</span>
-                                        <span class="star">☆</span>
-                                    </div>
-                                    <div class="rating-value" data-lang-en="Rating: 0/5" data-lang-ru="Оценка: 0/5">Rating: 0/5</div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card p-3">
-                                    <h5 data-lang-en="Pasta Carbonara" data-lang-ru="Паста Карбонара">Pasta Carbonara</h5>
-                                    <div class="star-rating">
-                                        <span class="star">☆</span>
-                                        <span class="star">☆</span>
-                                        <span class="star">☆</span>
-                                        <span class="star">☆</span>
-                                        <span class="star">☆</span>
-                                    </div>
-                                    <div class="rating-value" data-lang-en="Rating: 0/5" data-lang-ru="Оценка: 0/5">Rating: 0/5</div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card p-3">
-                                    <h5 data-lang-en="Chocolate Cake" data-lang-ru="Шоколадный торт">Chocolate Cake</h5>
-                                    <div class="star-rating">
-                                        <span class="star">☆</span>
-                                        <span class="star">☆</span>
-                                        <span class="star">☆</span>
-                                        <span class="star">☆</span>
-                                        <span class="star">☆</span>
-                                    </div>
-                                    <div class="rating-value" data-lang-en="Rating: 0/5" data-lang-ru="Оценка: 0/5">Rating: 0/5</div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card p-3">
-                                    <h5 data-lang-en="Grilled Chicken" data-lang-ru="Курица гриль">Grilled Chicken</h5>
-                                    <div class="star-rating">
-                                        <span class="star">☆</span>
-                                        <span class="star">☆</span>
-                                        <span class="star">☆</span>
-                                        <span class="star">☆</span>
-                                        <span class="star">☆</span>
-                                    </div>
-                                    <div class="rating-value" data-lang-en="Rating: 0/5" data-lang-ru="Оценка: 0/5">Rating: 0/5</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- ADVANCED JS: Recipe Filter with Switch Statement -->
-                <section class="container my-5">
-                    <div class="card p-4">
-                        <h3 class="mb-4" data-lang-en="🍳 Filter Recipes by Meal Type" data-lang-ru="🍳 Фильтр рецептов по типу блюда">🍳 Filter Recipes by Meal Type</h3>
-                        <div class="filter-buttons">
-                            <button class="filter-btn active" onclick="filterRecipes('all')" data-lang-en="All Recipes" data-lang-ru="Все рецепты">All Recipes</button>
-                            <button class="filter-btn" onclick="filterRecipes('breakfast')" data-lang-en="Breakfast" data-lang-ru="Завтрак">Breakfast</button>
-                            <button class="filter-btn" onclick="filterRecipes('lunch')" data-lang-en="Lunch" data-lang-ru="Обед">Lunch</button>
-                            <button class="filter-btn" onclick="filterRecipes('dinner')" data-lang-en="Dinner" data-lang-ru="Ужин">Dinner</button>
-                            <button class="filter-btn" onclick="filterRecipes('dessert')" data-lang-en="Dessert" data-lang-ru="Десерт">Dessert</button>
-                        </div>
-                        <div id="filterStatus" data-lang-en="Showing all recipes" data-lang-ru="Показаны все рецепты">Showing all recipes</div>
-                        <div id="recipeList"></div>
-                    </div>
-                </section>
-
-                <!-- ADVANCED JS: Multi-Step Form -->
-                <section class="container my-5">
-                    <div class="card p-4">
-                        <h3 class="mb-4" data-lang-en="📝 Multi-Step Recipe Submission" data-lang-ru="📝 Отправка рецепта (многошаговая)">📝 Multi-Step Recipe Submission</h3>
-                        <div class="step-indicator">
-                            <div class="step active" data-lang-en="Step 1" data-lang-ru="Шаг 1">Step 1</div>
-                            <div class="step" data-lang-en="Step 2" data-lang-ru="Шаг 2">Step 2</div>
-                            <div class="step" data-lang-en="Step 3" data-lang-ru="Шаг 3">Step 3</div>
-                        </div>
-                        
-                        <div id="step1" class="form-step">
-                            <h4 data-lang-en="Basic Information" data-lang-ru="Основная информация">Basic Information</h4>
-                            <div class="mb-3">
-                                <label class="form-label" data-lang-en="Recipe Name" data-lang-ru="Название рецепта">Recipe Name</label>
-                                <input type="text" class="form-control" placeholder="e.g., Chocolate Chip Cookies" data-lang-en="e.g., Chocolate Chip Cookies" data-lang-ru="например, Печенье с шоколадом">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label" data-lang-en="Cooking Time (minutes)" data-lang-ru="Время приготовления (минуты)">Cooking Time (minutes)</label>
-                                <input type="number" class="form-control" placeholder="e.g., 30" data-lang-en="e.g., 30" data-lang-ru="например, 30">
-                            </div>
-                        </div>
-                        
-                        <div id="step2" class="form-step">
-                            <h4 data-lang-en="Ingredients" data-lang-ru="Ингредиенты">Ingredients</h4>
-                            <div class="mb-3">
-                                <label class="form-label" data-lang-en="Main Ingredients" data-lang-ru="Основные ингредиенты">Main Ingredients</label>
-                                <textarea class="form-control" rows="4" placeholder="List main ingredients..." data-lang-en="List main ingredients..." data-lang-ru="Перечислите основные ингредиенты..."></textarea>
-                            </div>
-                        </div>
-                        
-                        <div id="step3" class="form-step">
-                            <h4 data-lang-en="Instructions" data-lang-ru="Инструкции">Instructions</h4>
-                            <div class="mb-3">
-                                <label class="form-label" data-lang-en="Cooking Steps" data-lang-ru="Шаги приготовления">Cooking Steps</label>
-                                <textarea class="form-control" rows="6" placeholder="Describe the cooking process..." data-lang-en="Describe the cooking process..." data-lang-ru="Опишите процесс приготовления..."></textarea>
-                            </div>
-                        </div>
-                        
-                        <div class="d-flex justify-content-between mt-4">
-                            <button id="prevBtn" class="btn btn-secondary" style="display:none;" data-lang-en="Previous" data-lang-ru="Назад">Previous</button>
-                            <button id="nextBtn" class="btn btn-primary" data-lang-en="Next" data-lang-ru="Далее">Next</button>
-                            <button id="submitMultiStep" class="btn btn-success" style="display:none;" onclick="alert('Recipe submitted! 🎉')" data-lang-en="Submit Recipe" data-lang-ru="Отправить рецепт">Submit Recipe</button>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="container my-5 text-center">
-                    <div class="card p-4">
-                        <h3 class="mb-3" data-lang-en="🎨 Change Page Background" data-lang-ru="🎨 Изменить фон страницы">🎨 Change Page Background</h3>
-                        <p class="text-muted mb-3" data-lang-en="Click the button to change the page background color" data-lang-ru="Нажмите кнопку, чтобы изменить цвет фона страницы">Click the button to change the page background color</p>
-                        <button id="colorChangeBtn" class="btn btn-lg btn-primary" onclick="changeBackgroundColor()" data-lang-en="Change Background Color" data-lang-ru="Изменить цвет фона">
-                            Change Background Color
-                        </button>
-                    </div>
-                </section>
-
-                <section class="container my-5 text-center">
-                    <div class="card p-4 bg-light">
-                        <p class="text-muted mb-3" data-lang-en="Subscribe to our newsletter for the latest recipes and cooking tips" data-lang-ru="Подпишитесь на нашу рассылку, чтобы получать последние рецепты и советы по приготовлению">Subscribe to our newsletter for the latest recipes and cooking tips</p>
-                        <button class="btn btn-success btn-lg" onclick="showPopup()" data-lang-en="Subscribe Now" data-lang-ru="Подписаться сейчас">
-                            Subscribe Now
-                        </button>
-                    </div>
-                </section>
-
-                <section class="container my-5">
-                    <h2 class="text-center mb-4" data-lang-en="Frequently Asked Questions" data-lang-ru="Часто задаваемые вопросы">Frequently Asked Questions</h2>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="faq-item mb-3">
-                                <div class="faq-question p-3 rounded" onclick="toggleAccordion(this)" style="cursor: pointer;">
-                                    <strong data-lang-en="Q: What types of recipes do you offer?" data-lang-ru="В: Какие виды рецептов вы предлагаете?">Q: What types of recipes do you offer?</strong> <span style="float: right;">▼</span>
-                                </div>
-                                <div class="faq-answer p-3" style="display: none; transition: all 0.3s ease;">
-                                    <p data-lang-en="We offer a wide variety of recipes including soups, main meals, fast food, desserts, drinks, and breakfast items from cuisines around the world." data-lang-ru="Мы предлагаем широкий выбор рецептов, включая супы, основные блюда, фастфуд, десерты, напитки и завтраки из кухонь всего мира.">We offer a wide variety of recipes including soups, main meals, fast food, desserts, drinks, and breakfast items from cuisines around the world.</p>
-                                </div>
-                            </div>
-
-                            <div class="faq-item mb-3">
-                                <div class="faq-question p-3 rounded" onclick="toggleAccordion(this)" style="cursor: pointer;">
-                                    <strong data-lang-en="Q: Are the recipes suitable for beginners?" data-lang-ru="В: Подходят ли рецепты для начинающих?">Q: Are the recipes suitable for beginners?</strong> <span style="float: right;">▼</span>
-                                </div>
-                                <div class="faq-answer p-3" style="display: none; transition: all 0.3s ease;">
-                                    <p data-lang-en="Yes! We have recipes for all skill levels, from beginner to advanced. Each recipe includes difficulty level indicators and detailed step-by-step instructions." data-lang-ru="Да! У нас есть рецепты для всех уровней навыков, от начального до продвинутого. Каждый рецепт включает индикаторы сложности и подробные пошаговые инструкции.">Yes! We have recipes for all skill levels, from beginner to advanced. Each recipe includes difficulty level indicators and detailed step-by-step instructions.</p>
-                                </div>
-                            </div>
-
-                            <div class="faq-item mb-3">
-                                <div class="faq-question p-3 rounded" onclick="toggleAccordion(this)" style="cursor: pointer;">
-                                    <strong data-lang-en="Q: How often do you add new recipes?" data-lang-ru="В: Как часто вы добавляете новые рецепты?">Q: How often do you add new recipes?</strong> <span style="float: right;">▼</span>
-                                </div>
-                                <div class="faq-answer p-3" style="display: none; transition: all 0.3s ease;">
-                                    <p data-lang-en="We add new recipes every week! Subscribe to our newsletter to stay updated with the latest additions to our culinary collection." data-lang-ru="Мы добавляем новые рецепты каждую неделю! Подпишитесь на нашу рассылку, чтобы быть в курсе последних дополнений в нашей кулинарной коллекции.">We add new recipes every week! Subscribe to our newsletter to stay updated with the latest additions to our culinary collection.</p>
-                                </div>
-                            </div>
-
-                            <div class="faq-item mb-3">
-                                <div class="faq-question p-3 rounded" onclick="toggleAccordion(this)" style="cursor: pointer;">
-                                    <strong data-lang-en="Q: Can I submit my own recipes?" data-lang-ru="В: Могу ли я отправить свои рецепты?">Q: Can I submit my own recipes?</strong> <span style="float: right;">▼</span>
-                                </div>
-                                <div class="faq-answer p-3" style="display: none; transition: all 0.3s ease;">
-                                    <p data-lang-en="Absolutely! We love featuring recipes from our community. Contact us through our contact form to submit your recipe for review." data-lang-ru="Конечно! Мы любим публиковать рецепты от нашего сообщества. Свяжитесь с нами через контактную форму, чтобы отправить свой рецепт на рассмотрение.">Absolutely! We love featuring recipes from our community. Contact us through our contact form to submit your recipe for review.</p>
-                                </div>
-                            </div>
-
-                            <div class="faq-item">
-                                <div class="faq-question p-3 rounded" onclick="toggleAccordion(this)" style="cursor: pointer;">
-                                    <strong data-lang-en="Q: Do you offer nutritional information?" data-lang-ru="В: Предоставляете ли вы информацию о питательности?">Q: Do you offer nutritional information?</strong> <span style="float: right;">▼</span>
-                                </div>
-                                <div class="faq-answer p-3" style="display: none; transition: all 0.3s ease;">
-                                    <p data-lang-en="We're working on adding comprehensive nutritional information to all our recipes. This feature will be available soon!" data-lang-ru="Мы работаем над добавлением полной информации о питательности ко всем нашим рецептам. Эта функция скоро будет доступна!">We're working on adding comprehensive nutritional information to all our recipes. This feature will be available soon!</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="contact-section container">
-                    <h2 class="contact-title" data-lang-en="Contact Us" data-lang-ru="Свяжитесь с нами">Contact Us</h2>
-                    <div class="row g-4">
-                        <div class="col-12 col-md-4">
-                            <div class="card p-3 h-100">
-                                <h5 data-lang-en="Email" data-lang-ru="Электронная почта">Email</h5>
-                                <p class="mb-3">letuscook@foodie.com</p>
-                                <h5 data-lang-en="Phone" data-lang-ru="Телефон">Phone</h5>
-                                <p class="mb-3">+7 777 777 77 77</p>
-                                <h5 data-lang-en="Address" data-lang-ru="Адрес">Address</h5>
-                                <p data-lang-en="123 Culinary Street<br>Food City, FC 12345" data-lang-ru="ул. Кулинарная, 123<br>Город Еды, FC 12345">123 Culinary Street<br>Food City, FC 12345</p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-8">
-                            <div class="card p-3 h-100">
-                                <form id="contactForm" novalidate>
-                                    <div class="mb-3">
-                                        <label for="name" class="form-label" data-lang-en="Name *" data-lang-ru="Имя *">Name *</label>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" data-lang-en="Enter your full name" data-lang-ru="Введите ваше полное имя">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="email" class="form-label" data-lang-en="Email *" data-lang-ru="Электронная почта *">Email *</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="your.email@example.com" data-lang-en="your.email@example.com" data-lang-ru="ваша.почта@example.com">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="password" class="form-label" data-lang-en="Password *" data-lang-ru="Пароль *">Password *</label>
-                                        <input type="password" class="form-control" id="password" name="password" placeholder="At least 6 characters" data-lang-en="At least 6 characters" data-lang-ru="Минимум 6 символов">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="confirmPassword" class="form-label" data-lang-en="Confirm Password *" data-lang-ru="Подтвердите пароль *">Confirm Password *</label>
-                                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" data-lang-en="Re-enter your password" data-lang-ru="Введите пароль еще раз">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="message" class="form-label" data-lang-en="Message *" data-lang-ru="Сообщение *">Message *</label>
-                                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell us what you're thinking... (min 10 characters)" data-lang-en="Tell us what you're thinking... (min 10 characters)" data-lang-ru="Расскажите нам, что вы думаете... (минимум 10 символов)"></textarea>
-                                    </div>
-                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                        <div class="btn-group" role="group" aria-label="Contact buttons">
-                                            <button type="submit" class="btn btn-primary" data-lang-en="Send Message" data-lang-ru="Отправить сообщение">Send Message</button>
-                                            <button type="reset" class="btn btn-outline-secondary" onclick="clearErrors()" data-lang-en="Reset" data-lang-ru="Сбросить">Reset</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- JQUERY FEATURES SECTION -->
-                <section class="container my-5">
-                    <!-- Scroll Progress Bar -->
-                    <div id="scrollProgress" style="position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); z-index: 9999; width: 0%;"></div>
-                    
-                    <!-- Real-time Search -->
-                    <div class="card mb-4">
-                        <div class="card-header bg-primary text-white">
-                            <h3 class="mb-0" data-lang-en="Real-time Recipe Search" data-lang-ru="Поиск рецептов в реальном времени">Real-time Recipe Search</h3>
-                        </div>
-                        <div class="card-body">
-                            <input type="text" id="searchInput" class="form-control mb-3" placeholder="Type to search recipes..." data-lang-en="Type to search recipes..." data-lang-ru="Введите для поиска рецептов...">
-                            <div id="searchResults">
-                                <div class="searchable-item p-2 border-bottom" data-lang-en="Pancakes - Easy breakfast recipe" data-lang-ru="Блинчики - Простой рецепт для завтрака">Pancakes - Easy breakfast recipe</div>
-                                <div class="searchable-item p-2 border-bottom" data-lang-en="Grilled Chicken - Healthy lunch option" data-lang-ru="Курица гриль - Полезный вариант обеда">Grilled Chicken - Healthy lunch option</div>
-                                <div class="searchable-item p-2 border-bottom" data-lang-en="Pasta Carbonara - Italian dinner classic" data-lang-ru="Паста Карбонара - Классический итальянский ужин">Pasta Carbonara - Italian dinner classic</div>
-                                <div class="searchable-item p-2 border-bottom" data-lang-en="Chocolate Cake - Delicious dessert" data-lang-ru="Шоколадный торт - Вкусный десерт">Chocolate Cake - Delicious dessert</div>
-                                <div class="searchable-item p-2 border-bottom" data-lang-en="Cheeseburger - Quick fast food" data-lang-ru="Чизбургер - Быстрый фастфуд">Cheeseburger - Quick fast food</div>
-                                <div class="searchable-item p-2 border-bottom" data-lang-en="Fried Chicken - Crispy and tasty" data-lang-ru="Жареная курица - Хрустящая и вкусная">Fried Chicken - Crispy and tasty</div>
-                                <div class="searchable-item p-2 border-bottom" data-lang-en="Pizza Slice - Italian favorite" data-lang-ru="Пицца - Итальянский фаворит">Pizza Slice - Italian favorite</div>
-                                <div class="searchable-item p-2 border-bottom" data-lang-en="Ice Cream Sundae - Cool dessert" data-lang-ru="Мороженое - Прохладный десерт">Ice Cream Sundae - Cool dessert</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Autocomplete Search -->
-                    <div class="card mb-4">
-                        <div class="card-header bg-success text-white">
-                            <h3 class="mb-0" data-lang-en="Autocomplete Search" data-lang-ru="Автозаполнение поиска">Autocomplete Search</h3>
-                        </div>
-                        <div class="card-body">
-                            <div style="position: relative;">
-                                <input type="text" id="autocompleteInput" class="form-control" placeholder="Start typing a recipe name..." data-lang-en="Start typing a recipe name..." data-lang-ru="Начните вводить название рецепта...">
-                                <div id="autocompleteDropdown" style="display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #ddd; border-top: none; max-height: 200px; overflow-y: auto; z-index: 1000;"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Search Highlighting -->
-                    <div class="card mb-4">
-                        <div class="card-header bg-warning text-dark">
-                            <h3 class="mb-0" data-lang-en="Search Highlighting" data-lang-ru="Подсветка поиска">Task 3: Search Highlighting</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="input-group mb-3">
-                                <input type="text" id="highlightInput" class="form-control" placeholder="Enter keyword to highlight..." data-lang-en="Enter keyword to highlight..." data-lang-ru="Введите ключевое слово для подсветки...">
-                                <button class="btn btn-warning" id="highlightSearchBtn" data-lang-en="Highlight" data-lang-ru="Подсветить">Highlight</button>
-                            </div>
-                            <div class="highlight-content">
-                                <p class="highlight-text-1">Cooking is an art that brings people together. Whether you love breakfast, lunch, dinner, or dessert, there is always a recipe for everyone.</p>
-                                <p class="highlight-text-2">Our recipes include pasta, chicken, cake, pizza, and many more delicious dishes from around the world.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Animated Counter -->
-                    <div class="card mb-4">
-                        <div class="card-header bg-info text-white">
-                            <h3 class="mb-0" data-lang-en="Animated Number Counter" data-lang-ru="Анимированный счетчик">Task 5: Animated Number Counter</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="row text-center">
-                                <div class="col-md-3">
-                                    <h2 class="counter-number" data-target="1250">0</h2>
-                                    <p data-lang-en="Recipes" data-lang-ru="Рецепты">Recipes</p>
-                                </div>
-                                <div class="col-md-3">
-                                    <h2 class="counter-number" data-target="5000">0</h2>
-                                    <p data-lang-en="Users" data-lang-ru="Пользователи">Users</p>
-                                </div>
-                                <div class="col-md-3">
-                                    <h2 class="counter-number" data-target="850">0</h2>
-                                    <p data-lang-en="Reviews" data-lang-ru="Отзывы">Reviews</p>
-                                </div>
-                                <div class="col-md-3">
-                                    <h2 class="counter-number" data-target="120">0</h2>
-                                    <p data-lang-en="Chefs" data-lang-ru="Повара">Chefs</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Loading Spinner -->
-                    <div class="card mb-4">
-                        <div class="card-header bg-danger text-white">
-                            <h3 class="mb-0" data-lang-en="Loading Spinner on Submit" data-lang-ru="Загрузка при отправке">Task 6: Loading Spinner on Submit</h3>
-                        </div>
-                        <div class="card-body">
-                            <form>
-                                <div class="mb-3">
-                                    <label class="form-label" data-lang-en="Recipe Name" data-lang-ru="Название рецепта">Recipe Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter recipe name" data-lang-en="Enter recipe name" data-lang-ru="Введите название рецепта">
-                                </div>
-                                <button type="button" class="btn btn-danger submit-with-loader" data-lang-en="Submit Recipe" data-lang-ru="Отправить рецепт">Submit Recipe</button>
-                            </form>
-                        </div>
-                    </div>
-
-                    <!-- Copy to Clipboard -->
-                    <div class="card mb-4">
-                        <div class="card-header bg-secondary text-white">
-                            <h3 class="mb-0" data-lang-en="Copy to Clipboard" data-lang-ru="Копировать в буфер обмена">Task 8: Copy to Clipboard</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <label class="form-label" data-lang-en="Recipe Code:" data-lang-ru="Код рецепта:">Recipe Code:</label>
-                                <div class="d-flex align-items-center gap-2">
-                                    <code class="copy-text p-2 bg-light flex-grow-1">RECIPE-2025-PANCAKES</code>
-                                    <button class="btn btn-sm btn-secondary copy-btn" data-lang-en="Copy" data-lang-ru="Копировать">Copy</button>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label" data-lang-en="Discount Code:" data-lang-ru="Код скидки:">Discount Code:</label>
-                                <div class="d-flex align-items-center gap-2">
-                                    <code class="copy-text p-2 bg-light flex-grow-1">SAVE20OFF</code>
-                                    <button class="btn btn-sm btn-secondary copy-btn" data-lang-en="Copy" data-lang-ru="Копировать">Copy</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Lazy Loading Images -->
-                    <div class="card mb-4">
-                        <div class="card-header bg-dark text-white">
-                            <h3 class="mb-0" data-lang-en="Lazy Loading Images" data-lang-ru="1Отложенная загрузка изображений">Task 9: Lazy Loading Images</h3>
-                        </div>
-                        <div class="card-body">
-                            <p><strong data-lang-en="Scroll down to load images dynamically!" data-lang-ru="Прокрутите вниз для динамической загрузки изображений!">Scroll down to load images dynamically!</strong> <span data-lang-en="Images appear when you scroll to them." data-lang-ru="Изображения появляются при прокрутке к ним.">Images appear when you scroll to them.</span></p>
-                            <div class="row g-3">
-                                <!-- Row 1 -->
-                                <div class="col-md-4">
-                                    <div class="card h-100">
-                                        <img class="lazy-image img-fluid card-img-top" data-src="Images/oatmeal.png" alt="Oatmeal Breakfast" style="background: #f0f0f0; min-height: 200px; opacity: 0.3;">
-                                        <div class="card-body">
-                                            <h5 data-lang-en="Oatmeal" data-lang-ru="Овсянка">Oatmeal</h5>
-                                            <p class="small" data-lang-en="Healthy breakfast" data-lang-ru="Полезный завтрак">Healthy breakfast</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card h-100">
-                                        <img class="lazy-image img-fluid card-img-top" data-src="Images/Grilled-Ribeye.jpg" alt="Grilled Ribeye" style="background: #f0f0f0; min-height: 200px; opacity: 0.3;">
-                                        <div class="card-body">
-                                            <h5 data-lang-en="Grilled Ribeye" data-lang-ru="Рибай на гриле">Grilled Ribeye</h5>
-                                            <p class="small" data-lang-en="Premium steak" data-lang-ru="Премиум стейк">Premium steak</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card h-100">
-                                        <img class="lazy-image img-fluid card-img-top" data-src="Images/cake.png" alt="Delicious Cake" style="background: #f0f0f0; min-height: 200px; opacity: 0.3;">
-                                        <div class="card-body">
-                                            <h5 data-lang-en="Cake" data-lang-ru="Торт">Cake</h5>
-                                            <p class="small" data-lang-en="Sweet dessert" data-lang-ru="Сладкий десерт">Sweet dessert</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Row 2 -->
-                                <div class="col-md-4">
-                                    <div class="card h-100">
-                                        <img class="lazy-image img-fluid card-img-top" data-src="Images/spaghetti-bolognese.jpg" alt="Spaghetti Bolognese" style="background: #f0f0f0; min-height: 200px; opacity: 0.3;">
-                                        <div class="card-body">
-                                            <h5 data-lang-en="Spaghetti Bolognese" data-lang-ru="Спагетти Болоньезе">Spaghetti Bolognese</h5>
-                                            <p class="small" data-lang-en="Italian classic" data-lang-ru="Итальянская классика">Italian classic</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card h-100">
-                                        <img class="lazy-image img-fluid card-img-top" data-src="Images/fried-chicken.png" alt="Fried Chicken" style="background: #f0f0f0; min-height: 200px; opacity: 0.3;">
-                                        <div class="card-body">
-                                            <h5 data-lang-en="Fried Chicken" data-lang-ru="Жареная курица">Fried Chicken</h5>
-                                            <p class="small" data-lang-en="Crispy fast food" data-lang-ru="Хрустящий фастфуд">Crispy fast food</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card h-100">
-                                        <img class="lazy-image img-fluid card-img-top" data-src="Images/Lamb-Kebab.jpg" alt="Lamb Kebab" style="background: #f0f0f0; min-height: 200px; opacity: 0.3;">
-                                        <div class="card-body">
-                                            <h5 data-lang-en="Lamb Kebab" data-lang-ru="Кебаб из баранины">Lamb Kebab</h5>
-                                            <p class="small" data-lang-en="Grilled perfection" data-lang-ru="Гриль совершенство">Grilled perfection</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Row 3 -->
-                                <div class="col-md-4">
-                                    <div class="card h-100">
-                                        <img class="lazy-image img-fluid card-img-top" data-src="Images/Borscht.jpg" alt="Borscht Soup" style="background: #f0f0f0; min-height: 200px; opacity: 0.3;">
-                                        <div class="card-body">
-                                            <h5 data-lang-en="Borscht" data-lang-ru="Борщ">Borscht</h5>
-                                            <p class="small" data-lang-en="Traditional soup" data-lang-ru="Традиционный суп">Traditional soup</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card h-100">
-                                        <img class="lazy-image img-fluid card-img-top" data-src="Images/Pasta-Alfredo.jpg" alt="Pasta Alfredo" style="background: #f0f0f0; min-height: 200px; opacity: 0.3;">
-                                        <div class="card-body">
-                                            <h5 data-lang-en="Pasta Alfredo" data-lang-ru="Паста Альфредо">Pasta Alfredo</h5>
-                                            <p class="small" data-lang-en="Creamy Italian" data-lang-ru="Сливочная итальянская">Creamy Italian</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card h-100">
-                                        <img class="lazy-image img-fluid card-img-top" data-src="Images/uzbek-beef-plov-13-Region.jpg" alt="Uzbek Plov" style="background: #f0f0f0; min-height: 200px; opacity: 0.3;">
-                                        <div class="card-body">
-                                            <h5 data-lang-en="Uzbek Plov" data-lang-ru="Узбекский плов">Uzbek Plov</h5>
-                                            <p class="small" data-lang-en="Central Asian dish" data-lang-ru="Центральноазиатское блюдо">Central Asian dish</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <div id="subscriptionPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 9999; align-items: center; justify-content: center;">
-                    <div class="card" style="max-width: 500px; margin: 20px; position: relative;">
-                        <div class="card-body p-4">
-                            <button onclick="closePopup()" style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #999;">&times;</button>
-                            <h3 class="text-center mb-4" data-lang-en="📬 Subscribe to Our Newsletter" data-lang-ru="📬 Подпишитесь на нашу рассылку">📬 Subscribe to Our Newsletter</h3>
-                            <p class="text-center text-muted mb-4" data-lang-en="Get the latest recipes and cooking tips delivered to your inbox!" data-lang-ru="Получайте последние рецепты и советы по приготовлению прямо на свою почту!">Get the latest recipes and cooking tips delivered to your inbox!</p>
-                            <form id="subscriptionForm">
-                                <div class="mb-3">
-                                    <label for="subscribeEmail" class="form-label" data-lang-en="Email Address" data-lang-ru="Адрес электронной почты">Email Address</label>
-                                    <input type="email" class="form-control" id="subscribeEmail" placeholder="Enter your email" data-lang-en="Enter your email" data-lang-ru="Введите вашу почту" required>
-                                </div>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-success btn-lg" data-lang-en="Subscribe" data-lang-ru="Подписаться">Subscribe</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-    </main>
-
-    <!-- Footer with Working Links (All Links Functional) -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div>
-                <strong data-lang-en="Let Us Cook Team:" data-lang-ru="Команда Let Us Cook:">Let Us Cook Team:</strong> Nurassyl Orazbek, Rasul Akhmetov, Asylan Usen, Anuar Zhenissov
-            </div>
-            <div class="footer-links">
-                <!--  All footer links direct to appropriate pages -->
-                <a href="index.html" data-lang-en="Home" data-lang-ru="Главная">Home</a>
-                <a href="culinary.html" data-lang-en="Gallery" data-lang-ru="Галерея">Gallery</a>
-                <a href="#contact" data-lang-en="Contact" data-lang-ru="Контакты">Contact</a>
-            </div>
-            <div class="social-links">
-                <!-- Social links styled and accessible -->
-                <a href="#" title="Facebook" aria-label="Facebook">📘</a>
-                <a href="#" title="Instagram" aria-label="Instagram">📷</a>
-                <a href="#" title="Twitter" aria-label="Twitter">🐦</a>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
-            © 2025 Let Us Cook. Nurassyl Orazbek, Anuar Zhenissov, Asylan Usen, Rasul Akhmetov.
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container">
+        <section class="hero">
+            <h1 data-i18n="hero.title">🍽️ Welcome to Let Us Cook</h1>
+            <p data-i18n="hero.subtitle">Discover amazing recipes and culinary delights from around the world</p>
+            <a href="#categories" class="btn btn-primary" style="color: white; margin-top: 1rem;" data-i18n="hero.explore">Explore Menu</a>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories">
+            <h2 class="section-title" data-i18n="categories.title">Explore Our Categories</h2>
+            <div class="grid">
+                <!-- Culinary -->
+                <div class="card" onclick="window.location.href='culinary.html'">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=500&h=300&fit=crop" alt="Culinary" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title" data-i18n="category.culinary">🍳 Culinary Arts</h3>
+                        <p class="card-description" data-i18n="category.culinary.desc">Explore the world of professional cooking and culinary techniques by Nurassyl</p>
+                    </div>
+                </div>
+
+                <!-- Soups -->
+                <div class="card" onclick="window.location.href='an/soups.html'">
+                    <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&h=300&fit=crop" alt="Soups" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title" data-i18n="category.soups">🍲 Soups</h3>
+                        <p class="card-description" data-i18n="category.soups.desc">Warm and comforting soup recipes from around the world</p>
+                    </div>
+                </div>
+
+                <!-- Meals -->
+                <div class="card" onclick="window.location.href='an/meals.html'">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&h=300&fit=crop" alt="Meals" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title" data-i18n="category.meals">🍖 Main Meals</h3>
+                        <p class="card-description" data-i18n="category.meals.desc">Hearty and satisfying main course dishes</p>
+                    </div>
+                </div>
+
+                <!-- Fast Food -->
+                <div class="card" onclick="window.location.href='as/fastfood.html'">
+                    <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=500&h=300&fit=crop" alt="Fast Food" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title" data-i18n="category.fastfood">🍔 Fast Food</h3>
+                        <p class="card-description" data-i18n="category.fastfood.desc">Quick and delicious fast food favorites</p>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="card" onclick="window.location.href='as/desserts.html'">
+                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500&h=300&fit=crop" alt="Desserts" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title" data-i18n="category.desserts">🍰 Desserts</h3>
+                        <p class="card-description" data-i18n="category.desserts.desc">Sweet treats and delectable desserts</p>
+                    </div>
+                </div>
+
+                <!-- Drinks -->
+                <div class="card" onclick="window.location.href='ra/drinks.html'">
+                    <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500&h=300&fit=crop" alt="Drinks" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title" data-i18n="category.drinks">🥤 Drinks</h3>
+                        <p class="card-description" data-i18n="category.drinks.desc">Refreshing beverages and cocktails</p>
+                    </div>
+                </div>
+
+                <!-- Breakfast -->
+                <div class="card" onclick="window.location.href='ra/breakfast.html'">
+                    <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=500&h=300&fit=crop" alt="Breakfast" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title" data-i18n="category.breakfast">🥞 Breakfast</h3>
+                        <p class="card-description" data-i18n="category.breakfast.desc">Start your day with amazing breakfast options</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="mt-3">
+            <h2 class="section-title" data-i18n="features.title">Why Choose Let Us Cook?</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title" data-i18n="feature.quality">🌟 Quality Recipes</h3>
+                        <p class="card-description" data-i18n="feature.quality.desc">Carefully curated recipes from professional chefs and culinary experts</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title" data-i18n="feature.search">🔍 Easy Search</h3>
+                        <p class="card-description" data-i18n="feature.search.desc">Find exactly what you're looking for with our advanced search and filter options</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title" data-i18n="feature.rate">⭐ Rate & Review</h3>
+                        <p class="card-description" data-i18n="feature.rate.desc">Share your experience and help others discover great dishes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 data-i18n="footer.about">About Us</h3>
+                <p data-i18n="footer.about.text">Let Us Cook is your ultimate destination for discovering amazing recipes and culinary inspiration from around the world.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3 data-i18n="footer.links">Quick Links</h3>
+                <ul>
+                    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                    <li><a href="culinary.html" data-i18n="nav.culinary">Culinary</a></li>
+                    <li><a href="an/soups.html" data-i18n="nav.soups">Soups</a></li>
+                    <li><a href="an/meals.html" data-i18n="nav.meals">Meals</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 data-i18n="footer.more">More Categories</h3>
+                <ul>
+                    <li><a href="as/fastfood.html" data-i18n="nav.fastfood">Fast Food</a></li>
+                    <li><a href="as/desserts.html" data-i18n="nav.desserts">Desserts</a></li>
+                    <li><a href="ra/drinks.html" data-i18n="nav.drinks">Drinks</a></li>
+                    <li><a href="ra/breakfast.html" data-i18n="nav.breakfast">Breakfast</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 data-i18n="footer.account">Account</h3>
+                <ul>
+                    <li><a href="login.html" data-i18n="nav.login">Log In</a></li>
+                    <li><a href="signup.html" data-i18n="nav.signup">Sign Up</a></li>
+                    <li><a href="profile.html" data-i18n="nav.profile">Profile</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p data-i18n="footer.copyright">&copy; 2025 Let Us Cook - Culinary Excellence. All rights reserved.</p>
+            <p data-i18n="footer.team">Created by Nurassyl, Anuar, Asylan, and Rasul</p>
         </div>
     </footer>
 
-    <!--Bootstrap 5.3.2 JavaScript for Responsive Components -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="common.js"></script>
 </body>
 </html>
