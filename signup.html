@@ -59,7 +59,7 @@
                 <button type="submit" class="btn-submit" data-i18n="auth.signup.button">Sign Up</button>
 
                 <div class="form-footer">
-                    <span data-i18n="auth.signup.footer">Already have an account?</span> <a href="login.html" data-i18n="nav.login">Log In</a>
+                    <span data-i18n="auth.signup.footer">Already have an account?</span> <a href="index.html" data-i18n="nav.login">Log In</a>
                 </div>
             </form>
         </div>
@@ -147,7 +147,7 @@
 
                     if (response.ok && data.success) {
                         alert('Account created successfully! Please log in.');
-                        window.location.href = 'login.html';
+                        window.location.href = 'index.html';  // Login page is now index.html
                     } else {
                         if (response.status === 409) {
                             showError(document.getElementById('email'), 'An account with this email already exists');

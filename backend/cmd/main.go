@@ -35,11 +35,12 @@ func main() {
 	// Initialize repository
 	userRepo := repository.NewUserRepository(pool)
 
-	// Initialize handler
+	// Initialize handlers
 	userHandler := handler.NewUserHandler(userRepo)
+	chatHandler := handler.NewChatHandler()
 
 	// Setup routes
-	router := routes.SetupRoutes(userHandler)
+	router := routes.SetupRoutes(userHandler, chatHandler)
 
 	// Setup CORS
 	corsHandler := cors.New(cors.Options{

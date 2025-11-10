@@ -16,6 +16,7 @@ const translations = {
         'nav.login': 'Log In',
         'nav.signup': 'Sign Up',
         'nav.profile': 'Profile',
+        'nav.chat': 'Chat',
         'nav.logout': 'Logout',
         
         // Homepage
@@ -178,6 +179,7 @@ const translations = {
         'nav.login': 'Войти',
         'nav.signup': 'Регистрация',
         'nav.profile': 'Профиль',
+        'nav.chat': 'Чат',
         'nav.logout': 'Выйти',
         
         // Homepage
@@ -718,8 +720,8 @@ function requireAuth() {
         const currentPage = window.location.pathname + window.location.search;
         localStorage.setItem('redirectAfterLogin', currentPage);
         
-        // Redirect to login page
-        window.location.href = '/login.html';
+        // Redirect to login page (now index.html)
+        window.location.href = '/index.html';
         return false;
     }
     return true;
@@ -728,14 +730,14 @@ function requireAuth() {
 function logout() {
     localStorage.removeItem('currentUser');
     localStorage.removeItem('redirectAfterLogin');
-    window.location.href = '/login.html';
+    window.location.href = '/index.html';
 }
 
 // Public pages that don't require authentication
 const publicPages = [
-    '/login.html',
-    '/signup.html',
-    '/index.html',
+    '/index.html',    // Login page
+    '/signup.html',   // Signup page
+    '/login.html',    // Home page (now public)
     '/'
 ];
 

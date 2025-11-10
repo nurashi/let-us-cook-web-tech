@@ -6,7 +6,7 @@ import (
 )
 
 // SetupRoutes configures all routes for the application
-func SetupRoutes(userHandler *handler.UserHandler) *mux.Router {
+func SetupRoutes(userHandler *handler.UserHandler, chatHandler *handler.ChatHandler) *mux.Router {
 	router := mux.NewRouter()
 
 	// API routes
@@ -23,6 +23,9 @@ func SetupRoutes(userHandler *handler.UserHandler) *mux.Router {
 	api.HandleFunc("/users", userHandler.GetAllUsers).Methods("GET")
 	api.HandleFunc("/users/{id}", userHandler.GetUser).Methods("GET")
 	api.HandleFunc("/users/{id}", userHandler.DeleteUser).Methods("DELETE")
+
+	// Chat routes
+	api.HandleFunc("/chat", chatHandler.Chat).Methods("POST")
 
 	return router
 }

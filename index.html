@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Let Us Cook - Culinary Excellence</title>
+    <title>Log In - Let Us Cook</title>
     <link rel="stylesheet" href="common.css">
 </head>
 <body>
@@ -12,192 +12,115 @@
         <div class="nav-container">
             <a href="index.html" class="logo">🍳 Let Us Cook</a>
             
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
-            <ul class="nav-links">
-                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-                <li><a href="culinary.html" data-i18n="nav.culinary">Culinary</a></li>
-                <li><a href="an/soups.html" data-i18n="nav.soups">Soups</a></li>
-                <li><a href="an/meals.html" data-i18n="nav.meals">Meals</a></li>
-                <li><a href="as/fastfood.html" data-i18n="nav.fastfood">Fast Food</a></li>
-                <li><a href="as/desserts.html" data-i18n="nav.desserts">Desserts</a></li>
-                <li><a href="ra/drinks.html" data-i18n="nav.drinks">Drinks</a></li>
-                <li><a href="ra/breakfast.html" data-i18n="nav.breakfast">Breakfast</a></li>
-            </ul>
-            
             <div class="nav-controls">
                 <button class="language-toggle" aria-label="Toggle language">EN</button>
                 <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
-                
-                <div class="auth-buttons">
-                    <a href="login.html" class="btn-login" data-i18n="nav.login">Log In</a>
-                    <a href="signup.html" class="btn-signup" data-i18n="nav.signup">Sign Up</a>
-                </div>
-                
-                <div class="user-profile" style="display: none;">
-                    <div class="user-info">
-                        <div class="user-name"></div>
-                        <div class="user-email"></div>
-                    </div>
-                    <button class="btn-logout" data-i18n="nav.logout">Logout</button>
-                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <div class="container">
-        <section class="hero">
-            <h1 data-i18n="hero.title">🍽️ Welcome to Let Us Cook</h1>
-            <p data-i18n="hero.subtitle">Discover amazing recipes and culinary delights from around the world</p>
-            <a href="#categories" class="btn btn-primary" style="color: white; margin-top: 1rem;" data-i18n="hero.explore">Explore Menu</a>
-        </section>
-
-        <!-- Categories Section -->
-        <section id="categories">
-            <h2 class="section-title" data-i18n="categories.title">Explore Our Categories</h2>
-            <div class="grid">
-                <!-- Culinary -->
-                <div class="card" onclick="window.location.href='culinary.html'">
-                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=500&h=300&fit=crop" alt="Culinary" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title" data-i18n="category.culinary">🍳 Culinary Arts</h3>
-                        <p class="card-description" data-i18n="category.culinary.desc">Explore the world of professional cooking and culinary techniques by Nurassyl</p>
-                    </div>
+        <div class="form-container">
+            <h2 class="form-title" data-i18n="auth.login.title">Welcome Back!</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email" data-i18n="auth.email">Email Address</label>
+                    <input type="email" id="email" class="form-input" required>
+                    <div class="error-message"></div>
                 </div>
 
-                <!-- Soups -->
-                <div class="card" onclick="window.location.href='an/soups.html'">
-                    <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&h=300&fit=crop" alt="Soups" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title" data-i18n="category.soups">🍲 Soups</h3>
-                        <p class="card-description" data-i18n="category.soups.desc">Warm and comforting soup recipes from around the world</p>
-                    </div>
+                <div class="form-group">
+                    <label for="password" data-i18n="auth.password">Password</label>
+                    <input type="password" id="password" class="form-input" required>
+                    <div class="error-message"></div>
                 </div>
 
-                <!-- Meals -->
-                <div class="card" onclick="window.location.href='an/meals.html'">
-                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&h=300&fit=crop" alt="Meals" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title" data-i18n="category.meals">🍖 Main Meals</h3>
-                        <p class="card-description" data-i18n="category.meals.desc">Hearty and satisfying main course dishes</p>
-                    </div>
-                </div>
+                <button type="submit" class="btn-submit" data-i18n="auth.login.button">Log In</button>
 
-                <!-- Fast Food -->
-                <div class="card" onclick="window.location.href='as/fastfood.html'">
-                    <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=500&h=300&fit=crop" alt="Fast Food" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title" data-i18n="category.fastfood">🍔 Fast Food</h3>
-                        <p class="card-description" data-i18n="category.fastfood.desc">Quick and delicious fast food favorites</p>
-                    </div>
+                <div class="form-footer">
+                    <span data-i18n="auth.login.footer">Don't have an account?</span> <a href="signup.html" data-i18n="nav.signup">Sign Up</a>
                 </div>
-
-                <!-- Desserts -->
-                <div class="card" onclick="window.location.href='as/desserts.html'">
-                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500&h=300&fit=crop" alt="Desserts" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title" data-i18n="category.desserts">🍰 Desserts</h3>
-                        <p class="card-description" data-i18n="category.desserts.desc">Sweet treats and delectable desserts</p>
-                    </div>
-                </div>
-
-                <!-- Drinks -->
-                <div class="card" onclick="window.location.href='ra/drinks.html'">
-                    <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500&h=300&fit=crop" alt="Drinks" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title" data-i18n="category.drinks">🥤 Drinks</h3>
-                        <p class="card-description" data-i18n="category.drinks.desc">Refreshing beverages and cocktails</p>
-                    </div>
-                </div>
-
-                <!-- Breakfast -->
-                <div class="card" onclick="window.location.href='ra/breakfast.html'">
-                    <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=500&h=300&fit=crop" alt="Breakfast" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title" data-i18n="category.breakfast">🥞 Breakfast</h3>
-                        <p class="card-description" data-i18n="category.breakfast.desc">Start your day with amazing breakfast options</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="mt-3">
-            <h2 class="section-title" data-i18n="features.title">Why Choose Let Us Cook?</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="card-content">
-                        <h3 class="card-title" data-i18n="feature.quality">🌟 Quality Recipes</h3>
-                        <p class="card-description" data-i18n="feature.quality.desc">Carefully curated recipes from professional chefs and culinary experts</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-content">
-                        <h3 class="card-title" data-i18n="feature.search">🔍 Easy Search</h3>
-                        <p class="card-description" data-i18n="feature.search.desc">Find exactly what you're looking for with our advanced search and filter options</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-content">
-                        <h3 class="card-title" data-i18n="feature.rate">⭐ Rate & Review</h3>
-                        <p class="card-description" data-i18n="feature.rate.desc">Share your experience and help others discover great dishes</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </form>
+        </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3 data-i18n="footer.about">About Us</h3>
-                <p data-i18n="footer.about.text">Let Us Cook is your ultimate destination for discovering amazing recipes and culinary inspiration from around the world.</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3 data-i18n="footer.links">Quick Links</h3>
-                <ul>
-                    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-                    <li><a href="culinary.html" data-i18n="nav.culinary">Culinary</a></li>
-                    <li><a href="an/soups.html" data-i18n="nav.soups">Soups</a></li>
-                    <li><a href="an/meals.html" data-i18n="nav.meals">Meals</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3 data-i18n="footer.more">More Categories</h3>
-                <ul>
-                    <li><a href="as/fastfood.html" data-i18n="nav.fastfood">Fast Food</a></li>
-                    <li><a href="as/desserts.html" data-i18n="nav.desserts">Desserts</a></li>
-                    <li><a href="ra/drinks.html" data-i18n="nav.drinks">Drinks</a></li>
-                    <li><a href="ra/breakfast.html" data-i18n="nav.breakfast">Breakfast</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3 data-i18n="footer.account">Account</h3>
-                <ul>
-                    <li><a href="login.html" data-i18n="nav.login">Log In</a></li>
-                    <li><a href="signup.html" data-i18n="nav.signup">Sign Up</a></li>
-                    <li><a href="profile.html" data-i18n="nav.profile">Profile</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p data-i18n="footer.copyright">&copy; 2025 Let Us Cook - Culinary Excellence. All rights reserved.</p>
-            <p data-i18n="footer.team">Created by Nurassyl, Anuar, Asylan, and Rasul</p>
-        </div>
-    </footer>
-
     <script src="common.js"></script>
+    <script>
+        const API_URL = 'http://localhost:3000/api';
+
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Clear previous errors
+            document.querySelectorAll('.form-input').forEach(input => clearError(input));
+            
+            let isValid = true;
+            
+            // Get form values
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            
+            // Validate email
+            if (!validateRequired(email)) {
+                showError(document.getElementById('email'), 'Email is required');
+                isValid = false;
+            } else if (!validateEmail(email)) {
+                showError(document.getElementById('email'), 'Please enter a valid email address');
+                isValid = false;
+            }
+            
+            // Validate password
+            if (!validateRequired(password)) {
+                showError(document.getElementById('password'), 'Password is required');
+                isValid = false;
+            }
+            
+            if (isValid) {
+                const submitButton = this.querySelector('.btn-submit');
+                const originalText = submitButton.textContent;
+                submitButton.textContent = 'Logging in...';
+                submitButton.disabled = true;
+
+                try {
+                    // Call backend API
+                    const response = await fetch(`${API_URL}/login`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ email, password })
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok && data.success) {
+                        // Store current user (without password)
+                        localStorage.setItem('currentUser', JSON.stringify(data.data.user));
+                        
+                        // Check if there's a redirect URL saved
+                        const redirectUrl = localStorage.getItem('redirectAfterLogin');
+                        if (redirectUrl) {
+                            localStorage.removeItem('redirectAfterLogin');
+                            alert('Login successful!');
+                            window.location.href = redirectUrl;
+                        } else {
+                            alert('Login successful!');
+                            window.location.href = 'login.html';  // Home page is now login.html
+                        }
+                    } else {
+                        showError(document.getElementById('email'), data.message || 'Invalid email or password');
+                        showError(document.getElementById('password'), data.message || 'Invalid email or password');
+                        submitButton.textContent = originalText;
+                        submitButton.disabled = false;
+                    }
+                } catch (error) {
+                    console.error('Login error:', error);
+                    showError(document.getElementById('email'), 'Network error. Make sure the backend server is running on http://localhost:3000');
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                }
+            }
+        });
+    </script>
 </body>
 </html>

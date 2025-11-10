@@ -25,6 +25,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: letuscook-backend
+    env_file:
+      - .env
     environment:
       DB_HOST: postgres
       DB_PORT: 5432
