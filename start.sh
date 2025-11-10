@@ -8,19 +8,29 @@ NC='\033[0m' # No Color
 
 echo -e "${BLUE}🚀 Starting Let Us Cook Application...${NC}\n"
 
-# Check if docker-compose is installed
-if ! command -v docker-compose &> /dev/null; then
-    echo -e "${RED}❌ docker-compose not found. Please install it first.${NC}"
+# Check if docker is installed
+if ! command -v docker &> /dev/null; then
+    echo -e "${RED}❌ docker not found. Please install it first.${NC}"
+    exit 1
+fi
+
+# Use docker compose (newer) or docker-compose (older)
+if docker compose version &> /dev/null; then
+    DOCKER_COMPOSE="docker compose"
+elif command -v docker-compose &> /dev/null; then
+    DOCKER_COMPOSE="docker-compose"
+else
+    echo -e "${RED}❌ Neither 'docker compose' nor 'docker-compose' found.${NC}"
     exit 1
 fi
 
 # Stop any existing containers
 echo -e "${BLUE}🛑 Stopping existing containers...${NC}"
-docker-compose down 2>/dev/null
+$DOCKER_COMPOSE down 2>/dev/null
 
 # Build and start all services
 echo -e "${BLUE}🏗️  Building and starting services...${NC}"
-docker-compose up -d --build
+$DOCKER_COMPOSE up -d --build
 
 # Wait for services to be ready
 echo -e "${BLUE}⏳ Waiting for services to start...${NC}"
@@ -39,9 +49,9 @@ if docker ps | grep -q "letuscook"; then
     echo -e "   📧 Email:    john@example.com"
     echo -e "   🔑 Password: password123"
     echo -e "\n${BLUE}📊 Container status:${NC}"
-    docker-compose ps
-    echo -e "\n${BLUE}💡 To stop: docker-compose down${NC}"
-    echo -e "${BLUE}💡 To view logs: docker-compose logs -f${NC}"
+    $DOCKER_COMPOSE ps
+    echo -e "\n${BLUE}💡 To stop: ./stop.sh or $DOCKER_COMPOSE down${NC}"
+    echo -e "${BLUE}💡 To view logs: $DOCKER_COMPOSE logs -f${NC}"
 else
     echo -e "\n${RED}❌ Failed to start services${NC}"
     echo -e "${RED}Check logs with: docker-compose logs${NC}"
