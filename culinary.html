@@ -142,7 +142,10 @@
         // Check authentication before loading page
         checkPageAuth();
         
-        // Recipe data
+        // External API Configuration - TheMealDB (Free Recipe API)
+        const MEAL_API_URL = 'https://www.themealdb.com/api/json/v1/1';
+        
+        // Local recipe data (fallback if API fails)
         const recipes = [
             {
                 id: 'cul-1',
@@ -344,8 +347,94 @@
             renderRecipes(filteredRecipes);
         }
 
+        // External API Integration - Fetch recipes from TheMealDB
+        async function fetchExternalRecipes(searchTerm = '') {
+            try {
+                let url = `${MEAL_API_URL}/search.php?s=${searchTerm}`;
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data.meals) {
+                    // Transform API data to our format
+                    const apiRecipes = data.meals.slice(0, 8).map((meal, index) => ({
+                        id: 'api-' + meal.idMeal,
+                        name: meal.strMeal,
+                        description: meal.strInstructions.substring(0, 100) + '...',
+                        price: (Math.random() * 30 + 15).toFixed(2),
+                        image: meal.strMealThumb,
+                        difficulty: ['easy', 'medium', 'hard'][Math.floor(Math.random() * 3)],
+                        cuisine: meal.strArea.toLowerCase(),
+                        time: ['quick', 'medium', 'long'][Math.floor(Math.random() * 3)],
+                        isExternal: true,
+                        externalData: meal
+                    }));
+                    
+                    // Cache API results in localStorage
+                    localStorage.setItem('cachedAPIRecipes', JSON.stringify({
+                        timestamp: Date.now(),
+                        recipes: apiRecipes,
+                        searchTerm: searchTerm
+                    }));
+                    
+                    return apiRecipes;
+                }
+            } catch (error) {
+                console.error('Error fetching recipes from API:', error);
+            }
+            return [];
+        }
+
+        // Load recipes with API integration
+        async function loadRecipes() {
+            const searchInput = document.getElementById('searchInput');
+            const searchTerm = searchInput.value.trim();
+            
+            // Check cache first (valid for 1 hour)
+            const cached = localStorage.getItem('cachedAPIRecipes');
+            if (cached) {
+                const cachedData = JSON.parse(cached);
+                const hourInMs = 60 * 60 * 1000;
+                if (Date.now() - cachedData.timestamp < hourInMs && cachedData.searchTerm === searchTerm) {
+                    return [...recipes, ...cachedData.recipes];
+                }
+            }
+            
+            // Fetch from API
+            const apiRecipes = await fetchExternalRecipes(searchTerm);
+            if (apiRecipes.length > 0) {
+                return [...recipes, ...apiRecipes];
+            }
+            
+            return recipes;
+        }
+
+        // Enhanced search with API integration
+        async function searchRecipes() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            
+            if (searchTerm) {
+                saveSearchTerm(searchTerm);
+                
+                // Show loading state
+                const grid = document.getElementById('recipesGrid');
+                grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--accent-color); padding: 2rem;">🔍 Searching recipes...</p>';
+                
+                // Fetch recipes from API
+                const allRecipes = await loadRecipes();
+                
+                filteredRecipes = allRecipes.filter(recipe => 
+                    recipe.name.toLowerCase().includes(searchTerm) ||
+                    recipe.description.toLowerCase().includes(searchTerm)
+                );
+            } else {
+                filteredRecipes = [...recipes];
+            }
+            
+            applyFilters();
+        }
+
         // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
             // Load saved filter state
             const savedFilters = getFilterState('culinary');
             if (savedFilters.difficulty) document.getElementById('difficultyFilter').value = savedFilters.difficulty;
@@ -353,11 +442,15 @@
             if (savedFilters.time) document.getElementById('timeFilter').value = savedFilters.time;
             if (savedFilters.search) document.getElementById('searchInput').value = savedFilters.search;
             
+            // Load initial recipes (with API integration)
+            const allRecipes = await loadRecipes();
+            filteredRecipes = allRecipes;
+            
             // Apply saved filters
             if (Object.keys(savedFilters).length > 0) {
                 applyFilters();
             } else {
-                renderRecipes(recipes);
+                renderRecipes(filteredRecipes);
             }
             
             // Add enter key support for search

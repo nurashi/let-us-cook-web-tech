@@ -97,16 +97,20 @@
                         // Store current user (without password)
                         localStorage.setItem('currentUser', JSON.stringify(data.data.user));
                         
-                        // Check if there's a redirect URL saved
-                        const redirectUrl = localStorage.getItem('redirectAfterLogin');
-                        if (redirectUrl) {
-                            localStorage.removeItem('redirectAfterLogin');
-                            alert('Login successful!');
-                            window.location.href = redirectUrl;
-                        } else {
-                            alert('Login successful!');
-                            window.location.href = 'login.html';  // Home page is now login.html
-                        }
+                        // Show success message
+                        showSuccessModal('Login successful! Welcome back!');
+                        
+                        // Redirect after a short delay
+                        setTimeout(() => {
+                            // Check if there's a redirect URL saved
+                            const redirectUrl = localStorage.getItem('redirectAfterLogin');
+                            if (redirectUrl) {
+                                localStorage.removeItem('redirectAfterLogin');
+                                window.location.href = redirectUrl;
+                            } else {
+                                window.location.href = 'login.html';  // Home page
+                            }
+                        }, 1500);
                     } else {
                         showError(document.getElementById('email'), data.message || 'Invalid email or password');
                         showError(document.getElementById('password'), data.message || 'Invalid email or password');

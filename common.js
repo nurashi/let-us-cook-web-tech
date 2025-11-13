@@ -448,8 +448,24 @@ function validateEmail(email) {
 }
 
 function validatePassword(password) {
-    // At least 3 characters
-    return password.length >= 3;
+    // At least 8 characters, must contain at least one letter and one number
+    const minLength = password.length >= 8;
+    const hasLetter = /[a-zA-Z]/.test(password);
+    const hasNumber = /\d/.test(password);
+    return minLength && hasLetter && hasNumber;
+}
+
+function getPasswordStrength(password) {
+    let strength = 0;
+    if (password.length >= 8) strength++;
+    if (password.length >= 12) strength++;
+    if (/[a-z]/.test(password) && /[A-Z]/.test(password)) strength++;
+    if (/\d/.test(password)) strength++;
+    if (/[^a-zA-Z0-9]/.test(password)) strength++;
+    
+    if (strength <= 2) return { level: 'weak', color: '#dc3545' };
+    if (strength <= 3) return { level: 'medium', color: '#ffc107' };
+    return { level: 'strong', color: '#28a745' };
 }
 
 function validatePhone(phone) {
@@ -633,6 +649,124 @@ function closeModal(modalId) {
         modal.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
+}
+
+// Show success modal (custom alert replacement)
+function showSuccessModal(message) {
+    // Remove any existing modal
+    const existingModal = document.getElementById('successModal');
+    if (existingModal) {
+        existingModal.remove();
+    }
+    
+    // Create modal
+    const modal = document.createElement('div');
+    modal.id = 'successModal';
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--overlay);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        animation: fadeIn 0.3s ease;
+    `;
+    
+    const modalContent = document.createElement('div');
+    modalContent.style.cssText = `
+        background: var(--bg-card);
+        padding: 2rem 3rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 10px 40px var(--shadow);
+        text-align: center;
+        max-width: 400px;
+        animation: slideUp 0.3s ease;
+    `;
+    
+    modalContent.innerHTML = `
+        <div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
+        <h3 style="color: var(--success); margin-bottom: 0.5rem;">Success!</h3>
+        <p style="color: var(--text-primary); font-size: 1.1rem;">${message}</p>
+    `;
+    
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+    
+    // Auto-close after 2 seconds
+    setTimeout(() => {
+        modal.style.opacity = '0';
+        setTimeout(() => modal.remove(), 300);
+    }, 2000);
+}
+
+// Show error modal
+function showErrorModal(message) {
+    const existingModal = document.getElementById('errorModal');
+    if (existingModal) {
+        existingModal.remove();
+    }
+    
+    const modal = document.createElement('div');
+    modal.id = 'errorModal';
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--overlay);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        animation: fadeIn 0.3s ease;
+    `;
+    
+    const modalContent = document.createElement('div');
+    modalContent.style.cssText = `
+        background: var(--bg-card);
+        padding: 2rem 3rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 10px 40px var(--shadow);
+        text-align: center;
+        max-width: 400px;
+        animation: slideUp 0.3s ease;
+    `;
+    
+    modalContent.innerHTML = `
+        <div style="font-size: 3rem; margin-bottom: 1rem;">❌</div>
+        <h3 style="color: var(--error); margin-bottom: 0.5rem;">Error!</h3>
+        <p style="color: var(--text-primary); font-size: 1.1rem;">${message}</p>
+        <button onclick="document.getElementById('errorModal').remove()" 
+                style="margin-top: 1rem; padding: 0.5rem 1.5rem; background: var(--accent-color); 
+                       color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">
+            OK
+        </button>
+    `;
+    
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+}
+
+// Add animations to CSS
+if (!document.getElementById('modalAnimations')) {
+    const style = document.createElement('style');
+    style.id = 'modalAnimations';
+    style.textContent = `
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    `;
+    document.head.appendChild(style);
 }
 
 // Close modal when clicking outside

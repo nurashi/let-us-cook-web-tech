@@ -46,8 +46,14 @@
                     <input type="password" id="password" class="form-input" required>
                     <div class="error-message"></div>
                     <small style="color: var(--text-secondary); display: block; margin-top: 0.3rem;">
-                        Must be at least 3 characters
+                        Must be at least 8 characters with letters and numbers
                     </small>
+                    <div id="passwordStrength" style="margin-top: 0.5rem; display: none;">
+                        <div style="height: 4px; background: var(--border-color); border-radius: 2px; overflow: hidden;">
+                            <div id="strengthBar" style="height: 100%; width: 0%; transition: all 0.3s ease;"></div>
+                        </div>
+                        <small id="strengthText" style="font-size: 0.85rem;"></small>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -67,6 +73,30 @@
 
     <script src="common.js"></script>
     <script>
+        // Password strength indicator
+        document.getElementById('password').addEventListener('input', function() {
+            const password = this.value;
+            const strengthDiv = document.getElementById('passwordStrength');
+            const strengthBar = document.getElementById('strengthBar');
+            const strengthText = document.getElementById('strengthText');
+            
+            if (password.length > 0) {
+                strengthDiv.style.display = 'block';
+                const strength = getPasswordStrength(password);
+                
+                let widthPercent = 33;
+                if (strength.level === 'medium') widthPercent = 66;
+                if (strength.level === 'strong') widthPercent = 100;
+                
+                strengthBar.style.width = widthPercent + '%';
+                strengthBar.style.backgroundColor = strength.color;
+                strengthText.textContent = `Password strength: ${strength.level}`;
+                strengthText.style.color = strength.color;
+            } else {
+                strengthDiv.style.display = 'none';
+            }
+        });
+        
         document.getElementById('signupForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -108,7 +138,7 @@
                 showError(document.getElementById('password'), 'Password is required');
                 isValid = false;
             } else if (!validatePassword(password)) {
-                showError(document.getElementById('password'), 'Password must be at least 3 characters');
+                showError(document.getElementById('password'), 'Password must be at least 8 characters with letters and numbers');
                 isValid = false;
             }
             
@@ -146,8 +176,11 @@
                     const data = await response.json();
 
                     if (response.ok && data.success) {
-                        alert('Account created successfully! Please log in.');
-                        window.location.href = 'index.html';  // Login page is now index.html
+                        showSuccessModal('Account created successfully! Please log in.');
+                        setTimeout(() => {
+                            window.location.href = 'index.html';  // Login page is now index.html
+                        }, 2000);
+                    
                     } else {
                         if (response.status === 409) {
                             showError(document.getElementById('email'), 'An account with this email already exists');
